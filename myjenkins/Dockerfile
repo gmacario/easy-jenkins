@@ -1,6 +1,10 @@
 # Project: gmacario/easy-jenkins
 #
-# With some inspiration from
+# Extend the standard Jenkins LTS Docker image with:
+# - Jenkins workflow plugins
+# - Docker
+#
+# Credits to https://github.com/camiloribeiro/cdeasy
 # - https://github.com/camiloribeiro/cdeasy/blob/master/docker/jenkins/Dockerfile
 #
 FROM jenkins:latest
@@ -31,9 +35,13 @@ RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
 RUN touch /var/run/docker.sock
 
+RUN usermod -aG docker jenkins
+
 # COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
-# COPY start.sh /tmp/start.sh
-# RUN chmod +x /tmp/start.sh && dos2unix /tmp/start.sh
+COPY start.sh /tmp/start.sh
+RUN chmod +x /tmp/start.sh && dos2unix /tmp/start.sh
+
+ENTRYPOINT ["/bin/bash", "-c", "/tmp/start.sh"]
 
 # EOF
