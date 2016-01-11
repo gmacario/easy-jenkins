@@ -5,3 +5,8 @@ myjenkins:
     - "51000:50000"
   tty: true
   privileged: true
+
+build-yocto-slave01:
+  image: gmacario/build-yocto
+
+# EOF
