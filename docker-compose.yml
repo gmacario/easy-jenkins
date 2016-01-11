@@ -1,3 +1,6 @@
+# See also:
+# - Compose file reference: https://docs.docker.com/compose/compose-file/
+
 myjenkins:
   image: jenkins
   ports:
@@ -6,7 +9,12 @@ myjenkins:
   tty: true
   privileged: true
 
-build-yocto-slave01:
+build-yocto-slave:
   image: gmacario/build-yocto
+  user: jenkins
+  entrypoint: ""
+  command: "java -jar /usr/share/jenkins/slave.jar -jnlpUrl http://master:8080/computer/build-yocto-slave/slave-agent.jnlp"
+  links:
+    - myjenkins:master
 
 # EOF
