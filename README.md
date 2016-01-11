@@ -2,6 +2,13 @@
 
 Easily deploy a Jenkins CI/CD infrastructure via docker-compose
 
+### System Requirements
+
+* Docker and docker-compose (tested with Docker Toolbox 1.9.1d)
+* At least 8MB RAM and 100 GB disk space
+* A fast Internet connection
+* A recent Internet browser
+
 ### TL;DR
 
 ```
@@ -10,9 +17,13 @@ $ cd easy-jenkins
 $ ./runme.sh
 ```
 
-Then browse <http://192.168.99.100:9080>
+Then open <http://192.168.99.100:9080> from the Internet browser of your choice to access the Jenkins dashboard.
 
-You may need to adjust the URL based on the result of `docker-machine url easy-jenkins`
+You may need to adjust the IP address in the URL above based on the actual URL of your Docker host, which may be displayed with the following command:
+
+```
+$ docker-machine url easy-jenkins
+```
 
 ### License
 
