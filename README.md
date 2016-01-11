@@ -7,10 +7,12 @@ Easily deploy a Jenkins CI/CD infrastructure via docker-compose
 ```
 $ git clone https://github.com/gmacario/easy-jenkins
 $ cd easy-jenkins
-$ docker-compose up -d
+$ ./runme.sh
 ```
 
-Then browse <http://192.168.99.100:9080> (you may need to adjust the URL based on the result of `docker-machine url default`)
+Then browse <http://192.168.99.100:9080>
+
+You may need to adjust the URL based on the result of `docker-machine url easy-jenkins`
 
 ### License
 

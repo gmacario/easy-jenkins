@@ -18,4 +18,7 @@ fi
 
 docker-machine env ${MACHINE}
 
+eval $(docker-machine env ${MACHINE})
+docker-compose up -d
+
 # EOF

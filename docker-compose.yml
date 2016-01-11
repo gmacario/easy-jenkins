@@ -1,0 +1,7 @@
+myjenkins:
+  image: jenkins
+  ports:
+    - "9080:8080"
+    - "51000:50000"
+  tty: true
+  privileged: true
