@@ -4,7 +4,7 @@
 
 set -e
 
-docker-machine ls
+# docker-machine ls
 
 if docker-machine ls | grep ${VM} >/dev/null; then
     echo "WARNING: Docker machine ${VM} exists, skipping docker-machine create"
@@ -19,9 +19,12 @@ if docker-machine status ${VM} | grep -v Running; then
     docker-machine start ${VM}
 fi
 
-docker-machine env ${VM}
+# docker-machine env ${VM}
 
 eval $(docker-machine env ${VM})
 docker-compose up -d
+
+MASTER=$(echo ${DOCKER_HOST} | sed -e 's/^.*\:\/\///' | sed -e 's/\:.*$//')
+echo "INFO: Now browse http://${MASTER}:9080/ to view the Jenkins dashboard"
 
 # EOF
