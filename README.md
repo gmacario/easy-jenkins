@@ -1,6 +1,6 @@
 # easy-jenkins
 
-Easily deploy a Jenkins CI/CD infrastructure via docker-compose
+Easily deploy a [Jenkins](https://jenkins-ci.org/) CI/CD infrastructure via [docker-machine](https://www.docker.com/docker-machine) and [docker-compose](https://www.docker.com/docker-compose).
 
 ### System Requirements
 
@@ -17,13 +17,24 @@ $ cd easy-jenkins
 $ ./runme.sh
 ```
 
-Then open <http://192.168.99.100:9080> from the Internet browser of your choice to access the Jenkins dashboard.
-
-You may need to adjust the IP address in the URL above based on the actual URL of your Docker host, which may be displayed with the following command:
+If the script executes successfully it will display a message like the following:
 
 ```
-$ docker-machine url easy-jenkins
+INFO: Now browse http://192.168.99.100:9080/ to access the Jenkins dashboard
 ```
+
+The Jenkins dashboard may then be accessed by opening the displayed URL using a recent Internet browser.
+
+The behavior of the `runme.sh` script may be customized through some environment variables - please refer to the comments inside the script for details.
+
+You may also use the following command
+
+```
+$ docker-machine ls
+$ eval $(docker-machine env easy-jenkins)
+```
+
+to setup the environment variables so that `docker-compose` and `docker` will interact with the created VM.
 
 ### License
 
