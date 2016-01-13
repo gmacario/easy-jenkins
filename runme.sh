@@ -15,7 +15,7 @@ else
       --virtualbox-memory "3048" \
       ${VM}
 fi
-if docker-machine status ${VM} | grep -v Running; then
+if docker-machine status ${VM} | grep -v Running >/dev/null; then
     docker-machine start ${VM}
 fi
 
