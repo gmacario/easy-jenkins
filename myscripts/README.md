@@ -8,8 +8,8 @@ Jenkins offers a scripting language based on [Groovy](http://www.groovy-lang.org
 
 #### From Jenkins Script Console
 
-The easiest way for running a Jenkins script is via the Jenkins Script Console which you may access via a web browser opening the at
-`${JENKINS_DASHBOARD}/console` URL, for instance `http://127.0.0.1:8080/console`.
+The easiest way for running a Jenkins script is via the Jenkins Script Console which you may access via a web browser opening the
+`${JENKINS_DASHBOARD}/console` URL, for instance `http://192.168.99.100:9080/console`.
 
 See https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+Script+Console for details.
 
