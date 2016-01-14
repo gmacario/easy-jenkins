@@ -50,6 +50,7 @@ $ curl --user 'username:password' -d "script=$(<./myscripts/hello.groovy)" https
 ### See also
 
 * https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+Script+Console
+* https://wiki.jenkins-ci.org/display/JENKINS/Scriptler+Plugin
 * https://www.cloudbees.com/jenkins/juc-2015/presentations/JUC-2015-USEast-Groovy-With-Jenkins-McCollum.pdf
 * https://learnxinyminutes.com/docs/groovy/
 
