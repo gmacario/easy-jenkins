@@ -42,7 +42,8 @@ fi
 eval $(docker-machine env ${VM})
 docker-compose up -d
 
-MASTER=$(echo ${DOCKER_HOST} | sed -e 's/^.*\:\/\///' | sed -e 's/\:.*$//')
-echo "INFO: Now browse http://${MASTER}:9080/ to access the Jenkins dashboard"
+echo "INFO: Browse http://$(docker-machine ip ${VM}):9080/ to access the Jenkins dashboard"
+echo "INFO: Run the following command to configure your shell:"
+echo "INFO: eval \$(docker-machine env ${VM})"
 
 # EOF
