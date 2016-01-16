@@ -25,7 +25,7 @@ println "df -h".execute().text
 //println "INFO: Executing sudo id"
 //println "sudo id".execute().text // java.io.IOException: Cannot run program "sudo": error=2, No such file or directory
 
-println "INFO: Executing df -h"
+println "INFO: Executing printenv"
 println "printenv".execute().text
 
 /* EOF */
