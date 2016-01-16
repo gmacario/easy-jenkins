@@ -32,11 +32,10 @@ RUN chmod +x /usr/local/bin/docker-compose
 # Install Jenkins plugins from the list at plugins.txt
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN dos2unix /usr/share/jenkins/plugins.txt
+RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
 COPY start.sh /tmp/start.sh
 RUN chmod +x /tmp/start.sh && dos2unix /tmp/start.sh
-
-RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
 COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
