@@ -52,8 +52,8 @@ project.getBuildersList().add(new Shell("echo Hello world"));
 project.save()
 
 // TODO: JENKINS_URL ???
-println "INFO: Executing printenv"
+println "DEBUG: Executing printenv"
 println "printenv".execute().text
 
 println "INFO: Script seed.groovy executed correctly. Now execute"
-println "\$ curl \${JENKINS_HOME}/job/" + jobName + "/build"
+println "\$ curl \${JENKINS_URL}/job/" + jobName + "/build"
