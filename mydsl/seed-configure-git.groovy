@@ -3,10 +3,10 @@ Usage:
 
 Browse ${JENKINS_URL}/view/All/newJob
 
-* Item Name: seed-build-gdp
+* Item Name: seed-configure-git
 * Type: Freestyle project
 
-Browse ${JENKINS_URL}/job/seed-build-gdp/configure
+Browse ${JENKINS_URL}/job/seed-configure-git/configure
 
 * Restrict where this project can be run
   - Label Expression: master
@@ -15,7 +15,7 @@ Browse ${JENKINS_URL}/job/seed-build-gdp/configure
   - Process Job DSLs
   - DSL Script: <paste those contents>
   
-Browse ${JENKINS_URL}/job/seed-build-gdp/build?delay=0sec
+Browse ${JENKINS_URL}/job/seed-configure-git/build?delay=0sec
 
 */
 
