@@ -1,5 +1,12 @@
 /*
 List all the installed Jenkins plugins
+
+Usage:
+
+- Browse ${JENKINS_URL}/script
+- Paste this page
+- Click "Run"
+
 */
 
 // Jenkins APIs:
