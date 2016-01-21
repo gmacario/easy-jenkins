@@ -19,31 +19,48 @@
 [[ "${VM_MEM_SIZEMB}" = "" ]] && VM_MEM_SIZEMB=3048
 [[ "${VM_DISK_SIZEMB}" = "" ]] && VM_DISK_SIZEMB=50000
 
+F_HAVE_DOCKER_MACHINE=false
+
 set -e
 
-# docker-machine ls
-
-if docker-machine ls | grep ${VM} >/dev/null; then
-    echo "WARNING: Docker machine ${VM} exists, skipping docker-machine create"
+if which docker-machine >/dev/null; then
+    F_HAVE_DOCKER_MACHINE=true
 else
-    echo "INFO: Creating VirtualBox VM ${VM} (cpu:${VM_NUM_CPUS}, memory:${VM_MEM_SIZEMB} MB, disk:${VM_DISK_SIZEMB} MB)"
-    docker-machine create --driver virtualbox \
-      --virtualbox-cpu-count "${VM_NUM_CPUS}" \
-      --virtualbox-memory "${VM_MEM_SIZEMB}" \
-      --virtualbox-disk-size "${VM_DISK_SIZEMB}" \
-      ${VM}
+    echo "WARNING: Could not find docker-machine - Please set environment variables manually"
 fi
-if docker-machine status ${VM} | grep -v Running >/dev/null; then
-    docker-machine start ${VM}
+if ! which docker-compose >/dev/null; then
+    echo "ERROR: Must install docker-compose"
+    exit 1
 fi
 
-# docker-machine env ${VM}
+if "${F_HAVE_DOCKER_MACHINE}"; then
+    # docker-machine ls
+    if docker-machine ls | grep ${VM} >/dev/null; then
+        echo "WARNING: Docker host ${VM} exists, skipping docker-machine create"
+    else
+        echo "INFO: Creating VirtualBox VM ${VM} (cpu:${VM_NUM_CPUS}, memory:${VM_MEM_SIZEMB} MB, disk:${VM_DISK_SIZEMB} MB)"
+        docker-machine create --driver virtualbox \
+          --virtualbox-cpu-count "${VM_NUM_CPUS}" \
+          --virtualbox-memory "${VM_MEM_SIZEMB}" \
+          --virtualbox-disk-size "${VM_DISK_SIZEMB}" \
+          ${VM}
+    fi
+    if docker-machine status ${VM} | grep -v Running >/dev/null; then
+        docker-machine start ${VM}
+    fi
+    # docker-machine env ${VM}
+    eval $(docker-machine env ${VM})
+fi
 
-eval $(docker-machine env ${VM})
 docker-compose up -d
 
-echo "INFO: Browse http://$(docker-machine ip ${VM}):9080/ to access the Jenkins dashboard"
-echo "INFO: Run the following command to configure your shell:"
-echo "INFO: eval \$(docker-machine env ${VM})"
+if "${F_HAVE_DOCKER_MACHINE}"; then
+    echo "INFO: Browse http://$(docker-machine ip ${VM}):9080/ to access the Jenkins dashboard"
+    echo "INFO: Run the following command to configure your shell:"
+    echo "INFO: eval \$(docker-machine env ${VM})"
+else
+    JENKINS_URL="http://localhost:9080/"
+    echo "INFO: Browse ${JENKINS_URL} to access the Jenkins dashboard"
+fi
 
 # EOF
