@@ -1,7 +1,10 @@
 # pluginName pluginVersion # latestVersion
+# ace-editor 1.0.1
 ant 1.2
 antisamy-markup-formatter 1.3
+# branch-api 1.0
 build-pipeline-plugin 1.4.9
+# cloudbees-folder 5.1
 credentials 1.24
 cvs 2.12
 dashboard-view 2.9.7
@@ -19,12 +22,16 @@ job-dsl 1.42
 jobConfigHistory 2.12
 join 1.16
 jquery 1.11.2-0
+# jquery-detached 1.1.1 # 1.2
 junit 1.10
 ldap 1.11
 mailer 1.16
+# mapdb-api 1.0.6.0
 matrix-auth 1.2
 matrix-project 1.6
 maven-plugin 2.12.1
+# mercurial 1.54
+# mock-slave 1.8
 pam-auth 1.2
 parameterized-trigger 2.30
 promoted-builds 2.24.1
@@ -38,10 +45,14 @@ token-macro 1.12.1
 translation 1.12
 view-job-filters 1.27
 windows-slaves 1.1
+# workflow-aggregator 1.13
 workflow-api 1.13
 workflow-basic-steps 1.13
+# workflow-cps 1.13
+# workflow-cps-global-lib 1.13
 workflow-durable-task-step 1.13
 workflow-job 1.13
+# workflow-multibranch 1.13
 workflow-scm-step 1.13
 workflow-step-api 1.13
 workflow-support 1.13
