@@ -26,8 +26,8 @@ fi
 [[ "${VM_DISK_SIZEMB}" = "" ]] && VM_DISK_SIZEMB=50000
 
 # docker-machine ls
-if docker-machine ls | grep ${VM} >/dev/null; then
-    echo "WARNING: Docker machine ${VM} exists, skipping docker-machine create"
+if docker-machine ls | grep -w ${VM} >/dev/null; then
+    echo "INFO: Docker machine ${VM} exists, skipping docker-machine create"
 else
     echo "INFO: Creating VirtualBox VM ${VM} (cpu:${VM_NUM_CPUS}, memory:${VM_MEM_SIZEMB} MB, disk:${VM_DISK_SIZEMB} MB)"
     docker-machine create --driver virtualbox \
