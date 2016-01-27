@@ -27,21 +27,22 @@ job-dsl 1.42
 jobConfigHistory 2.12
 join 1.16
 jquery 1.11.2-0
-jquery-detached 1.1.1 # 1.2
+jquery-detached 1.2
 junit 1.10
 ldap 1.11
 mailer 1.16
-# mapdb-api 1.0.6.0
+mapdb-api 1.0.6.0
 matrix-auth 1.2
 matrix-project 1.6
 maven-plugin 2.12.1
-# mercurial 1.54
-# mock-slave 1.8
+mercurial 1.54
+mock-slave 1.8
 pam-auth 1.2
 parameterized-trigger 2.30
 promoted-builds 2.24.1
+run-condition 1.0
 scm-api 1.0
-script-security 1.16
+script-security 1.17
 sectioned-view 1.20
 ssh-credentials 1.11
 ssh-slaves 1.10
