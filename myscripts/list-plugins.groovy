@@ -1,12 +1,15 @@
 /*
 List all the installed Jenkins plugins
 
-Usage:
+Execute it from the Script Console:
 
 - Browse ${JENKINS_URL}/script
 - Paste this page
 - Click "Run"
 
+You may also execute it from the Scriptler plugin:
+
+- Browse ${JENKINS_URL}/scriptler
 */
 
 // Jenkins APIs:
@@ -15,6 +18,8 @@ Usage:
 // http://javadoc.jenkins-ci.org/hudson/PluginManager.html
 // http://javadoc.jenkins-ci.org/hudson/PluginWrapper.html
 // http://javadoc.jenkins-ci.org/hudson/model/UpdateSite.Plugin.html
+
+import jenkins.model.Jenkins
 
 def debugPrint(String s) {
   //println "DEBUG: " + s
