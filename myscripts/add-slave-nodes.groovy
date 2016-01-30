@@ -1,4 +1,5 @@
-/*
+/* WORK-IN-PROGRESS
+
 Add slave nodes
 
 Execute it from the Script Console:
@@ -11,6 +12,11 @@ You may also execute it from the Scriptler plugin:
 
 - Browse ${JENKINS_URL}/scriptler
 */
+
+// See also:
+//
+// https://github.com/MovingBlocks/GroovyJenkins/blob/master/src/main/groovy/AddNodeToJenkins.groovy
+// https://github.com/MovingBlocks/GroovyJenkins/blob/master/src/main/groovy/RemoveAgent.groovy
 
 // Jenkins APIs:
 //
