@@ -18,7 +18,8 @@ RUN apt-get update -qq && apt-get install -qqy \
     wget \
     lxc \
     iptables \
-    dos2unix
+    dos2unix \
+    groovy2
 
 # Install Docker
 RUN wget -qO- https://get.docker.com/ | sh
