@@ -20,6 +20,10 @@ Jenkins.instance.nodes.each {
 }
 */
 
+// FIXME: Extend it to run as a Job DSL Build step
+// using the [Job DSL Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin)
+// rather than the [Groovy plugin](https://wiki.jenkins-ci.org/display/JENKINS/Groovy+plugin)
+
 // The "build" object is added by the Jenkins Groovy plugin and can resolve parameters and such
 String agentList = build.buildVariableResolver.resolve('AgentList')
 String agentDescription = build.buildVariableResolver.resolve('AgentDescription')

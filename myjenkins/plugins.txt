@@ -20,6 +20,7 @@ git 2.4.1
 git-client 1.19.2
 git-server 1.6
 greenballs 1.15
+groovy 1.29
 htmlpublisher 1.10
 javadoc 1.3
 jenkins-multijob-plugin 1.20
