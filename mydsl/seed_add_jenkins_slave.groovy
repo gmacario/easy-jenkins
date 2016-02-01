@@ -1,12 +1,14 @@
 /*
-  References:
+  Project: https://github.com/gmacario/easy-jenkins
+  File:    mydsl/seed_add_jenkins_slave.groovy
 
+  References:
     - https://jenkinsci.github.io/job-dsl-plugin/#
  */
  
 job('add_jenkins_slave') {
   scm {
-    git('https://github.com/gmacario/easy-jenkins', 'fix-issue-16-v2')
+    git('https://github.com/gmacario/easy-jenkins', '*/master')
     
     parameters {
       textParam('AgentList', 'build-yocto-slave', 'Name of agents to create, optionally more than one (each line makes one agent)')
@@ -16,11 +18,9 @@ job('add_jenkins_slave') {
     }
     
     steps {
-      // TODO
-      /* dsl {
-          text(readFileFromWorkspace('myscripts/add-slave-nodes.groovy'))
-          removeAction('DELETE')
-      } */
+      systemGroovyScriptFile ('myscripts/add_slave_nodes.groovy') {
+	      // TODO
+      }
     }
   }
 }
