@@ -1,4 +1,10 @@
-job('add-jenkins-slave') {
+/*
+  References:
+
+    - https://jenkinsci.github.io/job-dsl-plugin/#
+ */
+ 
+job('add_jenkins_slave') {
   scm {
     git('https://github.com/gmacario/easy-jenkins', 'fix-issue-16-v2')
     
@@ -10,9 +16,11 @@ job('add-jenkins-slave') {
     }
     
     steps {
-      text(readFileFromWorkspace('myscripts/add-slave-nodes.groovy'))
-      removeAction('DELETE')
       // TODO
+      /* dsl {
+          text(readFileFromWorkspace('myscripts/add-slave-nodes.groovy'))
+          removeAction('DELETE')
+      } */
     }
   }
 }
