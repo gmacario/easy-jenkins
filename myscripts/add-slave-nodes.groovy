@@ -3,9 +3,9 @@
  *
  * SUGGESTED PAIRED PARAMETERS IN JENKINS (type, name, default values, description):
  *
- * Text - AgentList - "TestAutoAgent" - Name of agents to create, optionally more than one (each line makes one agent)
+ * Text - AgentList - "build-yocto-slave" - Name of agents to create, optionally more than one (each line makes one agent)
  * String - AgentDescription - "Auto-created Jenkins agent" - Description that'll be set for _every_ created agent
- * String - AgentHome - "D:\JenkinsAgent" - Remote filesystem root for the agent
+ * String - AgentHome - "/home/jenkins" - Remote filesystem root for the agent
  * String - AgentExecutors - 2 - Number of executors for the agent
  */
 
