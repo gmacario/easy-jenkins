@@ -1,95 +1,49 @@
-/* WORK-IN-PROGRESS
+/**
+ * This script is meant to be executed by a parameterized job in Jenkins and will then create new agents (slaves) as per the parameters
+ *
+ * SUGGESTED PAIRED PARAMETERS IN JENKINS (type, name, default values, description):
+ *
+ * Text - AgentList - "TestAutoAgent" - Name of agents to create, optionally more than one (each line makes one agent)
+ * String - AgentDescription - "Auto-created Jenkins agent" - Description that'll be set for _every_ created agent
+ * String - AgentHome - "D:\JenkinsAgent" - Remote filesystem root for the agent
+ * String - AgentExecutors - 2 - Number of executors for the agent
+ */
 
-Add slave nodes
+import hudson.model.Node.Mode
+import hudson.slaves.*
+import jenkins.model.Jenkins
 
-Execute it from the Script Console:
-
-- Browse ${JENKINS_URL}/script
-- Paste this page
-- Click "Run"
-
-You may also execute it from the Scriptler plugin:
-
-- Browse ${JENKINS_URL}/scriptler
+/*
+//Handy debug logging
+Jenkins.instance.nodes.each {
+    println "BEFORE - Agent: $it"
+}
 */
 
-// See also:
-//
-// https://github.com/MovingBlocks/GroovyJenkins/blob/master/src/main/groovy/AddNodeToJenkins.groovy
-// https://github.com/MovingBlocks/GroovyJenkins/blob/master/src/main/groovy/RemoveAgent.groovy
+// The "build" object is added by the Jenkins Groovy plugin and can resolve parameters and such
+String agentList = build.buildVariableResolver.resolve('AgentList')
+String agentDescription = build.buildVariableResolver.resolve('AgentDescription')
+String agentHome = build.buildVariableResolver.resolve('AgentHome')
+String agentExecutors = build.buildVariableResolver.resolve('AgentExecutors')
 
-// Jenkins APIs:
-//
-// http://javadoc.jenkins-ci.org/allclasses-noframe.html
-// http://javadoc.jenkins-ci.org/hudson/PluginManager.html
-// http://javadoc.jenkins-ci.org/hudson/PluginWrapper.html
-// http://javadoc.jenkins-ci.org/hudson/model/Node.Mode.html
-// http://javadoc.jenkins-ci.org/hudson/model/UpdateSite.Plugin.html
-// http://javadoc.jenkins-ci.org/hudson/slaves/ComputerLauncher.html
-// http://javadoc.jenkins-ci.org/hudson/slaves/DumbSlave.html
-// http://javadoc.jenkins-ci.org/hudson/slaves/JNLPLauncher.html
-// http://javadoc.jenkins-ci.org/hudson/slaves/RetentionStrategy.html
-// http://javadoc.jenkins-ci.org/hudson/slaves/RetentionStrategy.Always.html
+agentList.eachLine {
 
-import jenkins.model.Jenkins
-import hudson.model.Node.Mode
-import hudson.slaves.ComputerLauncher
-import hudson.slaves.JNLPLauncher
-import hudson.slaves.RetentionStrategy
-import hudson.slaves.RetentionStrategy.Always
+    // There is a constructor that also takes a list of properties (env vars) at the end, but haven't needed that yet
+    DumbSlave dumb = new DumbSlave(it,  // Agent name, usually matches the host computer's machine name
+            agentDescription,           // Agent description
+            agentHome,                  // Workspace on the agent's computer
+            agentExecutors,             // Number of executors
+            Mode.EXCLUSIVE,             // "Usage" field, EXCLUSIVE is "only tied to node", NORMAL is "any"
+            "",                         // Labels
+            new JNLPLauncher(),         // Launch strategy, JNLP is the Java Web Start setting services use
+            RetentionStrategy.INSTANCE) // Is the "Availability" field and INSTANCE means "Always"
 
-import hudson.slaves.DumbSlave
-
-def debugPrint(String s) {
-  println "DEBUG: " + s
+    Jenkins.instance.addNode(dumb)
+    println "Agent '$it' created with $agentExecutors executors and home '$agentHome'"
 }
 
-debugPrint("Jenkins.instance.computers=" + Jenkins.instance.computers);
-
-DumbSlave slave = new DumbSlave(
-  "build-yocto-slave",						// String name
-  "A slave for building Yocto images",		// String nodeDescription
-  "/home/jenkins",							// String remoteFS
-  "3",										// String numExecutors
-  Node.Mode.NORMAL,							// Node.Mode mode
-  "yocto",									// String labelString
-  JNLPLauncher,								// ComputerLauncher launcher
-  RetentionStrategy.Always,					// RetentionStrategy retentionStrategy
-  null										// List<? extends NodeProperty<?>> nodeProperties
-  );
-
-// TODO
-
-// println(Jenkins.instance.pluginManager.plugins)
-// println Jenkins.instance.pluginManager.getPlugins()
-// println ""
-
-/**
-println "# pluginName pluginVersion # latestVersion"
-for (p in Jenkins.instance.pluginManager.plugins.sort()) {
-  debugPrint "p=" + p
-  debugPrint "p.getClass()=" + p.getClass()
-  debugPrint "p.getVersion()=" + p.getVersion()
-  debugPrint "p.getBackupVersion()=" + p.getBackupVersion()
-  debugPrint "p.hasUpdate()=" + p.hasUpdate()
-  debugPrint "p.getUpdateInfo()=" + p.getUpdateInfo()
-  
-  line = p.toString()
-  line = line.substring(line.lastIndexOf(':') + 1)
-  if (p.hasUpdate()) {
-    hudson.model.UpdateSite.Plugin usp = p.getUpdateInfo();
-    debugPrint "usp.title=" + usp.title
-    debugPrint "usp.wiki=" + usp.wiki
-    debugPrint "usp.version=" + usp.version
-    line = line + " " + p.getVersion() + " # " + usp.version 
-  } else {
-    line = line + " " + p.getVersion()
-  }
-  // debugPrint p.api.toString()
-  // debugPrint p.getInfo()
-  println line
-  // println "# ---------------------"
+/*
+Jenkins.instance.nodes.each {
+    println "AFTER - Agent: $it"
 }
-**/
-
-// println Jenkins.instance.getViews()
+*/
