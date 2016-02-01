@@ -1,12 +1,17 @@
 /* 
+  Project: https://github.com/gmacario/easy-jenkins
+  File:    mydsl/seed_build_gdp.groovy
+*/
+  
+/*
 Usage:
 
-Browse ${JENKINS_URL}/view/All/newJob
+Browse `${JENKINS_URL}/view/All/newJob`
 
-* Item Name: seed-build-gdp
+* Item Name: seed_build_gdp
 * Type: Freestyle project
 
-Browse ${JENKINS_URL}/job/seed-build-gdp/configure
+Browse `${JENKINS_URL}/job/seed-build-gdp/configure`
 
 * Restrict where this project can be run
   - Label Expression: master
@@ -15,11 +20,10 @@ Browse ${JENKINS_URL}/job/seed-build-gdp/configure
   - Process Job DSLs
   - DSL Script: <paste those contents>
   
-Browse ${JENKINS_URL}/job/seed-build-gdp/build?delay=0sec
-
+Browse `${JENKINS_URL}/job/seed_build_gdp/build?delay=0sec`
 */
 
-def jobName = "build-gdp"
+def jobName = "build_gdp"
 def gitUrl = "https://github.com/gmacario/genivi-demo-platform"
 def gitBranch = "qemux86-64"
 
