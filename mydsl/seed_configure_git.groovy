@@ -19,7 +19,7 @@ Browse ${JENKINS_URL}/job/seed_configure_git/build?delay=0sec
 
 */
 
-def jobName = "configure-git"
+def jobName = "configure_git"
 
 job(jobName) {
   
