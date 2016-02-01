@@ -6,7 +6,7 @@ Browse ${JENKINS_URL}/view/All/newJob
 * Item Name: seed-configure-git
 * Type: Freestyle project
 
-Browse ${JENKINS_URL}/job/seed-configure-git/configure
+Browse ${JENKINS_URL}/job/seed_configure_git/configure
 
 * Restrict where this project can be run
   - Label Expression: master
@@ -15,7 +15,7 @@ Browse ${JENKINS_URL}/job/seed-configure-git/configure
   - Process Job DSLs
   - DSL Script: <paste those contents>
   
-Browse ${JENKINS_URL}/job/seed-configure-git/build?delay=0sec
+Browse ${JENKINS_URL}/job/seed_configure_git/build?delay=0sec
 
 */
 
