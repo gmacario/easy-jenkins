@@ -1,10 +1,14 @@
 ### Introduction
 
-Instructions for building the [GENIVI Demo Platform](http://projects.genivi.org/genivi-demo-platform/home) from sources.
-
 <!-- (2016-02-02 07:58 CET) -->
 
-Tested on dc7600-gm (Ubuntu 14.04.3 LTS 64-bit, Docker 1.9.1)
+Instructions for building from sources my fork of the [GENIVI Demo Platform](http://projects.genivi.org/genivi-demo-platform/home).
+
+This is mainly used as a regression test suite for the [gmacario/easy-jenkins](https://github.com/gmacario/easy-jenkins) project.
+
+The following instructions were tested on
+* Client: itm-gmacario-w7 (MS Windows 7 64-bit, Docker Toolbox 1.9.1i)
+* Server: dc7600-gm (Ubuntu 14.04.3 LTS 64-bit, Docker Engine 1.9.1)
 
 ### Preparation
 
