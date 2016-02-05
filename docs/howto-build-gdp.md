@@ -25,6 +25,25 @@ $ docker-compose stop; docker-compose rm -f; docker-compose build --pull
 $ ./runme.sh
 ```
 
+Some information messages should be displayed on the launching terminal:
+
+```
+gmacario@ITM-GMACARIO-W7 MINGW64 ~/easy-jenkins (master)
+$ ./runme.sh
+INFO: Docker machine mv-linux-powerhorse exists, skipping docker-machine create
+INFO: Using Docker machine mv-linux-powerhorse
+Creating easyjenkins_myjenkins_1
+Creating easyjenkins_build-yocto-slave_1
+INFO: Browse http://192.168.12.22:9080/ to access the Jenkins dashboard
+INFO: Run the following command to configure your shell:
+INFO: eval $(docker-machine env mv-linux-powerhorse)
+
+gmacario@ITM-GMACARIO-W7 MINGW64 ~/easy-jenkins (master)
+$
+```
+
+Take note of the `${JENKINS_URL}` (in our example, <http://192.168.12.22:9080/>) where the Jenkins dashboard could be accessed.
+
 (Optional) Watch docker-compose logs until line `INFO: Jenkins is fully up and running` is displayed:
 
 ```
@@ -36,7 +55,7 @@ myjenkins_1         | INFO: Jenkins is fully up and running
 ...
 ```
 
-Browse `${JENKINS_URL}` at <http://mv-linux-powerhorse.solarma.it:9080/> and verify that the Jenkins dashboard is displayed correctly.
+Browse `${JENKINS_URL}` as explained by the `INFO: Browse xxx to access the Jenkins dashboard` message above and verify that the Jenkins dashboard is displayed correctly.
 
 Browse `${JENKINS_URL}/job/seed`, then click **Build Now**
 
@@ -122,6 +141,13 @@ Then click **Save**.
 <!-- (2016-02-04 12:20 CET) -->
 
 Browse `${JENKINS_URL}/job/build_gdp/`, then click **Build Now**
+
+<!--
+(2016-02-04 14:33 CET)
+
+NOTE: Running task 3426 of 4394 (ID: 1578, /home/jenkins/workspace/build_gdp/gdp-src-build/../meta-ivi/meta-ivi/recipes-extended/persistence-administrator/persistence-administrator_git.bb, do_configure)
+NOTE: recipe persistence-administrator-7.0+gitAUTOINC+3a6cc3228b-r0: task do_configure: Started
+-->
 
 Result: TODO
 
