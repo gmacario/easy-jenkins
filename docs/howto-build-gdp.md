@@ -170,4 +170,6 @@ Finished: SUCCESS
 
 Browse `${JENKINS_URL}/job/build_gdp/ws/gdp-src-build/tmp/deploy/images/qemux86-64/` to inspect the build results.
 
+![Build results of project build_gdp](images/capture-20160205-1709.png)
+
 <!-- EOF -->
