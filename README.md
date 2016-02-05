@@ -36,6 +36,15 @@ $ eval $(docker-machine env easy-jenkins)
 
 to setup the environment variables so that `docker-compose` and `docker` will interact with the created VM.
 
+### What I can do next?
+
+Basically whatever you can do with Jenkins. An excellent book is [Jenkins: The Definitive Guide][1].
+
+Under the [docs/][2] directory you can also find some examples about how to use easy-jenkins.
+
+[1]: http://www.wakaleo.com/books/jenkins-the-definitive-guide
+[2]: docs
+
 ### License
 
 easy-jenkins is licensed under the MIT License - for details please see the `LICENSE` file.
