@@ -36,7 +36,7 @@ You will also be reminded to use the following command
 
 ```
 INFO: Run the following command to configure your shell:
-INFO: eval $(docker-machine env mv-linux-powerhorse)
+INFO: eval $(docker-machine env easy-jenkins)
 ```
 
 in order to setup the environment variables so that `docker-compose` and `docker` will interact with the correct Docker engine.
