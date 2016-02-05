@@ -146,17 +146,27 @@ Browse `${JENKINS_URL}/job/build_gdp/`, then click **Build Now**
 
 You may watch the build logs at `${JENKINS_URL}/job/build_gdp/lastBuild/console`
 
-A full build takes about 4 hours to complete on a dual-Xeon(R) CPU X5450 @3.00 GHz and 16 GB RAM.
-
-<!--
-(2016-02-04 16:27 CET)
-
-NOTE: Running noexec task 4367 of 4394 (ID: 1839, /home/jenkins/workspace/build_gdp/gdp-src-build/../meta-genivi-demo/recipes-extended/browser-poc/browser-poc_git.bb, do_build)
--->
+<!-- (2016-02-04 17:06 CET) -->
 
 ```
-TODO
+Started by user anonymous
+[EnvInject] - Loading node environment variables.
+Building remotely on build-yocto-slave (yocto) in workspace /home/jenkins/workspace/build_gdp
+Cloning the remote Git repository
+Cloning repository https://github.com/gmacario/genivi-demo-platform
+...
+NOTE: Running task 4393 of 4394 (ID: 7, /home/jenkins/workspace/build_gdp/gdp-src-build/../meta-genivi-demo/recipes-demo-platform/images/genivi-demo-platform.bb, do_rootfs)
+NOTE: recipe genivi-demo-platform-1.3+snapshot-20160205-r0: task do_rootfs: Started
+NOTE: recipe genivi-demo-platform-1.3+snapshot-20160205-r0: task do_rootfs: Succeeded
+NOTE: Running noexec task 4394 of 4394 (ID: 11, /home/jenkins/workspace/build_gdp/gdp-src-build/../meta-genivi-demo/recipes-demo-platform/images/genivi-demo-platform.bb, do_build)
+NOTE: Tasks Summary: Attempted 4394 tasks of which 22 didn't need to be rerun and all succeeded.
+
+Summary: There were 16 WARNING messages shown.
+Notifying upstream projects of job completion
+Finished: SUCCESS
 ```
+
+**NOTE**: A full build takes about 5 hours to complete on a dual-Xeon(R) CPU X5450 @3.00 GHz and 16 GB RAM.
 
 Browse `${JENKINS_URL}/job/build_gdp/ws/gdp-src-build/tmp/deploy/images/qemux86-64/` to inspect the build results.
 
