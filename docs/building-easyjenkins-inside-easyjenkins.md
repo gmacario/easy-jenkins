@@ -10,7 +10,7 @@ Install easy-jenkins from https://github.com/gmacario/easy-jenkins
 
 Refer to section **Preparation** of [howto-build-gdp.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/howto-build-gdp.md) for details.
 
-## Test Docker inside myjenkins
+## Test Docker inside the Jenkins master node
 
 ### Configure project `test_docker`
 
@@ -21,7 +21,7 @@ Refer to section **Preparation** of [howto-build-gdp.md](https://github.com/gmac
   then click **OK**.
   
 * Inside the project configuration page, fill-in the following information:
-  - Restrict where this project can be run: `master` (TODO: Define and use label `docker`)
+  - Restrict where this project can be run: `master`
   - Build
     - Add build step > Execute shell
       - Command
