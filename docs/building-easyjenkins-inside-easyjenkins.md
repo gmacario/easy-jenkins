@@ -41,7 +41,7 @@ docker info
   
   then click **Save**
 
-## Build project `test_docker`
+### Build project `test_docker`
 
 * Browse `${JENKINS_URL}/job/test_docker`, then click **Build Now**
 
