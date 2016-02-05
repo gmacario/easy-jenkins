@@ -10,6 +10,7 @@ Easily deploy a [Jenkins](https://jenkins-ci.org/) CI/CD infrastructure via [doc
 * A recent Internet browser
 
 **NOTE**: Thanks to docker-machine the program also allows to deploy and run the containers on a remote Docker engine, for instance:
+
 1. A fast, multi-core server on your local network
 2. An instance on a public cloud, such as [Amazon EC2](https://aws.amazon.com/it/ec2/), [DigitalOcean](https://www.digitalocean.com/), etc.
 
@@ -31,14 +32,14 @@ The Jenkins dashboard may then be accessed by opening the displayed URL using a 
 
 The behavior of the `runme.sh` script may be customized through some environment variables - please refer to the comments inside the script for details.
 
-You may also use the following command
+You will also be reminded to use the following command
 
 ```
-$ docker-machine ls
-$ eval $(docker-machine env easy-jenkins)
+INFO: Run the following command to configure your shell:
+INFO: eval $(docker-machine env mv-linux-powerhorse)
 ```
 
-to setup the environment variables so that `docker-compose` and `docker` will interact with the created VM.
+in order to setup the environment variables so that `docker-compose` and `docker` will interact with the correct Docker engine.
 
 ### License
 
