@@ -31,8 +31,6 @@ if docker-machine ls | grep -w ${VM} >/dev/null; then
 else
     echo "INFO: Creating VirtualBox VM ${VM} (cpu:${VM_NUM_CPUS}, memory:${VM_MEM_SIZEMB} MB, disk:${VM_DISK_SIZEMB} MB)"
     docker-machine create --driver virtualbox \
-      --virtualbox-boot2docker-url \
-        https://github.com/boot2docker/boot2docker/releases/download/v1.10.0-rc3/boot2docker.iso \
       --virtualbox-cpu-count "${VM_NUM_CPUS}" \
       --virtualbox-memory "${VM_MEM_SIZEMB}" \
       --virtualbox-disk-size "${VM_DISK_SIZEMB}" \
