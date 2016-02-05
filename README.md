@@ -4,10 +4,14 @@ Easily deploy a [Jenkins](https://jenkins-ci.org/) CI/CD infrastructure via [doc
 
 ### System Requirements
 
-* Docker and docker-compose (tested with Docker Toolbox 1.9.1d)
-* At least 8MB RAM and 100 GB disk space
+* A modern machine with at least: dual-core CPU, 8MB RAM, 100 GB disk space
+* Docker and docker-compose (tested with [Docker Toolbox](https://www.docker.com/products/docker-toolbox) 1.10.0)
 * A fast Internet connection
 * A recent Internet browser
+
+**NOTE**: Thanks to docker-machine the program also allows to deploy and run the containers on a remote Docker engine, for instance:
+1. A fast, multi-core server on your local network
+2. An instance on a public cloud, such as [Amazon EC2](https://aws.amazon.com/it/ec2/), [DigitalOcean](https://www.digitalocean.com/), etc.
 
 ### TL;DR
 
