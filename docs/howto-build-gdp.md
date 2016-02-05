@@ -142,15 +142,19 @@ Then click **Save**.
 
 Browse `${JENKINS_URL}/job/build_gdp/`, then click **Build Now**
 
-<!--
-(2016-02-04 15:08 CET)
+You may watch the build logs at `${JENKINS_URL}/job/build_gdp/lastBuild/console`
 
-NOTE: Running task 4222 of 4394 (ID: 1802, /home/jenkins/workspace/build_gdp/gdp-src-build/../meta-genivi-demo/recipes-multimedia/audiomanager/gdp-audiomanager-monitor.bb, do_populate_sysroot)
-NOTE: recipe gdp-audiomanager-monitor-1.0-r0: task do_populate_sysroot: Started
-NOTE: recipe gdp-audiomanager-monitor-1.0-r0: task do_populate_sysroot: Succeeded
+A full build takes about 4 hours to complete on a dual-Xeon(R) CPU X5450 @3.00 GHz and 16 GB RAM.
+
+<!--
+(2016-02-04 15:41 CET)
+
+NOTE: Running noexec task 4342 of 4394 (ID: 3365, /home/jenkins/workspace/build_gdp/gdp-src-build/../meta-qt5/recipes-qt/qt5/qtlocation_5.3.2.bb, do_build)
 -->
 
-Result: TODO
+```
+TODO
+```
 
 Browse `${JENKINS_URL}/job/build_gdp/ws/gdp-src-build/tmp/deploy/images/qemux86-64/` to inspect the build results.
 
