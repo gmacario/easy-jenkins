@@ -1,4 +1,4 @@
-### Introduction
+## Introduction
 
 <!-- (2016-02-02 07:58 CET) -->
 
@@ -13,7 +13,7 @@ The following instructions were tested on
 
 You may also run both Docker client and engine on your (OS X or Windows) laptop using [Docker Toolbox](https://www.docker.com/products/docker-toolbox).
 
-### Preparation
+## Preparation
 
 On a bash shell on the Docker Client, deploy master branch of [gmacario/easy-jenkins](https://github.com/gmacario/easy-jenkins) to docker-machine `mv-linux-powerhorse`
 
@@ -125,7 +125,7 @@ Click **Save**, then click **Build Now**
 
 Verify in the Console Output that the job was run on the slave.
 
-### Configure project `build_gdp`
+## Configure project `build_gdp`
 
 <!-- (2016-02-04 12:20 CET) -->
 
@@ -138,7 +138,7 @@ Browse `${JENKINS_URL}/job/build_gdp/`, then click **Configure**
 
 Then click **Save**.
 
-### Build project `build_gdp`
+## Build project `build_gdp`
 
 <!-- (2016-02-04 12:20 CET) -->
 
@@ -149,9 +149,9 @@ You may watch the build logs at `${JENKINS_URL}/job/build_gdp/lastBuild/console`
 A full build takes about 4 hours to complete on a dual-Xeon(R) CPU X5450 @3.00 GHz and 16 GB RAM.
 
 <!--
-(2016-02-04 15:41 CET)
+(2016-02-04 16:27 CET)
 
-NOTE: Running noexec task 4342 of 4394 (ID: 3365, /home/jenkins/workspace/build_gdp/gdp-src-build/../meta-qt5/recipes-qt/qt5/qtlocation_5.3.2.bb, do_build)
+NOTE: Running noexec task 4367 of 4394 (ID: 1839, /home/jenkins/workspace/build_gdp/gdp-src-build/../meta-genivi-demo/recipes-extended/browser-poc/browser-poc_git.bb, do_build)
 -->
 
 ```
