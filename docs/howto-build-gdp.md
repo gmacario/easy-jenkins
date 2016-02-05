@@ -2,7 +2,7 @@
 
 <!-- (2016-02-02 07:58 CET) -->
 
-Instructions for building from sources my fork of the [GENIVI Demo Platform](http://projects.genivi.org/genivi-demo-platform/home).
+Instructions for building from sources using Jenkins my fork of the [GENIVI Demo Platform](http://projects.genivi.org/genivi-demo-platform/home).
 
 This is mainly used as a regression test suite for the [gmacario/easy-jenkins](https://github.com/gmacario/easy-jenkins) project.
 
@@ -143,12 +143,15 @@ Then click **Save**.
 Browse `${JENKINS_URL}/job/build_gdp/`, then click **Build Now**
 
 <!--
-(2016-02-04 14:33 CET)
+(2016-02-04 15:08 CET)
 
-NOTE: Running task 3426 of 4394 (ID: 1578, /home/jenkins/workspace/build_gdp/gdp-src-build/../meta-ivi/meta-ivi/recipes-extended/persistence-administrator/persistence-administrator_git.bb, do_configure)
-NOTE: recipe persistence-administrator-7.0+gitAUTOINC+3a6cc3228b-r0: task do_configure: Started
+NOTE: Running task 4222 of 4394 (ID: 1802, /home/jenkins/workspace/build_gdp/gdp-src-build/../meta-genivi-demo/recipes-multimedia/audiomanager/gdp-audiomanager-monitor.bb, do_populate_sysroot)
+NOTE: recipe gdp-audiomanager-monitor-1.0-r0: task do_populate_sysroot: Started
+NOTE: recipe gdp-audiomanager-monitor-1.0-r0: task do_populate_sysroot: Succeeded
 -->
 
 Result: TODO
+
+Browse `${JENKINS_URL}/job/build_gdp/ws/gdp-src-build/tmp/deploy/images/qemux86-64/` to inspect the build results.
 
 <!-- EOF -->
