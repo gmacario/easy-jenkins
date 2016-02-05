@@ -57,6 +57,8 @@ myjenkins_1         | INFO: Jenkins is fully up and running
 
 Browse `${JENKINS_URL}` as explained by the `INFO: Browse xxx to access the Jenkins dashboard` message above and verify that the Jenkins dashboard is displayed correctly.
 
+#### Build project `seed`
+
 Browse `${JENKINS_URL}/job/seed`, then click **Build Now**
 
 Result: The following items will be generated and show up in the Jenkins dashboard:
@@ -65,7 +67,7 @@ Result: The following items will be generated and show up in the Jenkins dashboa
 2. build_gdp
 3. configure_git
 
-### Configure git on Jenkins node `master`
+#### Configure git on Jenkins node `master`
 
 <!-- (2016-02-04 12:16 CET) -->
 
@@ -75,7 +77,7 @@ Browse `${JENKINS_URL}/job/configure_git/`, then click **Build Now**
 
 Verify in the Console Output that the job was run on the master node (at this point there should not be any slave nodes yet)
 
-### Create Jenkins node `build-yocto-slave`
+#### Create Jenkins node `build-yocto-slave`
 
 <!-- (2016-02-04 12:17 CET) -->
 
@@ -96,7 +98,7 @@ Result: SUCCESS
 
 Browse `${JENKINS_URL}`, verify that node `build-yocto-slave` is running.
 
-### Configure labels on Jenkins node `build-yocto-slave`
+#### Configure labels on Jenkins node `build-yocto-slave`
 
 <!-- (2016-02-04 12:18 CET) -->
 
@@ -108,7 +110,7 @@ Browse `${JENKINS_URL}/computer/build-yocto-slave/`, then click **Configure**
 
 Then click **Save**.
 
-### Configure git on Jenkins node `build-yocto-slave`
+#### Configure git on Jenkins node `build-yocto-slave`
 
 <!-- (2016-02-04 12:19 CET) -->
 
