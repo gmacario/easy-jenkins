@@ -10,7 +10,7 @@ Install easy-jenkins from https://github.com/gmacario/easy-jenkins
 
 Refer to section **Preparation** of [howto-build-gdp.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/howto-build-gdp.md) for details.
 
-## Test Docker inside the Jenkins master node
+## Verify Docker configuration inside Jenkins `master` node
 
 ### Configure project `test_docker`
 
@@ -52,63 +52,71 @@ Inspect `${JENKINS_URL}/job/test_docker/lastBuild/console`
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
-Building on master in workspace /var/jenkins_home/jobs/test_docker/workspace
-[workspace] $ /bin/bash -xe /tmp/hudson1129037539263121207.sh
+Building on master in workspace /var/jenkins_home/workspace/test_docker
+[test_docker] $ /bin/bash -xe /tmp/hudson4344133062160301936.sh
 + id
 uid=0(root) gid=0(root) groups=0(root)
 + pwd
-/var/jenkins_home/jobs/test_docker/workspace
+/var/jenkins_home/workspace/test_docker
 + docker --version
-Docker version 1.9.1, build a34a1d5
+Docker version 1.10.0, build 590d5108
 + docker version
 Client:
- Version:      1.9.1
- API version:  1.21
- Go version:   go1.4.2
- Git commit:   a34a1d5
- Built:        Fri Nov 20 12:59:02 UTC 2015
+ Version:      1.10.0
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   590d5108
+ Built:        Thu Feb  4 18:16:19 2016
  OS/Arch:      linux/amd64
 
 Server:
- Version:      1.9.1
- API version:  1.21
- Go version:   go1.4.2
- Git commit:   a34a1d5
- Built:        Fri Nov 20 12:59:02 UTC 2015
+ Version:      1.10.0
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   590d5108
+ Built:        Thu Feb  4 18:16:19 2016
  OS/Arch:      linux/amd64
 + docker info
 Containers: 0
+ Running: 0
+ Paused: 0
+ Stopped: 0
 Images: 0
-Server Version: 1.9.1
+Server Version: 1.10.0
 Storage Driver: devicemapper
- Pool Name: docker-0:44-262-pool
+ Pool Name: docker-0:32-173-pool
  Pool Blocksize: 65.54 kB
- Base Device Size: 107.4 GB
- Backing Filesystem: 
- Data file: /dev/loop2
- Metadata file: /dev/loop3
- Data Space Used: 1.821 GB
+ Base Device Size: 10.74 GB
+ Backing Filesystem: ext4
+ Data file: /dev/loop0
+ Metadata file: /dev/loop1
+ Data Space Used: 305.7 MB
  Data Space Total: 107.4 GB
- Data Space Available: 105.6 GB
- Metadata Space Used: 1.479 MB
+ Data Space Available: 107.1 GB
+ Metadata Space Used: 729.1 kB
  Metadata Space Total: 2.147 GB
- Metadata Space Available: 2.146 GB
+ Metadata Space Available: 2.147 GB
  Udev Sync Supported: false
  Deferred Removal Enabled: false
  Deferred Deletion Enabled: false
  Deferred Deleted Device Count: 0
  Data loop file: /var/lib/docker/devicemapper/devicemapper/data
+ WARNING: Usage of loopback devices is strongly discouraged for production use. Either use `--storage-opt dm.thinpooldev` or use `--storage-opt dm.no_warn_on_loop_devices=true` to suppress this warning.
  Metadata loop file: /var/lib/docker/devicemapper/devicemapper/metadata
  Library Version: 1.02.90 (2014-09-01)
 Execution Driver: native-0.2
 Logging Driver: json-file
-Kernel Version: 3.13.0-77-generic
+Plugins: 
+ Volume: local
+ Network: host bridge null
+Kernel Version: 4.1.17-boot2docker
 Operating System: Debian GNU/Linux 8 (jessie) (containerized)
-CPUs: 8
-Total Memory: 15.67 GiB
-Name: e1d192d7db58
-ID: 6QSX:2PIP:D44J:77ZL:WEIY:D5AM:HUWT:CPDY:YTA3:UZT6:CUIK:X2X2
-WARNING: No swap limit support
+OSType: linux
+Architecture: x86_64
+CPUs: 1
+Total Memory: 1.956 GiB
+Name: fe6f2d6f87a5
+ID: EYYU:VYS3:HJDC:AYNG:KWU5:6AX5:T4CP:5PXK:PIEQ:O6G6:RJQ6:XJZ6
 WARNING: bridge-nf-call-iptables is disabled
 WARNING: bridge-nf-call-ip6tables is disabled
 Notifying upstream projects of job completion
