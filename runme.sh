@@ -82,7 +82,7 @@ if ! which docker >/dev/null; then
     exit 1
 fi
 result=$(docker --version)
-echo "DEBUG: line $LINENO: result=$result"
+# echo "DEBUG: line $LINENO: result=$result"
 have_maj_min_pat=$(echo $result | sed -e 's/^.*version //' | sed -e 's/\,.*$//')
 # echo "DEBUG: line $LINENO: have_maj_min_pat=$have_maj_min_pat"
 want_maj_min_pat="1.10.0"
@@ -98,7 +98,7 @@ if ! which docker-compose >/dev/null; then
     exit 1
 fi
 result=$(docker-compose --version)
-echo "DEBUG: line $LINENO: result=$result"
+# echo "DEBUG: line $LINENO: result=$result"
 have_maj_min_pat=$(echo $result | sed -e 's/^.*version //' | sed -e 's/\,.*$//')
 # echo "DEBUG: line $LINENO: have_maj_min_pat=$have_maj_min_pat"
 want_maj_min_pat="1.6.0"
@@ -114,7 +114,7 @@ if ! which docker-machine >/dev/null; then
   exit 1
 fi
 result=$(docker-machine --version)
-echo "DEBUG: line $LINENO: result=$result"
+# echo "DEBUG: line $LINENO: result=$result"
 have_maj_min_pat=$(echo $result | sed -e 's/^.*version //' | sed -e 's/\,.*$//')
 # echo "DEBUG: line $LINENO: have_maj_min_pat=$have_maj_min_pat"
 want_maj_min_pat="0.6.0"
