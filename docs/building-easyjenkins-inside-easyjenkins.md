@@ -121,10 +121,7 @@ Finished: SUCCESS
 
 Notice that there are no containers inside this Docker engine - which means it is a different engine from the one where easy-jenkins services are running.
 
-**TODO**: Should not use Docker-in-Docker for service myjenkins.
-See [this blog post](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/) to understand why.
-
-See related https://github.com/gmacario/easy-jenkins/issues/31
+**TODO**: Do not use Docker-in-Docker for service myjenkins. See related https://github.com/gmacario/easy-jenkins/issues/31
 
 ## Configure project `build_easyjenkins_freestyle`
 
@@ -197,10 +194,10 @@ Notifying upstream projects of job completion
 Finished: FAILURE
 ```
 
-See related:
+**TODO**: Install docker 1.10.0 or later. See related https://github.com/gmacario/easy-jenkins/issues/35
 
-* https://github.com/gmacario/easy-jenkins/issues/35
-* https://github.com/gmacario/easy-jenkins/issues/36
-* https://github.com/gmacario/easy-jenkins/pull/11
+**TODO**: Install docker-compose 1.6.0 or later. See related https://github.com/gmacario/easy-jenkins/issues/36
+
+**TODO**: Handle case when no docker-machine installed. See related https://github.com/gmacario/easy-jenkins/pull/11
 
 <!-- EOF -->
