@@ -156,8 +156,6 @@ Notice that there are no containers inside this Docker engine - which means it i
   
   then click **Save**
 
-TODO
-
 ## Build project `build_easyjenkins_freestyle`
 
 * Browse `${JENKINS_URL}/job/build_easyjenkins_freestyle`, then click **Build Now**
