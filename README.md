@@ -4,7 +4,7 @@ Easily deploy a [Jenkins](https://jenkins-ci.org/) CI/CD infrastructure via [doc
 
 ### System Requirements
 
-* A modern machine with at least: dual-core CPU, 8MB RAM, 100 GB disk space
+* A modern machine with at least: dual-core CPU, 8 GB RAM, 100 GB disk space
 * Docker and docker-compose (tested with [Docker Toolbox](https://www.docker.com/products/docker-toolbox) 1.10.0)
 * A fast Internet connection
 * A recent Internet browser
