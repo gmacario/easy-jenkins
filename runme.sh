@@ -22,7 +22,7 @@ if [[ "${VM}" = "" ]]; then
     VM=$(docker-machine active) || VM=easy-jenkins
 fi
 [[ "${VM_NUM_CPUS}" = "" ]] && VM_NUM_CPUS=2
-[[ "${VM_MEM_SIZEMB}" = "" ]] && VM_MEM_SIZEMB=3048
+[[ "${VM_MEM_SIZEMB}" = "" ]] && VM_MEM_SIZEMB=2048
 [[ "${VM_DISK_SIZEMB}" = "" ]] && VM_DISK_SIZEMB=50000
 
 # docker-machine ls
@@ -42,7 +42,6 @@ if docker-machine status ${VM} | grep -v Running >/dev/null; then
 fi
 
 # docker-machine env ${VM}
-
 eval $(docker-machine env ${VM})
 docker-compose up -d
 
