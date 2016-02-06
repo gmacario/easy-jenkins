@@ -124,6 +124,8 @@ Notice that there are no containers inside this Docker engine - which means it i
 **TODO**: Should not use Docker-in-Docker for service myjenkins.
 See [this blog post](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/) to understand why.
 
+See related https://github.com/gmacario/easy-jenkins/issues/31
+
 ## Configure project `build_easyjenkins_freestyle`
 
 * Browse `${JENKINS_URL}`, then click **New Item**
