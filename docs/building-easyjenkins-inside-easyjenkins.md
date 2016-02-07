@@ -54,12 +54,12 @@ Inspect `${JENKINS_URL}/job/test_docker/lastBuild/console`
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
-Building in workspace /var/jenkins_home/workspace/test_docker
-[test_docker] $ /bin/bash -xe /tmp/hudson729394599786323653.sh
+Building in workspace /var/jenkins_home/jobs/test_docker/workspace
+[workspace] $ /bin/bash -xe /tmp/hudson5596916223361323318.sh
 + id
 uid=0(root) gid=0(root) groups=0(root)
 + pwd
-/var/jenkins_home/workspace/test_docker
+/var/jenkins_home/jobs/test_docker/workspace
 + docker --version
 Docker version 1.10.0, build 590d5108
 + docker version
@@ -86,15 +86,15 @@ Containers: 0
 Images: 0
 Server Version: 1.10.0
 Storage Driver: devicemapper
- Pool Name: docker-0:32-181-pool
+ Pool Name: docker-0:33-181-pool
  Pool Blocksize: 65.54 kB
  Base Device Size: 10.74 GB
  Backing Filesystem: ext4
- Data file: /dev/loop0
- Metadata file: /dev/loop1
+ Data file: /dev/loop2
+ Metadata file: /dev/loop3
  Data Space Used: 305.7 MB
  Data Space Total: 107.4 GB
- Data Space Available: 47.74 GB
+ Data Space Available: 47.34 GB
  Metadata Space Used: 729.1 kB
  Metadata Space Total: 2.147 GB
  Metadata Space Available: 2.147 GB
@@ -110,19 +110,19 @@ Execution Driver: native-0.2
 Logging Driver: json-file
 Plugins: 
  Volume: local
- Network: null host bridge
+ Network: bridge null host
 Kernel Version: 4.1.17-boot2docker
 Operating System: Debian GNU/Linux 8 (jessie) (containerized)
 OSType: linux
 Architecture: x86_64
 CPUs: 2
 Total Memory: 1.956 GiB
-Name: c2eb63618350
-ID: UIQS:A2YO:DHQU:EUQZ:S2N7:ZVIK:4IU3:MHYM:FE6G:J652:72LH:Z6SI
+Name: 1bac2c6e2590
+ID: CJPD:RMI5:UHWR:ASWD:UY5K:ZZ6L:BHPX:KVYR:C2FT:PXVS:I5SO:OHO7
 WARNING: bridge-nf-call-iptables is disabled
 WARNING: bridge-nf-call-ip6tables is disabled
 + docker-compose --version
-docker-compose version 1.5.2, build 7240ff3
+docker-compose version 1.6.0, build d99cad6
 Notifying upstream projects of job completion
 Finished: SUCCESS
 ```
@@ -175,10 +175,10 @@ Result: FAILURE
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
-Building in workspace /var/jenkins_home/workspace/build_easyjenkins_freestyle
+Building in workspace /var/jenkins_home/jobs/build_easyjenkins_freestyle/workspace
 Cloning the remote Git repository
 Cloning repository https://github.com/gmacario/easy-jenkins
- > git init /var/jenkins_home/workspace/build_easyjenkins_freestyle # timeout=10
+ > git init /var/jenkins_home/jobs/build_easyjenkins_freestyle/workspace # timeout=10
 Fetching upstream changes from https://github.com/gmacario/easy-jenkins
  > git --version # timeout=10
  > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/easy-jenkins +refs/heads/*:refs/remotes/origin/*
@@ -189,14 +189,14 @@ Fetching upstream changes from https://github.com/gmacario/easy-jenkins
  > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/easy-jenkins +refs/heads/*:refs/remotes/origin/*
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
  > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
-Checking out Revision 4aa27af08bf6609b63ebc7276b6a58abd39b4fd7 (refs/remotes/origin/master)
+Checking out Revision a0655fd8439bd6f3572d171f49434729e032aae8 (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 4aa27af08bf6609b63ebc7276b6a58abd39b4fd7
-First time build. Skipping changelog.
-[build_easyjenkins_freestyle] $ /bin/bash -xe /tmp/hudson2498623857747950670.sh
+ > git checkout -f a0655fd8439bd6f3572d171f49434729e032aae8
+ > git rev-list 4aa27af08bf6609b63ebc7276b6a58abd39b4fd7 # timeout=10
+[workspace] $ /bin/bash -xe /tmp/hudson7336618461355917178.sh
 + ./runme.sh
 ./runme.sh: line 71: docker-machine: command not found
-ERROR: Should install docker-compose >= 1.6.0 (have 1.5.2)
+ERROR: Cannot find docker-machine
 Build step 'Execute shell' marked build as failure
 Notifying upstream projects of job completion
 Finished: FAILURE
