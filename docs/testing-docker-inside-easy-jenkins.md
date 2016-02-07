@@ -51,13 +51,15 @@ docker volume ls
 
 Result: SUCCESS
 
+<!-- (2016-02-07 21:59 CET) -->
+
 Inspect `${JENKINS_URL}/job/test_docker/lastBuild/console`
 
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
 Building in workspace /var/jenkins_home/jobs/test_docker/workspace
-[workspace] $ /bin/bash -xe /tmp/hudson2360723683233882849.sh
+[workspace] $ /bin/bash -xe /tmp/hudson2107386275993675628.sh
 + id
 uid=0(root) gid=0(root) groups=0(root)
 + pwd
@@ -67,7 +69,7 @@ Docker version 1.10.0, build 590d5108
 + docker-compose --version
 docker-compose version 1.6.0, build d99cad6
 + docker-machine --version
-/tmp/hudson2360723683233882849.sh: line 8: docker-machine: command not found
+/tmp/hudson2107386275993675628.sh: line 8: docker-machine: command not found
 + true
 + docker version
 Client:
@@ -86,25 +88,25 @@ Server:
  Built:        Thu Feb  4 18:16:19 2016
  OS/Arch:      linux/amd64
 + docker info
-Containers: 1
+Containers: 0
  Running: 0
  Paused: 0
- Stopped: 1
-Images: 16
+ Stopped: 0
+Images: 0
 Server Version: 1.10.0
 Storage Driver: devicemapper
- Pool Name: docker-0:33-181-pool
+ Pool Name: docker-0:32-239-pool
  Pool Blocksize: 65.54 kB
  Base Device Size: 10.74 GB
  Backing Filesystem: ext4
- Data file: /dev/loop2
- Metadata file: /dev/loop3
- Data Space Used: 1.384 GB
+ Data file: /dev/loop0
+ Metadata file: /dev/loop1
+ Data Space Used: 305.7 MB
  Data Space Total: 107.4 GB
- Data Space Available: 46.26 GB
- Metadata Space Used: 2.63 MB
+ Data Space Available: 47.64 GB
+ Metadata Space Used: 729.1 kB
  Metadata Space Total: 2.147 GB
- Metadata Space Available: 2.145 GB
+ Metadata Space Available: 2.147 GB
  Udev Sync Supported: false
  Deferred Removal Enabled: false
  Deferred Deletion Enabled: false
@@ -117,26 +119,23 @@ Execution Driver: native-0.2
 Logging Driver: json-file
 Plugins: 
  Volume: local
- Network: host bridge null
+ Network: bridge null host
 Kernel Version: 4.1.17-boot2docker
 Operating System: Debian GNU/Linux 8 (jessie) (containerized)
 OSType: linux
 Architecture: x86_64
 CPUs: 2
 Total Memory: 1.956 GiB
-Name: 1bac2c6e2590
-ID: CJPD:RMI5:UHWR:ASWD:UY5K:ZZ6L:BHPX:KVYR:C2FT:PXVS:I5SO:OHO7
+Name: 2cad5f6ee72e
+ID: GPCR:V7ZH:7KLE:QUJ3:N55I:CZDH:HNX6:VNFD:5ZNX:4VJH:V5ST:M6S4
 WARNING: bridge-nf-call-iptables is disabled
 WARNING: bridge-nf-call-ip6tables is disabled
 + docker images
-REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
-workspace_myjenkins   latest              144d1b05ba44        5 minutes ago       927.6 MB
-jenkins               latest              997d1b2b89a5        11 days ago         708.4 MB
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 + docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 + docker volume ls
 DRIVER              VOLUME NAME
-local               04a5744717782810667775297d88e0684a86f5045748c417959cb3b8760e2071
 Notifying upstream projects of job completion
 Finished: SUCCESS
 ```
