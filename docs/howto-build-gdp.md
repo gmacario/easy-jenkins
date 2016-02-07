@@ -2,16 +2,14 @@
 
 <!-- (2016-02-02 07:58 CET) -->
 
-Instructions for building from sources using Jenkins my fork of the [GENIVI Demo Platform](http://projects.genivi.org/genivi-demo-platform/home).
+This document explains how to build from sources my fork of the [GENIVI Demo Platform](http://projects.genivi.org/genivi-demo-platform/home) using Jenkins.
 
-This is mainly used as a regression test suite for the [gmacario/easy-jenkins](https://github.com/gmacario/easy-jenkins) project.
+This procedure may be used as a regression test suite for the [gmacario/easy-jenkins](https://github.com/gmacario/easy-jenkins) project.
 
 The following instructions were tested on
 
 * Docker client: itm-gmacario-w7 (MS Windows 7 64-bit, Docker Toolbox 1.10.0)
 * Docker engine: mv-linux-powerhorse (Ubuntu 14.04.3 LTS 64-bit, Docker Engine 1.10.0)
-
-You may also run both Docker client and engine on your (OS X or Windows) laptop using [Docker Toolbox](https://www.docker.com/products/docker-toolbox).
 
 ## Preparation
 
@@ -87,14 +85,11 @@ Browse `${JENKINS_URL}/job/add_jenkins_slave/` then click **Build with Parameter
 
 - AgentList: `build-yocto-slave`
 - AgentDescription: `Auto-created Jenkins agent`
-- AgentHome: `/home/jenkins`
 - AgentExecutors: `2`
-
-~~TODO: Should add Text parameter `AgentLabels` - tracked as [issues/23](https://github.com/gmacario/easy-jenkins/issues/23)~~
+- AgentHome: `/home/jenkins`
+- AgentLabels: `yocto`
 
 then click **Build**
-
-Result: SUCCESS
 
 Browse `${JENKINS_URL}`, verify that node `build-yocto-slave` is running.
 
