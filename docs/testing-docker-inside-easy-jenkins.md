@@ -8,6 +8,8 @@ Install easy-jenkins from https://github.com/gmacario/easy-jenkins
 
 Refer to section **Preparation** of [howto-build-gdp.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/howto-build-gdp.md) for details.
 
+## Step-by-step instructions
+
 ### Configure project `test_docker`
 
 * Browse `${JENKINS_URL}`, then click **New Item**
