@@ -16,7 +16,7 @@ then click **OK**.
 Browse `${JENKINS_URL}/job/build_gdp/configure`
 
 * Restrict where this project can be run: Yes
-  - Label Expression: `yocto`
+  - Label Expression: `master`
   
 * Build > Add build step
   - Process Job DSLs
@@ -32,9 +32,7 @@ def gitUrl = "https://github.com/gmacario/genivi-demo-platform"
 def gitBranch = "qemux86-64"
 
 job(jobName) {
-  // TODO
-  // * Restrict where this project can be run
-  //   - Label Expression: master
+  label('yocto')
   scm {
     git(gitUrl, gitBranch) {
       // TODO
