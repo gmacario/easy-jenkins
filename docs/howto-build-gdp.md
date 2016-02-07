@@ -125,18 +125,13 @@ Click **Save**, then click **Build Now**
 
 Verify in the Console Output that the job was run on the slave.
 
-## Configure project `build_gdp`
+## (optional) Review configuration of project `build_gdp`
 
-<!-- (2016-02-04 12:20 CET) -->
-
-Workaround for [issues/25](https://github.com/gmacario/easy-jenkins/issues/25)
+<!-- (2016-02-07 11:15 CET) -->
 
 Browse `${JENKINS_URL}/job/build_gdp/`, then click **Configure**
 
-- Restrict where this project can be run: Yes
-  - Label Expression: `yocto`
-
-Then click **Save**.
+Verify and possibly change project configuration. When finished, click **Save**.
 
 ## Build project `build_gdp`
 
