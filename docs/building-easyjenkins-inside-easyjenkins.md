@@ -166,6 +166,8 @@ Notice that there are no containers inside this Docker engine - which means it i
 
 ## Build project `build_easyjenkins_freestyle`
 
+<!-- (2016-02-07 11:28 CET) -->
+
 * Browse `${JENKINS_URL}/job/build_easyjenkins_freestyle`, then click **Build Now**
 
 Result: FAILURE
@@ -187,14 +189,14 @@ Fetching upstream changes from https://github.com/gmacario/easy-jenkins
  > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/easy-jenkins +refs/heads/*:refs/remotes/origin/*
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
  > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
-Checking out Revision fc1bd4ce76ffec5ceaeb3b16a91757e265eb0b75 (refs/remotes/origin/master)
+Checking out Revision 4aa27af08bf6609b63ebc7276b6a58abd39b4fd7 (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f fc1bd4ce76ffec5ceaeb3b16a91757e265eb0b75
- > git rev-list fc1bd4ce76ffec5ceaeb3b16a91757e265eb0b75 # timeout=10
-[build_easyjenkins_freestyle] $ /bin/bash -xe /tmp/hudson5411443336708558632.sh
+ > git checkout -f 4aa27af08bf6609b63ebc7276b6a58abd39b4fd7
+First time build. Skipping changelog.
+[build_easyjenkins_freestyle] $ /bin/bash -xe /tmp/hudson2498623857747950670.sh
 + ./runme.sh
 ./runme.sh: line 71: docker-machine: command not found
-ERROR: Should install docker >= 1.10.0 (have 1.9.1)
+ERROR: Should install docker-compose >= 1.6.0 (have 1.5.2)
 Build step 'Execute shell' marked build as failure
 Notifying upstream projects of job completion
 Finished: FAILURE
