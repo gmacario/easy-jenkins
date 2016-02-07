@@ -10,8 +10,9 @@ Install easy-jenkins from https://github.com/gmacario/easy-jenkins
 
 Refer to section **Preparation** of [howto-build-gdp.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/howto-build-gdp.md) for details.
 
+## Step-by-step instructions
 
-## Configure project `build_easyjenkins_freestyle`
+### Configure project `build_easyjenkins_freestyle`
 
 * Browse `${JENKINS_URL}`, then click **New Item**
   - Item name: `build_easyjenkins_freestyle`
@@ -47,7 +48,7 @@ docker-compose build --pull
   
   then click **Save**
 
-## Build project `build_easyjenkins_freestyle`
+### Build project `build_easyjenkins_freestyle`
 
 <!-- (2016-02-07 13:55 CET) -->
 
