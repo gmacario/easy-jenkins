@@ -204,7 +204,7 @@ Finished: FAILURE
 
 ~~**TODO**: Install docker 1.10.0 or later. See related https://github.com/gmacario/easy-jenkins/issues/35~~
 
-**TODO**: Install docker-compose 1.6.0 or later. See related https://github.com/gmacario/easy-jenkins/issues/36
+~~**TODO**: Install docker-compose 1.6.0 or later. See related https://github.com/gmacario/easy-jenkins/issues/36~~
 
 **TODO**: Handle case when no docker-machine installed. See related https://github.com/gmacario/easy-jenkins/pull/11
 
