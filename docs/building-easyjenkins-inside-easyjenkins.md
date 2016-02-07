@@ -200,7 +200,7 @@ Notifying upstream projects of job completion
 Finished: FAILURE
 ```
 
-**TODO**: Install docker 1.10.0 or later. See related https://github.com/gmacario/easy-jenkins/issues/35
+~~**TODO**: Install docker 1.10.0 or later. See related https://github.com/gmacario/easy-jenkins/issues/35~~
 
 **TODO**: Install docker-compose 1.6.0 or later. See related https://github.com/gmacario/easy-jenkins/issues/36
 
