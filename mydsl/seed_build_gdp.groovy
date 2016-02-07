@@ -6,25 +6,25 @@
 /*
 Usage:
 
-Browse `${JENKINS_URL}/view/All/newJob`, then click **New Item**
+Browse `${JENKINS_URL}`, then click **New Item**
 
-* Item Name: `build_gdp`
+* Item Name: `seed_build_gdp`
 * Type: Freestyle project
 
 then click **OK**.
 
-Browse `${JENKINS_URL}/job/build_gdp/configure`
+Browse `${JENKINS_URL}/job/seed_build_gdp/configure` and change
 
-* Restrict where this project can be run: Yes
-  - Label Expression: `master`
-  
-* Build > Add build step
-  - Process Job DSLs
-  - DSL Script: <paste these file>
+* Build
+  - Add build step > Process Job DSLs
+    - Use the provided DSL script: Yes
+      - DSL Script: <paste this file>
   
 then click **Save**.
 
-Browse `${JENKINS_URL}/job/build_gdp/build?delay=0sec`
+Browse `${JENKINS_URL}/job/seed_build_gdp/`, then click **Build Now**
+
+Result: Project `build_gdp` will be listed in `${JENKINS_URL}`
 */
 
 def jobName = "build_gdp"
