@@ -55,62 +55,70 @@ Inspect `${JENKINS_URL}/job/test_docker/lastBuild/console`
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
 Building in workspace /var/jenkins_home/workspace/test_docker
-[test_docker] $ /bin/bash -xe /tmp/hudson4381156953900617112.sh
+[test_docker] $ /bin/bash -xe /tmp/hudson729394599786323653.sh
 + id
 uid=0(root) gid=0(root) groups=0(root)
 + pwd
 /var/jenkins_home/workspace/test_docker
 + docker --version
-Docker version 1.9.1, build a34a1d5
+Docker version 1.10.0, build 590d5108
 + docker version
 Client:
- Version:      1.9.1
- API version:  1.21
- Go version:   go1.4.2
- Git commit:   a34a1d5
- Built:        Fri Nov 20 12:59:02 UTC 2015
+ Version:      1.10.0
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   590d5108
+ Built:        Thu Feb  4 18:16:19 2016
  OS/Arch:      linux/amd64
 
 Server:
- Version:      1.9.1
- API version:  1.21
- Go version:   go1.4.2
- Git commit:   a34a1d5
- Built:        Fri Nov 20 12:59:02 UTC 2015
+ Version:      1.10.0
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   590d5108
+ Built:        Thu Feb  4 18:16:19 2016
  OS/Arch:      linux/amd64
 + docker info
 Containers: 0
+ Running: 0
+ Paused: 0
+ Stopped: 0
 Images: 0
-Server Version: 1.9.1
+Server Version: 1.10.0
 Storage Driver: devicemapper
- Pool Name: docker-0:34-240-pool
+ Pool Name: docker-0:32-181-pool
  Pool Blocksize: 65.54 kB
- Base Device Size: 107.4 GB
+ Base Device Size: 10.74 GB
  Backing Filesystem: ext4
  Data file: /dev/loop0
  Metadata file: /dev/loop1
- Data Space Used: 1.821 GB
+ Data Space Used: 305.7 MB
  Data Space Total: 107.4 GB
- Data Space Available: 105.6 GB
- Metadata Space Used: 1.479 MB
+ Data Space Available: 47.74 GB
+ Metadata Space Used: 729.1 kB
  Metadata Space Total: 2.147 GB
- Metadata Space Available: 2.146 GB
+ Metadata Space Available: 2.147 GB
  Udev Sync Supported: false
  Deferred Removal Enabled: false
  Deferred Deletion Enabled: false
  Deferred Deleted Device Count: 0
  Data loop file: /var/lib/docker/devicemapper/devicemapper/data
+ WARNING: Usage of loopback devices is strongly discouraged for production use. Either use `--storage-opt dm.thinpooldev` or use `--storage-opt dm.no_warn_on_loop_devices=true` to suppress this warning.
  Metadata loop file: /var/lib/docker/devicemapper/devicemapper/metadata
  Library Version: 1.02.90 (2014-09-01)
 Execution Driver: native-0.2
 Logging Driver: json-file
-Kernel Version: 3.13.0-77-generic
+Plugins: 
+ Volume: local
+ Network: null host bridge
+Kernel Version: 4.1.17-boot2docker
 Operating System: Debian GNU/Linux 8 (jessie) (containerized)
+OSType: linux
+Architecture: x86_64
 CPUs: 2
-Total Memory: 3.177 GiB
-Name: 12edd489028e
-ID: OZWS:TLNR:V3FW:FYIH:2VBE:IN4Q:FYWZ:HSZM:LDPF:U7SY:D5Q4:HMY7
-WARNING: No swap limit support
+Total Memory: 1.956 GiB
+Name: c2eb63618350
+ID: UIQS:A2YO:DHQU:EUQZ:S2N7:ZVIK:4IU3:MHYM:FE6G:J652:72LH:Z6SI
 WARNING: bridge-nf-call-iptables is disabled
 WARNING: bridge-nf-call-ip6tables is disabled
 + docker-compose --version
