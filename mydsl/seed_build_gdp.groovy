@@ -1,6 +1,6 @@
 /* 
   Project: https://github.com/gmacario/easy-jenkins
-  File:    mydsl/build_gdp.groovy
+  File:    mydsl/seed_build_gdp.groovy
 */
   
 /*
