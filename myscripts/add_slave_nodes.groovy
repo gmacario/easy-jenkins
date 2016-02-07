@@ -1,12 +1,14 @@
 /**
- * This script is meant to be executed by a parameterized job in Jenkins and will then create new agents (slaves) as per the parameters
+ * This script is meant to be executed by a parameterized job in Jenkins
+ * and will then create new agents (slaves) as per the parameters
  *
  * SUGGESTED PAIRED PARAMETERS IN JENKINS (type, name, default values, description):
  *
- * Text - AgentList - "build-yocto-slave" - Name of agents to create, optionally more than one (each line makes one agent)
- * String - AgentDescription - "Auto-created Jenkins agent" - Description that'll be set for _every_ created agent
- * String - AgentHome - "/home/jenkins" - Remote filesystem root for the agent
- * String - AgentExecutors - 2 - Number of executors for the agent
+ * Text   - AgentList        - "build-yocto-slave" - Names of the agent(s) to create (each line makes one agent)
+ * String - AgentDescription - "Auto-created Jenkins agent" - Description that will be set for _every_ created agent
+ * String - AgentExecutors   - 2 - Number of executors for the agent
+ * String - AgentHome        - "/home/jenkins" - Remote filesystem root for the agent
+ * Text   - AgentLabels      - "/home/jenkins" - Remote filesystem root for the agent
  */
 
 import hudson.model.Node.Mode
@@ -29,21 +31,21 @@ String agentList = build.buildVariableResolver.resolve('AgentList')
 String agentDescription = build.buildVariableResolver.resolve('AgentDescription')
 String agentHome = build.buildVariableResolver.resolve('AgentHome')
 String agentExecutors = build.buildVariableResolver.resolve('AgentExecutors')
+String agentLabels = build.buildVariableResolver.resolve('AgentLabels')
 
 agentList.eachLine {
-
     // There is a constructor that also takes a list of properties (env vars) at the end, but haven't needed that yet
     DumbSlave dumb = new DumbSlave(it,  // Agent name, usually matches the host computer's machine name
             agentDescription,           // Agent description
             agentHome,                  // Workspace on the agent's computer
             agentExecutors,             // Number of executors
             Mode.EXCLUSIVE,             // "Usage" field, EXCLUSIVE is "only tied to node", NORMAL is "any"
-            "",                         // Labels
+            agentLabels,                // Labels
             new JNLPLauncher(),         // Launch strategy, JNLP is the Java Web Start setting services use
             RetentionStrategy.INSTANCE) // Is the "Availability" field and INSTANCE means "Always"
 
     Jenkins.instance.addNode(dumb)
-    println "Agent '$it' created with $agentExecutors executors and home '$agentHome'"
+    println "Agent '$it' created with $agentExecutors executors, home '$agentHome' and labels '$agentLabels'"
 }
 
 /*
@@ -51,3 +53,5 @@ Jenkins.instance.nodes.each {
     println "AFTER - Agent: $it"
 }
 */
+
+// EOF
