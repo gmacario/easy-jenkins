@@ -48,7 +48,7 @@ In order to run easy-jenkins you need a recent 64-bit x86 host with:
 1. A fast, multi-core server on your local network
 2. An instance on a public cloud, such as [Amazon EC2](https://aws.amazon.com/it/ec2/), [DigitalOcean](https://www.digitalocean.com/), etc.
 
-### What I can do next?
+### What can I do next?
 
 Basically whatever you can do with Jenkins. An excellent book is [Jenkins: The Definitive Guide][1].
 
