@@ -90,25 +90,13 @@ Browse `${JENKINS_URL}/job/add_jenkins_slave/` then click **Build with Parameter
 - AgentHome: `/home/jenkins`
 - AgentExecutors: `2`
 
-TODO: Should add Text parameter `AgentLabels` - tracked as [issues/23](https://github.com/gmacario/easy-jenkins/issues/23)
+~~TODO: Should add Text parameter `AgentLabels` - tracked as [issues/23](https://github.com/gmacario/easy-jenkins/issues/23)~~
 
 then click **Build**
 
 Result: SUCCESS
 
 Browse `${JENKINS_URL}`, verify that node `build-yocto-slave` is running.
-
-#### Configure labels on Jenkins node `build-yocto-slave`
-
-<!-- (2016-02-04 12:18 CET) -->
-
-Workaround for [issues/23](https://github.com/gmacario/easy-jenkins/issues/23)
-
-Browse `${JENKINS_URL}/computer/build-yocto-slave/`, then click **Configure**
-
-- Labels: `yocto`
-
-Then click **Save**.
 
 #### Configure git on Jenkins node `build-yocto-slave`
 
