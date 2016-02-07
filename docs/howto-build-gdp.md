@@ -113,14 +113,6 @@ Click **Save**, then click **Build Now**
 
 Verify in the Console Output that the job was run on the slave.
 
-## (optional) Review configuration of project `build_gdp`
-
-<!-- (2016-02-07 11:15 CET) -->
-
-Browse `${JENKINS_URL}/job/build_gdp/`, then click **Configure**
-
-Verify and possibly change project configuration. When finished, click **Save**.
-
 ## Build project `build_gdp`
 
 <!-- (2016-02-04 12:20 CET) -->
