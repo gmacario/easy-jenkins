@@ -73,8 +73,15 @@ fi
 [[ "${VM_NUM_CPUS}" = "" ]] && VM_NUM_CPUS=2
 [[ "${VM_MEM_SIZEMB}" = "" ]] && VM_MEM_SIZEMB=2048
 [[ "${VM_DISK_SIZEMB}" = "" ]] && VM_DISK_SIZEMB=50000
+[[ "${USE_DOCKER_MACHINE}" = "" ]] && USE_DOCKER_MACHINE=true
 
 # Check prerequisites
+
+# docker-machine
+if ! which docker-machine >/dev/null; then
+    echo "WARNING: Cannot find docker-machine - assuming environment variables already defined"
+    USE_DOCKER_MACHINE=false
+fi
 
 # docker
 if ! which docker >/dev/null; then
@@ -108,44 +115,44 @@ if ! is_version_ok $have_maj_min_pat $want_maj_min_pat; then
     exit 1
 fi
 
-# docker-machine
-if ! which docker-machine >/dev/null; then
-  echo "ERROR: Cannot find docker-machine"
-  exit 1
-fi
-result=$(docker-machine --version)
-# echo "DEBUG: line $LINENO: result=$result"
-have_maj_min_pat=$(echo $result | sed -e 's/^.*version //' | sed -e 's/\,.*$//')
-# echo "DEBUG: line $LINENO: have_maj_min_pat=$have_maj_min_pat"
-want_maj_min_pat="0.6.0"
-# echo "DEBUG: line $LINENO: want_maj_min_pat=$want_maj_min_pat"
-if ! is_version_ok $have_maj_min_pat $want_maj_min_pat; then
-  echo "ERROR: Should install docker-machine >= $want_maj_min_pat (have $have_maj_min_pat)"
-  exit 1
-fi
+if ${USE_DOCKER_MACHINE}; then
+    result=$(docker-machine --version)
+    # echo "DEBUG: line $LINENO: result=$result"
+    have_maj_min_pat=$(echo $result | sed -e 's/^.*version //' | sed -e 's/\,.*$//')
+    # echo "DEBUG: line $LINENO: have_maj_min_pat=$have_maj_min_pat"
+    want_maj_min_pat="0.6.0"
+    # echo "DEBUG: line $LINENO: want_maj_min_pat=$want_maj_min_pat"
+    if ! is_version_ok $have_maj_min_pat $want_maj_min_pat; then
+      echo "ERROR: Should install docker-machine >= $want_maj_min_pat (have $have_maj_min_pat)"
+      exit 1
+    fi
+    
+    # docker-machine ls
+    if docker-machine ls | grep -w ${VM} >/dev/null; then
+        echo "INFO: Docker machine ${VM} exists, skipping docker-machine create"
+    else
+        echo "INFO: Creating VirtualBox VM ${VM} (cpu:${VM_NUM_CPUS}, memory:${VM_MEM_SIZEMB} MB, disk:${VM_DISK_SIZEMB} MB)"
+        docker-machine create --driver virtualbox \
+          --virtualbox-cpu-count "${VM_NUM_CPUS}" \
+          --virtualbox-memory "${VM_MEM_SIZEMB}" \
+          --virtualbox-disk-size "${VM_DISK_SIZEMB}" \
+          ${VM}
+    fi
+    echo "INFO: Using Docker machine ${VM}"
+    if docker-machine status ${VM} | grep -v Running >/dev/null; then
+        docker-machine start ${VM}
+    fi
+    
+    # docker-machine env ${VM}
+    eval $(docker-machine env ${VM})
+fi    # if ${USE_DOCKER_MACHINE} ...
 
-# docker-machine ls
-if docker-machine ls | grep -w ${VM} >/dev/null; then
-    echo "INFO: Docker machine ${VM} exists, skipping docker-machine create"
-else
-    echo "INFO: Creating VirtualBox VM ${VM} (cpu:${VM_NUM_CPUS}, memory:${VM_MEM_SIZEMB} MB, disk:${VM_DISK_SIZEMB} MB)"
-    docker-machine create --driver virtualbox \
-      --virtualbox-cpu-count "${VM_NUM_CPUS}" \
-      --virtualbox-memory "${VM_MEM_SIZEMB}" \
-      --virtualbox-disk-size "${VM_DISK_SIZEMB}" \
-      ${VM}
-fi
-echo "INFO: Using Docker machine ${VM}"
-if docker-machine status ${VM} | grep -v Running >/dev/null; then
-    docker-machine start ${VM}
-fi
-
-# docker-machine env ${VM}
-eval $(docker-machine env ${VM})
 docker-compose up -d
 
-echo "INFO: Browse http://$(docker-machine ip ${VM}):9080/ to access the Jenkins dashboard"
-echo "INFO: Run the following command to configure your shell:"
-echo "INFO: eval \$(docker-machine env ${VM})"
+if ${USE_DOCKER_MACHINE}; then
+    echo "INFO: Browse http://$(docker-machine ip ${VM}):9080/ to access the Jenkins dashboard"
+    echo "INFO: Run the following command to configure your shell:"
+    echo "INFO: eval \$(docker-machine env ${VM})"
+fi    # if ${USE_DOCKER_MACHINE} ...
 
 # EOF
