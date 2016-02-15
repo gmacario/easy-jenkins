@@ -6,7 +6,7 @@ This procedure is used to verify the correct installation of [Docker](https://ww
 
 Install easy-jenkins from https://github.com/gmacario/easy-jenkins
 
-Refer to section **Preparation** of [howto-build-gdp.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/howto-build-gdp.md) for details.
+Refer to [preparation.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/preparation.md) for details.
 
 ## Step-by-step instructions
 
