@@ -65,10 +65,20 @@ is_version_ok () {
 
 set -e
 
+# docker-machine
+if ! which docker-machine >/dev/null; then
+    echo "WARNING: Cannot find docker-machine - assuming environment variables already defined"
+    USE_DOCKER_MACHINE=false
+fi
+
 if [[ "${VM}" = "" ]]; then
     # If VM is not defined, try setting it to active docker-machine
     # otherwise just pick a default name
-    VM=$(docker-machine active) || VM=easy-jenkins
+    if ${USE_DOCKER_MACHINE}; then
+        VM=$(docker-machine active)
+    else 
+        VM=easy-jenkins
+    fi
 fi
 [[ "${VM_NUM_CPUS}" = "" ]] && VM_NUM_CPUS=2
 [[ "${VM_MEM_SIZEMB}" = "" ]] && VM_MEM_SIZEMB=2048
@@ -76,12 +86,6 @@ fi
 [[ "${USE_DOCKER_MACHINE}" = "" ]] && USE_DOCKER_MACHINE=true
 
 # Check prerequisites
-
-# docker-machine
-if ! which docker-machine >/dev/null; then
-    echo "WARNING: Cannot find docker-machine - assuming environment variables already defined"
-    USE_DOCKER_MACHINE=false
-fi
 
 # docker
 if ! which docker >/dev/null; then
