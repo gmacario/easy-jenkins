@@ -89,7 +89,7 @@ fi
 
 # docker
 if ! which docker >/dev/null; then
-    echo "ERROR: Cannot find docker"
+    echo "ERROR: Cannot find docker - Please see https://docs.docker.com/engine/installation/"
     exit 1
 fi
 result=$(docker --version)
