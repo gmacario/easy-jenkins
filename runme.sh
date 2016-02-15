@@ -105,7 +105,7 @@ fi
 
 # docker-compose
 if ! which docker-compose >/dev/null; then
-    echo "ERROR: Cannot find docker-compose"
+    echo "ERROR: Cannot find docker-compose - Please see https://docs.docker.com/compose/install/"
     exit 1
 fi
 result=$(docker-compose --version)
