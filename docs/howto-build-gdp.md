@@ -13,7 +13,7 @@ The following instructions were tested on
 
 ## Preparation
 
-Please refer to document `preparation.md`.
+Refer to [preparation.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/preparation.md) for details.
 
 ## Build project `build_gdp`
 
