@@ -67,7 +67,7 @@ set -e
 
 # docker-machine
 if ! which docker-machine >/dev/null; then
-    echo "WARNING: Cannot find docker-machine - assuming environment variables already defined"
+    echo "WARNING: Cannot find docker-machine - assuming environment variables are already defined"
     USE_DOCKER_MACHINE=false
 fi
 
