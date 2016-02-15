@@ -2,6 +2,7 @@
 # - Compose file reference: https://docs.docker.com/compose/compose-file/
 
 version: '2'
+
 services:
   myjenkins:
     # image: jenkins:latest
@@ -11,7 +12,7 @@ services:
       - "51000:50000"
     tty: true
     privileged: true
-  
+
   build-yocto-slave:
     image: gmacario/build-yocto:latest
     user: jenkins
@@ -19,5 +20,12 @@ services:
     command: "java -jar /usr/share/jenkins/slave.jar -jnlpUrl http://master:8080/computer/build-yocto-slave/slave-agent.jnlp"
     links:
       - myjenkins:master
+    volumes:
+      - data:/home/jenkins
+
+volumes:
+    data:
+    downloads:
+    sstate-cache:
 
 # EOF
