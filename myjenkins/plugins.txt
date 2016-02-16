@@ -43,6 +43,7 @@ matrix-project 1.6
 maven-plugin 2.12.1
 mercurial 1.54
 mock-slave 1.8
+multiple-scms 0.5
 pam-auth 1.2
 parameterized-trigger 2.30
 plain-credentials 1.1
