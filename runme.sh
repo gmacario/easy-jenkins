@@ -75,9 +75,7 @@ if [[ "${VM}" = "" ]]; then
     # If VM is not defined, try setting it to active docker-machine
     # otherwise just pick a default name
     if ${USE_DOCKER_MACHINE}; then
-        VM=$(docker-machine active)
-    else 
-        VM=easy-jenkins
+        VM=$(docker-machine active) || VM=easy-jenkins
     fi
 fi
 [[ "${VM_NUM_CPUS}" = "" ]] && VM_NUM_CPUS=2
@@ -130,7 +128,7 @@ if ${USE_DOCKER_MACHINE}; then
       echo "ERROR: Should install docker-machine >= $want_maj_min_pat (have $have_maj_min_pat)"
       exit 1
     fi
-    
+
     # docker-machine ls
     if docker-machine ls | grep -w ${VM} >/dev/null; then
         echo "INFO: Docker machine ${VM} exists, skipping docker-machine create"
@@ -146,7 +144,7 @@ if ${USE_DOCKER_MACHINE}; then
     if docker-machine status ${VM} | grep -v Running >/dev/null; then
         docker-machine start ${VM}
     fi
-    
+
     # docker-machine env ${VM}
     eval $(docker-machine env ${VM})
 fi    # if ${USE_DOCKER_MACHINE} ...
