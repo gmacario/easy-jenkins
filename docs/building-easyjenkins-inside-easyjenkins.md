@@ -26,7 +26,7 @@ Refer to [preparation.md](https://github.com/gmacario/easy-jenkins/blob/master/d
   - Discard Old Builds: Yes
     - Strategy: Log Rotation
       - Days to keep builds: (none)
-      - Max # of builds to keep: 2
+      - Max # of builds to keep: 10
   - Restrict where this project can be run: `master` (TODO: Define and use label `docker`)
   - Source Code Management: Git
     - Repositories
