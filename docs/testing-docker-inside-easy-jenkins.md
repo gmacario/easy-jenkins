@@ -58,34 +58,34 @@ Inspect `${JENKINS_URL}/job/test_docker/lastBuild/console`
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
-Building in workspace /var/jenkins_home/jobs/test_docker/workspace
-[workspace] $ /bin/bash -xe /tmp/hudson2107386275993675628.sh
+Building on master in workspace /var/jenkins_home/jobs/test_docker/workspace
+[workspace] $ /bin/bash -xe /tmp/hudson2149809609450450021.sh
 + id
 uid=0(root) gid=0(root) groups=0(root)
 + pwd
 /var/jenkins_home/jobs/test_docker/workspace
 + docker --version
-Docker version 1.10.0, build 590d5108
+Docker version 1.10.1, build 9e83765
 + docker-compose --version
 docker-compose version 1.6.0, build d99cad6
 + docker-machine --version
-/tmp/hudson2107386275993675628.sh: line 8: docker-machine: command not found
+/tmp/hudson2149809609450450021.sh: line 8: docker-machine: command not found
 + true
 + docker version
 Client:
- Version:      1.10.0
+ Version:      1.10.1
  API version:  1.22
  Go version:   go1.5.3
- Git commit:   590d5108
- Built:        Thu Feb  4 18:16:19 2016
+ Git commit:   9e83765
+ Built:        Thu Feb 11 19:09:42 2016
  OS/Arch:      linux/amd64
 
 Server:
- Version:      1.10.0
+ Version:      1.10.1
  API version:  1.22
  Go version:   go1.5.3
- Git commit:   590d5108
- Built:        Thu Feb  4 18:16:19 2016
+ Git commit:   9e83765
+ Built:        Thu Feb 11 19:09:42 2016
  OS/Arch:      linux/amd64
 + docker info
 Containers: 0
@@ -93,9 +93,9 @@ Containers: 0
  Paused: 0
  Stopped: 0
 Images: 0
-Server Version: 1.10.0
+Server Version: 1.10.1
 Storage Driver: devicemapper
- Pool Name: docker-0:32-239-pool
+ Pool Name: docker-0:32-181-pool
  Pool Blocksize: 65.54 kB
  Base Device Size: 10.74 GB
  Backing Filesystem: ext4
@@ -103,7 +103,7 @@ Storage Driver: devicemapper
  Metadata file: /dev/loop1
  Data Space Used: 305.7 MB
  Data Space Total: 107.4 GB
- Data Space Available: 47.64 GB
+ Data Space Available: 47.65 GB
  Metadata Space Used: 729.1 kB
  Metadata Space Total: 2.147 GB
  Metadata Space Available: 2.147 GB
@@ -119,15 +119,15 @@ Execution Driver: native-0.2
 Logging Driver: json-file
 Plugins: 
  Volume: local
- Network: bridge null host
+ Network: null host bridge
 Kernel Version: 4.1.17-boot2docker
 Operating System: Debian GNU/Linux 8 (jessie) (containerized)
 OSType: linux
 Architecture: x86_64
 CPUs: 2
 Total Memory: 1.956 GiB
-Name: 2cad5f6ee72e
-ID: GPCR:V7ZH:7KLE:QUJ3:N55I:CZDH:HNX6:VNFD:5ZNX:4VJH:V5ST:M6S4
+Name: 61d3e4cd8e76
+ID: ZHXV:WTIC:XCQE:2M2S:XIMR:PYLQ:Z37D:CMFI:3AJI:7C5W:YROR:FB7X
 WARNING: bridge-nf-call-iptables is disabled
 WARNING: bridge-nf-call-ip6tables is disabled
 + docker images
