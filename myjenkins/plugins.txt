@@ -18,7 +18,7 @@ envinject 1.92.1
 external-monitor-job 1.4
 ghprb 1.30.3
 git 2.4.2
-git-client 1.19.4
+git-client 1.19.5
 git-server 1.6
 github 1.17.0
 github-api 1.72
