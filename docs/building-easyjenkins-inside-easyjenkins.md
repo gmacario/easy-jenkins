@@ -26,7 +26,7 @@ Refer to [preparation.md](https://github.com/gmacario/easy-jenkins/blob/master/d
   - Restrict where this project can be run: `master` (TODO: Define and use label `docker`)
   - Source Code Management: Git
     - Repositories
-      - Repository URL: `https://github.com/gmacario/easy-jenkins` (TODO?)
+      - Repository URL: `https://github.com/gmacario/easy-jenkins`
       - Credentials: - none -
       - Branches to build
         - Branch Specifier (blank for `any`): `*/master` (TODO?)
@@ -40,8 +40,7 @@ Refer to [preparation.md](https://github.com/gmacario/easy-jenkins/blob/master/d
 
 docker-compose build --pull
 
-# Uncomment after merging https://github.com/gmacario/easy-jenkins/pull/11
-# ./runme.sh
+./runme.sh
 
 # EOF
 ```
@@ -136,6 +135,6 @@ Finished: SUCCESS
 
 ~~**TODO**: Install docker-compose 1.6.0 or later. See related https://github.com/gmacario/easy-jenkins/issues/36~~
 
-**TODO**: Handle case when no docker-machine installed. See related https://github.com/gmacario/easy-jenkins/pull/11
+~~**TODO**: Handle case when no docker-machine installed. See related https://github.com/gmacario/easy-jenkins/pull/11~~
 
 <!-- EOF -->
