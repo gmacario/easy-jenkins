@@ -85,6 +85,20 @@ fi
 
 # Check prerequisites
 
+# docker-machine
+if ${USE_DOCKER_MACHINE}; then
+  result=$(docker-machine --version)
+  # echo "DEBUG: line $LINENO: result=$result"
+  have_maj_min_pat=$(echo $result | sed -e 's/^.*version //' | sed -e 's/\,.*$//')
+  # echo "DEBUG: line $LINENO: have_maj_min_pat=$have_maj_min_pat"
+  want_maj_min_pat="0.6.0"
+  # echo "DEBUG: line $LINENO: want_maj_min_pat=$want_maj_min_pat"
+  if ! is_version_ok $have_maj_min_pat $want_maj_min_pat; then
+      echo "ERROR: Should install docker-machine >= $want_maj_min_pat (have $have_maj_min_pat)"
+      exit 1
+  fi
+fi    # if ${USE_DOCKER_MACHINE}
+
 # docker
 if ! which docker >/dev/null; then
     echo "ERROR: Cannot find docker - Please see https://docs.docker.com/engine/installation/"
