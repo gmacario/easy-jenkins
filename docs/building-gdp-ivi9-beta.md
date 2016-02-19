@@ -51,7 +51,9 @@ then click **OK**. Inside the project configuration page, add the following info
 ```
 # DEBUG
 id
+pwd
 ls -la
+printenv
 ```
   - Execute shell
     - Command
@@ -81,7 +83,7 @@ chmod a+x /usr/local/bin/repo
 source init.sh
 
 # Prevent error "Do not use Bitbake as root"
-touch conf/sanityy.conf
+touch conf/sanity.conf
 
 bitbake genivi-demo-platform
 ```
@@ -90,13 +92,13 @@ then click **Save**.
 
 ### Build project `build_gdp_ivi9_beta`
 
-<!-- (2016-02-19 18:40 CET) -->
+<!-- (2016-02-19 18:50 CET) -->
 
 Browse `${JENKINS_URL}/job/build_gdp_ivi9_beta/`, then click **Build Now**
 
 You may watch the build logs at `${JENKINS_URL}/job/build_gdp_ivi9_beta/lastBuild/console`
 
-<!-- (2016-02-19 18:40 CET) -->
+<!-- (2016-02-19 18:50 CET) -->
 
 ```
 Started by user anonymous
@@ -114,9 +116,9 @@ Checking out Revision 6e50965700f98572eaa731e426d561b1b5031c87 (refs/remotes/ori
  > git config core.sparsecheckout # timeout=10
  > git checkout -f 6e50965700f98572eaa731e426d561b1b5031c87
  > git rev-list 6e50965700f98572eaa731e426d561b1b5031c87 # timeout=10
-Docker container ab128245c2709b1ab4d6552faef97e22f72702632868c9217f3bfe04752c6666 started to host the build
-$ docker exec --tty ab128245c2709b1ab4d6552faef97e22f72702632868c9217f3bfe04752c6666 env
-[workspace] $ docker exec --tty --user 0:0 ab128245c2709b1ab4d6552faef97e22f72702632868c9217f3bfe04752c6666 env affinity:container==e1d192d7db587826ac8fe8aa16904668acfa610aca385d3941c67924ea61154a 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
+Docker container 873f985689c598580809352f064401354c9a6a13939103315e5b0ef6cf758361 started to host the build
+$ docker exec --tty 873f985689c598580809352f064401354c9a6a13939103315e5b0ef6cf758361 env
+[workspace] $ docker exec --tty --user 0:0 873f985689c598580809352f064401354c9a6a13939103315e5b0ef6cf758361 env affinity:container==e1d192d7db587826ac8fe8aa16904668acfa610aca385d3941c67924ea61154a 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
  b="${f%.override}";
  echo "$f" >> "$COPY_REFERENCE_FILE_LOG";
  rel="${b:23}";
@@ -128,7 +130,7 @@ $ docker exec --tty ab128245c2709b1ab4d6552faef97e22f72702632868c9217f3bfe04752c
  cp -r "${f}" "/var/jenkins_home/${rel}";
  [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
  fi
-}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#2 BUILD_ID=2 BUILD_NUMBER=2 BUILD_TAG=jenkins-GENIVI-build_gdp_ivi9_beta-2 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=0 GIT_BRANCH=origin/qemux86-64-ivi9-beta GIT_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_PREVIOUS_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_URL=git://git.projects.genivi.org/genivi-demo-platform.git HOME=/root HOSTNAME=23165c7ab151 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=53d719acc1b28b93 JAVA_DEBIAN_VERSION=8u66-b17-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u66 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=53d719acc1b28b93 JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.1 JOB_NAME=GENIVI/build_gdp_ivi9_beta LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/jobs/GENIVI/jobs/build_gdp_ivi9_beta/workspace /bin/sh -xe /tmp/hudson7192551229352147118.sh
+}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#3 BUILD_ID=3 BUILD_NUMBER=3 BUILD_TAG=jenkins-GENIVI-build_gdp_ivi9_beta-3 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=0 GIT_BRANCH=origin/qemux86-64-ivi9-beta GIT_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_PREVIOUS_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_URL=git://git.projects.genivi.org/genivi-demo-platform.git HOME=/root HOSTNAME=23165c7ab151 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=53d719acc1b28b93 JAVA_DEBIAN_VERSION=8u66-b17-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u66 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=53d719acc1b28b93 JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.1 JOB_NAME=GENIVI/build_gdp_ivi9_beta LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/jobs/GENIVI/jobs/build_gdp_ivi9_beta/workspace /bin/sh -xe /tmp/hudson8560520634677004851.sh
 ...
 TODO
 ```
