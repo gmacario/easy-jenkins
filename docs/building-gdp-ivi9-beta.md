@@ -76,8 +76,7 @@ chmod a+x /usr/local/bin/repo
 ```
 # Actual build steps
 
-echo TODO
-# bash -xec "source init.sh && bitbake genivi-demo-platform"
+bash -xec "source init.sh && bitbake genivi-demo-platform"
 ```
 
 then click **Save**.
