@@ -19,7 +19,9 @@ The instructions inside this document were tested on
 
 Refer to [preparation.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/preparation.md) for details.
 
-## Create project `build_gdp_ivi9_beta`
+## Step-by-step instructions
+
+### Create project `build_gdp_ivi9_beta`
 
 Browse `${DOCKER_URL}`, then click **New Item**
 
@@ -60,7 +62,7 @@ ls -la
 apt-get update && apt-get -y upgrade
 
 # Install the following utilities (required by poky)
-apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath libsdl1.2-dev xterm
+apt-get install -y build-essential chrpath curl diffstat gcc-multilib gawk git-core libsdl1.2-dev texinfo unzip wget xterm
 
 # Additional host packages required by poky/scripts/wic
 apt-get install -y parted dosfstools mtools syslinux
@@ -80,7 +82,7 @@ echo TODO
 
 then click **Save**.
 
-## Build project `build_gdp_ivi9_beta`
+### Build project `build_gdp_ivi9_beta`
 
 <!-- (2016-02-19 17:40 CET) -->
 
@@ -106,9 +108,9 @@ Checking out Revision 6e50965700f98572eaa731e426d561b1b5031c87 (refs/remotes/ori
  > git config core.sparsecheckout # timeout=10
  > git checkout -f 6e50965700f98572eaa731e426d561b1b5031c87
  > git rev-list 6e50965700f98572eaa731e426d561b1b5031c87 # timeout=10
-Docker container 73629f43f797aa5b817ded6ff0333507c6b959ed3f87be474c61c7ca7c0ccc79 started to host the build
-$ docker exec --tty 73629f43f797aa5b817ded6ff0333507c6b959ed3f87be474c61c7ca7c0ccc79 env
-[build_gdp_ivi9_beta] $ docker exec --tty --user 0:0 73629f43f797aa5b817ded6ff0333507c6b959ed3f87be474c61c7ca7c0ccc79 env 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
+Docker container 6af91739c0df0551899cd7ea407f9d4c72e77b4a9321cc13098bcab001cc6657 started to host the build
+$ docker exec --tty 6af91739c0df0551899cd7ea407f9d4c72e77b4a9321cc13098bcab001cc6657 env
+[build_gdp_ivi9_beta] $ docker exec --tty --user 0:0 6af91739c0df0551899cd7ea407f9d4c72e77b4a9321cc13098bcab001cc6657 env 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
  b="${f%.override}";
  echo "$f" >> "$COPY_REFERENCE_FILE_LOG";
  rel="${b:23}";
@@ -120,7 +122,7 @@ $ docker exec --tty 73629f43f797aa5b817ded6ff0333507c6b959ed3f87be474c61c7ca7c0c
  cp -r "${f}" "/var/jenkins_home/${rel}";
  [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
  fi
-}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#4 BUILD_ID=4 BUILD_NUMBER=4 BUILD_TAG=jenkins-build_gdp_ivi9_beta-4 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=0 GIT_BRANCH=origin/qemux86-64-ivi9-beta GIT_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_PREVIOUS_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_URL=git://git.projects.genivi.org/genivi-demo-platform.git HOME=/root HOSTNAME=f809e1210c90 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=16c08e0031ecb35c JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u72 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=16c08e0031ecb35c JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.1 JOB_NAME=build_gdp_ivi9_beta LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/workspace/build_gdp_ivi9_beta /bin/sh -xe /tmp/hudson8755919213559861374.sh
+}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#5 BUILD_ID=5 BUILD_NUMBER=5 BUILD_TAG=jenkins-build_gdp_ivi9_beta-5 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=0 GIT_BRANCH=origin/qemux86-64-ivi9-beta GIT_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_PREVIOUS_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_URL=git://git.projects.genivi.org/genivi-demo-platform.git HOME=/root HOSTNAME=f809e1210c90 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=16c08e0031ecb35c JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u72 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=16c08e0031ecb35c JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.1 JOB_NAME=build_gdp_ivi9_beta LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/workspace/build_gdp_ivi9_beta /bin/sh -xe /tmp/hudson2458163022294285780.sh
 + id
 uid=0(root) gid=0(root) groups=0(root)
 + ls -la
