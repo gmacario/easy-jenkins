@@ -127,7 +127,32 @@ $ docker exec --tty 6af91739c0df0551899cd7ea407f9d4c72e77b4a9321cc13098bcab001cc
 uid=0(root) gid=0(root) groups=0(root)
 + ls -la
 ...
-TODO
+Processing triggers for libc-bin (2.19-0ubuntu6.7) ...
++ curl http://storage.googleapis.com/git-repo-downloads/repo
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 40 26223   40 10721    0     0  18067      0  0:00:01 --:--:--  0:00:01 18048
+100 26223  100 26223    0     0  42142      0 --:--:-- --:--:-- --:--:-- 42091
++ chmod a+x /usr/local/bin/repo
+[build_gdp_ivi9_beta] $ docker exec --tty --user 0:0 6af91739c0df0551899cd7ea407f9d4c72e77b4a9321cc13098bcab001cc6657 env 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
+ b="${f%.override}";
+ echo "$f" >> "$COPY_REFERENCE_FILE_LOG";
+ rel="${b:23}";
+ dir=$(dirname "${b}");
+ echo " $f -> $rel" >> "$COPY_REFERENCE_FILE_LOG";
+ if [[ ! -e /var/jenkins_home/${rel} || $f = *.override ]]; then
+ echo "copy $rel to JENKINS_HOME" >> "$COPY_REFERENCE_FILE_LOG";
+ mkdir -p "/var/jenkins_home/${dir:23}";
+ cp -r "${f}" "/var/jenkins_home/${rel}";
+ [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
+ fi
+}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#5 BUILD_ID=5 BUILD_NUMBER=5 BUILD_TAG=jenkins-build_gdp_ivi9_beta-5 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=0 GIT_BRANCH=origin/qemux86-64-ivi9-beta GIT_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_PREVIOUS_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_URL=git://git.projects.genivi.org/genivi-demo-platform.git HOME=/root HOSTNAME=f809e1210c90 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=16c08e0031ecb35c JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u72 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=16c08e0031ecb35c JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.1 JOB_NAME=build_gdp_ivi9_beta LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/workspace/build_gdp_ivi9_beta /bin/sh -xe /tmp/hudson332766688338871369.sh
++ echo TODO: bash -xec source init.sh && bitbake genivi-demo-platform
+TODO: bash -xec source init.sh && bitbake genivi-demo-platform
+Stopping Docker container after build completion
+Notifying upstream projects of job completion
+Finished: SUCCESS
 ```
 
 **NOTE**: A full build takes about 5 hours to complete on a dual-Xeon(R) CPU X5450 @3.00 GHz and 16 GB RAM.
