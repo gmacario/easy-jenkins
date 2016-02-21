@@ -60,7 +60,7 @@ source init.sh
 # Prevent error "Do not use Bitbake as root"
 touch conf/sanity.conf
 
-bitbake genivi-core-image-minimal
+bitbake core-image-minimal
 # bitbake genivi-demo-platform
 ```
   
