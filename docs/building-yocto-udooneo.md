@@ -1,15 +1,13 @@
+# Building a Yocto distribution for the UDOO Neo
+
 **WORK-IN-PROGRESS**
 
-# Building Yocto distro for UDOO Neo inside easy-jenkins
-
-This document explains how to buil from sources a Yocto-based distribution for the UDOO Neo.
-
-This procedure may be useful to verify non-regressions of a new feature/bugfix before merging it to the master branch.
+This document explains how to buil from sources a [Yocto](https://www.yoctoproject.org/)-based distribution for the [UDOO Neo](http://www.udoo.org/udoo-neo/) using [easy-jenkins](https://github.com/gmacario/easy-jenkins).
 
 The following instructions were tested on
 
-* Docker client: mac-tizy (MacBook Pro, OS X)
-* Docker engine: Oracle VirtualBox VM created by Docker Toolbox
+* Docker client: mac-tizy (MacBook Pro, Docker Toolbox 10.0 on OS X 10.11.3)
+* Docker engine: mv-linux-powerhorse (Docker 1.10.0 on Ubuntu 14.04.4 LTS 64-bit)
 
 ## Preparation
 
