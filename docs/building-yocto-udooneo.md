@@ -73,13 +73,36 @@ bitbake core-image-minimal
 
 ### Build project `build_yocto_udooneo`
 
-<!-- (2016-02-21 14:06 CET) -->
+<!-- (2016-02-22 18:57 CET) -->
 
 Browse `${JENKINS_URL}/job/build_yocto_udooneo`, then click **Build Now**
 
 Result: TODO
 
 ```
+Started by user anonymous
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/jenkins_home/workspace/GENIVI/build_yocto_udooneo
+Cloning the remote Git repository
+Cloning repository https://github.com/gmacario/genivi-demo-platform
+ > git init /var/jenkins_home/workspace/GENIVI/build_yocto_udooneo # timeout=10
+Fetching upstream changes from https://github.com/gmacario/genivi-demo-platform
+ > git --version # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/genivi-demo-platform +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/gmacario/genivi-demo-platform # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/gmacario/genivi-demo-platform # timeout=10
+Fetching upstream changes from https://github.com/gmacario/genivi-demo-platform
+ > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/genivi-demo-platform +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/dev-udooneo-jethro^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/dev-udooneo-jethro^{commit} # timeout=10
+Checking out Revision 1ff20e1c8d9739333a1df26453de5a88102a8bd8 (refs/remotes/origin/dev-udooneo-jethro)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 1ff20e1c8d9739333a1df26453de5a88102a8bd8
+First time build. Skipping changelog.
+Pull Docker image gmacario/build-yocto from repository ...
+$ docker pull gmacario/build-yocto
+...
 TODO
 ```
 
