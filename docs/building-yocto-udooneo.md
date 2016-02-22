@@ -40,7 +40,7 @@ Inside the project configuration page, fill-in the following information:
   - Build Environment
     - Build inside a Docker container: Yes
       - Docker image to use: Pull docker image from repository
-        - Image id/tag: `gmacario/build-yocto-new`
+        - Image id/tag: `gmacario/build-yocto`
   - Build
     - Execute shell
       - Command
