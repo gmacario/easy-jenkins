@@ -61,7 +61,12 @@ source init.sh
 touch conf/sanity.conf
 
 bitbake core-image-minimal
+# bitbake -vvv core-image-minimal # ==> FAIL core-image-minimal.bb, task do_rootfs
+
+# bitbake udoo-image-full-cmdline
 # bitbake genivi-demo-platform
+
+# EOF
 ```
   
   then click **Save**
