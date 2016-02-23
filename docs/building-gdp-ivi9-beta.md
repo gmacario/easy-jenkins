@@ -67,8 +67,8 @@ printenv | sort
 ```
 # Configure git
 
-git config user.name "easy-jenkins"
-git config user.email "$(whoami)@$(hostname)"
+git config --global user.name "easy-jenkins"
+git config --global user.email "$(whoami)@$(hostname)"
 ```
   - Execute shell
     - Command
@@ -95,7 +95,7 @@ Browse `${JENKINS_URL}/job/build_gdp_ivi9_beta/`, then click **Build Now**
 
 You may watch the build logs at `${JENKINS_URL}/job/build_gdp_ivi9_beta/lastBuild/console`
 
-<!-- (2016-02-23 14:16 CET) -->
+<!-- (2016-02-23 14:26 CET) -->
 
 ```
 Started by user anonymous
@@ -118,7 +118,7 @@ Checking out Revision 6e50965700f98572eaa731e426d561b1b5031c87 (refs/remotes/ori
  > git submodule sync # timeout=10
  > git config --get remote.origin.url # timeout=10
  > git submodule update --init --recursive
-Docker container 36c4066bb0b9e9422414cd60486f8e6d1ff66bd5dc8aa03a8f4a3cf90c166a7c started to host the build
+Docker container 2841fd1f3dcdc9272da432c7980f2d374c28b3bb241a126a9512f43441178403 started to host the build
 ...
 TODO
 ```
