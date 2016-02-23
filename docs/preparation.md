@@ -62,9 +62,7 @@ Browse `${JENKINS_URL}/job/configure_git/`, then click **Build Now**
 
 Verify in the Console Output that the job was run on the master node (at this point there should not be any slave nodes yet)
 
-### Create Jenkins node `build-yocto-slave`
-
-<!-- (2016-02-04 12:17 CET) -->
+<!-- ### Create Jenkins node `build-yocto-slave`
 
 Workaround for [issues/16](https://github.com/gmacario/easy-jenkins/issues/16)
 
@@ -78,7 +76,7 @@ Browse `${JENKINS_URL}/job/add_jenkins_slave/` then click **Build with Parameter
 
 then click **Build**
 
-Browse `${JENKINS_URL}`, verify that node `build-yocto-slave` is running.
+Browse `${JENKINS_URL}`, verify that node `build-yocto-slave` is running. -->
 
 <!-- ### Configure git on Jenkins node `build-yocto-slave`
 
