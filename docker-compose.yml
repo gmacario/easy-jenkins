@@ -13,15 +13,15 @@ services:
     tty: true
     privileged: true
 
-  build-yocto-slave:
-    image: gmacario/build-yocto:latest
-    user: jenkins
-    entrypoint: ""
-    command: "java -jar /usr/share/jenkins/slave.jar -jnlpUrl http://master:8080/computer/build-yocto-slave/slave-agent.jnlp"
-    links:
-      - myjenkins:master
-    volumes:
-      - data:/home/jenkins
+  # build-yocto-slave:
+  #   image: gmacario/build-yocto:latest
+  #   user: jenkins
+  #   entrypoint: ""
+  #   command: "java -jar /usr/share/jenkins/slave.jar -jnlpUrl http://master:8080/computer/build-yocto-slave/slave-agent.jnlp"
+  #   links:
+  #     - myjenkins:master
+  #   volumes:
+  #     - data:/home/jenkins
 
 volumes:
     data:
