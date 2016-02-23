@@ -95,26 +95,25 @@ You may watch the build logs at `${JENKINS_URL}/job/build_gdp_ivi9_beta/lastBuil
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
-Building in workspace /var/jenkins_home/workspace/GENIVI/build_yocto_udooneo
-Cloning the remote Git repository
-Cloning repository https://github.com/gmacario/genivi-demo-platform
- > git init /var/jenkins_home/workspace/GENIVI/build_yocto_udooneo # timeout=10
-Fetching upstream changes from https://github.com/gmacario/genivi-demo-platform
+Building in workspace /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git://git.projects.genivi.org/genivi-demo-platform.git # timeout=10
+Fetching upstream changes from git://git.projects.genivi.org/genivi-demo-platform.git
  > git --version # timeout=10
- > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/genivi-demo-platform +refs/heads/*:refs/remotes/origin/*
- > git config remote.origin.url https://github.com/gmacario/genivi-demo-platform # timeout=10
- > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
- > git config remote.origin.url https://github.com/gmacario/genivi-demo-platform # timeout=10
-Fetching upstream changes from https://github.com/gmacario/genivi-demo-platform
- > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/genivi-demo-platform +refs/heads/*:refs/remotes/origin/*
- > git rev-parse refs/remotes/origin/dev-udooneo-jethro^{commit} # timeout=10
- > git rev-parse refs/remotes/origin/origin/dev-udooneo-jethro^{commit} # timeout=10
-Checking out Revision c83152c2cc1e87d0f6adfcc45358331635f34618 (refs/remotes/origin/dev-udooneo-jethro)
+ > git -c core.askpass=true fetch --tags --progress git://git.projects.genivi.org/genivi-demo-platform.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/qemux86-64-ivi9-beta^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/qemux86-64-ivi9-beta^{commit} # timeout=10
+Checking out Revision 6e50965700f98572eaa731e426d561b1b5031c87 (refs/remotes/origin/qemux86-64-ivi9-beta)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f c83152c2cc1e87d0f6adfcc45358331635f34618
-First time build. Skipping changelog.
-Pull Docker image gmacario/build-yocto from repository ...
-$ docker pull gmacario/build-yocto
+ > git checkout -f 6e50965700f98572eaa731e426d561b1b5031c87
+ > git rev-list 6e50965700f98572eaa731e426d561b1b5031c87 # timeout=10
+ > git remote # timeout=10
+ > git submodule init # timeout=10
+ > git submodule sync # timeout=10
+ > git config --get remote.origin.url # timeout=10
+ > git submodule update --init --recursive
+Docker container 
 ...
 TODO
 ```
