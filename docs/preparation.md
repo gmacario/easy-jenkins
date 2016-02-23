@@ -1,16 +1,28 @@
-## Preparation
+## Installing and preparing easy-jenkins
 
-On a bash shell on the Docker Client, deploy master branch of [gmacario/easy-jenkins](https://github.com/gmacario/easy-jenkins) to docker-machine `mv-linux-powerhorse`
+On a bash shell on the Docker Client, type the following commands to install [easy-jenkins](https://github.com/gmacario/easy-jenkins):
 
 ```
 $ git clone https://github.com/gmacario/easy-jenkins
-$ cd ~/easy-jenkins
+$ cd easy-jenkins
+$ ./runme.sh
+```
+
+Notice that the `runme.sh` will try to create a docker-machine if this is not already available.
+
+A more complex invocation may be used to create the containers to a differnt docker-machine (in the following example, `mv-linux-powerhorse`):
+
+```
+$ git clone https://github.com/gmacario/easy-jenkins
+$ cd easy-jenkins
 $ eval $(docker-machine env mv-linux-powerhorse)  # OPTIONAL - if docker-engine on a different machine
 $ docker-compose stop; docker-compose rm -f; docker-compose build --pull
 $ ./runme.sh
 ```
 
-Some information messages should be displayed on the launching terminal:
+The `$ docker-compose ...` commands are used to make sure the machine runs the most updated images as defined by easy-jenkins.
+
+If the installation is successful, the following messages will be displayed on the launching terminal:
 
 ```
 gmacario@ITM-GMACARIO-W7 MINGW64 ~/easy-jenkins (master)
@@ -46,7 +58,7 @@ Browse `${JENKINS_URL}` as explained by the `INFO: Browse xxx to access the Jenk
 
 Browse `${JENKINS_URL}/job/seed`, then click **Build Now**
 
-Result: The following items will be generated and show up in the Jenkins dashboard:
+Result: The following projects will be generated and show up in the Jenkins dashboard:
 
 1. add_jenkins_slave
 2. build_gdp
