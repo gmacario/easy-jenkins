@@ -2,18 +2,17 @@
 
 **WORK-IN-PROGRESS**
 
-This document explains how to buil from sources a [Yocto](https://www.yoctoproject.org/)-based distribution for the [UDOO Neo](http://www.udoo.org/udoo-neo/) using [easy-jenkins](https://github.com/gmacario/easy-jenkins).
+This document explains how to build from sources a [Yocto](https://www.yoctoproject.org/)-based distribution for the [UDOO Neo](http://www.udoo.org/udoo-neo/) using [easy-jenkins](https://github.com/gmacario/easy-jenkins).
 
 The following instructions were tested on
 
-* Docker client: mac-tizy (MacBook Pro, Docker Toolbox 10.0 on OS X 10.11.3)
-* Docker engine: mv-linux-powerhorse (Docker 1.10.0 on Ubuntu 14.04.4 LTS 64-bit)
+* Docker client: mac-tizy (HW: MacBook Pro; SW: OS X 10.11.3, Docker Toolbox 10.0)
+* Docker engine: mv-linux-powerhorse (HW: HP xw8600 Workstation, SW: Ubuntu 14.04.4 LTS 64-bit, Docker 1.10.0)
 
 ## Preparation
 
-Install easy-jenkins from https://github.com/gmacario/easy-jenkins
-
-Refer to [preparation.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/preparation.md) for details.
+* Install and configure easy-jenkins - please refer to [preparation.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/preparation.md) for details.
+* Verify that the Jenkins Dashboard is accessible at `${DOCKER_URL}` (example: http://192.168.99.100:9080/)
 
 ## Step-by-step instructions
 
@@ -54,14 +53,18 @@ pwd
 ls -la
 printenv
 
+# Configure git
+git config --global user.name "easy-jenkins"
+git config --global user.email "$(whoami)@$(hostname)"
+
 # Prepare Yocto build
 source init.sh
 
 # Prevent error "Do not use Bitbake as root"
-touch conf/sanity.conf
+[ $(whoami) = "root" ] && touch conf/sanity.conf
 
 bitbake core-image-minimal
-# bitbake -vvv core-image-minimal # ==> FAIL core-image-minimal.bb, task do_rootfs
+# bitbake -vvv core-image-minimal # ==> ERROR in core-image-minimal.bb, task do_rootfs
 
 # bitbake udoo-image-full-cmdline
 # bitbake genivi-demo-platform
@@ -73,11 +76,11 @@ bitbake core-image-minimal
 
 ### Build project `build_yocto_udooneo`
 
-<!-- (2016-02-22 18:57 CET) -->
+<!-- (2016-02-23 15:47 CET) -->
 
 Browse `${JENKINS_URL}/job/build_yocto_udooneo`, then click **Build Now**
 
-Result: TODO
+You may watch the build logs at `${JENKINS_URL}/job/build_yocto_udooneo/lastBuild/console`
 
 ```
 Started by user anonymous
@@ -96,9 +99,9 @@ Fetching upstream changes from https://github.com/gmacario/genivi-demo-platform
  > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/genivi-demo-platform +refs/heads/*:refs/remotes/origin/*
  > git rev-parse refs/remotes/origin/dev-udooneo-jethro^{commit} # timeout=10
  > git rev-parse refs/remotes/origin/origin/dev-udooneo-jethro^{commit} # timeout=10
-Checking out Revision 1ff20e1c8d9739333a1df26453de5a88102a8bd8 (refs/remotes/origin/dev-udooneo-jethro)
+Checking out Revision c83152c2cc1e87d0f6adfcc45358331635f34618 (refs/remotes/origin/dev-udooneo-jethro)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 1ff20e1c8d9739333a1df26453de5a88102a8bd8
+ > git checkout -f c83152c2cc1e87d0f6adfcc45358331635f34618
 First time build. Skipping changelog.
 Pull Docker image gmacario/build-yocto from repository ...
 $ docker pull gmacario/build-yocto
