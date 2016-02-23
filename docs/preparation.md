@@ -80,9 +80,7 @@ then click **Build**
 
 Browse `${JENKINS_URL}`, verify that node `build-yocto-slave` is running.
 
-### Configure git on Jenkins node `build-yocto-slave`
-
-<!-- (2016-02-04 12:19 CET) -->
+<!-- ### Configure git on Jenkins node `build-yocto-slave`
 
 Workaround for [issues/27](https://github.com/gmacario/easy-jenkins/issues/27)
 
@@ -93,6 +91,6 @@ Browse `${JENKINS_URL}/job/configure_git/`, then click **Configure**
 
 Click **Save**, then click **Build Now**
 
-Verify in the Console Output that the job was run on the slave.
+Verify in the Console Output that the job was run on the slave. -->
 
 <!-- EOF -->
