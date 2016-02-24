@@ -102,9 +102,9 @@ Fetching changes from the remote Git repository
 Fetching upstream changes from git://git.projects.genivi.org/genivi-demo-platform.git
  > git --version # timeout=10
  > git -c core.askpass=true fetch --tags --progress git://git.projects.genivi.org/genivi-demo-platform.git +refs/heads/*:refs/remotes/origin/*
- > git rev-parse refs/remotes/origin/qemux86-64^{commit} # timeout=10
- > git rev-parse refs/remotes/origin/origin/qemux86-64^{commit} # timeout=10
-Checking out Revision 6e50965700f98572eaa731e426d561b1b5031c87 (refs/remotes/origin/qemux86-64)
+ > git rev-parse refs/remotes/origin/qemux86-64-ivi9-beta^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/qemux86-64-ivi9-beta^{commit} # timeout=10
+Checking out Revision 6e50965700f98572eaa731e426d561b1b5031c87 (refs/remotes/origin/qemux86-64-ivi9-beta)
  > git config core.sparsecheckout # timeout=10
  > git checkout -f 6e50965700f98572eaa731e426d561b1b5031c87
  > git rev-list 6e50965700f98572eaa731e426d561b1b5031c87 # timeout=10
@@ -113,125 +113,119 @@ Checking out Revision 6e50965700f98572eaa731e426d561b1b5031c87 (refs/remotes/ori
  > git submodule sync # timeout=10
  > git config --get remote.origin.url # timeout=10
  > git submodule update --init --recursive
+Docker container 
 ...
-| [ 12%] Generating country_GE.png
-| cd /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/build/navit/xpm && /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/sysroots/x86_64-linux/usr/bin/rsvg-convert --width=32 --height=32 --output /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/build/navit/xpm/country_GE.png /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_GE.svgz
-| Error reading SVG:Error domain 1 code 4 on line 1 column 1 of file:///var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_UG.svgz: Start tag expected, '<' not found
+| [ 61%] [ 61%] Generating country_BO.png
+| cd /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/build/navit/xpm && /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/sysroots/x86_64-linux/usr/bin/rsvg-convert --width=32 --height=32 --output /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/build/navit/xpm/country_BO.png /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_BO.svgz
+| Error reading SVG:Error domain 1 code 4 on line 1 column 1 of file:///var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_IO.svgz: Start tag expected, '<' not found
 | 
 | 
-| Error reading SVG:Error domain 1 code 4 on line 1 column 1 of file:///var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_LV.svgz: Start tag expected, '<' not found
+| Generating country_UA.png
+| make[2]: *** [navit/xpm/country_IO.png] Error 1
+| make[2]: *** Waiting for unfinished jobs....
+| cd /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/build/navit/xpm && /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/sysroots/x86_64-linux/usr/bin/rsvg-convert --width=32 --height=32 --output /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/build/navit/xpm/country_UA.png /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_UA.svgz
+| Generating country_GH.png
+| cd /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/build/navit/xpm && /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/sysroots/x86_64-linux/usr/bin/rsvg-convert --width=32 --height=32 --output /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/build/navit/xpm/country_GH.png /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_GH.svgz
+| Error reading SVG:Error domain 1 code 4 on line 1 column 1 of file:///var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_BO.svgz: Start tag expected, '<' not found
 | 
 | 
-| Error reading SVG:Error domain 1 code 4 on line 1 column 1 of file:///var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_GE.svgz: Start tag expected, '<' not found
+| make[2]: *** [navit/xpm/country_BO.png] Error 1
+| Error reading SVG:Error domain 1 code 4 on line 1 column 1 of file:///var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_UA.svgz: Start tag expected, '<' not found
 | 
 | 
+| make[2]: *** [navit/xpm/country_UA.png] Error 1
 | Error reading SVG:Error domain 1 code 4 on line 1 column 1 of file:///var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_GH.svgz: Start tag expected, '<' not found
 | 
 | 
-| Error reading SVG:Error domain 1 code 4 on line 1 column 1 of file:///var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_BM.svgz: Start tag expected, '<' not found
-| 
-| 
-| Error reading SVG:Error domain 1 code 4 on line 1 column 1 of file:///var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_CO.svgz: Start tag expected, '<' not found
-| 
-| 
-| Error reading SVG:Error domain 1 code 4 on line 1 column 1 of file:///var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_SR.svgz: Start tag expected, '<' not found
-| 
-| 
-| Error reading SVG:Error domain 1 code 4 on line 1 column 1 of file:///var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/navit/navit/xpm/country_VN.svgz: Start tag expected, '<' not found
-| 
-| 
-| make[2]: *** [navit/xpm/country_CO.png] Error 1
-| make[2]: *** Waiting for unfinished jobs....
-| make[2]: *** [navit/xpm/country_LV.png] Error 1
-| make[2]: *** [navit/xpm/country_GE.png] Error 1
-| make[2]: *** [navit/xpm/country_VN.png] Error 1
-| make[2]: *** [navit/xpm/country_BM.png] Error 1
 | make[2]: *** [navit/xpm/country_GH.png] Error 1
-| make[2]: *** [navit/xpm/country_UG.png] Error 1
-| make[2]: *** [navit/xpm/country_SR.png] Error 1
 | make[2]: Leaving directory `/var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/build'
 | make[1]: *** [navit/xpm/CMakeFiles/images.dir/all] Error 2
 | make[1]: Leaving directory `/var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/build'
 | make: *** [all] Error 2
 | ERROR: oe_runmake failed
 | WARNING: exit code 1 from a shell command.
-| ERROR: Function failed: do_compile (log file is located at /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/temp/log.do_compile.467)
-Currently 7 running tasks (2593 of 4460):
-0: qtdeclarative-5.4.2+gitAUTOINC+2fdb6eba0a-r0 do_install (pid 464)
-1: alsa-utils-1.0.28-r1 do_compile (pid 474)
-2: glib-networking-2.38.0-r0 do_configure (pid 475)
-3: mesa-2_10.4.4-r1 do_package_write_ipk (pid 476)
-4: xproto-1_7.0.26-r0 do_package (pid 482)
-5: pulseaudio-6.0-r1 do_package_write_ipk (pid 479)
-6: qtscript-5.4.2+gitAUTOINC+eb08742e8f-r0 do_package (pid 724)
-[418A[J[1;31mERROR[0m: [31mTask 1928 (/var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/../meta-genivi-demo/recipes-navigation/navit/navit_svn.bb, do_compile) failed with exit code '1'[0m
-Currently 7 running tasks (2593 of 4460):
-0: qtdeclarative-5.4.2+gitAUTOINC+2fdb6eba0a-r0 do_install (pid 464)
-1: alsa-utils-1.0.28-r1 do_compile (pid 474)
-2: glib-networking-2.38.0-r0 do_configure (pid 475)
-3: mesa-2_10.4.4-r1 do_package_write_ipk (pid 476)
-4: xproto-1_7.0.26-r0 do_package (pid 482)
-5: pulseaudio-6.0-r1 do_package_write_ipk (pid 479)
-6: qtscript-5.4.2+gitAUTOINC+eb08742e8f-r0 do_package (pid 724)
-[418A[JCurrently 7 running tasks (2594 of 4460):
-0: qtdeclarative-5.4.2+gitAUTOINC+2fdb6eba0a-r0 do_install (pid 464)
-1: alsa-utils-1.0.28-r1 do_compile (pid 474)
-2: glib-networking-2.38.0-r0 do_configure (pid 475)
-3: mesa-2_10.4.4-r1 do_package_write_ipk (pid 476)
-4: xproto-1_7.0.26-r0 do_package (pid 482)
-5: pulseaudio-6.0-r1 do_package_write_ipk (pid 479)
-6: qtscript-5.4.2+gitAUTOINC+eb08742e8f-r0 do_package (pid 724)
-[418A[JWaiting for 8 running tasks to finish:
-0: qtdeclarative-5.4.2+gitAUTOINC+2fdb6eba0a-r0 do_install (pid 464)
-1: alsa-utils-1.0.28-r1 do_compile (pid 474)
-2: glib-networking-2.38.0-r0 do_configure (pid 475)
-3: mesa-2_10.4.4-r1 do_package_write_ipk (pid 476)
-4: xproto-1_7.0.26-r0 do_package (pid 482)
-5: pulseaudio-6.0-r1 do_package_write_ipk (pid 479)
-6: qtscript-5.4.2+gitAUTOINC+eb08742e8f-r0 do_package (pid 724)
-7: keyutils-1.5.9-r1 do_package (pid 1443)
-[458A[JWaiting for 7 running tasks to finish:
-0: alsa-utils-1.0.28-r1 do_compile (pid 474)
-1: glib-networking-2.38.0-r0 do_configure (pid 475)
-2: mesa-2_10.4.4-r1 do_package_write_ipk (pid 476)
-3: xproto-1_7.0.26-r0 do_package (pid 482)
-4: pulseaudio-6.0-r1 do_package_write_ipk (pid 479)
-5: qtscript-5.4.2+gitAUTOINC+eb08742e8f-r0 do_package (pid 724)
-6: keyutils-1.5.9-r1 do_package (pid 1443)
-[389A[JWaiting for 6 running tasks to finish:
-0: glib-networking-2.38.0-r0 do_configure (pid 475)
-1: mesa-2_10.4.4-r1 do_package_write_ipk (pid 476)
-2: xproto-1_7.0.26-r0 do_package (pid 482)
-3: pulseaudio-6.0-r1 do_package_write_ipk (pid 479)
-4: qtscript-5.4.2+gitAUTOINC+eb08742e8f-r0 do_package (pid 724)
-5: keyutils-1.5.9-r1 do_package (pid 1443)
-[344A[JWaiting for 5 running tasks to finish:
-0: glib-networking-2.38.0-r0 do_configure (pid 475)
-1: mesa-2_10.4.4-r1 do_package_write_ipk (pid 476)
-2: pulseaudio-6.0-r1 do_package_write_ipk (pid 479)
-3: qtscript-5.4.2+gitAUTOINC+eb08742e8f-r0 do_package (pid 724)
-4: keyutils-1.5.9-r1 do_package (pid 1443)
-[301A[JWaiting for 4 running tasks to finish:
-0: glib-networking-2.38.0-r0 do_configure (pid 475)
-1: mesa-2_10.4.4-r1 do_package_write_ipk (pid 476)
-2: pulseaudio-6.0-r1 do_package_write_ipk (pid 479)
-3: qtscript-5.4.2+gitAUTOINC+eb08742e8f-r0 do_package (pid 724)
-[258A[JWaiting for 3 running tasks to finish:
-0: glib-networking-2.38.0-r0 do_configure (pid 475)
-1: mesa-2_10.4.4-r1 do_package_write_ipk (pid 476)
-2: pulseaudio-6.0-r1 do_package_write_ipk (pid 479)
-[194A[JWaiting for 2 running tasks to finish:
-0: mesa-2_10.4.4-r1 do_package_write_ipk (pid 476)
-1: pulseaudio-6.0-r1 do_package_write_ipk (pid 479)
-[142A[JWaiting for 1 running tasks to finish:
-0: pulseaudio-6.0-r1 do_package_write_ipk (pid 479)
-[91A[JWaiting for 0 running tasks to finish:
-[39A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 2594 tasks of which 2583 didn't need to be rerun and 1 failed.[0m
+| ERROR: Function failed: do_compile (log file is located at /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/temp/log.do_compile.6119)
+Currently 6 running tasks (2671 of 4460):
+0: qt3d-5.4.2+gitAUTOINC+8a9723d742-r0 do_compile (pid 1987)
+1: qtmultimedia-5.4.2+gitAUTOINC+cc0569a038-r0 do_compile (pid 2026)
+2: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+3: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_ipk (pid 3298)
+4: rpm-5.4.14-r0 do_package (pid 6284)
+5: python-dbus-1.2.0-r0 do_populate_sysroot (pid 15604)
+[413A[J[1;31mERROR[0m: [31mTask 1928 (/var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/../meta-genivi-demo/recipes-navigation/navit/navit_svn.bb, do_compile) failed with exit code '1'[0m
+Currently 6 running tasks (2671 of 4460):
+0: qt3d-5.4.2+gitAUTOINC+8a9723d742-r0 do_compile (pid 1987)
+1: qtmultimedia-5.4.2+gitAUTOINC+cc0569a038-r0 do_compile (pid 2026)
+2: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+3: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_ipk (pid 3298)
+4: rpm-5.4.14-r0 do_package (pid 6284)
+5: python-dbus-1.2.0-r0 do_populate_sysroot (pid 15604)
+[413A[JCurrently 6 running tasks (2672 of 4460):
+0: qt3d-5.4.2+gitAUTOINC+8a9723d742-r0 do_compile (pid 1987)
+1: qtmultimedia-5.4.2+gitAUTOINC+cc0569a038-r0 do_compile (pid 2026)
+2: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+3: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_ipk (pid 3298)
+4: rpm-5.4.14-r0 do_package (pid 6284)
+5: python-dbus-1.2.0-r0 do_populate_sysroot (pid 15604)
+[413A[JWaiting for 7 running tasks to finish:
+0: qt3d-5.4.2+gitAUTOINC+8a9723d742-r0 do_compile (pid 1987)
+1: qtmultimedia-5.4.2+gitAUTOINC+cc0569a038-r0 do_compile (pid 2026)
+2: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+3: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_ipk (pid 3298)
+4: rpm-5.4.14-r0 do_package (pid 6284)
+5: python-dbus-1.2.0-r0 do_populate_sysroot (pid 15604)
+6: alsa-state-0.2.0-r5 do_packagedata (pid 15924)
+[460A[JWaiting for 8 running tasks to finish:
+0: qt3d-5.4.2+gitAUTOINC+8a9723d742-r0 do_compile (pid 1987)
+1: qtmultimedia-5.4.2+gitAUTOINC+cc0569a038-r0 do_compile (pid 2026)
+2: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+3: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_ipk (pid 3298)
+4: rpm-5.4.14-r0 do_package (pid 6284)
+5: python-dbus-1.2.0-r0 do_populate_sysroot (pid 15604)
+6: alsa-state-0.2.0-r5 do_packagedata (pid 15924)
+7: qtxmlpatterns-5.4.2+gitAUTOINC+c21924d67a-r0 do_package_write_rpm (pid 15707)
+[541A[JWaiting for 7 running tasks to finish:
+0: qt3d-5.4.2+gitAUTOINC+8a9723d742-r0 do_compile (pid 1987)
+1: qtmultimedia-5.4.2+gitAUTOINC+cc0569a038-r0 do_compile (pid 2026)
+2: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+3: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_ipk (pid 3298)
+4: rpm-5.4.14-r0 do_package (pid 6284)
+5: alsa-state-0.2.0-r5 do_packagedata (pid 15924)
+6: qtxmlpatterns-5.4.2+gitAUTOINC+c21924d67a-r0 do_package_write_rpm (pid 15707)
+[485A[JWaiting for 6 running tasks to finish:
+0: qt3d-5.4.2+gitAUTOINC+8a9723d742-r0 do_compile (pid 1987)
+1: qtmultimedia-5.4.2+gitAUTOINC+cc0569a038-r0 do_compile (pid 2026)
+2: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+3: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_ipk (pid 3298)
+4: rpm-5.4.14-r0 do_package (pid 6284)
+5: qtxmlpatterns-5.4.2+gitAUTOINC+c21924d67a-r0 do_package_write_rpm (pid 15707)
+[435A[JWaiting for 5 running tasks to finish:
+0: qt3d-5.4.2+gitAUTOINC+8a9723d742-r0 do_compile (pid 1987)
+1: qtmultimedia-5.4.2+gitAUTOINC+cc0569a038-r0 do_compile (pid 2026)
+2: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+3: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_ipk (pid 3298)
+4: qtxmlpatterns-5.4.2+gitAUTOINC+c21924d67a-r0 do_package_write_rpm (pid 15707)
+[396A[JWaiting for 4 running tasks to finish:
+0: qt3d-5.4.2+gitAUTOINC+8a9723d742-r0 do_compile (pid 1987)
+1: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+2: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_ipk (pid 3298)
+3: qtxmlpatterns-5.4.2+gitAUTOINC+c21924d67a-r0 do_package_write_rpm (pid 15707)
+[327A[JWaiting for 3 running tasks to finish:
+0: qt3d-5.4.2+gitAUTOINC+8a9723d742-r0 do_compile (pid 1987)
+1: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+2: qtxmlpatterns-5.4.2+gitAUTOINC+c21924d67a-r0 do_package_write_rpm (pid 15707)
+[254A[JWaiting for 2 running tasks to finish:
+0: qt3d-5.4.2+gitAUTOINC+8a9723d742-r0 do_compile (pid 1987)
+1: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+[173A[JWaiting for 1 running tasks to finish:
+0: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package_write_rpm (pid 2387)
+[112A[JWaiting for 0 running tasks to finish:
+[39A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 2672 tasks of which 2623 didn't need to be rerun and 1 failed.[0m
 Waiting for 0 running tasks to finish:
 
 Summary: 1 task failed:
   /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/../meta-genivi-demo/recipes-navigation/navit/navit_svn.bb, do_compile
-Summary: There was 1 WARNING message shown.
+Summary: There were 6 WARNING messages shown.
 Summary: There was 1 ERROR message shown, returning a non-zero exit code.
 Build step 'Execute shell' marked build as failure
 Stopping Docker container after build completion
