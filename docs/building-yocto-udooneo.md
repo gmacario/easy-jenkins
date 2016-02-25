@@ -308,6 +308,65 @@ Result: SUCCESS
 
 Please see http://www.udoo.org/get-started-neo/ for details.
 
-You can follow [this blog post](http://gmacario.github.io/howto/udoo/neo/embedded/software/development/2015/11/08/connecting-to-udoo-neo-serial-console.html) to learn how to connect to the UDOO Neo serial console to watch U-Boot and kernel logs.
+Please see [this blog post](http://gmacario.github.io/howto/udoo/neo/embedded/software/development/2015/11/08/connecting-to-udoo-neo-serial-console.html) to learn how to connect to the UDOO Neo serial console.
+
+After powering up your UDOO Neo the serial console should display the boot messages up to a login prompt:
+
+```
+U-Boot SPL 2015.04 (Feb 24 2016 - 14:37:26)
+Setting 1024MB RAM calibration data
+port 1
+
+
+U-Boot 2015.04 (Feb 24 2016 - 14:37:26)
+
+CPU:   Freescale i.MX6SX rev1.2 at 792 MHz
+CPU:   Temperature 50 C
+Reset cause: POR
+Board: UDOO Neo Full
+I2C:   ready
+DRAM:  1 GiB
+PMIC:  PFUZE3000 DEV_ID=0x30 REV_ID=0x11
+MMC:   FSL_SDHC: 0, FSL_SDHC: 1
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   CPU Net Initialization Failed
+No ethernet found.
+Normal Boot
+Hit any key to stop autoboot:
+...
+
+Starting syslogd/klogd: done
+
+OpenEmbedded nodistro.0 udooneo /dev/ttymxc0
+
+udooneo login:
+```
+
+Login to the target with user `root` (default password: none)
+
+```
+root@udooneo:~# cat /proc/version
+Linux version 3.14.56_1.0.x-udoo+gfeef1c3 (root@1cfc10892ef9) (gcc version 5.2.0 (GCC) ) #1 SMP PREEMPT Wed Feb 24 14:30:31 UTC 2016
+root@udooneo:~#  fdisk -l
+
+Disk /dev/mmcblk0: 15.7 GB, 15720251392 bytes
+4 heads, 32 sectors/track, 239872 cylinders
+Units = cylinders of 128 * 512 = 65536 bytes
+
+        Device Boot      Start         End      Blocks  Id System
+/dev/mmcblk0p1              65         192        8192   c Win95 FAT32 (LBA)
+/dev/mmcblk0p2             193         320        8192  83 Linux
+root@udooneo:~# df -h
+Filesystem                Size      Used Available Use% Mounted on
+/dev/root                 6.7M      4.8M      1.4M  77% /
+devtmpfs                337.1M         0    337.1M   0% /dev
+tmpfs                   497.2M     84.0K    497.1M   0% /run
+tmpfs                   497.2M     56.0K    497.2M   0% /var/volatile
+root@udooneo:~#
+```
 
 <!-- EOF -->
