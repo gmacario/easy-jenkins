@@ -1,7 +1,5 @@
 # Building a Yocto distribution for the UDOO Neo
 
-**WORK-IN-PROGRESS**
-
 This document explains how to build from sources a [Yocto](https://www.yoctoproject.org/)-based distribution for the [UDOO Neo](http://www.udoo.org/udoo-neo/) using [easy-jenkins](https://github.com/gmacario/easy-jenkins).
 
 The following instructions were tested on
@@ -34,7 +32,7 @@ Inside the project configuration page, fill-in the following information:
       - Repository URL: `https://github.com/gmacario/genivi-demo-platform`
       - Credentials: - none -
       - Branches to build
-        - Branch Specifier (blank for `any`): `*/dev-udooneo-jethro` (TODO?)
+        - Branch Specifier (blank for `any`): `*/dev-udooneo-jethro`
       - Repository browser: (Auto)
   - Build Environment
     - Build inside a Docker container: Yes
@@ -77,7 +75,7 @@ bitbake core-image-minimal
 
 ### Build project `build_yocto_udooneo`
 
-<!-- (2016-02-24 14:55 CET): Tested on mv-linux-powerhorse -->
+<!-- (2016-02-25 09:20 CET): Tested on ies-genbld01-vm -->
 
 Browse `${JENKINS_URL}/job/build_yocto_udooneo`, then click **Build Now**
 
@@ -87,91 +85,274 @@ You may watch the build logs at `${JENKINS_URL}/job/build_yocto_udooneo/lastBuil
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
 Building in workspace /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace
-Cloning the remote Git repository
-Cloning repository https://github.com/gmacario/genivi-demo-platform
- > git init /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace # timeout=10
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/gmacario/genivi-demo-platform # timeout=10
 Fetching upstream changes from https://github.com/gmacario/genivi-demo-platform
  > git --version # timeout=10
- > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/genivi-demo-platform +refs/heads/*:refs/remotes/origin/*
- > git config remote.origin.url https://github.com/gmacario/genivi-demo-platform # timeout=10
- > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
- > git config remote.origin.url https://github.com/gmacario/genivi-demo-platform # timeout=10
-Fetching upstream changes from https://github.com/gmacario/genivi-demo-platform
  > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/genivi-demo-platform +refs/heads/*:refs/remotes/origin/*
  > git rev-parse refs/remotes/origin/dev-udooneo-jethro^{commit} # timeout=10
  > git rev-parse refs/remotes/origin/origin/dev-udooneo-jethro^{commit} # timeout=10
 Checking out Revision c83152c2cc1e87d0f6adfcc45358331635f34618 (refs/remotes/origin/dev-udooneo-jethro)
  > git config core.sparsecheckout # timeout=10
  > git checkout -f c83152c2cc1e87d0f6adfcc45358331635f34618
-First time build. Skipping changelog.
-Pull Docker image gmacario/build-yocto from repository ...
-$ docker pull gmacario/build-yocto
+ > git rev-list c83152c2cc1e87d0f6adfcc45358331635f34618 # timeout=10
+Docker container 91dbb500e1cc04759d73dce134de4d0b404dd73ed551610b27f2a19058cb6f03 started to host the build
+$ docker exec --tty 91dbb500e1cc04759d73dce134de4d0b404dd73ed551610b27f2a19058cb6f03 env
+[workspace] $ docker exec --tty --user 0:0 91dbb500e1cc04759d73dce134de4d0b404dd73ed551610b27f2a19058cb6f03 env affinity:container==d2bd62faffcc79292164417afbae867c3f5543e8dd0ce66602d520b49d7737e5 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
+ b="${f%.override}";
+ echo "$f" >> "$COPY_REFERENCE_FILE_LOG";
+ rel="${b:23}";
+ dir=$(dirname "${b}");
+ echo " $f -> $rel" >> "$COPY_REFERENCE_FILE_LOG";
+ if [[ ! -e /var/jenkins_home/${rel} || $f = *.override ]]; then
+ echo "copy $rel to JENKINS_HOME" >> "$COPY_REFERENCE_FILE_LOG";
+ mkdir -p "/var/jenkins_home/${dir:23}";
+ cp -r "${f}" "/var/jenkins_home/${rel}";
+ [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
+ fi
+}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#10 BUILD_ID=10 BUILD_NUMBER=10 BUILD_TAG=jenkins-GENIVI-build_yocto_udooneo-10 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=1 GIT_BRANCH=origin/dev-udooneo-jethro GIT_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618 GIT_PREVIOUS_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618 GIT_PREVIOUS_SUCCESSFUL_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618 GIT_URL=https://github.com/gmacario/genivi-demo-platform HOME=/root HOSTNAME=8f63e0800015 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=047d4e67f42b8469 JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u72 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=047d4e67f42b8469 JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.1 JOB_NAME=GENIVI/build_yocto_udooneo LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace /bin/bash -xe /tmp/hudson4961355938340616079.sh
++ id
+uid=0(root) gid=0(root) groups=0(root)
++ pwd
+/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace
++ ls -la
+total 64
+drwxr-xr-x 12 root root 4096 Feb 23 16:04 .
+drwxr-xr-x  4 root root 4096 Feb 25 08:20 ..
+drwxr-xr-x  9 root root 4096 Feb 25 08:20 .git
+-rw-r--r--  1 root root  204 Feb 23 16:04 .gitignore
+-rw-r--r--  1 root root  938 Feb 23 16:04 .gitmodules
+-rw-r--r--  1 root root  805 Feb 23 16:04 README.md
+drwxr-xr-x  7 root root 4096 Feb 23 16:11 gdp-src-build
+-rw-r--r--  1 root root  908 Feb 23 16:04 init.sh
+drwxr-xr-x 19 root root 4096 Feb 23 16:06 meta-fsl-arm
+drwxr-xr-x  7 root root 4096 Feb 23 16:06 meta-fsl-arm-extra
+drwxr-xr-x  5 root root 4096 Feb 23 16:06 meta-fsl-demos
+drwxr-xr-x 16 root root 4096 Feb 23 16:06 meta-genivi-demo
+drwxr-xr-x 17 root root 4096 Feb 23 16:06 meta-openembedded
+drwxr-xr-x  7 root root 4096 Feb 23 16:06 meta-qt5
+drwxr-xr-x 10 root root 4096 Feb 23 16:06 meta-udoo
+drwxr-xr-x 10 root root 4096 Feb 23 16:07 poky
++ printenv
+HOSTNAME=8f63e0800015
+HUDSON_SERVER_COOKIE=047d4e67f42b8469
+TERM=xterm
+BUILD_TAG=jenkins-GENIVI-build_yocto_udooneo-10
+GIT_PREVIOUS_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618
+COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log
+ROOT_BUILD_CAUSE=MANUALTRIGGER
+WORKSPACE=/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace
+CA_CERTIFICATES_JAVA_VERSION=20140324
+JENKINS_HOME=/var/jenkins_home
+GIT_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618
+JENKINS_UC=https://updates.jenkins-ci.org
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+BUILD_CAUSE_MANUALTRIGGER=true
+PWD=/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace
+JENKINS_SLAVE_AGENT_PORT=50000
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+LANG=C.UTF-8
+JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e
+JAVA_VERSION=8u72
+JOB_NAME=GENIVI/build_yocto_udooneo
+BUILD_DISPLAY_NAME=#10
+BUILD_ID=10
+BUILD_CAUSE=MANUALTRIGGER
+TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888
+GIT_PREVIOUS_SUCCESSFUL_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618
+SHLVL=3
+JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1
+HOME=/root
+GIT_BRANCH=origin/dev-udooneo-jethro
+JENKINS_SERVER_COOKIE=047d4e67f42b8469
+EXECUTOR_NUMBER=1
+NODE_LABELS=master
+GIT_URL=https://github.com/gmacario/genivi-demo-platform
+affinity:container==d2bd62faffcc79292164417afbae867c3f5543e8dd0ce66602d520b49d7737e5
+HUDSON_HOME=/var/jenkins_home
+CLASSPATH=
+NODE_NAME=master
+BUILD_NUMBER=10
+ROOT_BUILD_CAUSE_MANUALTRIGGER=true
+JENKINS_VERSION=1.642.1
+BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
+ b="${f%.override}";
+ echo "$f" >> "/var/jenkins_home/copy_reference_file.log";
+ rel="${b:23}";
+ dir=$(dirname "${b}");
+ echo " $f -> $rel" >> "/var/jenkins_home/copy_reference_file.log";
+ if [[ ! -e /var/jenkins_home/${rel} || $f = *.override ]]; then
+ echo "copy $rel to JENKINS_HOME" >> "/var/jenkins_home/copy_reference_file.log";
+ mkdir -p "/var/jenkins_home/${dir:23}";
+ cp -r "${f}" "/var/jenkins_home/${rel}";
+ [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
+ fi
+}
+_=/usr/bin/printenv
++ git config --global user.name easy-jenkins
+++ whoami
+++ hostname
++ git config --global user.email root@91dbb500e1cc
++ source init.sh
++++ basename /tmp/hudson4961355938340616079.sh
+++ cmd=hudson4961355938340616079.sh
+++ '[' hudson4961355938340616079.sh = init.sh ']'
+++ git submodule init
+++ git submodule sync
+Synchronizing submodule url for 'meta-fsl-arm'
+Synchronizing submodule url for 'meta-fsl-arm-extra'
+Synchronizing submodule url for 'meta-fsl-demos'
+Synchronizing submodule url for 'meta-genivi-demo'
+Synchronizing submodule url for 'meta-openembedded'
+Synchronizing submodule url for 'meta-qt5'
+Synchronizing submodule url for 'meta-udoo'
+Synchronizing submodule url for 'poky'
+++ git submodule update
+++ source poky/oe-init-build-env gdp-src-build
++++ '[' -n poky/oe-init-build-env ']'
+++++ dirname poky/oe-init-build-env
++++ OEROOT=poky
++++ '[' -n '' ']'
++++ THIS_SCRIPT=poky/oe-init-build-env
++++ '[' -z '' ']'
++++ '[' /tmp/hudson4961355938340616079.sh = poky/oe-init-build-env ']'
+++++ readlink -f poky
++++ OEROOT=/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky
++++ export OEROOT
++++ . /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/scripts/oe-buildenv-internal
+++++ '[' -z /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky ']'
+++++ '[' -z '' -a '!' -z '' ']'
++++++ /usr/bin/env python --version
++++++ grep 'Python 3'
+++++ py_v3_check=
+++++ '[' '' '!=' '' ']'
++++++ python -c 'import sys; print sys.version_info >= (2,7,3)'
+++++ py_v26_check=True
+++++ '[' True '!=' True ']'
+++++ '[' x = x ']'
+++++ '[' xgdp-src-build = x ']'
+++++ BDIR=gdp-src-build
+++++ '[' gdp-src-build = / ']'
++++++ echo gdp-src-build
++++++ sed -re 's|/+$||'
+++++ BDIR=gdp-src-build
++++++ readlink -f gdp-src-build
+++++ BDIR=/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build
+++++ '[' -z /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build ']'
+++++ '[' x '!=' x ']'
+++++ expr /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build : '/.*'
+++++ BUILDDIR=/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build
+++++ unset BDIR
+++++ '[' x = x ']'
+++++ BITBAKEDIR=/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/bitbake/
++++++ readlink -f /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/bitbake/
+++++ BITBAKEDIR=/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/bitbake
++++++ readlink -f /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build
+++++ BUILDDIR=/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build
+++++ test -d /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/bitbake
+++++ NEWPATHS=/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/scripts:/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/bitbake/bin:
++++++ echo /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++++ sed -e 's|:/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/scripts:/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/bitbake/bin:|:|g' -e 's|^/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/scripts:/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/bitbake/bin:||'
+++++ PATH=/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/scripts:/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++++ unset BITBAKEDIR NEWPATHS
+++++ export BUILDDIR
+++++ export PATH
+++++ export 'BB_ENV_EXTRAWHITE=MACHINE DISTRO TCMODE TCLIBC HTTP_PROXY http_proxy HTTPS_PROXY https_proxy FTP_PROXY ftp_proxy FTPS_PROXY ftps_proxy ALL_PROXY all_proxy NO_PROXY no_proxy SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE BB_NUMBER_THREADS BB_NO_NETWORK PARALLEL_MAKE GIT_PROXY_COMMAND SOCKS5_PASSWD SOCKS5_USER SCREENDIR STAMPS_DIR'
+++++ BB_ENV_EXTRAWHITE='MACHINE DISTRO TCMODE TCLIBC HTTP_PROXY http_proxy HTTPS_PROXY https_proxy FTP_PROXY ftp_proxy FTPS_PROXY ftps_proxy ALL_PROXY all_proxy NO_PROXY no_proxy SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE BB_NUMBER_THREADS BB_NO_NETWORK PARALLEL_MAKE GIT_PROXY_COMMAND SOCKS5_PASSWD SOCKS5_USER SCREENDIR STAMPS_DIR'
++++ /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/poky/scripts/oe-setup-builddir
+
+### Shell environment set up for builds. ###
+
+You can now run 'bitbake <target>'
+
+Common targets are:
+    core-image-minimal
+    core-image-sato
+    meta-toolchain
+    adt-installer
+    meta-ide-support
+
+You can also run generated qemu images with a command like 'runqemu qemux86'
++++ '[' -n /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build ']'
++++ cd /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build
++++ unset OEROOT
++++ unset BBPATH
++++ unset THIS_SCRIPT
++++ '[' -z '' ']'
++++ '[' -f bitbake.lock ']'
++++ grep : bitbake.lock
++++ '[' 1 = 0 ']'
+++ echo
+
+++ echo 'Now run:  bitbake genivi-demo-platform'
+Now run:  bitbake genivi-demo-platform
+++ whoami
++ '[' root = root ']'
++ touch conf/sanity.conf
++ bitbake m4-firmware
+Loading cache:   0% || ETA:  --:--:--
 ...
-Currently 2 running tasks (1301 of 1303):
-0: python-2.7.9-r1 do_package_qa (pid 7285)
-1: core-image-minimal-1.0-r0 do_rootfs (pid 12809)
-[137A[J[1;33mWARNING[0m: [33mQA Issue: python: /python-distutils-staticdev/usr/lib/python2.7/config/libpython2.7.a is owned by uid 0, which is the same as the user running bitbake. This may be due to host contamination [host-user-contaminated][0m
-Currently 2 running tasks (1301 of 1303):
-0: python-2.7.9-r1 do_package_qa (pid 7285)
-1: core-image-minimal-1.0-r0 do_rootfs (pid 12809)
-[137A[J[1;31mERROR[0m: [31mError: The image creation script '/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build/tmp-glibc/work/udooneo-oe-linux-gnueabi/core-image-minimal/1.0-r0/temp/create_image.sdcard' returned 1:
-0+0 records in
-0+0 records out
-0 bytes (0 B) copied, 7.0948e-05 s, 0.0 kB/s
-Model:  (file)
-Disk /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build/tmp-glibc/deploy/images/udooneo/core-image-minimal-udooneo-20160224140133.rootfs.sdcard: 25.2MB
-Sector size (logical/physical): 512B/512B
-Partition Table: msdos
-Disk Flags: 
+Loading cache: 100% || ETA:  00:00:00
 
-Number  Start   End     Size    Type     File system  Flags
- 1      4194kB  12.6MB  8389kB  primary               lba
- 2      12.6MB  21.0MB  8389kB  primary
+Loaded 2123 entries from dependency cache.
+[1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
 
-62+0 records in
-62+0 records out
-31744 bytes (32 kB) copied, 0.000191588 s, 166 MB/s
-225+1 records in
-225+1 records out
-231196 bytes (231 kB) copied, 0.000712553 s, 324 MB/s
-mkfs.fat: warning - lowercase labels might not work properly with DOS or Windows
-mkfs.fat 3.0.28 (2015-05-16)
-/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build/tmp-glibc/deploy/images/udooneo/m4clean.fw: No such file or directory
-WARNING: exit code 1 from a shell command.
-[0m
-Currently 2 running tasks (1301 of 1303):
-0: python-2.7.9-r1 do_package_qa (pid 7285)
-1: core-image-minimal-1.0-r0 do_rootfs (pid 12809)
-[137A[J[1;31mERROR[0m: [31mFunction failed: do_rootfs[0m
-Currently 2 running tasks (1301 of 1303):
-0: python-2.7.9-r1 do_package_qa (pid 7285)
-1: core-image-minimal-1.0-r0 do_rootfs (pid 12809)
-[137A[J[1;31mERROR[0m: [31mLogfile of failure stored in: /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build/tmp-glibc/work/udooneo-oe-linux-gnueabi/core-image-minimal/1.0-r0/temp/log.do_rootfs.12809[0m
-Currently 1 running tasks (1301 of 1303):
-0: python-2.7.9-r1 do_package_qa (pid 7285)
-[86A[J[1;31mERROR[0m: [31mTask 7 (/var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build/../poky/meta/recipes-core/images/core-image-minimal.bb, do_rootfs) failed with exit code '1'[0m
-Currently 1 running tasks (1301 of 1303):
-0: python-2.7.9-r1 do_package_qa (pid 7285)
-[86A[J[1;33mWARNING[0m: [33mQA Issue: python: /python-dbg/usr/lib/python2.7/lib-dynload/.debug/crypt.so is owned by uid 0, which is the same as the user running bitbake. This may be due to host contamination [host-user-contaminated][0m
-Waiting for 1 running tasks to finish:
-0: python-2.7.9-r1 do_package_qa (pid 7285)
-[83A[J[1;33mWARNING[0m: [33mQA Issue: python: /python-audio/usr/lib/python2.7/lib-dynload/audioop.so is owned by uid 0, which is the same as the user running bitbake. This may be due to host contamination [host-user-contaminated][0m
-Waiting for 1 running tasks to finish:
-0: python-2.7.9-r1 do_package_qa (pid 7285)
-[83A[JWaiting for 0 running tasks to finish:
-[39A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 1301 tasks of which 9 didn't need to be rerun and 1 failed.[0m
-Waiting for 0 running tasks to finish:
+Build Configuration:
+BB_VERSION        = "1.28.0"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "Ubuntu-14.04"
+TARGET_SYS        = "arm-oe-linux-gnueabi"
+MACHINE           = "udooneo"
+DISTRO            = "poky-ivi-systemd"
+DISTRO_VERSION    = "nodistro.0"
+TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard cortexa9"
+TARGET_FPU        = "vfp-neon"
+meta              
+meta-yocto        
+meta-yocto-bsp    = "HEAD:7fe17a2942ff03e2ec47d566fd5393f52b2eb736"
+meta-oe           = "HEAD:dc5634968b270dde250690609f0015f881db81f2"
+meta-udoo         = "HEAD:0dca517aca288909dddeb74e33c444d9b5e3afd9"
+meta-fsl-arm      = "HEAD:35b8b9bd9863de208ab60e33b55f10ee43e2619b"
 
-Summary: 1 task failed:
-  /var/jenkins_home/jobs/GENIVI/jobs/build_yocto_udooneo/workspace/gdp-src-build/../poky/meta/recipes-core/images/core-image-minimal.bb, do_rootfs
-Summary: There were 1926 WARNING messages shown.
-Summary: There were 2 ERROR messages shown, returning a non-zero exit code.
-Build step 'Execute shell' marked build as failure
+[1;29mNOTE[0m: [29mPreparing RunQueue[0m
+[1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
+[1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
+[1;29mNOTE[0m: [29mTasks Summary: Attempted 386 tasks of which 386 didn't need to be rerun and all succeeded.[0m
++ bitbake core-image-minimal
+Loading cache:   0% || ETA:  --:--:--
+...
+Loading cache: 100% || ETA:  00:00:00
+
+Loaded 2123 entries from dependency cache.
+[1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
+
+Build Configuration:
+BB_VERSION        = "1.28.0"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "Ubuntu-14.04"
+TARGET_SYS        = "arm-oe-linux-gnueabi"
+MACHINE           = "udooneo"
+DISTRO            = "poky-ivi-systemd"
+DISTRO_VERSION    = "nodistro.0"
+TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard cortexa9"
+TARGET_FPU        = "vfp-neon"
+meta              
+meta-yocto        
+meta-yocto-bsp    = "HEAD:7fe17a2942ff03e2ec47d566fd5393f52b2eb736"
+meta-oe           = "HEAD:dc5634968b270dde250690609f0015f881db81f2"
+meta-udoo         = "HEAD:0dca517aca288909dddeb74e33c444d9b5e3afd9"
+meta-fsl-arm      = "HEAD:35b8b9bd9863de208ab60e33b55f10ee43e2619b"
+
+[1;29mNOTE[0m: [29mPreparing RunQueue[0m
+[1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
+[1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
+[1;29mNOTE[0m: [29mTasks Summary: Attempted 1303 tasks of which 1303 didn't need to be rerun and all succeeded.[0m
 Stopping Docker container after build completion
 Notifying upstream projects of job completion
-Finished: FAILURE
+Finished: SUCCESS
 ```
 
-Result: FAILURE in core-image-minimal.bb, do_rootfs
+Result: SUCCESS
 
 <!-- EOF -->
