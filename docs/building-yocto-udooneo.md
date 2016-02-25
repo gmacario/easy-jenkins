@@ -21,7 +21,7 @@ Browse `${JENKINS_URL}`, then click **New Item**
   - Type: **Freestyle project**
 
   then click **OK**.
-  
+
 Inside the project configuration page, fill-in the following information:
   - Discard Old Builds: Yes
     - Strategy: Log Rotation
@@ -73,7 +73,7 @@ bitbake core-image-minimal
 - Post-build Actions
     - Archive the artifacts
       - Files to archive: `*/tmp-glibc/deploy/images/**/*.sdcard.gz`
-  
+
 then click **Save**
 
 ### Build project `build_yocto_udooneo`
@@ -297,5 +297,15 @@ Finished: SUCCESS
 ```
 
 Result: SUCCESS
+
+## Testing the image on UDOO Neo
+
+* Browse `${JENKINS_URL}/jobs/build_yocto_udooneo`, in section "Last Successful Artifacts" click on `core-image-minimal-udooneo.sdcard.gz` to download the file to a machine with a SD Card writer.
+* Write the image to a blank Micro SD card
+  - On MS Windows first uncompress the image, then use [Win 32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) to write the image to the Micro SD card
+  - On Linux just use `$ zcat *.sdcard.gz | sudo dd of=/dev/xxx`
+* Insert the Micro SD card on your UDOO Neo and power up the board.
+
+Please see http://www.udoo.org/get-started-neo/ for details.
 
 <!-- EOF -->
