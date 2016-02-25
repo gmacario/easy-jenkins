@@ -61,7 +61,7 @@ source init.sh
 # Prevent error "Do not use Bitbake as root"
 [ $(whoami) = "root" ] && touch conf/sanity.conf
 
-# Worksaround for https://github.com/gmacario/easy-jenkins/issues/57
+# Workaround for https://github.com/gmacario/easy-jenkins/issues/57
 bitbake m4-firmware
 
 bitbake core-image-minimal
