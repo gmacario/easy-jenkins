@@ -308,4 +308,6 @@ Result: SUCCESS
 
 Please see http://www.udoo.org/get-started-neo/ for details.
 
+You can follow [this blog post](http://gmacario.github.io/howto/udoo/neo/embedded/software/development/2015/11/08/connecting-to-udoo-neo-serial-console.html) to learn how to connect to the UDOO Neo serial console to watch U-Boot and kernel logs.
+
 <!-- EOF -->
