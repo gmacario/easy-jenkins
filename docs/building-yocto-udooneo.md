@@ -63,9 +63,10 @@ source init.sh
 # Prevent error "Do not use Bitbake as root"
 [ $(whoami) = "root" ] && touch conf/sanity.conf
 
-bitbake core-image-minimal
-# bitbake -vvv core-image-minimal # ==> ERROR in core-image-minimal.bb, task do_rootfs
+# Worksaround for https://github.com/gmacario/easy-jenkins/issues/57
+bitbake m4-firmware
 
+bitbake core-image-minimal
 # bitbake udoo-image-full-cmdline
 # bitbake genivi-demo-platform
 
