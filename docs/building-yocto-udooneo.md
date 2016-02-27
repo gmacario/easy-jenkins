@@ -32,7 +32,7 @@ Inside the project configuration page, fill-in the following information:
       - Repository URL: `https://github.com/gmacario/genivi-demo-platform`
       - Credentials: - none -
       - Branches to build
-        - Branch Specifier (blank for `any`): `*/dev-udooneo-jethro`
+        - Branch Specifier (blank for 'any'): `*/dev-udooneo-jethro`
       - Repository browser: (Auto)
   - Build Environment
     - Build inside a Docker container: Yes
