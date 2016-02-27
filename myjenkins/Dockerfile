@@ -47,7 +47,7 @@ COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
 RUN touch /var/run/docker.sock
 
-USER jenkins
+USER root
 ENTRYPOINT ["/bin/bash", "-c", "/tmp/start.sh"]
 
 # EOF
