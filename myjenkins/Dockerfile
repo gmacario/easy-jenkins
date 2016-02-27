@@ -28,12 +28,12 @@ RUN curl -o /usr/local/bin/gosu -fsSL \
 
 # Install Docker
 RUN wget -qO- https://get.docker.com/ | sh
-
 RUN usermod -aG docker jenkins
 
 # Install docker-compose
-RUN curl -L https://github.com/docker/compose/releases/download/1.6.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-RUN chmod +x /usr/local/bin/docker-compose
+RUN curl -o /usr/local/bin/docker-compose -fsSL \
+    "https://github.com/docker/compose/releases/download/1.6.0/docker-compose-$(uname -s)-$(uname -m)" && \
+    chmod +x /usr/local/bin/docker-compose
 
 # Install Jenkins plugins from the list at plugins.txt
 COPY plugins.txt /usr/share/jenkins/plugins.txt
