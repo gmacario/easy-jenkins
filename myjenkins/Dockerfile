@@ -21,6 +21,11 @@ RUN apt-get update -qq && apt-get install -qqy \
     dos2unix \
     groovy2
 
+# Install gosu
+RUN curl -o /usr/local/bin/gosu -fsSL \
+    "https://github.com/tianon/gosu/releases/download/1.7/gosu-$(dpkg --print-architecture)" && \
+    chmod +x /usr/local/bin/gosu
+
 # Install Docker
 RUN wget -qO- https://get.docker.com/ | sh
 
