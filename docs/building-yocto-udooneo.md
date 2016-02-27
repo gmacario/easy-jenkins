@@ -49,17 +49,24 @@ Inside the project configuration page, fill-in the following information:
 id
 pwd
 ls -la
-printenv
+printenv | sort
+cat /etc/passwd
+
+# Workaround in case USER is undefined
+[ "$USER" = "" ] && export USER=jenkins
 
 # Configure git
 git config --global user.name "easy-jenkins"
-git config --global user.email "$(whoami)@$(hostname)"
+git config --global user.email "$USER@$(hostname)"
 
 # Prepare Yocto build
 source init.sh
 
 # Prevent error "Do not use Bitbake as root"
 [ $(whoami) = "root" ] && touch conf/sanity.conf
+
+# Workaround for "DISTRO 'poky-ivi-systemd' not found."
+export DISTRO="poky"
 
 # Workaround for https://github.com/gmacario/easy-jenkins/issues/57
 bitbake m4-firmware
@@ -78,11 +85,13 @@ then click **Save**
 
 ### Build project `build_yocto_udooneo`
 
-<!-- (2016-02-25 09:49 CET): Tested on ies-genbld01-vm -->
+<!-- (2016-02-27 21:12 CET): Tested on dc7600-gm -->
 
 Browse `${JENKINS_URL}/job/build_yocto_udooneo`, then click **Build Now**
 
 You may watch the build logs at `${JENKINS_URL}/job/build_yocto_udooneo/lastBuild/console`
+
+<!-- TODO: Update when build successful -->
 
 ```
 Started by user anonymous
