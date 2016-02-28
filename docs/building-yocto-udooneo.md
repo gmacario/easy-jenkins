@@ -85,7 +85,7 @@ then click **Save**
 
 ### Build project `build_yocto_udooneo`
 
-<!-- (2016-02-27 21:12 CET): Tested on dc7600-gm -->
+<!-- (2016-02-28 11:18 CET): Tested on dc7600-gm -->
 
 Browse `${JENKINS_URL}/job/build_yocto_udooneo`, then click **Build Now**
 
