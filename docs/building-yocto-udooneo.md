@@ -85,7 +85,7 @@ then click **Save**
 
 ### Build project `build_yocto_udooneo`
 
-<!-- (2016-02-28 11:18 CET): Tested on dc7600-gm -->
+<!-- (2016-02-28 12:17 CET): Tested on dc7600-gm -->
 
 Browse `${JENKINS_URL}/job/build_yocto_udooneo`, then click **Build Now**
 
@@ -96,31 +96,25 @@ You may watch the build logs at `${JENKINS_URL}/job/build_yocto_udooneo/lastBuil
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
-Building in workspace /var/jenkins_home/workspace/build_yocto_udooneo
-Cloning the remote Git repository
-Cloning repository https://github.com/gmacario/genivi-demo-platform
- > git init /var/jenkins_home/workspace/build_yocto_udooneo # timeout=10
+Building in workspace /var/jenkins_home/jobs/build_yocto_udooneo/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/gmacario/genivi-demo-platform # timeout=10
 Fetching upstream changes from https://github.com/gmacario/genivi-demo-platform
  > git --version # timeout=10
- > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/genivi-demo-platform +refs/heads/*:refs/remotes/origin/*
- > git config remote.origin.url https://github.com/gmacario/genivi-demo-platform # timeout=10
- > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
- > git config remote.origin.url https://github.com/gmacario/genivi-demo-platform # timeout=10
-Fetching upstream changes from https://github.com/gmacario/genivi-demo-platform
  > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/genivi-demo-platform +refs/heads/*:refs/remotes/origin/*
  > git rev-parse refs/remotes/origin/dev-udooneo-jethro^{commit} # timeout=10
  > git rev-parse refs/remotes/origin/origin/dev-udooneo-jethro^{commit} # timeout=10
 Checking out Revision c83152c2cc1e87d0f6adfcc45358331635f34618 (refs/remotes/origin/dev-udooneo-jethro)
  > git config core.sparsecheckout # timeout=10
  > git checkout -f c83152c2cc1e87d0f6adfcc45358331635f34618
-First time build. Skipping changelog.
-Pull Docker image gmacario/build-yocto from repository ...
-$ docker pull gmacario/build-yocto
+ > git rev-list c83152c2cc1e87d0f6adfcc45358331635f34618 # timeout=10
+Docker container fd9a49092f0a4364f1863e3d9dece31e07934fc3cb35fa4c66dcda6b916d0b2b started to host the build
 ...
 TODO
 ```
 
-Result: SUCCESS
+Result: TODO
 
 ## Testing the image on UDOO Neo
 
