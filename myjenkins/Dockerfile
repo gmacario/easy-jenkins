@@ -21,14 +21,19 @@ RUN apt-get update -qq && apt-get install -qqy \
     dos2unix \
     groovy2
 
+# Install gosu
+RUN curl -o /usr/local/bin/gosu -fsSL \
+    "https://github.com/tianon/gosu/releases/download/1.7/gosu-$(dpkg --print-architecture)" && \
+    chmod +x /usr/local/bin/gosu
+
 # Install Docker
 RUN wget -qO- https://get.docker.com/ | sh
-
 RUN usermod -aG docker jenkins
 
 # Install docker-compose
-RUN curl -L https://github.com/docker/compose/releases/download/1.6.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-RUN chmod +x /usr/local/bin/docker-compose
+RUN curl -o /usr/local/bin/docker-compose -fsSL \
+    "https://github.com/docker/compose/releases/download/1.6.2/docker-compose-$(uname -s)-$(uname -m)" && \
+    chmod +x /usr/local/bin/docker-compose
 
 # Install Jenkins plugins from the list at plugins.txt
 COPY plugins.txt /usr/share/jenkins/plugins.txt
@@ -42,6 +47,7 @@ COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
 RUN touch /var/run/docker.sock
 
+USER root
 ENTRYPOINT ["/bin/bash", "-c", "/tmp/start.sh"]
 
 # EOF

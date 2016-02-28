@@ -2,6 +2,6 @@
 
 sleep 5
 service docker start
-/usr/local/bin/jenkins.sh
+gosu jenkins /usr/local/bin/jenkins.sh
 
 # EOF
