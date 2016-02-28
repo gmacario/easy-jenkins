@@ -110,6 +110,78 @@ Checking out Revision c83152c2cc1e87d0f6adfcc45358331635f34618 (refs/remotes/ori
  > git checkout -f c83152c2cc1e87d0f6adfcc45358331635f34618
  > git rev-list c83152c2cc1e87d0f6adfcc45358331635f34618 # timeout=10
 Docker container fd9a49092f0a4364f1863e3d9dece31e07934fc3cb35fa4c66dcda6b916d0b2b started to host the build
+$ docker exec --tty fd9a49092f0a4364f1863e3d9dece31e07934fc3cb35fa4c66dcda6b916d0b2b env
+[workspace] $ docker exec --tty --user 1000:1000 fd9a49092f0a4364f1863e3d9dece31e07934fc3cb35fa4c66dcda6b916d0b2b env 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
+ b="${f%.override}";
+ echo "$f" >> "$COPY_REFERENCE_FILE_LOG";
+ rel="${b:23}";
+ dir=$(dirname "${b}");
+ echo " $f -> $rel" >> "$COPY_REFERENCE_FILE_LOG";
+ if [[ ! -e /var/jenkins_home/${rel} || $f = *.override ]]; then
+ echo "copy $rel to JENKINS_HOME" >> "$COPY_REFERENCE_FILE_LOG";
+ mkdir -p "/var/jenkins_home/${dir:23}";
+ cp -r "${f}" "/var/jenkins_home/${rel}";
+ [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
+ fi
+}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#4 BUILD_ID=4 BUILD_NUMBER=4 BUILD_TAG=jenkins-build_yocto_udooneo-4 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=0 GIT_BRANCH=origin/dev-udooneo-jethro GIT_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618 GIT_PREVIOUS_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618 GIT_URL=https://github.com/gmacario/genivi-demo-platform HOME=/var/jenkins_home HOSTNAME=f87bbb74291e HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=1705e5c9585393f8 JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u72 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=1705e5c9585393f8 JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.1 JOB_NAME=build_yocto_udooneo LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/jobs/build_yocto_udooneo/workspace /bin/bash -xe /tmp/hudson8595198191372537430.sh
++ id
+uid=1000 gid=1000
++ pwd
+/var/jenkins_home/jobs/build_yocto_udooneo/workspace
++ ls -la
+total 64
+drwxr-xr-x 12 1000 1000 4096 Feb 28 11:15 .
+drwxr-xr-x  4 1000 1000 4096 Feb 28 11:17 ..
+drwxr-xr-x  8 1000 1000 4096 Feb 28 11:17 .git
+-rw-r--r--  1 1000 1000  204 Feb 28 11:15 .gitignore
+-rw-r--r--  1 1000 1000  938 Feb 28 11:15 .gitmodules
+-rw-r--r--  1 1000 1000  805 Feb 28 11:15 README.md
+drwxr-xr-x  3 1000 1000 4096 Feb 28 11:15 gdp-src-build
+-rw-r--r--  1 1000 1000  908 Feb 28 11:15 init.sh
+drwxr-xr-x  2 1000 1000 4096 Feb 28 11:15 meta-fsl-arm
+drwxr-xr-x  2 1000 1000 4096 Feb 28 11:15 meta-fsl-arm-extra
+drwxr-xr-x  2 1000 1000 4096 Feb 28 11:15 meta-fsl-demos
+drwxr-xr-x  2 1000 1000 4096 Feb 28 11:15 meta-genivi-demo
+drwxr-xr-x  2 1000 1000 4096 Feb 28 11:15 meta-openembedded
+drwxr-xr-x  2 1000 1000 4096 Feb 28 11:15 meta-qt5
+drwxr-xr-x  2 1000 1000 4096 Feb 28 11:15 meta-udoo
+drwxr-xr-x  2 1000 1000 4096 Feb 28 11:15 poky
++ printenv
+...
++ export USER=jenkins
++ USER=jenkins
++ git config --global user.name easy-jenkins
+++ hostname
++ git config --global user.email jenkins@fd9a49092f0a
++ source init.sh
+...
++ export DISTRO=poky
++ DISTRO=poky
++ bitbake m4-firmware
+Parsing recipes: 100% || Time: 00:12:22
+
+Parsing of 1598 .bb files complete (0 cached, 1598 parsed). 2122 targets, 126 skipped, 0 masked, 0 errors.
+[1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
+Build Configuration:
+BB_VERSION        = "1.28.0"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "Ubuntu-14.04"
+TARGET_SYS        = "arm-poky-linux-gnueabi"
+MACHINE           = "udooneo"
+DISTRO            = "poky"
+DISTRO_VERSION    = "2.0.1"
+TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard cortexa9"
+TARGET_FPU        = "vfp-neon"
+meta              
+meta-yocto        
+meta-yocto-bsp    = "HEAD:7fe17a2942ff03e2ec47d566fd5393f52b2eb736"
+meta-oe           = "HEAD:dc5634968b270dde250690609f0015f881db81f2"
+meta-udoo         = "HEAD:0dca517aca288909dddeb74e33c444d9b5e3afd9"
+meta-fsl-arm      = "HEAD:35b8b9bd9863de208ab60e33b55f10ee43e2619b"
+
+[1;29mNOTE[0m: [29mPreparing RunQueue[0m
+[1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
+[1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
 ...
 TODO
 ```
