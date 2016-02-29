@@ -79,7 +79,7 @@ bitbake core-image-minimal
 ```
 - Post-build Actions
     - Archive the artifacts
-      - Files to archive: `*/tmp-glibc/deploy/images/**/*.sdcard.gz`
+      - Files to archive: `*/tmp*/deploy/images/**/*.sdcard.gz`
 
 then click **Save**
 
