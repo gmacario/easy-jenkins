@@ -71,7 +71,7 @@ export DISTRO="poky"
 # Workaround for https://github.com/gmacario/easy-jenkins/issues/57
 bitbake m4-firmware
 
-bitbake core-image-minimal
+# bitbake core-image-minimal
 bitbake udoo-image-full-cmdline
 # bitbake genivi-demo-platform
 
