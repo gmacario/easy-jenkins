@@ -71,8 +71,8 @@ export DISTRO="poky"
 # Workaround for https://github.com/gmacario/easy-jenkins/issues/57
 bitbake m4-firmware
 
-bitbake core-image-minimal
-# bitbake udoo-image-full-cmdline
+# bitbake core-image-minimal
+bitbake udoo-image-full-cmdline
 # bitbake genivi-demo-platform
 
 # EOF
@@ -91,12 +91,12 @@ Browse `${JENKINS_URL}/job/build_yocto_udooneo`, then click **Build Now**
 
 You may watch the build logs at `${JENKINS_URL}/job/build_yocto_udooneo/lastBuild/console`
 
-<!-- (2016-02-29 07:00 CET) http://dc7600-gm.solarma.it:9080/job/build_yocto_udooneo/lastBuild/consoleText -->
+<!-- (2016-02-29 15:25 CET) http://mv-linux-powerhorse.solarma.it:9080/job/build_yocto_udooneo/lastBuild/consoleText -->
 
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
-Building in workspace /var/jenkins_home/jobs/build_yocto_udooneo/workspace
+Building in workspace /var/jenkins_home/workspace/build_yocto_udooneo
  > git rev-parse --is-inside-work-tree # timeout=10
 Fetching changes from the remote Git repository
  > git config remote.origin.url https://github.com/gmacario/genivi-demo-platform # timeout=10
@@ -105,13 +105,13 @@ Fetching upstream changes from https://github.com/gmacario/genivi-demo-platform
  > git -c core.askpass=true fetch --tags --progress https://github.com/gmacario/genivi-demo-platform +refs/heads/*:refs/remotes/origin/*
  > git rev-parse refs/remotes/origin/dev-udooneo-jethro^{commit} # timeout=10
  > git rev-parse refs/remotes/origin/origin/dev-udooneo-jethro^{commit} # timeout=10
-Checking out Revision c83152c2cc1e87d0f6adfcc45358331635f34618 (refs/remotes/origin/dev-udooneo-jethro)
+Checking out Revision 5d7941d796519ec4d88da900aa4aa4807efb70dd (refs/remotes/origin/dev-udooneo-jethro)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f c83152c2cc1e87d0f6adfcc45358331635f34618
- > git rev-list c83152c2cc1e87d0f6adfcc45358331635f34618 # timeout=10
-Docker container 59be779c02e693562ed4e58bd5e06241809e6dcea639a233b9044c087bc22517 started to host the build
-$ docker exec --tty 59be779c02e693562ed4e58bd5e06241809e6dcea639a233b9044c087bc22517 env
-[workspace] $ docker exec --tty --user 1000:1000 59be779c02e693562ed4e58bd5e06241809e6dcea639a233b9044c087bc22517 env 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
+ > git checkout -f 5d7941d796519ec4d88da900aa4aa4807efb70dd
+ > git rev-list 5d7941d796519ec4d88da900aa4aa4807efb70dd # timeout=10
+Docker container a8f65c4e68297b4c267791dca3df4d2ad3d5315aa2e3463f1519d6280bff3e51 started to host the build
+$ docker exec --tty a8f65c4e68297b4c267791dca3df4d2ad3d5315aa2e3463f1519d6280bff3e51 env
+[build_yocto_udooneo] $ docker exec --tty --user 1000:1000 a8f65c4e68297b4c267791dca3df4d2ad3d5315aa2e3463f1519d6280bff3e51 env 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
  b="${f%.override}";
  echo "$f" >> "$COPY_REFERENCE_FILE_LOG";
  rel="${b:23}";
@@ -123,29 +123,29 @@ $ docker exec --tty 59be779c02e693562ed4e58bd5e06241809e6dcea639a233b9044c087bc2
  cp -r "${f}" "/var/jenkins_home/${rel}";
  [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
  fi
-}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#7 BUILD_ID=7 BUILD_NUMBER=7 BUILD_TAG=jenkins-build_yocto_udooneo-7 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=1 GIT_BRANCH=origin/dev-udooneo-jethro GIT_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618 GIT_PREVIOUS_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618 GIT_PREVIOUS_SUCCESSFUL_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618 GIT_URL=https://github.com/gmacario/genivi-demo-platform HOME=/var/jenkins_home HOSTNAME=f87bbb74291e HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=1705e5c9585393f8 JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u72 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=1705e5c9585393f8 JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.1 JOB_NAME=build_yocto_udooneo LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/jobs/build_yocto_udooneo/workspace /bin/bash -xe /tmp/hudson2834737698374619086.sh
+}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#9 BUILD_ID=9 BUILD_NUMBER=9 BUILD_TAG=jenkins-build_yocto_udooneo-9 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=1 GIT_BRANCH=origin/dev-udooneo-jethro GIT_COMMIT=5d7941d796519ec4d88da900aa4aa4807efb70dd GIT_PREVIOUS_COMMIT=5d7941d796519ec4d88da900aa4aa4807efb70dd GIT_PREVIOUS_SUCCESSFUL_COMMIT=5d7941d796519ec4d88da900aa4aa4807efb70dd GIT_URL=https://github.com/gmacario/genivi-demo-platform HOME=/var/jenkins_home HOSTNAME=1dddbffd6d7e HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=2c5d611b8254ec31 JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u72 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=2c5d611b8254ec31 JENKINS_SHA=e72e06e64d23eefb13090459f517b0697aad7be0 JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.2 JOB_NAME=build_yocto_udooneo LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/workspace/build_yocto_udooneo /bin/bash -xe /tmp/hudson5501682872211725896.sh
 + id
 uid=1000 gid=1000
 + pwd
-/var/jenkins_home/jobs/build_yocto_udooneo/workspace
+/var/jenkins_home/workspace/build_yocto_udooneo
 + ls -la
 total 64
-drwxr-xr-x 12 1000 1000 4096 Feb 28 11:15 .
-drwxr-xr-x  4 1000 1000 4096 Feb 29 00:23 ..
-drwxr-xr-x  9 1000 1000 4096 Feb 29 00:23 .git
--rw-r--r--  1 1000 1000  204 Feb 28 11:15 .gitignore
--rw-r--r--  1 1000 1000  938 Feb 28 11:15 .gitmodules
--rw-r--r--  1 1000 1000  805 Feb 28 11:15 README.md
-drwxr-xr-x  7 1000 1000 4096 Feb 28 11:34 gdp-src-build
--rw-r--r--  1 1000 1000  908 Feb 28 11:15 init.sh
-drwxr-xr-x 19 1000 1000 4096 Feb 28 11:18 meta-fsl-arm
-drwxr-xr-x  7 1000 1000 4096 Feb 28 11:18 meta-fsl-arm-extra
-drwxr-xr-x  5 1000 1000 4096 Feb 28 11:18 meta-fsl-demos
-drwxr-xr-x 16 1000 1000 4096 Feb 28 11:18 meta-genivi-demo
-drwxr-xr-x 17 1000 1000 4096 Feb 28 11:19 meta-openembedded
-drwxr-xr-x  7 1000 1000 4096 Feb 28 11:19 meta-qt5
-drwxr-xr-x 10 1000 1000 4096 Feb 28 11:19 meta-udoo
-drwxr-xr-x 10 1000 1000 4096 Feb 28 11:21 poky
+drwxr-xr-x 12 1000 1000 4096 Feb 29 08:59 .
+drwxr-xr-x  7 1000 1000 4096 Feb 29 10:10 ..
+drwxr-xr-x  9 1000 1000 4096 Feb 29 14:00 .git
+-rw-r--r--  1 1000 1000  204 Feb 29 08:59 .gitignore
+-rw-r--r--  1 1000 1000  938 Feb 29 08:59 .gitmodules
+-rw-r--r--  1 1000 1000  805 Feb 29 08:59 README.md
+drwxr-xr-x  7 1000 1000 4096 Feb 29 09:02 gdp-src-build
+-rw-r--r--  1 1000 1000  908 Feb 29 08:59 init.sh
+drwxr-xr-x 19 1000 1000 4096 Feb 29 10:55 meta-fsl-arm
+drwxr-xr-x  7 1000 1000 4096 Feb 29 08:59 meta-fsl-arm-extra
+drwxr-xr-x  5 1000 1000 4096 Feb 29 08:59 meta-fsl-demos
+drwxr-xr-x 15 1000 1000 4096 Feb 29 10:55 meta-genivi-demo
+drwxr-xr-x 17 1000 1000 4096 Feb 29 09:00 meta-openembedded
+drwxr-xr-x  9 1000 1000 4096 Feb 29 10:55 meta-qt5
+drwxr-xr-x 10 1000 1000 4096 Feb 29 09:00 meta-udoo
+drwxr-xr-x 10 1000 1000 4096 Feb 29 09:01 poky
 + printenv
 + sort
  [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
@@ -162,44 +162,44 @@ drwxr-xr-x 10 1000 1000 4096 Feb 28 11:21 poky
 BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
 BUILD_CAUSE=MANUALTRIGGER
 BUILD_CAUSE_MANUALTRIGGER=true
-BUILD_DISPLAY_NAME=#7
-BUILD_ID=7
-BUILD_NUMBER=7
-BUILD_TAG=jenkins-build_yocto_udooneo-7
+BUILD_DISPLAY_NAME=#9
+BUILD_ID=9
+BUILD_NUMBER=9
+BUILD_TAG=jenkins-build_yocto_udooneo-9
 CA_CERTIFICATES_JAVA_VERSION=20140324
 CLASSPATH=
 COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log
 EXECUTOR_NUMBER=1
 GIT_BRANCH=origin/dev-udooneo-jethro
-GIT_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618
-GIT_PREVIOUS_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618
-GIT_PREVIOUS_SUCCESSFUL_COMMIT=c83152c2cc1e87d0f6adfcc45358331635f34618
+GIT_COMMIT=5d7941d796519ec4d88da900aa4aa4807efb70dd
+GIT_PREVIOUS_COMMIT=5d7941d796519ec4d88da900aa4aa4807efb70dd
+GIT_PREVIOUS_SUCCESSFUL_COMMIT=5d7941d796519ec4d88da900aa4aa4807efb70dd
 GIT_URL=https://github.com/gmacario/genivi-demo-platform
 HOME=/var/jenkins_home
-HOSTNAME=f87bbb74291e
+HOSTNAME=1dddbffd6d7e
 HUDSON_HOME=/var/jenkins_home
-HUDSON_SERVER_COOKIE=1705e5c9585393f8
+HUDSON_SERVER_COOKIE=2c5d611b8254ec31
 JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1
 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 JAVA_VERSION=8u72
 JENKINS_HOME=/var/jenkins_home
-JENKINS_SERVER_COOKIE=1705e5c9585393f8
-JENKINS_SHA=6a0213256670a00610a3e09203850a0fcf1a688e
+JENKINS_SERVER_COOKIE=2c5d611b8254ec31
+JENKINS_SHA=e72e06e64d23eefb13090459f517b0697aad7be0
 JENKINS_SLAVE_AGENT_PORT=50000
 JENKINS_UC=https://updates.jenkins-ci.org
-JENKINS_VERSION=1.642.1
+JENKINS_VERSION=1.642.2
 JOB_NAME=build_yocto_udooneo
 LANG=C.UTF-8
 NODE_LABELS=master
 NODE_NAME=master
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-PWD=/var/jenkins_home/jobs/build_yocto_udooneo/workspace
+PWD=/var/jenkins_home/workspace/build_yocto_udooneo
 ROOT_BUILD_CAUSE=MANUALTRIGGER
 ROOT_BUILD_CAUSE_MANUALTRIGGER=true
 SHLVL=3
 TERM=xterm
 TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888
-WORKSPACE=/var/jenkins_home/jobs/build_yocto_udooneo/workspace
+WORKSPACE=/var/jenkins_home/workspace/build_yocto_udooneo
 _=/usr/bin/printenv
 }
 + cat /etc/passwd
@@ -229,11 +229,11 @@ build:x:30000:30000::/home/build:
 + USER=jenkins
 + git config --global user.name easy-jenkins
 ++ hostname
-+ git config --global user.email jenkins@59be779c02e6
++ git config --global user.email jenkins@a8f65c4e6829
 + source init.sh
-+++ basename /tmp/hudson2834737698374619086.sh
-++ cmd=hudson2834737698374619086.sh
-++ '[' hudson2834737698374619086.sh = init.sh ']'
++++ basename /tmp/hudson5501682872211725896.sh
+++ cmd=hudson5501682872211725896.sh
+++ '[' hudson5501682872211725896.sh = init.sh ']'
 ++ git submodule init
 ++ git submodule sync
 Synchronizing submodule url for 'meta-fsl-arm'
@@ -252,12 +252,12 @@ Synchronizing submodule url for 'poky'
 +++ '[' -n '' ']'
 +++ THIS_SCRIPT=poky/oe-init-build-env
 +++ '[' -z '' ']'
-+++ '[' /tmp/hudson2834737698374619086.sh = poky/oe-init-build-env ']'
++++ '[' /tmp/hudson5501682872211725896.sh = poky/oe-init-build-env ']'
 ++++ readlink -f poky
-+++ OEROOT=/var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky
++++ OEROOT=/var/jenkins_home/workspace/build_yocto_udooneo/poky
 +++ export OEROOT
-+++ . /var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/scripts/oe-buildenv-internal
-++++ '[' -z /var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky ']'
++++ . /var/jenkins_home/workspace/build_yocto_udooneo/poky/scripts/oe-buildenv-internal
+++++ '[' -z /var/jenkins_home/workspace/build_yocto_udooneo/poky ']'
 ++++ '[' -z '' -a '!' -z '' ']'
 +++++ /usr/bin/env python --version
 +++++ grep 'Python 3'
@@ -274,29 +274,29 @@ Synchronizing submodule url for 'poky'
 +++++ sed -re 's|/+$||'
 ++++ BDIR=gdp-src-build
 +++++ readlink -f gdp-src-build
-++++ BDIR=/var/jenkins_home/jobs/build_yocto_udooneo/workspace/gdp-src-build
-++++ '[' -z /var/jenkins_home/jobs/build_yocto_udooneo/workspace/gdp-src-build ']'
+++++ BDIR=/var/jenkins_home/workspace/build_yocto_udooneo/gdp-src-build
+++++ '[' -z /var/jenkins_home/workspace/build_yocto_udooneo/gdp-src-build ']'
 ++++ '[' x '!=' x ']'
-++++ expr /var/jenkins_home/jobs/build_yocto_udooneo/workspace/gdp-src-build : '/.*'
-++++ BUILDDIR=/var/jenkins_home/jobs/build_yocto_udooneo/workspace/gdp-src-build
+++++ expr /var/jenkins_home/workspace/build_yocto_udooneo/gdp-src-build : '/.*'
+++++ BUILDDIR=/var/jenkins_home/workspace/build_yocto_udooneo/gdp-src-build
 ++++ unset BDIR
 ++++ '[' x = x ']'
-++++ BITBAKEDIR=/var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/bitbake/
-+++++ readlink -f /var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/bitbake/
-++++ BITBAKEDIR=/var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/bitbake
-+++++ readlink -f /var/jenkins_home/jobs/build_yocto_udooneo/workspace/gdp-src-build
-++++ BUILDDIR=/var/jenkins_home/jobs/build_yocto_udooneo/workspace/gdp-src-build
-++++ test -d /var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/bitbake
-++++ NEWPATHS=/var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/scripts:/var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/bitbake/bin:
+++++ BITBAKEDIR=/var/jenkins_home/workspace/build_yocto_udooneo/poky/bitbake/
++++++ readlink -f /var/jenkins_home/workspace/build_yocto_udooneo/poky/bitbake/
+++++ BITBAKEDIR=/var/jenkins_home/workspace/build_yocto_udooneo/poky/bitbake
++++++ readlink -f /var/jenkins_home/workspace/build_yocto_udooneo/gdp-src-build
+++++ BUILDDIR=/var/jenkins_home/workspace/build_yocto_udooneo/gdp-src-build
+++++ test -d /var/jenkins_home/workspace/build_yocto_udooneo/poky/bitbake
+++++ NEWPATHS=/var/jenkins_home/workspace/build_yocto_udooneo/poky/scripts:/var/jenkins_home/workspace/build_yocto_udooneo/poky/bitbake/bin:
 +++++ echo /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-+++++ sed -e 's|:/var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/scripts:/var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/bitbake/bin:|:|g' -e 's|^/var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/scripts:/var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/bitbake/bin:||'
-++++ PATH=/var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/scripts:/var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++++ sed -e 's|:/var/jenkins_home/workspace/build_yocto_udooneo/poky/scripts:/var/jenkins_home/workspace/build_yocto_udooneo/poky/bitbake/bin:|:|g' -e 's|^/var/jenkins_home/workspace/build_yocto_udooneo/poky/scripts:/var/jenkins_home/workspace/build_yocto_udooneo/poky/bitbake/bin:||'
+++++ PATH=/var/jenkins_home/workspace/build_yocto_udooneo/poky/scripts:/var/jenkins_home/workspace/build_yocto_udooneo/poky/bitbake/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ++++ unset BITBAKEDIR NEWPATHS
 ++++ export BUILDDIR
 ++++ export PATH
 ++++ export 'BB_ENV_EXTRAWHITE=MACHINE DISTRO TCMODE TCLIBC HTTP_PROXY http_proxy HTTPS_PROXY https_proxy FTP_PROXY ftp_proxy FTPS_PROXY ftps_proxy ALL_PROXY all_proxy NO_PROXY no_proxy SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE BB_NUMBER_THREADS BB_NO_NETWORK PARALLEL_MAKE GIT_PROXY_COMMAND SOCKS5_PASSWD SOCKS5_USER SCREENDIR STAMPS_DIR'
 ++++ BB_ENV_EXTRAWHITE='MACHINE DISTRO TCMODE TCLIBC HTTP_PROXY http_proxy HTTPS_PROXY https_proxy FTP_PROXY ftp_proxy FTPS_PROXY ftps_proxy ALL_PROXY all_proxy NO_PROXY no_proxy SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE BB_NUMBER_THREADS BB_NO_NETWORK PARALLEL_MAKE GIT_PROXY_COMMAND SOCKS5_PASSWD SOCKS5_USER SCREENDIR STAMPS_DIR'
-+++ /var/jenkins_home/jobs/build_yocto_udooneo/workspace/poky/scripts/oe-setup-builddir
++++ /var/jenkins_home/workspace/build_yocto_udooneo/poky/scripts/oe-setup-builddir
 
 ### Shell environment set up for builds. ###
 
@@ -310,8 +310,8 @@ Common targets are:
     meta-ide-support
 
 You can also run generated qemu images with a command like 'runqemu qemux86'
-+++ '[' -n /var/jenkins_home/jobs/build_yocto_udooneo/workspace/gdp-src-build ']'
-+++ cd /var/jenkins_home/jobs/build_yocto_udooneo/workspace/gdp-src-build
++++ '[' -n /var/jenkins_home/workspace/build_yocto_udooneo/gdp-src-build ']'
++++ cd /var/jenkins_home/workspace/build_yocto_udooneo/gdp-src-build
 +++ unset OEROOT
 +++ unset BBPATH
 +++ unset THIS_SCRIPT
@@ -326,7 +326,7 @@ Now run:  bitbake genivi-demo-platform
 ++ whoami
 whoami: cannot find name for user ID 1000
 + '[' = root ']'
-/tmp/hudson2834737698374619086.sh: line 21: [: =: unary operator expected
+/tmp/hudson5501682872211725896.sh: line 21: [: =: unary operator expected
 + export DISTRO=poky
 + DISTRO=poky
 + bitbake m4-firmware
@@ -334,7 +334,7 @@ Loading cache:   0% || ETA:  --:--:--
 ...
 Loading cache: 100% || ETA:  00:00:00
 
-Loaded 2123 entries from dependency cache.
+Loaded 2370 entries from dependency cache.
 [1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
 
 Build Configuration:
@@ -349,10 +349,13 @@ TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard cortexa9"
 TARGET_FPU        = "vfp-neon"
 meta              
 meta-yocto        
-meta-yocto-bsp    = "HEAD:7fe17a2942ff03e2ec47d566fd5393f52b2eb736"
-meta-oe           = "HEAD:dc5634968b270dde250690609f0015f881db81f2"
-meta-udoo         = "HEAD:0dca517aca288909dddeb74e33c444d9b5e3afd9"
-meta-fsl-arm      = "HEAD:35b8b9bd9863de208ab60e33b55f10ee43e2619b"
+meta-yocto-bsp    = "HEAD:b1f23d1254682866236bfaeb843c0d8aa332efc2"
+meta-networking   
+meta-oe           
+meta-python       = "HEAD:dc5634968b270dde250690609f0015f881db81f2"
+meta-udoo         = "HEAD:93ce58963bb8155c0369c3797d695c08f854d30c"
+meta-fsl-arm      = "HEAD:8d22b44716fa624ff87383c36d222d9e28d0b267"
+meta-fsl-demos    = "HEAD:2231e946e7a94d096394f2b2477e8184c9bbde7b"
 
 [1;29mNOTE[0m: [29mPreparing RunQueue[0m
 [1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
@@ -360,10 +363,11 @@ meta-fsl-arm      = "HEAD:35b8b9bd9863de208ab60e33b55f10ee43e2619b"
 [1;29mNOTE[0m: [29mTasks Summary: Attempted 386 tasks of which 386 didn't need to be rerun and all succeeded.[0m
 + bitbake core-image-minimal
 Loading cache:   0% || ETA:  --:--:--
+Loading cache:   1% || ETA:  00:00:01
 ...
 Loading cache: 100% || ETA:  00:00:00
 
-Loaded 2123 entries from dependency cache.
+Loaded 2370 entries from dependency cache.
 [1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
 
 Build Configuration:
@@ -378,15 +382,52 @@ TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard cortexa9"
 TARGET_FPU        = "vfp-neon"
 meta              
 meta-yocto        
-meta-yocto-bsp    = "HEAD:7fe17a2942ff03e2ec47d566fd5393f52b2eb736"
-meta-oe           = "HEAD:dc5634968b270dde250690609f0015f881db81f2"
-meta-udoo         = "HEAD:0dca517aca288909dddeb74e33c444d9b5e3afd9"
-meta-fsl-arm      = "HEAD:35b8b9bd9863de208ab60e33b55f10ee43e2619b"
+meta-yocto-bsp    = "HEAD:b1f23d1254682866236bfaeb843c0d8aa332efc2"
+meta-networking   
+meta-oe           
+meta-python       = "HEAD:dc5634968b270dde250690609f0015f881db81f2"
+meta-udoo         = "HEAD:93ce58963bb8155c0369c3797d695c08f854d30c"
+meta-fsl-arm      = "HEAD:8d22b44716fa624ff87383c36d222d9e28d0b267"
+meta-fsl-demos    = "HEAD:2231e946e7a94d096394f2b2477e8184c9bbde7b"
 
 [1;29mNOTE[0m: [29mPreparing RunQueue[0m
 [1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
 [1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
 [1;29mNOTE[0m: [29mTasks Summary: Attempted 1964 tasks of which 1964 didn't need to be rerun and all succeeded.[0m
++ bitbake udoo-image-full-cmdline
+Loading cache:   0% || ETA:  --:--:--
+...
+Loading cache: 100% || ETA:  00:00:00
+
+Loaded 2370 entries from dependency cache.
+[1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
+[1;29mNOTE[0m: [29mmultiple providers are available for jpeg-native (jpeg-native, libjpeg-turbo-native)[0m
+[1;29mNOTE[0m: [29mconsider defining a PREFERRED_PROVIDER entry to match jpeg-native[0m
+
+Build Configuration:
+BB_VERSION        = "1.28.0"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "Ubuntu-14.04"
+TARGET_SYS        = "arm-poky-linux-gnueabi"
+MACHINE           = "udooneo"
+DISTRO            = "poky"
+DISTRO_VERSION    = "2.0.1"
+TUNE_FEATURES     = "arm armv7a vfp thumb neon callconvention-hard cortexa9"
+TARGET_FPU        = "vfp-neon"
+meta              
+meta-yocto        
+meta-yocto-bsp    = "HEAD:b1f23d1254682866236bfaeb843c0d8aa332efc2"
+meta-networking   
+meta-oe           
+meta-python       = "HEAD:dc5634968b270dde250690609f0015f881db81f2"
+meta-udoo         = "HEAD:93ce58963bb8155c0369c3797d695c08f854d30c"
+meta-fsl-arm      = "HEAD:8d22b44716fa624ff87383c36d222d9e28d0b267"
+meta-fsl-demos    = "HEAD:2231e946e7a94d096394f2b2477e8184c9bbde7b"
+
+[1;29mNOTE[0m: [29mPreparing RunQueue[0m
+[1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
+[1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
+[1;29mNOTE[0m: [29mTasks Summary: Attempted 4325 tasks of which 4325 didn't need to be rerun and all succeeded.[0m
 Stopping Docker container after build completion
 Archiving artifacts
 Notifying upstream projects of job completion
@@ -397,7 +438,9 @@ Result: SUCCESS
 
 ## Testing the image on UDOO Neo
 
-* Browse `${JENKINS_URL}/jobs/build_yocto_udooneo`, in section "Last Successful Artifacts" click on `core-image-minimal-udooneo.sdcard.gz` to download the file to a machine with a SD Card writer.
+<!-- (2016-02-29 17:17 CET) -->
+
+* Browse `${JENKINS_URL}/jobs/build_yocto_udooneo`, in section "Last Successful Artifacts" click on `udoo-image-full-cmdline-udooneo.sdcard.gz` to download the file to a machine with a SD Card writer.
 * Write the image to a blank Micro SD card
   - On MS Windows first uncompress the image, then use [Win 32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) to write the image to the Micro SD card
   - On Linux just use `$ zcat *.sdcard.gz | sudo dd of=/dev/xxx`
@@ -410,15 +453,15 @@ Please see [this blog post](http://gmacario.github.io/howto/udoo/neo/embedded/so
 After powering up your UDOO Neo the serial console should display the boot messages up to a login prompt:
 
 ```
-U-Boot SPL 2015.04 (Feb 24 2016 - 14:37:26)
+U-Boot SPL 2015.04 (Feb 29 2016 - 09:36:35)
 Setting 1024MB RAM calibration data
 port 1
 
 
-U-Boot 2015.04 (Feb 24 2016 - 14:37:26)
+U-Boot 2015.04 (Feb 29 2016 - 09:36:35)
 
 CPU:   Freescale i.MX6SX rev1.2 at 792 MHz
-CPU:   Temperature 50 C
+CPU:   Temperature 43 C
 Reset cause: POR
 Board: UDOO Neo Full
 I2C:   ready
@@ -435,34 +478,52 @@ No ethernet found.
 Normal Boot
 Hit any key to stop autoboot:
 ...
+Starting kernel ...
 
-Starting syslogd/klogd: done
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 3.14.56_1.0.x-udoo+gfeef1c3 (@b0ed5127df82) (gcc version 5.2.0 (GCC) ) #2 SMP PREEMPT Mon Feb 29 11:38:00 UTC 2016
+[    0.000000] CPU: ARMv7 Processor [412fc09a] revision 10 (ARMv7), cr=10c53c7d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine model: UDOO Neo Full
+[    0.000000] Reserved memory: reserved region for node 'm4@0x84000000': base 0x84000000, size 8 MiB
+[    0.000000] Reserved memory: reserved region for node 'm4@0xBFF00000': base 0xbff00000, size 1 MiB
+[    0.000000] cma: CMA: reserved 320 MiB at aa000000
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] PERCPU: Embedded 8 pages/cpu @bf639000 s8512 r8192 d16064 u32768
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 257792
+[    0.000000] Kernel command line: console=ttymxc0,115200 root=/dev/mmcblk0p2 rootwait rw ${mmcrootfstype} uart_from_osc clk_ignore_unused cpuidle.off=1 consoleblank=0
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Memory: 690356K/1039360K available (4890K kernel code, 331K rwdata, 5624K rodata, 256K init, 384K bss, 349004K reserved, 0K highmem)
+...
+Poky (Yocto Project Reference Distro) 2.0.1 udooneo /dev/ttymxc0
 
-OpenEmbedded nodistro.0 udooneo /dev/ttymxc0
-
-udooneo login:
+udooneo login: 
 ```
 
-Login to the target with user `root` (default password: none)
+Login with user `root` (default password: none)
 
 ```
 root@udooneo:~# cat /proc/version
-Linux version 3.14.56_1.0.x-udoo+gfeef1c3 (root@1cfc10892ef9) (gcc version 5.2.0 (GCC) ) #1 SMP PREEMPT Wed Feb 24 14:30:31 UTC 2016
-root@udooneo:~#  fdisk -l
+Linux version 3.14.56_1.0.x-udoo+gfeef1c3 (@b0ed5127df82) (gcc version 5.2.0 (GCC) ) #2 SMP PREEMPT Mon Feb 29 11:38:00 UTC 2016
+root@udooneo:~# fdisk -l
+Disk /dev/mmcblk0: 7.4 GiB, 7948206080 bytes, 15523840 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xe2dce300
 
-Disk /dev/mmcblk0: 15.7 GB, 15720251392 bytes
-4 heads, 32 sectors/track, 239872 cylinders
-Units = cylinders of 128 * 512 = 65536 bytes
-
-        Device Boot      Start         End      Blocks  Id System
-/dev/mmcblk0p1              65         192        8192   c Win95 FAT32 (LBA)
-/dev/mmcblk0p2             193         320        8192  83 Linux
+Device         Boot Start      End  Sectors  Size Id Type
+/dev/mmcblk0p1       8192    24575    16384    8M  c W95 FAT32 (LBA)
+/dev/mmcblk0p2      24576 15523839 15499264  7.4G 83 Linux
 root@udooneo:~# df -h
-Filesystem                Size      Used Available Use% Mounted on
-/dev/root                 6.7M      4.8M      1.4M  77% /
-devtmpfs                337.1M         0    337.1M   0% /dev
-tmpfs                   497.2M     84.0K    497.1M   0% /run
-tmpfs                   497.2M     56.0K    497.2M   0% /var/volatile
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.2G  306M  6.6G   5% /
+devtmpfs        338M     0  338M   0% /dev
+tmpfs           498M  152K  498M   1% /run
+tmpfs           498M  180K  498M   1% /var/volatile
 root@udooneo:~#
 ```
 
