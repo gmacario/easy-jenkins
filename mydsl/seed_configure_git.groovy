@@ -41,7 +41,7 @@ job(jobName) {
     shell "git config -l"
     shell "echo \$(whoami)"
     shell "echo \$(hostname)"
-    shell "git config --global user.name \"\$(whoami)\""
+    shell "git config --global user.name \"easy-jenkins\""
     shell "git config --global user.email \"\$(whoami)@\$(hostname)\""
   }
 }
