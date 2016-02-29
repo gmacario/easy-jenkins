@@ -331,105 +331,7 @@ whoami: cannot find name for user ID 1000
 + DISTRO=poky
 + bitbake m4-firmware
 Loading cache:   0% || ETA:  --:--:--
-Loading cache:   1% || ETA:  00:00:00
-Loading cache:   2% || ETA:  00:00:00
-Loading cache:   3% || ETA:  00:00:00
-Loading cache:   4% || ETA:  00:00:00
-Loading cache:   5% || ETA:  00:00:00
-Loading cache:   6% || ETA:  00:00:00
-Loading cache:   7% || ETA:  00:00:00
-Loading cache:   8% || ETA:  00:00:00
-Loading cache:   9% || ETA:  00:00:00
-Loading cache:  10% || ETA:  00:00:00
-Loading cache:  11% || ETA:  00:00:00
-Loading cache:  12% || ETA:  00:00:00
-Loading cache:  13% || ETA:  00:00:00
-Loading cache:  14% || ETA:  00:00:00
-Loading cache:  15% || ETA:  00:00:00
-Loading cache:  16% || ETA:  00:00:00
-Loading cache:  17% || ETA:  00:00:00
-Loading cache:  18% || ETA:  00:00:00
-Loading cache:  19% || ETA:  00:00:00
-Loading cache:  20% || ETA:  00:00:00
-Loading cache:  21% || ETA:  00:00:00
-Loading cache:  22% || ETA:  00:00:00
-Loading cache:  23% || ETA:  00:00:00
-Loading cache:  24% || ETA:  00:00:00
-Loading cache:  25% || ETA:  00:00:00
-Loading cache:  26% || ETA:  00:00:00
-Loading cache:  27% || ETA:  00:00:00
-Loading cache:  28% || ETA:  00:00:00
-Loading cache:  29% || ETA:  00:00:00
-Loading cache:  30% || ETA:  00:00:00
-Loading cache:  31% || ETA:  00:00:00
-Loading cache:  32% || ETA:  00:00:00
-Loading cache:  33% || ETA:  00:00:00
-Loading cache:  34% || ETA:  00:00:00
-Loading cache:  35% || ETA:  00:00:00
-Loading cache:  36% || ETA:  00:00:00
-Loading cache:  37% || ETA:  00:00:00
-Loading cache:  38% || ETA:  00:00:00
-Loading cache:  39% || ETA:  00:00:00
-Loading cache:  40% || ETA:  00:00:00
-Loading cache:  41% || ETA:  00:00:00
-Loading cache:  42% || ETA:  00:00:00
-Loading cache:  43% || ETA:  00:00:00
-Loading cache:  44% || ETA:  00:00:00
-Loading cache:  45% || ETA:  00:00:00
-Loading cache:  46% || ETA:  00:00:00
-Loading cache:  47% || ETA:  00:00:00
-Loading cache:  48% || ETA:  00:00:00
-Loading cache:  49% || ETA:  00:00:00
-Loading cache:  50% || ETA:  00:00:00
-Loading cache:  51% || ETA:  00:00:00
-Loading cache:  52% || ETA:  00:00:00
-Loading cache:  53% || ETA:  00:00:00
-Loading cache:  54% || ETA:  00:00:00
-Loading cache:  55% || ETA:  00:00:00
-Loading cache:  56% || ETA:  00:00:00
-Loading cache:  57% || ETA:  00:00:00
-Loading cache:  58% || ETA:  00:00:00
-Loading cache:  59% || ETA:  00:00:00
-Loading cache:  60% || ETA:  00:00:00
-Loading cache:  61% || ETA:  00:00:00
-Loading cache:  62% || ETA:  00:00:00
-Loading cache:  63% || ETA:  00:00:00
-Loading cache:  64% || ETA:  00:00:00
-Loading cache:  65% || ETA:  00:00:00
-Loading cache:  66% || ETA:  00:00:00
-Loading cache:  67% || ETA:  00:00:00
-Loading cache:  68% || ETA:  00:00:00
-Loading cache:  69% || ETA:  00:00:00
-Loading cache:  70% || ETA:  00:00:00
-Loading cache:  71% || ETA:  00:00:00
-Loading cache:  72% || ETA:  00:00:00
-Loading cache:  73% || ETA:  00:00:00
-Loading cache:  74% || ETA:  00:00:00
-Loading cache:  75% || ETA:  00:00:00
-Loading cache:  76% || ETA:  00:00:00
-Loading cache:  77% || ETA:  00:00:00
-Loading cache:  78% || ETA:  00:00:00
-Loading cache:  79% || ETA:  00:00:00
-Loading cache:  80% || ETA:  00:00:00
-Loading cache:  81% || ETA:  00:00:00
-Loading cache:  82% || ETA:  00:00:00
-Loading cache:  83% || ETA:  00:00:00
-Loading cache:  84% || ETA:  00:00:00
-Loading cache:  85% || ETA:  00:00:00
-Loading cache:  86% || ETA:  00:00:00
-Loading cache:  87% || ETA:  00:00:00
-Loading cache:  88% || ETA:  00:00:00
-Loading cache:  89% || ETA:  00:00:00
-Loading cache:  90% || ETA:  00:00:00
-Loading cache:  91% || ETA:  00:00:00
-Loading cache:  92% || ETA:  00:00:00
-Loading cache:  93% || ETA:  00:00:00
-Loading cache:  94% || ETA:  00:00:00
-Loading cache:  95% || ETA:  00:00:00
-Loading cache:  96% || ETA:  00:00:00
-Loading cache:  97% || ETA:  00:00:00
-Loading cache:  98% || ETA:  00:00:00
-Loading cache:  99% || ETA:  00:00:00
+...
 Loading cache: 100% || ETA:  00:00:00
 
 Loaded 2370 entries from dependency cache.
@@ -462,104 +364,7 @@ meta-fsl-demos    = "HEAD:2231e946e7a94d096394f2b2477e8184c9bbde7b"
 + bitbake core-image-minimal
 Loading cache:   0% || ETA:  --:--:--
 Loading cache:   1% || ETA:  00:00:01
-Loading cache:   2% || ETA:  00:00:00
-Loading cache:   3% || ETA:  00:00:00
-Loading cache:   4% || ETA:  00:00:00
-Loading cache:   5% || ETA:  00:00:00
-Loading cache:   6% || ETA:  00:00:00
-Loading cache:   7% || ETA:  00:00:00
-Loading cache:   8% || ETA:  00:00:00
-Loading cache:   9% || ETA:  00:00:00
-Loading cache:  10% || ETA:  00:00:00
-Loading cache:  11% || ETA:  00:00:00
-Loading cache:  12% || ETA:  00:00:00
-Loading cache:  13% || ETA:  00:00:00
-Loading cache:  14% || ETA:  00:00:00
-Loading cache:  15% || ETA:  00:00:00
-Loading cache:  16% || ETA:  00:00:00
-Loading cache:  17% || ETA:  00:00:00
-Loading cache:  18% || ETA:  00:00:00
-Loading cache:  19% || ETA:  00:00:00
-Loading cache:  20% || ETA:  00:00:00
-Loading cache:  21% || ETA:  00:00:00
-Loading cache:  22% || ETA:  00:00:00
-Loading cache:  23% || ETA:  00:00:00
-Loading cache:  24% || ETA:  00:00:00
-Loading cache:  25% || ETA:  00:00:00
-Loading cache:  26% || ETA:  00:00:00
-Loading cache:  27% || ETA:  00:00:00
-Loading cache:  28% || ETA:  00:00:00
-Loading cache:  29% || ETA:  00:00:00
-Loading cache:  30% || ETA:  00:00:00
-Loading cache:  31% || ETA:  00:00:00
-Loading cache:  32% || ETA:  00:00:00
-Loading cache:  33% || ETA:  00:00:00
-Loading cache:  34% || ETA:  00:00:00
-Loading cache:  35% || ETA:  00:00:00
-Loading cache:  36% || ETA:  00:00:00
-Loading cache:  37% || ETA:  00:00:00
-Loading cache:  38% || ETA:  00:00:00
-Loading cache:  39% || ETA:  00:00:00
-Loading cache:  40% || ETA:  00:00:00
-Loading cache:  41% || ETA:  00:00:00
-Loading cache:  42% || ETA:  00:00:00
-Loading cache:  43% || ETA:  00:00:00
-Loading cache:  44% || ETA:  00:00:00
-Loading cache:  45% || ETA:  00:00:00
-Loading cache:  46% || ETA:  00:00:00
-Loading cache:  47% || ETA:  00:00:00
-Loading cache:  48% || ETA:  00:00:00
-Loading cache:  49% || ETA:  00:00:00
-Loading cache:  50% || ETA:  00:00:00
-Loading cache:  51% || ETA:  00:00:00
-Loading cache:  52% || ETA:  00:00:00
-Loading cache:  53% || ETA:  00:00:00
-Loading cache:  54% || ETA:  00:00:00
-Loading cache:  55% || ETA:  00:00:00
-Loading cache:  56% || ETA:  00:00:00
-Loading cache:  57% || ETA:  00:00:00
-Loading cache:  58% || ETA:  00:00:00
-Loading cache:  59% || ETA:  00:00:00
-Loading cache:  60% || ETA:  00:00:00
-Loading cache:  61% || ETA:  00:00:00
-Loading cache:  62% || ETA:  00:00:00
-Loading cache:  63% || ETA:  00:00:00
-Loading cache:  64% || ETA:  00:00:00
-Loading cache:  65% || ETA:  00:00:00
-Loading cache:  66% || ETA:  00:00:00
-Loading cache:  67% || ETA:  00:00:00
-Loading cache:  68% || ETA:  00:00:00
-Loading cache:  69% || ETA:  00:00:00
-Loading cache:  70% || ETA:  00:00:00
-Loading cache:  71% || ETA:  00:00:00
-Loading cache:  72% || ETA:  00:00:00
-Loading cache:  73% || ETA:  00:00:00
-Loading cache:  74% || ETA:  00:00:00
-Loading cache:  75% || ETA:  00:00:00
-Loading cache:  76% || ETA:  00:00:00
-Loading cache:  77% || ETA:  00:00:00
-Loading cache:  78% || ETA:  00:00:00
-Loading cache:  79% || ETA:  00:00:00
-Loading cache:  80% || ETA:  00:00:00
-Loading cache:  81% || ETA:  00:00:00
-Loading cache:  82% || ETA:  00:00:00
-Loading cache:  83% || ETA:  00:00:00
-Loading cache:  84% || ETA:  00:00:00
-Loading cache:  85% || ETA:  00:00:00
-Loading cache:  86% || ETA:  00:00:00
-Loading cache:  87% || ETA:  00:00:00
-Loading cache:  88% || ETA:  00:00:00
-Loading cache:  89% || ETA:  00:00:00
-Loading cache:  90% || ETA:  00:00:00
-Loading cache:  91% || ETA:  00:00:00
-Loading cache:  92% || ETA:  00:00:00
-Loading cache:  93% || ETA:  00:00:00
-Loading cache:  94% || ETA:  00:00:00
-Loading cache:  95% || ETA:  00:00:00
-Loading cache:  96% || ETA:  00:00:00
-Loading cache:  97% || ETA:  00:00:00
-Loading cache:  98% || ETA:  00:00:00
-Loading cache:  99% || ETA:  00:00:00
+...
 Loading cache: 100% || ETA:  00:00:00
 
 Loaded 2370 entries from dependency cache.
@@ -591,105 +396,7 @@ meta-fsl-demos    = "HEAD:2231e946e7a94d096394f2b2477e8184c9bbde7b"
 [1;29mNOTE[0m: [29mTasks Summary: Attempted 1964 tasks of which 1964 didn't need to be rerun and all succeeded.[0m
 + bitbake udoo-image-full-cmdline
 Loading cache:   0% || ETA:  --:--:--
-Loading cache:   1% || ETA:  00:00:01
-Loading cache:   2% || ETA:  00:00:00
-Loading cache:   3% || ETA:  00:00:00
-Loading cache:   4% || ETA:  00:00:00
-Loading cache:   5% || ETA:  00:00:00
-Loading cache:   6% || ETA:  00:00:00
-Loading cache:   7% || ETA:  00:00:00
-Loading cache:   8% || ETA:  00:00:00
-Loading cache:   9% || ETA:  00:00:00
-Loading cache:  10% || ETA:  00:00:00
-Loading cache:  11% || ETA:  00:00:00
-Loading cache:  12% || ETA:  00:00:00
-Loading cache:  13% || ETA:  00:00:00
-Loading cache:  14% || ETA:  00:00:00
-Loading cache:  15% || ETA:  00:00:00
-Loading cache:  16% || ETA:  00:00:00
-Loading cache:  17% || ETA:  00:00:00
-Loading cache:  18% || ETA:  00:00:00
-Loading cache:  19% || ETA:  00:00:00
-Loading cache:  20% || ETA:  00:00:00
-Loading cache:  21% || ETA:  00:00:00
-Loading cache:  22% || ETA:  00:00:00
-Loading cache:  23% || ETA:  00:00:00
-Loading cache:  24% || ETA:  00:00:00
-Loading cache:  25% || ETA:  00:00:00
-Loading cache:  26% || ETA:  00:00:00
-Loading cache:  27% || ETA:  00:00:00
-Loading cache:  28% || ETA:  00:00:00
-Loading cache:  29% || ETA:  00:00:00
-Loading cache:  30% || ETA:  00:00:00
-Loading cache:  31% || ETA:  00:00:00
-Loading cache:  32% || ETA:  00:00:00
-Loading cache:  33% || ETA:  00:00:00
-Loading cache:  34% || ETA:  00:00:00
-Loading cache:  35% || ETA:  00:00:00
-Loading cache:  36% || ETA:  00:00:00
-Loading cache:  37% || ETA:  00:00:00
-Loading cache:  38% || ETA:  00:00:00
-Loading cache:  39% || ETA:  00:00:00
-Loading cache:  40% || ETA:  00:00:00
-Loading cache:  41% || ETA:  00:00:00
-Loading cache:  42% || ETA:  00:00:00
-Loading cache:  43% || ETA:  00:00:00
-Loading cache:  44% || ETA:  00:00:00
-Loading cache:  45% || ETA:  00:00:00
-Loading cache:  46% || ETA:  00:00:00
-Loading cache:  47% || ETA:  00:00:00
-Loading cache:  48% || ETA:  00:00:00
-Loading cache:  49% || ETA:  00:00:00
-Loading cache:  50% || ETA:  00:00:00
-Loading cache:  51% || ETA:  00:00:00
-Loading cache:  52% || ETA:  00:00:00
-Loading cache:  53% || ETA:  00:00:00
-Loading cache:  54% || ETA:  00:00:00
-Loading cache:  55% || ETA:  00:00:00
-Loading cache:  56% || ETA:  00:00:00
-Loading cache:  57% || ETA:  00:00:00
-Loading cache:  58% || ETA:  00:00:00
-Loading cache:  59% || ETA:  00:00:00
-Loading cache:  60% || ETA:  00:00:00
-Loading cache:  61% || ETA:  00:00:00
-Loading cache:  62% || ETA:  00:00:00
-Loading cache:  63% || ETA:  00:00:00
-Loading cache:  64% || ETA:  00:00:00
-Loading cache:  65% || ETA:  00:00:00
-Loading cache:  66% || ETA:  00:00:00
-Loading cache:  67% || ETA:  00:00:00
-Loading cache:  68% || ETA:  00:00:00
-Loading cache:  69% || ETA:  00:00:00
-Loading cache:  70% || ETA:  00:00:00
-Loading cache:  71% || ETA:  00:00:00
-Loading cache:  72% || ETA:  00:00:00
-Loading cache:  73% || ETA:  00:00:00
-Loading cache:  74% || ETA:  00:00:00
-Loading cache:  75% || ETA:  00:00:00
-Loading cache:  76% || ETA:  00:00:00
-Loading cache:  77% || ETA:  00:00:00
-Loading cache:  78% || ETA:  00:00:00
-Loading cache:  79% || ETA:  00:00:00
-Loading cache:  80% || ETA:  00:00:00
-Loading cache:  81% || ETA:  00:00:00
-Loading cache:  82% || ETA:  00:00:00
-Loading cache:  83% || ETA:  00:00:00
-Loading cache:  84% || ETA:  00:00:00
-Loading cache:  85% || ETA:  00:00:00
-Loading cache:  86% || ETA:  00:00:00
-Loading cache:  87% || ETA:  00:00:00
-Loading cache:  88% || ETA:  00:00:00
-Loading cache:  89% || ETA:  00:00:00
-Loading cache:  90% || ETA:  00:00:00
-Loading cache:  91% || ETA:  00:00:00
-Loading cache:  92% || ETA:  00:00:00
-Loading cache:  93% || ETA:  00:00:00
-Loading cache:  94% || ETA:  00:00:00
-Loading cache:  95% || ETA:  00:00:00
-Loading cache:  96% || ETA:  00:00:00
-Loading cache:  97% || ETA:  00:00:00
-Loading cache:  98% || ETA:  00:00:00
-Loading cache:  99% || ETA:  00:00:00
+...
 Loading cache: 100% || ETA:  00:00:00
 
 Loaded 2370 entries from dependency cache.
@@ -731,7 +438,9 @@ Result: SUCCESS
 
 ## Testing the image on UDOO Neo
 
-* Browse `${JENKINS_URL}/jobs/build_yocto_udooneo`, in section "Last Successful Artifacts" click on `core-image-minimal-udooneo.sdcard.gz` to download the file to a machine with a SD Card writer.
+<!-- (2016-02-29 17:17 CET) -->
+
+* Browse `${JENKINS_URL}/jobs/build_yocto_udooneo`, in section "Last Successful Artifacts" click on `udoo-image-full-cmdline-udooneo.sdcard.gz` to download the file to a machine with a SD Card writer.
 * Write the image to a blank Micro SD card
   - On MS Windows first uncompress the image, then use [Win 32 Disk Imager](https://sourceforge.net/projects/win32diskimager/) to write the image to the Micro SD card
   - On Linux just use `$ zcat *.sdcard.gz | sudo dd of=/dev/xxx`
@@ -744,15 +453,15 @@ Please see [this blog post](http://gmacario.github.io/howto/udoo/neo/embedded/so
 After powering up your UDOO Neo the serial console should display the boot messages up to a login prompt:
 
 ```
-U-Boot SPL 2015.04 (Feb 24 2016 - 14:37:26)
+U-Boot SPL 2015.04 (Feb 29 2016 - 09:36:35)
 Setting 1024MB RAM calibration data
 port 1
 
 
-U-Boot 2015.04 (Feb 24 2016 - 14:37:26)
+U-Boot 2015.04 (Feb 29 2016 - 09:36:35)
 
 CPU:   Freescale i.MX6SX rev1.2 at 792 MHz
-CPU:   Temperature 50 C
+CPU:   Temperature 43 C
 Reset cause: POR
 Board: UDOO Neo Full
 I2C:   ready
@@ -769,34 +478,52 @@ No ethernet found.
 Normal Boot
 Hit any key to stop autoboot:
 ...
+Starting kernel ...
 
-Starting syslogd/klogd: done
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 3.14.56_1.0.x-udoo+gfeef1c3 (@b0ed5127df82) (gcc version 5.2.0 (GCC) ) #2 SMP PREEMPT Mon Feb 29 11:38:00 UTC 2016
+[    0.000000] CPU: ARMv7 Processor [412fc09a] revision 10 (ARMv7), cr=10c53c7d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine model: UDOO Neo Full
+[    0.000000] Reserved memory: reserved region for node 'm4@0x84000000': base 0x84000000, size 8 MiB
+[    0.000000] Reserved memory: reserved region for node 'm4@0xBFF00000': base 0xbff00000, size 1 MiB
+[    0.000000] cma: CMA: reserved 320 MiB at aa000000
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] PERCPU: Embedded 8 pages/cpu @bf639000 s8512 r8192 d16064 u32768
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 257792
+[    0.000000] Kernel command line: console=ttymxc0,115200 root=/dev/mmcblk0p2 rootwait rw ${mmcrootfstype} uart_from_osc clk_ignore_unused cpuidle.off=1 consoleblank=0
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Memory: 690356K/1039360K available (4890K kernel code, 331K rwdata, 5624K rodata, 256K init, 384K bss, 349004K reserved, 0K highmem)
+...
+Poky (Yocto Project Reference Distro) 2.0.1 udooneo /dev/ttymxc0
 
-OpenEmbedded nodistro.0 udooneo /dev/ttymxc0
-
-udooneo login:
+udooneo login: 
 ```
 
-Login to the target with user `root` (default password: none)
+Login with user `root` (default password: none)
 
 ```
 root@udooneo:~# cat /proc/version
-Linux version 3.14.56_1.0.x-udoo+gfeef1c3 (root@1cfc10892ef9) (gcc version 5.2.0 (GCC) ) #1 SMP PREEMPT Wed Feb 24 14:30:31 UTC 2016
-root@udooneo:~#  fdisk -l
+Linux version 3.14.56_1.0.x-udoo+gfeef1c3 (@b0ed5127df82) (gcc version 5.2.0 (GCC) ) #2 SMP PREEMPT Mon Feb 29 11:38:00 UTC 2016
+root@udooneo:~# fdisk -l
+Disk /dev/mmcblk0: 7.4 GiB, 7948206080 bytes, 15523840 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xe2dce300
 
-Disk /dev/mmcblk0: 15.7 GB, 15720251392 bytes
-4 heads, 32 sectors/track, 239872 cylinders
-Units = cylinders of 128 * 512 = 65536 bytes
-
-        Device Boot      Start         End      Blocks  Id System
-/dev/mmcblk0p1              65         192        8192   c Win95 FAT32 (LBA)
-/dev/mmcblk0p2             193         320        8192  83 Linux
+Device         Boot Start      End  Sectors  Size Id Type
+/dev/mmcblk0p1       8192    24575    16384    8M  c W95 FAT32 (LBA)
+/dev/mmcblk0p2      24576 15523839 15499264  7.4G 83 Linux
 root@udooneo:~# df -h
-Filesystem                Size      Used Available Use% Mounted on
-/dev/root                 6.7M      4.8M      1.4M  77% /
-devtmpfs                337.1M         0    337.1M   0% /dev
-tmpfs                   497.2M     84.0K    497.1M   0% /run
-tmpfs                   497.2M     56.0K    497.2M   0% /var/volatile
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       7.2G  306M  6.6G   5% /
+devtmpfs        338M     0  338M   0% /dev
+tmpfs           498M  152K  498M   1% /run
+tmpfs           498M  180K  498M   1% /var/volatile
 root@udooneo:~#
 ```
 
