@@ -28,7 +28,7 @@ git-server 1.6
 github 1.17.1
 github-api 1.72
 github-oauth 0.22.3
-github-pullrequest 0.0.1-rc3
+github-pullrequest 0.0.1-rc4
 greenballs 1.15
 groovy 1.29
 htmlpublisher 1.11
