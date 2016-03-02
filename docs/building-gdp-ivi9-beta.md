@@ -4,18 +4,20 @@
 
 <!-- (2016-02-23 16:00 CET) -->
 
-This document explains how to build from sources the [GENIVI Demo Platform](http://projects.genivi.org/genivi-demo-platform/home) using Jenkins. 
+This document explains how to build from sources the [GENIVI Demo Platform](http://projects.genivi.org/genivi-demo-platform/home) using [Jenkins](https://jenkins-ci.org/). 
 
-Rather then performing the build inside a Jenkins dumb slave, the build is performed inside a custom Docker container.
+Rather then performing the build inside a Jenkins [dumb slave node](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines), the build is performed inside a custom [Docker container](https://wiki.jenkins-ci.org/display/JENKINS/Docker+Plugin).
 
-The instructions inside this document were tested on
+The instructions inside this document have been tested on
 
-* Docker client: itm-gmacario-w7 (MS Windows 7 64-bit, Docker Toolbox 1.10.0)
-* Docker engine: mv-linux-powerhorse (Ubuntu 14.04.4 LTS 64-bit, Docker 1.10.0, Docker Compose 1.6.0)
+* Docker client: itm-gmacario-w7 (MS Windows 7 64-bit, Docker Toolbox 1.10.2)
+* Docker engine: ies-genbld01-vm (Ubuntu 14.04.4 LTS 64-bit, Docker 1.10.1, Docker Compose 1.6.0)
+
+<!-- mv-linux-powerhorse (Ubuntu 14.04.4 LTS 64-bit, Docker 1.10.0, Docker Compose 1.6.0) -->
 
 ## Preparation
 
-* Install and configure easy-jenkins - please refer to [preparation.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/preparation.md) for details.
+* Install and configure [easy-jenkins](https://github.com/gmacario/easy-jenkins) - please refer to [preparation.md](https://github.com/gmacario/easy-jenkins/blob/master/docs/preparation.md) for details.
 * Verify that the Jenkins Dashboard is accessible at `${DOCKER_URL}` (example: http://192.168.99.100:9080/)
 
 ## Step-by-step instructions
@@ -87,7 +89,7 @@ then click **Save**.
 
 Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9_beta/`, then click **Build Now**.
 
-You may watch the build logs at `${JENKINS_URL}/job/build_gdp_ivi9_beta/lastBuild/console`
+You may watch the build logs at `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9_beta/lastBuild/console`
 
 <!-- (2016-03-02 07:16 CET) http://ies-genbld01-vm.ies.mentorg.com:9080/job/GENIVI/job/build_gdp_ivi9_beta/1/console -->
 
@@ -365,9 +367,9 @@ No currently running tasks (1 of 4460)
 [39A[JCurrently 1 running tasks (2 of 4460):
 0: texinfo-dummy-native-1.0-r0 do_fetch (pid 693)
 ...
-[105A[JCurrently 2 running tasks (1320 of 4460):
-0: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_compile (pid 7458)
-1: freetype-native-2.5.4-r0 do_configure (pid 24431)
+[106A[JCurrently 2 running tasks (1348 of 4460):
+0: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package (pid 32479)
+1: qtxmlpatterns-5.4.2+gitAUTOINC+c21924d67a-r0 do_compile (pid 868)
 ...
 TODO
 ```
