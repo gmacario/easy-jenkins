@@ -371,7 +371,49 @@ No currently running tasks (1 of 4460)
 0: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package (pid 32479)
 1: qtxmlpatterns-5.4.2+gitAUTOINC+c21924d67a-r0 do_compile (pid 868)
 ...
-TODO
+[91A[JCurrently 1 running tasks (1752 of 4460):
+0: pango-native-1.36.8-r0 do_compile (pid 13781)
+[91A[J[1;33mWARNING[0m: [33mnavit: LICENSE value "GPLv2 LGPLv2" has an invalid format - license names must be separated by the following characters to indicate the license selection: &|() [0m
+Currently 1 running tasks (1752 of 4460):
+0: pango-native-1.36.8-r0 do_compile (pid 13781)
+[91A[JCurrently 2 running tasks (1752 of 4460):
+0: pango-native-1.36.8-r0 do_compile (pid 13781)
+1: navit-1_0.2.0+svnr5532-r9.3 do_fetch (pid 18704)
+[143A[J[1;33mWARNING[0m: [33mFailed to fetch URL svn://anonymous@navit.svn.sourceforge.net/svnroot/navit/trunk;module=navit;protocol=http, attempting MIRRORS if available[0m
+Currently 2 running tasks (1752 of 4460):
+0: pango-native-1.36.8-r0 do_compile (pid 13781)
+1: navit-1_0.2.0+svnr5532-r9.3 do_fetch (pid 18704)
+[143A[J[1;31mERROR[0m: [31mFetcher failure: Fetch command failed with exit code 1, output:
+Redirecting to URL 'http://svn.code.sf.net/p/navit/code/trunk/navit':
+
+svn: E670005: Unable to connect to a repository at URL 'http://svn.code.sf.net/p/navit/code/trunk/navit'
+svn: E670005: No address associated with hostname
+[0m
+Currently 2 running tasks (1752 of 4460):
+0: pango-native-1.36.8-r0 do_compile (pid 13781)
+1: navit-1_0.2.0+svnr5532-r9.3 do_fetch (pid 18704)
+[143A[J[1;31mERROR[0m: [31mFunction failed: Fetcher failure for URL: 'svn://anonymous@navit.svn.sourceforge.net/svnroot/navit/trunk;module=navit;protocol=http'. Unable to fetch URL from any source.[0m
+Currently 2 running tasks (1752 of 4460):
+0: pango-native-1.36.8-r0 do_compile (pid 13781)
+1: navit-1_0.2.0+svnr5532-r9.3 do_fetch (pid 18704)
+[143A[J[1;31mERROR[0m: [31mLogfile of failure stored in: /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/temp/log.do_fetch.18704[0m
+Currently 1 running tasks (1752 of 4460):
+0: pango-native-1.36.8-r0 do_compile (pid 13781)
+[91A[J[1;31mERROR[0m: [31mTask 1925 (/var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/../meta-genivi-demo/recipes-navigation/navit/navit_svn.bb, do_fetch) failed with exit code '1'[0m
+Currently 1 running tasks (1752 of 4460):
+0: pango-native-1.36.8-r0 do_compile (pid 13781)
+[91A[JWaiting for 0 running tasks to finish:
+[39A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 1752 tasks of which 0 didn't need to be rerun and 1 failed.[0m
+Waiting for 0 running tasks to finish:
+
+Summary: 1 task failed:
+  /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/../meta-genivi-demo/recipes-navigation/navit/navit_svn.bb, do_fetch
+Summary: There were 26 WARNING messages shown.
+Summary: There were 2 ERROR messages shown, returning a non-zero exit code.
+Build step 'Execute shell' marked build as failure
+Stopping Docker container after build completion
+Notifying upstream projects of job completion
+Finished: FAILURE
 ```
 
 **NOTE**: A full build takes about TODO hours to complete (Docker Engine running on a dual-core AMD Opteron(TM) Processor 6276 CPU X5450 @2300 MHz, 4 GB RAM).
