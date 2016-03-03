@@ -33,6 +33,8 @@ then click **OK**. Inside the project configuration page, review configuration, 
 
 ### Create project `build_gdp_ivi9_beta`
 
+<!-- (2016-03-03 10:43 CET) -->
+
 Browse `${DOCKER_URL}/job/GENIVI`, then click **New Item**
 
 * Name: `build_gdp_ivi9_beta`
@@ -81,6 +83,14 @@ source init.sh
 bitbake genivi-demo-platform
 
 # EOF
+```
+
+* Post-build Actions
+  - Archive the artifacts
+    - Files to archive
+
+```
+gdp-src-build/tmp/deploy/images/*/*.manifest
 ```
 
 then click **Save**.
