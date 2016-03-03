@@ -4,7 +4,7 @@
 
 <!-- (2016-02-23 16:00 CET) -->
 
-This document explains how to build from sources the [GENIVI Demo Platform](http://projects.genivi.org/genivi-demo-platform/home) using [Jenkins](https://jenkins-ci.org/). 
+This document explains how to build from sources the [GENIVI Demo Platform](http://projects.genivi.org/genivi-demo-platform/home) using [Jenkins](https://jenkins-ci.org/).
 
 Rather then performing the build inside a Jenkins [dumb slave node](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines), the build is performed inside a custom [Docker container](https://wiki.jenkins-ci.org/display/JENKINS/Docker+Plugin).
 
@@ -346,8 +346,10 @@ Finished: SUCCESS
 
 **NOTE**: A full build starting from an empty workspace takes about TODO hours to complete (Docker Engine running on a dual-core AMD Opteron(TM) Processor 6276 CPU X5450 @2300 MHz, 4 GB RAM).
 
+![Artifacts of project build_gdp_ivi9_beta](images/capture-20160303-1050.png)
+
 Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9_beta/ws/gdp-src-build/tmp/deploy/images/qemux86-64/` to inspect the build results.
 
-TODO: Attach screenshot
+![Workspace of project build_gdp_ivi9_beta](images/capture-20160303-1055.png)
 
 <!-- EOF -->
