@@ -101,43 +101,27 @@ Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9_beta/`, then click **Build 
 
 You may watch the build logs at `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9_beta/lastBuild/console`
 
-<!-- (2016-03-02 07:16 CET) http://ies-genbld01-vm.ies.mentorg.com:9080/job/GENIVI/job/build_gdp_ivi9_beta/1/console -->
+<!-- (2016-03-03 10:47 CET) http://ies-genbld01-vm.ies.mentorg.com:9080/job/GENIVI/job/build_gdp_ivi9_beta/5/console -->
 
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
 Building in workspace /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta
-Cloning the remote Git repository
-Cloning repository git://git.projects.genivi.org/genivi-demo-platform.git
- > git init /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta # timeout=10
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git://git.projects.genivi.org/genivi-demo-platform.git # timeout=10
 Fetching upstream changes from git://git.projects.genivi.org/genivi-demo-platform.git
  > git --version # timeout=10
- > git -c core.askpass=true fetch --tags --progress git://git.projects.genivi.org/genivi-demo-platform.git +refs/heads/*:refs/remotes/origin/*
- > git config remote.origin.url git://git.projects.genivi.org/genivi-demo-platform.git # timeout=10
- > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
- > git config remote.origin.url git://git.projects.genivi.org/genivi-demo-platform.git # timeout=10
-Fetching upstream changes from git://git.projects.genivi.org/genivi-demo-platform.git
  > git -c core.askpass=true fetch --tags --progress git://git.projects.genivi.org/genivi-demo-platform.git +refs/heads/*:refs/remotes/origin/*
  > git rev-parse refs/remotes/origin/qemux86-64-ivi9-beta^{commit} # timeout=10
  > git rev-parse refs/remotes/origin/origin/qemux86-64-ivi9-beta^{commit} # timeout=10
 Checking out Revision 6e50965700f98572eaa731e426d561b1b5031c87 (refs/remotes/origin/qemux86-64-ivi9-beta)
  > git config core.sparsecheckout # timeout=10
  > git checkout -f 6e50965700f98572eaa731e426d561b1b5031c87
-First time build. Skipping changelog.
-Pull Docker image gmacario/build-yocto-genivi from repository ...
-$ docker pull gmacario/build-yocto-genivi
-Unable to find image 'alpine:3.2' locally
-3.2: Pulling from library/alpine
-0e88f6792a02: Pulling fs layer
-0e88f6792a02: Verifying Checksum
-0e88f6792a02: Download complete
-0e88f6792a02: Pull complete
-0e88f6792a02: Pull complete
-Digest: sha256:1fa629fef005231775e8b23e57ef32c0696a36235c102ac074f355e216b9e5fd
-Status: Downloaded newer image for alpine:3.2
-Docker container a634cf8789e10c756a0de4558362c04195b97054e6ecc7422e2cbc6d4bbd1f02 started to host the build
-$ docker exec --tty a634cf8789e10c756a0de4558362c04195b97054e6ecc7422e2cbc6d4bbd1f02 env
-[build_gdp_ivi9_beta] $ docker exec --tty --user 1000:1000 a634cf8789e10c756a0de4558362c04195b97054e6ecc7422e2cbc6d4bbd1f02 env 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
+ > git rev-list 6e50965700f98572eaa731e426d561b1b5031c87 # timeout=10
+Docker container 62d0ae51a9c4326a8cdc7c4dfd1c913093fd78c7aa4aa96ff6e1d73fb8ebf90c started to host the build
+$ docker exec --tty 62d0ae51a9c4326a8cdc7c4dfd1c913093fd78c7aa4aa96ff6e1d73fb8ebf90c env
+[build_gdp_ivi9_beta] $ docker exec --tty --user 1000:1000 62d0ae51a9c4326a8cdc7c4dfd1c913093fd78c7aa4aa96ff6e1d73fb8ebf90c env 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
  b="${f%.override}";
  echo "$f" >> "$COPY_REFERENCE_FILE_LOG";
  rel="${b:23}";
@@ -149,26 +133,26 @@ $ docker exec --tty a634cf8789e10c756a0de4558362c04195b97054e6ecc7422e2cbc6d4bbd
  cp -r "${f}" "/var/jenkins_home/${rel}";
  [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
  fi
-}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#1 BUILD_ID=1 BUILD_NUMBER=1 BUILD_TAG=jenkins-GENIVI-build_gdp_ivi9_beta-1 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=0 GIT_BRANCH=origin/qemux86-64-ivi9-beta GIT_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_URL=git://git.projects.genivi.org/genivi-demo-platform.git HOME=/var/jenkins_home HOSTNAME=9a260eff78c8 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=d73dd7a3cff408ad JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u72 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=d73dd7a3cff408ad JENKINS_SHA=e72e06e64d23eefb13090459f517b0697aad7be0 JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.2 JOB_NAME=GENIVI/build_gdp_ivi9_beta LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta /bin/bash -xe /tmp/hudson7953117173240702154.sh
+}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#5 BUILD_ID=5 BUILD_NUMBER=5 BUILD_TAG=jenkins-GENIVI-build_gdp_ivi9_beta-5 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=0 GIT_BRANCH=origin/qemux86-64-ivi9-beta GIT_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_PREVIOUS_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_PREVIOUS_SUCCESSFUL_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87 GIT_URL=git://git.projects.genivi.org/genivi-demo-platform.git HOME=/var/jenkins_home HOSTNAME=9a260eff78c8 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=d73dd7a3cff408ad JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u72 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=d73dd7a3cff408ad JENKINS_SHA=e72e06e64d23eefb13090459f517b0697aad7be0 JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.2 JOB_NAME=GENIVI/build_gdp_ivi9_beta LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta /bin/bash -xe /tmp/hudson3989190526745719821.sh
 + id
 uid=1000(build) gid=1000(build) groups=1000(build)
 + pwd
 /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta
 + ls -la
 total 52
-drwxr-xr-x 9 build build 4096 Mar  2 06:26 .
-drwxr-xr-x 3 build build 4096 Mar  2 06:26 ..
-drwxr-xr-x 8 build build 4096 Mar  2 06:26 .git
--rw-r--r-- 1 build build  204 Mar  2 06:26 .gitignore
--rw-r--r-- 1 build build  470 Mar  2 06:26 .gitmodules
--rw-r--r-- 1 build build  805 Mar  2 06:26 README.md
-drwxr-xr-x 3 build build 4096 Mar  2 06:26 gdp-src-build
--rw-r--r-- 1 build build  908 Mar  2 06:26 init.sh
-drwxr-xr-x 2 build build 4096 Mar  2 06:26 meta-genivi-demo
-drwxr-xr-x 2 build build 4096 Mar  2 06:26 meta-ivi
-drwxr-xr-x 2 build build 4096 Mar  2 06:26 meta-openembedded
-drwxr-xr-x 2 build build 4096 Mar  2 06:26 meta-qt5
-drwxr-xr-x 2 build build 4096 Mar  2 06:26 poky
+drwxr-xr-x  9 build build 4096 Mar  2 06:26 .
+drwxr-xr-x  3 build build 4096 Mar  2 06:26 ..
+drwxr-xr-x 10 build build 4096 Mar  3 09:47 .git
+-rw-r--r--  1 build build  204 Mar  2 06:26 .gitignore
+-rw-r--r--  1 build build  470 Mar  2 06:26 .gitmodules
+-rw-r--r--  1 build build  805 Mar  2 06:26 README.md
+drwxr-xr-x  8 build build 4096 Mar  2 18:41 gdp-src-build
+-rw-r--r--  1 build build  908 Mar  2 06:26 init.sh
+drwxr-xr-x 15 build build 4096 Mar  2 06:30 meta-genivi-demo
+drwxr-xr-x  6 build build 4096 Mar  2 06:30 meta-ivi
+drwxr-xr-x 18 build build 4096 Mar  2 06:30 meta-openembedded
+drwxr-xr-x  7 build build 4096 Mar  2 06:30 meta-qt5
+drwxr-xr-x 10 build build 4096 Mar  2 06:31 poky
 + printenv
 + sort
  [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
@@ -185,16 +169,18 @@ drwxr-xr-x 2 build build 4096 Mar  2 06:26 poky
 BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
 BUILD_CAUSE=MANUALTRIGGER
 BUILD_CAUSE_MANUALTRIGGER=true
-BUILD_DISPLAY_NAME=#1
-BUILD_ID=1
-BUILD_NUMBER=1
-BUILD_TAG=jenkins-GENIVI-build_gdp_ivi9_beta-1
+BUILD_DISPLAY_NAME=#5
+BUILD_ID=5
+BUILD_NUMBER=5
+BUILD_TAG=jenkins-GENIVI-build_gdp_ivi9_beta-5
 CA_CERTIFICATES_JAVA_VERSION=20140324
 CLASSPATH=
 COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log
 EXECUTOR_NUMBER=0
 GIT_BRANCH=origin/qemux86-64-ivi9-beta
 GIT_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87
+GIT_PREVIOUS_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87
+GIT_PREVIOUS_SUCCESSFUL_COMMIT=6e50965700f98572eaa731e426d561b1b5031c87
 GIT_URL=git://git.projects.genivi.org/genivi-demo-platform.git
 HOME=/var/jenkins_home
 HOSTNAME=9a260eff78c8
@@ -226,17 +212,12 @@ _=/usr/bin/printenv
 + git config --global user.name easy-jenkins
 ++ whoami
 ++ hostname
-+ git config --global user.email build@a634cf8789e1
++ git config --global user.email build@62d0ae51a9c4
 + source init.sh
-+++ basename /tmp/hudson7953117173240702154.sh
-++ cmd=hudson7953117173240702154.sh
-++ '[' hudson7953117173240702154.sh = init.sh ']'
++++ basename /tmp/hudson3989190526745719821.sh
+++ cmd=hudson3989190526745719821.sh
+++ '[' hudson3989190526745719821.sh = init.sh ']'
 ++ git submodule init
-Submodule 'meta-genivi-demo' (http://git.projects.genivi.org/meta-genivi-demo.git) registered for path 'meta-genivi-demo'
-Submodule 'meta-ivi' (http://git.yoctoproject.org/git/meta-ivi) registered for path 'meta-ivi'
-Submodule 'meta-openembedded' (git://git.openembedded.org/meta-openembedded) registered for path 'meta-openembedded'
-Submodule 'meta-qt5' (git://github.com/meta-qt5/meta-qt5.git) registered for path 'meta-qt5'
-Submodule 'poky' (git://git.yoctoproject.org/poky) registered for path 'poky'
 ++ git submodule sync
 Synchronizing submodule url for 'meta-genivi-demo'
 Synchronizing submodule url for 'meta-ivi'
@@ -244,21 +225,6 @@ Synchronizing submodule url for 'meta-openembedded'
 Synchronizing submodule url for 'meta-qt5'
 Synchronizing submodule url for 'poky'
 ++ git submodule update
-Cloning into 'meta-genivi-demo'...
-...
-Submodule path 'meta-genivi-demo': checked out '6c13a96ba719c657bd69f7c0212cd224def036c8'
-Cloning into 'meta-ivi'...
-...
-Submodule path 'meta-ivi': checked out 'bfd95c5021885ed61b58a33087a4ee8e3d2f32ad'
-Cloning into 'meta-openembedded'...
-...
-Submodule path 'meta-openembedded': checked out '5b0305d9efa4b5692cd942586fb7aa92dba42d59'
-Cloning into 'meta-qt5'...
-...  
-Submodule path 'meta-qt5': checked out '90919b9d86988e7da01fa2c0a07246b5b5600a5d'
-Cloning into 'poky'...
-...
-Submodule path 'poky': checked out 'eb4a134a60e3ac26a48379675ad6346a44010339'
 ++ source poky/oe-init-build-env gdp-src-build
 +++ '[' -n poky/oe-init-build-env ']'
 ++++ dirname poky/oe-init-build-env
@@ -266,7 +232,7 @@ Submodule path 'poky': checked out 'eb4a134a60e3ac26a48379675ad6346a44010339'
 +++ '[' -n '' ']'
 +++ THIS_SCRIPT=poky/oe-init-build-env
 +++ '[' -z '' ']'
-+++ '[' /tmp/hudson7953117173240702154.sh = poky/oe-init-build-env ']'
++++ '[' /tmp/hudson3989190526745719821.sh = poky/oe-init-build-env ']'
 ++++ readlink -f poky
 +++ OEROOT=/var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/poky
 +++ export OEROOT
@@ -331,6 +297,8 @@ You can also run generated qemu images with a command like 'runqemu qemux86'
 +++ unset THIS_SCRIPT
 +++ '[' -z '' ']'
 +++ '[' -f bitbake.lock ']'
++++ grep : bitbake.lock
++++ '[' 1 = 0 ']'
 ++ echo
 
 ++ echo 'Now run:  bitbake genivi-demo-platform'
@@ -338,14 +306,11 @@ Now run:  bitbake genivi-demo-platform
 ++ whoami
 + '[' build = root ']'
 + bitbake genivi-demo-platform
-Parsing recipes:   0% || ETA:  --:--:--
-Parsing recipes:   0% || ETA:  00:04:15
-[1;33mWARNING[0m: [33mnavit: LICENSE value "GPLv2 LGPLv2" has an invalid format - license names must be separated by the following characters to indicate the license selection: &|() [0m
-Parsing recipes:   1% || ETA:  00:03:42
+Loading cache:   0% || ETA:  --:--:--
 ...
-Parsing recipes: 100% || Time: 00:03:43
+Loading cache: 100% || ETA:  00:00:00
 
-Parsing of 1604 .bb files complete (0 cached, 1604 parsed). 2086 targets, 277 skipped, 0 masked, 0 errors.
+Loaded 2087 entries from dependency cache.
 [1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
 
 Build Configuration:
@@ -372,61 +337,14 @@ meta-genivi-demo  = "(detachedfrom6c13a96):6c13a96ba719c657bd69f7c0212cd224def03
 [1;29mNOTE[0m: [29mPreparing RunQueue[0m
 [1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
 [1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
-No currently running tasks (1 of 4460)
-[39A[JNo currently running tasks (2 of 4460)
-[39A[JCurrently 1 running tasks (2 of 4460):
-0: texinfo-dummy-native-1.0-r0 do_fetch (pid 693)
-...
-[106A[JCurrently 2 running tasks (1348 of 4460):
-0: qtbase-5.4.2+gitAUTOINC+2cb17c1fb9-r0 do_package (pid 32479)
-1: qtxmlpatterns-5.4.2+gitAUTOINC+c21924d67a-r0 do_compile (pid 868)
-...
-[91A[JCurrently 1 running tasks (1752 of 4460):
-0: pango-native-1.36.8-r0 do_compile (pid 13781)
-[91A[J[1;33mWARNING[0m: [33mnavit: LICENSE value "GPLv2 LGPLv2" has an invalid format - license names must be separated by the following characters to indicate the license selection: &|() [0m
-Currently 1 running tasks (1752 of 4460):
-0: pango-native-1.36.8-r0 do_compile (pid 13781)
-[91A[JCurrently 2 running tasks (1752 of 4460):
-0: pango-native-1.36.8-r0 do_compile (pid 13781)
-1: navit-1_0.2.0+svnr5532-r9.3 do_fetch (pid 18704)
-[143A[J[1;33mWARNING[0m: [33mFailed to fetch URL svn://anonymous@navit.svn.sourceforge.net/svnroot/navit/trunk;module=navit;protocol=http, attempting MIRRORS if available[0m
-Currently 2 running tasks (1752 of 4460):
-0: pango-native-1.36.8-r0 do_compile (pid 13781)
-1: navit-1_0.2.0+svnr5532-r9.3 do_fetch (pid 18704)
-[143A[J[1;31mERROR[0m: [31mFetcher failure: Fetch command failed with exit code 1, output:
-Redirecting to URL 'http://svn.code.sf.net/p/navit/code/trunk/navit':
-
-svn: E670005: Unable to connect to a repository at URL 'http://svn.code.sf.net/p/navit/code/trunk/navit'
-svn: E670005: No address associated with hostname
-[0m
-Currently 2 running tasks (1752 of 4460):
-0: pango-native-1.36.8-r0 do_compile (pid 13781)
-1: navit-1_0.2.0+svnr5532-r9.3 do_fetch (pid 18704)
-[143A[J[1;31mERROR[0m: [31mFunction failed: Fetcher failure for URL: 'svn://anonymous@navit.svn.sourceforge.net/svnroot/navit/trunk;module=navit;protocol=http'. Unable to fetch URL from any source.[0m
-Currently 2 running tasks (1752 of 4460):
-0: pango-native-1.36.8-r0 do_compile (pid 13781)
-1: navit-1_0.2.0+svnr5532-r9.3 do_fetch (pid 18704)
-[143A[J[1;31mERROR[0m: [31mLogfile of failure stored in: /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/tmp/work/core2-64-poky-linux/navit/1_0.2.0+svnr5532-r9.3/temp/log.do_fetch.18704[0m
-Currently 1 running tasks (1752 of 4460):
-0: pango-native-1.36.8-r0 do_compile (pid 13781)
-[91A[J[1;31mERROR[0m: [31mTask 1925 (/var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/../meta-genivi-demo/recipes-navigation/navit/navit_svn.bb, do_fetch) failed with exit code '1'[0m
-Currently 1 running tasks (1752 of 4460):
-0: pango-native-1.36.8-r0 do_compile (pid 13781)
-[91A[JWaiting for 0 running tasks to finish:
-[39A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 1752 tasks of which 0 didn't need to be rerun and 1 failed.[0m
-Waiting for 0 running tasks to finish:
-
-Summary: 1 task failed:
-  /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_beta/gdp-src-build/../meta-genivi-demo/recipes-navigation/navit/navit_svn.bb, do_fetch
-Summary: There were 26 WARNING messages shown.
-Summary: There were 2 ERROR messages shown, returning a non-zero exit code.
-Build step 'Execute shell' marked build as failure
+[1;29mNOTE[0m: [29mTasks Summary: Attempted 4460 tasks of which 4460 didn't need to be rerun and all succeeded.[0m
 Stopping Docker container after build completion
+Archiving artifacts
 Notifying upstream projects of job completion
-Finished: FAILURE
+Finished: SUCCESS
 ```
 
-**NOTE**: A full build takes about TODO hours to complete (Docker Engine running on a dual-core AMD Opteron(TM) Processor 6276 CPU X5450 @2300 MHz, 4 GB RAM).
+**NOTE**: A full build starting from an empty workspace takes about TODO hours to complete (Docker Engine running on a dual-core AMD Opteron(TM) Processor 6276 CPU X5450 @2300 MHz, 4 GB RAM).
 
 Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9_beta/ws/gdp-src-build/tmp/deploy/images/qemux86-64/` to inspect the build results.
 
