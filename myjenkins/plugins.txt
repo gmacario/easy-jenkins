@@ -3,11 +3,11 @@ ace-editor 1.1
 ant 1.2
 antisamy-markup-formatter 1.3
 authentication-tokens 1.2
-branch-api 1.3
+branch-api 1.4
 build-flow-plugin 0.18
 build-flow-test-aggregator 1.2
 build-pipeline-plugin 1.5.1
-cloudbees-folder 5.3
+cloudbees-folder 5.4
 conditional-buildstep 1.3.3
 credentials 1.25
 cvs 2.12
