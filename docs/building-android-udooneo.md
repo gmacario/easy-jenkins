@@ -82,20 +82,20 @@ Browse `${JENKINS_URL}/job/build_android_udooneo`, then click **Build Now**
 
 You may watch the build logs at `${JENKINS_URL}/job/build_android_udooneo/lastBuild/console`
 
-<!-- (2016-03-16 16:15 CET) http://mv-linux-powerhorse.solarma.it:9080/job/build_android_udooneo/lastBuild/console -->
+<!-- (2016-03-16 17:22 CET) http://mv-linux-powerhorse.solarma.it:9080/job/build_android_udooneo/lastBuild/console -->
 
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
 Building in workspace /var/jenkins_home/jobs/build_android_udooneo/workspace
-Pull Docker image gmacario/build-aosp from repository ...
-$ docker pull gmacario/build-aosp
-Docker container f8da08dea12b270399e03a7efcbad47f06423670b5781d690400307d4e776c71 started to host the build
-$ docker exec --tty f8da08dea12b270399e03a7efcbad47f06423670b5781d690400307d4e776c71 env
+Pull Docker image gmacario/build-aosp:feat-aosp-uboottools from repository ...
+$ docker pull gmacario/build-aosp:feat-aosp-uboottools
+Docker container 979360a119f5cb28ef5d82654e642a7fef8076b1d0e65e4ac0f4f7a22d66614e started to host the build
+$ docker exec --tty 979360a119f5cb28ef5d82654e642a7fef8076b1d0e65e4ac0f4f7a22d66614e env
 ...
 + make -j 8
 ++ date +%s
-+ local start_time=1458141000
++ local start_time=1458145403
 ++ get_make_command
 ++ echo command make
 + command make -j 8
@@ -122,55 +122,82 @@ OUT_DIR=out
 ============================================
 including ./abi/cpp/Android.mk ...
 ...
-Import includes file: out/host/linux-x86/obj32/EXECUTABLES/llvm-tblgen_intermediates/import_includes
-  SORTEX  vmlinux
-  SYSMAP  System.map
-host C++: libLLVMTableGen_32 <= external/llvm/lib/TableGen/Error.cpp
-host C++: libLLVMTableGen_32 <= external/llvm/lib/TableGen/Main.cpp
-  OBJCOPY arch/arm/boot/Image
-host C++: libLLVMTableGen_32 <= external/llvm/lib/TableGen/Record.cpp
-  Kernel: arch/arm/boot/Image is ready
-host C++: libLLVMTableGen_32 <= external/llvm/lib/TableGen/SetTheory.cpp
-  AS      arch/arm/boot/compressed/head.o
-  LZO     arch/arm/boot/compressed/piggy.lzo
-  CC      arch/arm/boot/compressed/misc.o
-  CC      arch/arm/boot/compressed/decompress.o
-  CC      arch/arm/boot/compressed/string.o
-  SHIPPED arch/arm/boot/compressed/hyp-stub.S
-  SHIPPED arch/arm/boot/compressed/lib1funcs.S
-host C++: libLLVMTableGen_32 <= external/llvm/lib/TableGen/StringMatcher.cpp
-  SHIPPED arch/arm/boot/compressed/ashldi3.S
-  SHIPPED arch/arm/boot/compressed/bswapsdi2.S
-  AS      arch/arm/boot/compressed/hyp-stub.o
-  AS      arch/arm/boot/compressed/lib1funcs.o
-  AS      arch/arm/boot/compressed/ashldi3.o
-  AS      arch/arm/boot/compressed/bswapsdi2.o
-host C++: libLLVMTableGen_32 <= external/llvm/lib/TableGen/TableGenBackend.cpp
-host C++: libLLVMTableGen_32 <= external/llvm/lib/TableGen/TGLexer.cpp
-host C++: libLLVMTableGen_32 <= external/llvm/lib/TableGen/TGParser.cpp
-host C++: libLLVMSupport_32 <= external/llvm/lib/Support/Allocator.cpp
-host C++: libLLVMSupport_32 <= external/llvm/lib/Support/APFloat.cpp
-host C++: libLLVMSupport_32 <= external/llvm/lib/Support/APInt.cpp
-host C++: libLLVMSupport_32 <= external/llvm/lib/Support/APSInt.cpp
-host C++: libLLVMSupport_32 <= external/llvm/lib/Support/ARMBuildAttrs.cpp
-host C++: libLLVMSupport_32 <= external/llvm/lib/Support/ARMWinEH.cpp
-  AS      arch/arm/boot/compressed/piggy.lzo.o
-  LD      arch/arm/boot/compressed/vmlinux
-  OBJCOPY arch/arm/boot/zImage
-host C++: libLLVMSupport_32 <= external/llvm/lib/Support/Atomic.cpp
-  Kernel: arch/arm/boot/zImage is ready
-  UIMAGE  arch/arm/boot/uImage
-"mkimage" command not found - U-Boot images will not be built
-/var/jenkins_home/jobs/build_android_udooneo/workspace/kernel_imx/arch/arm/boot/Makefile:80: recipe for target 'arch/arm/boot/uImage' failed
-make[3]: *** [arch/arm/boot/uImage] Error 1
-/var/jenkins_home/jobs/build_android_udooneo/workspace/kernel_imx/arch/arm/Makefile:307: recipe for target 'uImage' failed
-make[2]: *** [uImage] Error 2
-Makefile:133: recipe for target 'sub-make' failed
-make[1]: *** [sub-make] Error 2
-build/core/Makefile:980: recipe for target 'out/target/product/udooneo_6sx/kernel' failed
-make: *** [out/target/product/udooneo_6sx/kernel] Error 2
-make: *** Waiting for unfinished jobs....
-host C++: libLLVMSupport_32 <= external/llvm/lib/Support/BlockFrequency.cpp
+including ./tools/external/fat32lib/Android.mk ...
+No private recovery resources for TARGET_DEVICE udooneo_6sx
+build/core/main.mk:1056: warning: overriding recipe for target 'clean'
+external/tools/iw/Makefile:126: warning: ignoring old recipe for target 'clean'
+host Executable: validatekeymaps (out/host/linux-x86/obj32/EXECUTABLES/validatekeymaps_intermediates/validatekeymaps)
+host Executable: acp (out/host/linux-x86/obj32/EXECUTABLES/acp_intermediates/acp)
+mkdir -p out/target/product/udooneo_6sx/obj/KERNEL_OBJ
+for ubootplat in imx6sx:udoo_neo_android_defconfig; do \
+	UBOOT_PLATFORM=`echo $ubootplat | cut -d':' -f1`; \
+	UBOOT_CONFIG=`echo $ubootplat | cut -d':' -f2`; \
+	UBOOT_DIR="bootable/bootloader/uboot-imx"; \
+        echo ; \
+        echo ; \
+	make -C $UBOOT_DIR distclean ARCH=arm CROSS_COMPILE=`pwd`/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-; \
+	make -C $UBOOT_DIR $UBOOT_CONFIG ARCH=arm CROSS_COMPILE=`pwd`/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-; \
+	make -C $UBOOT_DIR ARCH=arm CROSS_COMPILE=`pwd`/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-; \
+	dd if=$UBOOT_DIR/SPL of=$UBOOT_DIR/u-boot.imx bs=1K seek=0 conv=notrunc; \
+	dd if=$UBOOT_DIR/u-boot.img of=$UBOOT_DIR/u-boot.imx bs=1K seek=68; \
+	install -D $UBOOT_DIR/u-boot.imx out/target/product/udooneo_6sx/u-boot-$UBOOT_PLATFORM.imx; \
+done
+rm -f out/target/product/udooneo_6sx/kernel
+
+
+host StaticLib: libziparchive-host_32 (out/host/linux-x86/obj32/STATIC_LIBRARIES/libziparchive-host_intermediates/libziparchive-host.a)
+make -C kernel_imx udoo_neo_android_defconfig ARCH=arm CROSS_COMPILE=`pwd`/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi- LOADADDR=0x80008000 O=`pwd`/out/target/product/udooneo_6sx/obj/KERNEL_OBJ 
+  CLEAN   examples/standalone
+host StaticLib: libzipfile_32 (out/host/linux-x86/obj32/STATIC_LIBRARIES/libzipfile_intermediates/libzipfile.a)
+  CLEAN   tools
+  CLEAN   tools/lib tools/common
+  CLEAN   scripts/basic
+  CLEAN   scripts/kconfig
+  CLEAN   spl/arch spl/board spl/common spl/drivers spl/fs spl/lib spl/u-boot-spl spl/u-boot-spl.bin spl/u-boot-spl.lds spl/u-boot-spl.map
+host SharedLib: libunwind-ptrace_32 (out/host/linux-x86/obj32/lib/libunwind-ptrace.so)
+  GEN     /var/jenkins_home/jobs/build_android_udooneo/workspace/out/target/product/udooneo_6sx/obj/KERNEL_OBJ/Makefile
+  CLEAN   u-boot.lds u-boot.map u-boot.imx u-boot.bin u-boot.srec u-boot u-boot.img SPL System.map
+preparing StaticLib: libunwindbacktrace_32 [including  out/host/linux-x86/obj32/STATIC_LIBRARIES/libunwind_intermediates/libunwind.a]
+  CLEAN   include/config include/generated spl
+  CLEAN   .config include/autoconf.mk include/autoconf.mk.dep include/config.h
+host StaticLib: libLLVMSupport_32 (out/host/linux-x86/obj32/STATIC_LIBRARIES/libLLVMSupport_intermediates/libLLVMSupport.a)
+host StaticLib: libbccRenderscript_32 (out/host/linux-x86/obj32/STATIC_LIBRARIES/libbccRenderscript_intermediates/libbccRenderscript.a)
+  HOSTCC  scripts/basic/fixdep
+host StaticLib: libbccExecutionEngine_32 (out/host/linux-x86/obj32/STATIC_LIBRARIES/libbccExecutionEngine_intermediates/libbccExecutionEngine.a)
+host StaticLib: libbccCore_32 (out/host/linux-x86/obj32/STATIC_LIBRARIES/libbccCore_intermediates/libbccCore.a)
+host StaticLib: libunwindbacktrace_32 (out/host/linux-x86/obj32/STATIC_LIBRARIES/libunwindbacktrace_intermediates/libunwindbacktrace.a)
+#
+# configuration written to .config
+#
+make -C kernel_imx -j8 prepare ARCH=arm CROSS_COMPILE=`pwd`/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi- LOADADDR=0x80008000 O=`pwd`/out/target/product/udooneo_6sx/obj/KERNEL_OBJ 
+make[1]: warning: -jN forced in submake: disabling jobserver mode.
+host StaticLib: libbccSupport_32 (out/host/linux-x86/obj32/STATIC_LIBRARIES/libbccSupport_intermediates/libbccSupport.a)
+  HOSTCC  scripts/kconfig/conf.o
+  SHIPPED scripts/kconfig/zconf.hash.c
+  SHIPPED scripts/kconfig/zconf.tab.c
+  SHIPPED scripts/kconfig/zconf.lex.c
+host StaticLib: librsloader_32 (out/host/linux-x86/obj32/STATIC_LIBRARIES/librsloader_intermediates/librsloader.a)
+host C++: dalvikvm_32 <= art/dalvikvm/dalvikvm.cc
+if [ ! -e include/config/auto.conf ]; then make -f /var/jenkins_home/jobs/build_android_udooneo/workspace/kernel_imx/Makefile silentoldconfig ; fi
+  CHK     include/config/kernel.release
+  GEN     /var/jenkins_home/jobs/build_android_udooneo/workspace/out/target/product/udooneo_6sx/obj/KERNEL_OBJ/Makefile
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  CHK     include/generated/uapi/linux/version.h
+host SharedLib: libnativehelper_32 (out/host/linux-x86/obj32/lib/libnativehelper.so)
+prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6//x86_64-linux/bin/ld: error: out/host/linux-x86/obj32/SHARED_LIBRARIES/libnativehelper_intermediates/JNIHelp.o: unsupported reloc 43 against global symbol std::string::_Rep::_S_empty_rep_storage
+prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6//x86_64-linux/bin/ld: error: out/host/linux-x86/obj32/SHARED_LIBRARIES/libnativehelper_intermediates/JNIHelp.o: unsupported reloc 43 against global symbol std::string::_Rep::_S_empty_rep_storage
+prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6//x86_64-linux/bin/ld: error: out/host/linux-x86/obj32/SHARED_LIBRARIES/libnativehelper_intermediates/JNIHelp.o: unsupported reloc 43 against global symbol std::string::_Rep::_S_empty_rep_storage
+prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6//x86_64-linux/bin/ld: error: out/host/linux-x86/obj32/SHARED_LIBRARIES/libnativehelper_intermediates/JNIHelp.o: unsupported reloc 43 against global symbol std::string::_Rep::_S_empty_rep_storage
+...
+  OBJCOPY spl/u-boot-spl.bin
+  CFGS    arch/arm/imx-common/spl_sd.cfg.cfgtmp
+  MKIMAGE SPL
+31+0 records in
+31+0 records out
+31744 bytes (32 kB, 31 KiB) copied, 0.000231922 s, 137 MB/s
+256+1 records in
+256+1 records out
+262896 bytes (263 kB, 257 KiB) copied, 0.00121776 s, 216 MB/s
 make: *** wait: No child processes.  Stop.
 Build step 'Execute shell' marked build as failure
 Stopping Docker container after build completion
