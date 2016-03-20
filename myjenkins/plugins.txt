@@ -22,7 +22,7 @@ durable-task 1.8
 envinject 1.92.1
 external-monitor-job 1.4
 ghprb 1.31.2
-git 2.4.2
+git 2.4.3
 git-client 1.19.6
 git-server 1.6
 github 1.18.1
