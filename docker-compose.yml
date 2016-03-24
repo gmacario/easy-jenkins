@@ -12,6 +12,8 @@ services:
       - "51000:50000"
     tty: true
     privileged: true
+    volumes:
+      - jenkins_home:/var/jenkins_home
 
   # build-yocto-slave:
   #   image: gmacario/build-yocto:latest
@@ -24,8 +26,9 @@ services:
   #     - data:/home/jenkins
 
 volumes:
-    data:
-    downloads:
-    sstate-cache:
+    jenkins_home:
+    # data:
+    # downloads:
+    # sstate-cache:
 
 # EOF
