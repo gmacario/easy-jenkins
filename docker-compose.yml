@@ -13,6 +13,7 @@ services:
     tty: true
     privileged: true
     volumes:
+      - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
 
   # build-yocto-slave:
@@ -26,8 +27,9 @@ services:
   #     - data:/home/jenkins
 
 volumes:
-    data:
-    downloads:
-    sstate-cache:
+  jenkins_home:
+  # data:
+  # downloads:
+  # sstate-cache:
 
 # EOF
