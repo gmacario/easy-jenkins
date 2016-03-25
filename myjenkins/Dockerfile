@@ -1,13 +1,18 @@
+# ===========================================================================================
 # Project: gmacario/easy-jenkins
 #
-# Extend the standard Jenkins LTS Docker image with:
-# - Jenkins workflow plugins
-# - Docker
+# File: myjenkins/Dockerfile
+#
+# Purpose: Extend the standard Jenkins LTS Docker image with:
+#   - docker
+#   - docker-compose
+#   - gosu
+#   - Additional Jenkins plugins (specified in plugins.txt)
 #
 # Credits to https://github.com/camiloribeiro/cdeasy
-# - https://github.com/camiloribeiro/cdeasy/blob/master/docker/jenkins/Dockerfile
-
+# ===========================================================================================
 FROM jenkins:latest
+
 MAINTAINER Gianpaolo Macario <gmacario@gmail.com>
 
 USER root
@@ -15,11 +20,11 @@ RUN apt-get update -qq && apt-get install -qqy \
     apt-transport-https \
     ca-certificates \
     curl \
-    wget \
-    lxc \
-    iptables \
     dos2unix \
-    groovy2
+    groovy2 \
+    iptables \
+    lxc \
+    wget
 
 # Install gosu
 RUN curl -o /usr/local/bin/gosu -fsSL \
@@ -27,8 +32,12 @@ RUN curl -o /usr/local/bin/gosu -fsSL \
     chmod +x /usr/local/bin/gosu
 
 # Install Docker
-RUN wget -qO- https://get.docker.com/ | sh
+RUN curl -fsSL https://get.docker.com/ | sh
 RUN usermod -aG docker jenkins
+
+# Workaround until user-namespaces are working
+# Add user "jenkins" to group "docker" of host (works with boot2docker)
+RUN usermod -aG 100 jenkins
 
 # Install docker-compose
 RUN curl -o /usr/local/bin/docker-compose -fsSL \
