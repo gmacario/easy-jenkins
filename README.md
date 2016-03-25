@@ -2,6 +2,8 @@
 
 Easily deploy a [Jenkins](https://jenkins-ci.org/) CI/CD infrastructure via [docker-machine](https://www.docker.com/docker-machine) and [docker-compose](https://www.docker.com/docker-compose).
 
+Please see [CHANGELOG](CHANGELOG.md) for main changes since previous release.
+
 ### TL;DR
 
 ```
