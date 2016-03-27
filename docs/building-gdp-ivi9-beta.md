@@ -62,6 +62,7 @@ then click **OK**. Inside the project configuration page, add the following info
 * Build
   - Execute shell
     - Command
+
 ```
 #!/bin/bash -xe
 
@@ -89,11 +90,7 @@ bitbake genivi-demo-platform
 
 * Post-build Actions
   - Archive the artifacts
-    - Files to archive
-
-```
-gdp-src-build/tmp/deploy/images/*/*.manifest
-```
+    - Files to archive: `gdp-src-build/tmp/deploy/images/*/*.manifest`
 
 then click **Save**.
 
