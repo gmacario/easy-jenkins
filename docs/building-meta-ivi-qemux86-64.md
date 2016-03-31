@@ -57,45 +57,46 @@ then click **OK**. Inside the project configuration page, add the following info
   - Script
 
 ```
-node {
-   stage 'Check-out meta-ivi'
+docker.image('gmacario/build-yocto-genivi').inside {
+   stage 'Checkout meta-ivi'
    dir ('meta-ivi') {
       git branch: '10.0', url: 'http://git.yoctoproject.org/git/meta-ivi'
    }
 
-   stage 'Check-out poky'
+   stage 'Checkout poky'
    dir ('poky') {
       git branch: 'jethro', url: 'http://git.yoctoproject.org/git/poky.git'
    }
 
-   stage 'Check-out meta-openembedded'
+   stage 'Checkout meta-openembedded'
    dir ('meta-openembedded') {
       git branch: 'jethro', url: 'git://git.openembedded.org/meta-openembedded'
    }
 
-   stage 'Check-out baseline_ci_helper'
+   stage 'Checkout baseline_ci_helper'
    dir ('baseline_ci_helper') {
       git branch: 'master', url: 'https://github.com/gunnarx/baseline_ci_helper.git'
    }
 
-   stage 'Verify materials'
-   echo 'Verifying materials'
+   stage 'Checkout correct SHAs'
+   sh 'cd meta-ivi && git config user.name "Jenkins Agent"'
+   sh 'cd meta-ivi && git config user.email "no_email@example.com"'
+   sh 'cd baseline_ci_helper && sh -c "./checkout_layer_hash.sh poky"'
+   sh 'cd baseline_ci_helper && sh -c "./checkout_layer_hash.sh meta-openembedded"'
+   
+   stage 'Inspect sources'
+   echo 'Inspecting sources'
    sh 'pwd'
    sh 'ls -la'
 
-   stage 'meta-ivi-build'
-   // This step should not normally be used in your script. Consult the inline help for details.
-   withDockerContainer('gmacario/build-yocto-genivi') {
-       sh 'cd meta-ivi && git config user.name "Jenkins Agent"'
-       sh 'cd meta-ivi && git config user.email "no_email@example.com"'
-    
-       sh 'cd baseline_ci_helper && sh -c "./checkout_layer_hash.sh poky"'
-       sh 'cd baseline_ci_helper && sh -c "./checkout_layer_hash.sh meta-openembedded"'
-       sh 'bash -c "export MACHINE=qemux86-64 && export TEMPLATECONF=$PWD/meta-ivi/meta-ivi/conf && source poky/oe-init-build-env && bitbake leviathan-image"'
-       
-       // echo 'Verifying materials'
-       // sh 'ls -la'
-   }
+   stage 'Build the image'
+   sh 'bash -c "export MACHINE=qemux86-64 && export TEMPLATECONF=$PWD/meta-ivi/meta-ivi/conf && source poky/oe-init-build-env && bitbake leviathan-image"'
+   
+   stage 'Inspect results'
+   echo 'Inspecting results'
+   sh 'pwd'
+   // sh 'ls -la .'
+   sh 'ls -laR build/tmp/deploy/images'
 }
 ```
 
