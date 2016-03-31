@@ -1,10 +1,8 @@
 # Building the GENIVI Yocto Baseline using easy-jenkins
 
-**WORK-IN-PROGRESS**
-
 ## Introduction
 
-<!-- (2016-02-30 16:40 CET) -->
+<!-- (2016-02-30 16:40 CEST) -->
 
 This document explains how to build from sources the [GENIVI Yocto Baseline](https://at.projects.genivi.org/wiki/display/PROJ/meta-ivi) using [Jenkins](https://jenkins-ci.org/).
 
@@ -33,11 +31,11 @@ then click **OK**. Inside the project configuration page, review configuration, 
 
 ### Create project `yocto-baseline-next`
 
-<!-- (2016-03-30 17:16 CET) -->
+<!-- (2016-03-31 09:40 CEST) -->
 
-Adapted from http://go.genivi.org/go/admin/pipelines/yocto-baseline-next/general
+<!-- Adapted from http://go.genivi.org/go/admin/pipelines/yocto-baseline-next/general -->
 
-See wiki page [meta-ivi/10.0.0](https://at.projects.genivi.org/wiki/x/UYKw)
+Please refer to official build instructions on wiki page [meta-ivi/10.0.0](https://at.projects.genivi.org/wiki/x/UYKw) for details.
 
 Browse `${DOCKER_URL}/job/GENIVI`, then click **New Item**
 
@@ -102,35 +100,18 @@ docker.image('gmacario/build-yocto-genivi').inside {
 
 then click **Save**.
 
-**TODO**: Update pipeline script based on https://documentation.cloudbees.com/docs/cje-user-guide/docker-workflow-sect-inside.html
-
-```
-docker.image('maven:3.3.3-jdk-8').inside {
-  git '…your-sources…'
-  sh 'mvn -B clean install'
-}
-```
-
 ### Build project `yocto-baseline-next`
 
 Browse `${JENKINS_URL}/job/GENIVI/job/yocto-baseline-next/`, then click **Build Now**.
 
 You may watch the build logs at `${JENKINS_URL}/job/GENIVI/job/yocto-baseline-next/lastBuild/console`
 
-**TODO TODO TODO**
-
-<!-- (2016-03-30 21:00 CET) http://alm-gm-ubu15.solarma.it:9080/job/GENIVI/job/yocto-baseline-next-NEW2/2/console -->
+<!-- (2016-03-31 09:45 CEST) http://alm-gm-ubu15.solarma.it:9080/job/GENIVI/job/yocto-baseline-next-NEW2/2/console -->
 
 ```
 TODO
 ```
 
 **NOTE**: A full build starting from an empty workspace takes about TODO hours to complete (Docker Engine running on a dual-core AMD Opteron(TM) Processor 6276 CPU X5450 @2300 MHz, 4 GB RAM).
-
-![Artifacts of project yocto-baseline-next](images/TODO.png)
-
-Browse `${JENKINS_URL}/job/GENIVI/job/yocto-baseline-next/TODO` to inspect the build results.
-
-![Workspace of project yocto-baseline-next](images/TODO.png)
 
 <!-- EOF -->
