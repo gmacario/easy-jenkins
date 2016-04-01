@@ -35,7 +35,7 @@ handlebars 1.1.1
 htmlpublisher 1.11
 icon-shim 2.0.3
 javadoc 1.3
-jenkins-multijob-plugin 1.20
+jenkins-multijob-plugin 1.21
 job-dsl 1.44
 jobConfigHistory 2.13
 join 1.19
