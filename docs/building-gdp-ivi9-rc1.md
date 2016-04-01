@@ -1,4 +1,6 @@
-# Building GDP ivi9 beta using easy-jenkins
+# Building GDP-ivi9 RC1 using easy-jenkins
+
+**WORK-IN-PROGRESS - Updating to rc1**
 
 ## Introduction
 
