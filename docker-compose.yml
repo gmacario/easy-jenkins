@@ -24,8 +24,8 @@ services:
   #     - data:/home/jenkins
 
 volumes:
-    data:
-    downloads:
-    sstate-cache:
+  #  data:
+  #  downloads:
+  #  sstate-cache:
 
 # EOF
