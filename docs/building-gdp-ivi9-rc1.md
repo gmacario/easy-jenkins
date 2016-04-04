@@ -1,7 +1,5 @@
 # Building GDP-ivi9 RC1 using easy-jenkins
 
-**WORK-IN-PROGRESS - Updating to rc1**
-
 ## Introduction
 
 <!-- (2016-04-01 16:00 CEST) -->
@@ -129,10 +127,30 @@ $ docker pull gmacario/build-yocto-genivi
 Using default tag: latest
 latest: Pulling from gmacario/build-yocto-genivi
 ...
-TODO
+[156A[JCurrently 1 running tasks (4442 of 4447):
+0: python-pyqt-5.3.1-r1 do_package_write_rpm (pid 30551)
+[99A[JNo currently running tasks (4442 of 4447)
+[42A[JNo currently running tasks (4443 of 4447)
+[42A[JNo currently running tasks (4444 of 4447)
+[42A[JNo currently running tasks (4445 of 4447)
+[42A[JNo currently running tasks (4446 of 4447)
+[42A[JCurrently 1 running tasks (4446 of 4447):
+0: genivi-demo-platform-1.3+snapshot-20160401-r0 do_rootfs (pid 31227)
+[113A[JNo currently running tasks (4446 of 4447)
+[42A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 4447 tasks of which 22 didn't need to be rerun and all succeeded.[0m
+
+Summary: There were 28 WARNING messages shown.
+Stopping Docker container after build completion
+$ docker kill 952e99c8486c5e465c8248d7e95eae5db31be60e6da9ad60552fd5795734002d
+952e99c8486c5e465c8248d7e95eae5db31be60e6da9ad60552fd5795734002d
+$ docker rm --force 952e99c8486c5e465c8248d7e95eae5db31be60e6da9ad60552fd5795734002d
+952e99c8486c5e465c8248d7e95eae5db31be60e6da9ad60552fd5795734002d
+Archiving artifacts
+Notifying upstream projects of job completion
+Finished: SUCCESS
 ```
 
-**NOTE**: A full build starting from an empty workspace takes about TODO hours to complete (Docker Engine running on a dual-core AMD Opteron(TM) Processor 6276 CPU X5450 @2300 MHz, 4 GB RAM).
+**NOTE**: A full build starting from an empty workspace takes about 6 hours to complete (Docker Engine running on a quad-core Intel(R) Xeon(TM) CPU X6550 @2.00GHz, 4 GB RAM + 16 GB swap).
 
 ![Artifacts of project build_gdp_ivi9_rc1](images/TODO.png)
 
