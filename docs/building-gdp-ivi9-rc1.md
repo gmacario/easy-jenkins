@@ -1,7 +1,5 @@
 # Building GDP-ivi9 RC1 using easy-jenkins
 
-## Introduction
-
 <!-- (2016-04-01 16:00 CEST) -->
 
 This document explains how to build from sources the [GENIVI Demo Platform](https://at.projects.genivi.org/wiki/x/aoCw) using [Jenkins](https://jenkins-ci.org/).
@@ -93,7 +91,7 @@ bitbake genivi-demo-platform
 
 then click **Save**.
 
-### Build project `build_gdp_ivi9_rc1a`
+### Build project `build_gdp_ivi9_rc1`
 
 Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9_rc1/`, then click **Build Now**.
 
@@ -127,6 +125,36 @@ $ docker pull gmacario/build-yocto-genivi
 Using default tag: latest
 latest: Pulling from gmacario/build-yocto-genivi
 ...
+Parsing of 1614 .bb files complete (0 cached, 1614 parsed). 2098 targets, 278 skipped, 0 masked, 0 errors.
+[1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
+
+Build Configuration:
+BB_VERSION        = "1.26.0"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "Ubuntu-14.04"
+TARGET_SYS        = "x86_64-poky-linux"
+MACHINE           = "qemux86-64"
+DISTRO            = "poky-ivi-systemd"
+DISTRO_VERSION    = "9.0.1"
+TUNE_FEATURES     = "m64 core2"
+TARGET_FPU        = ""
+meta              
+meta-yocto        
+meta-yocto-bsp    = "(detachedfromeb4a134):eb4a134a60e3ac26a48379675ad6346a44010339"
+meta-ivi          
+meta-ivi-bsp      = "(detachedfrombfd95c5):bfd95c5021885ed61b58a33087a4ee8e3d2f32ad"
+meta-oe           
+meta-filesystems  
+meta-ruby         = "(detachedfrom5b0305d):5b0305d9efa4b5692cd942586fb7aa92dba42d59"
+meta-qt5          = "(detachedfrom90919b9):90919b9d86988e7da01fa2c0a07246b5b5600a5d"
+meta-genivi-demo  = "(detachedfrome70bccf):e70bccfaf451ae77d9edf0b9d8f5d9e6918f829f"
+
+[1;29mNOTE[0m: [29mPreparing RunQueue[0m
+[1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
+[1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
+No currently running tasks (1 of 4447)
+[39A[JNo currently running tasks (2 of 4447)
+...
 [156A[JCurrently 1 running tasks (4442 of 4447):
 0: python-pyqt-5.3.1-r1 do_package_write_rpm (pid 30551)
 [99A[JNo currently running tasks (4442 of 4447)
@@ -152,10 +180,10 @@ Finished: SUCCESS
 
 **NOTE**: A full build starting from an empty workspace takes about 6 hours to complete (Docker Engine running on a quad-core Intel(R) Xeon(TM) CPU X6550 @2.00GHz, 4 GB RAM + 16 GB swap).
 
-![Artifacts of project build_gdp_ivi9_rc1](images/TODO.png)
+![Artifacts of project build_gdp_ivi9_rc1](images/capture-20160404-0957.png)
 
 Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9_rc1/ws/gdp-src-build/tmp/deploy/images/qemux86-64/` to inspect the build results.
 
-![Workspace of project build_gdp_ivi9_beta](images/TODO.png)
+![Workspace of project build_gdp_ivi9_beta](images/capture-20160404-0958.png)
 
 <!-- EOF -->
