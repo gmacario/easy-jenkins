@@ -1,8 +1,6 @@
-# Building a Yocto distribution for the UDOO NEO
+# Building the WTF Android Application for the UDOO NEO
 
-**WORK-IN-PROGRESS**
-
-This document explains how to build from sources the [WTF App](TODO) Android Application for the [UDOO Neo](http://www.udoo.org/udoo-neo/) using [easy-jenkins](https://github.com/gmacario/easy-jenkins).
+This document explains how to build from sources the [WTF App](https://github.com/WillyShakes/UdooWtf) Android Application for the [UDOO Neo](http://www.udoo.org/udoo-neo/) using [easy-jenkins](https://github.com/gmacario/easy-jenkins).
 
 The following instructions were tested on
 
@@ -16,10 +14,10 @@ The following instructions were tested on
 
 ## Step-by-step instructions
 
-### Configure project `build_yocto_udooneo`
+### Configure project `build_wtfapp_udooneo`
 
 Browse `${JENKINS_URL}`, then click **New Item**
-  - Item name: `build_yocto_udooneo`
+  - Item name: `build_wtfapp_udooneo`
   - Type: **Freestyle project**
 
   then click **OK**.
@@ -31,15 +29,15 @@ Inside the project configuration page, fill-in the following information:
       - Max # of builds to keep: 2
   - Source Code Management: Git
     - Repositories
-      - Repository URL: `https://github.com/gmacario/genivi-demo-platform`
+      - Repository URL: `https://github.com/WillyShakes/UdooWtf`
       - Credentials: - none -
       - Branches to build
-        - Branch Specifier (blank for 'any'): `*/dev-udooneo-jethro`
+        - Branch Specifier (blank for 'any'): `*/master`
       - Repository browser: (Auto)
   - Build Environment
     - Build inside a Docker container: Yes
       - Docker image to use: Pull docker image from repository
-        - Image id/tag: `gmacario/build-yocto`
+        - Image id/tag: `gmacario/wtfapp-devenv`
   - Build
     - Execute shell
       - Command
@@ -47,7 +45,9 @@ Inside the project configuration page, fill-in the following information:
 ```
 #!/bin/bash -xe
 
-# TODO
+export JAVA_HOME=
+chmod a+x gradlew
+./gradlew
 
 # EOF
 ```
