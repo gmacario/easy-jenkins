@@ -1,4 +1,4 @@
-# Building a Yocto distribution for the UDOO Neo
+# Building a Yocto distribution for the UDOO NEO
 
 This document explains how to build from sources a [Yocto](https://www.yoctoproject.org/)-based distribution for the [UDOO Neo](http://www.udoo.org/udoo-neo/) using [easy-jenkins](https://github.com/gmacario/easy-jenkins).
 
