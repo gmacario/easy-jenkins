@@ -1,4 +1,6 @@
-# Building GDP-ivi9 RC1 using easy-jenkins
+# Building GDP-ivi9 for qemux86-64 using easy-jenkins
+
+**WORK-IN-PROGRESS**
 
 <!-- (2016-04-01 16:00 CEST) -->
 
