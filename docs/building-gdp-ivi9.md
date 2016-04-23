@@ -1,6 +1,6 @@
-# Building GDP-ivi9 RC1 using easy-jenkins
+# Building GDP-ivi9 for qemux86-64 using easy-jenkins
 
-<!-- (2016-04-01 16:00 CEST) -->
+<!-- (2016-04-22 16:00 CEST) -->
 
 This document explains how to build from sources the [GENIVI Demo Platform](https://at.projects.genivi.org/wiki/x/aoCw) using [Jenkins](https://jenkins-ci.org/).
 
@@ -27,13 +27,13 @@ Browse `${DOCKER_URL}`, then click **New Item**
 
 then click **OK**. Inside the project configuration page, review configuration, then click **OK**.
 
-### Create project `build_gdp_ivi9_rc1`
+### Create project `build_gdp_ivi9`
 
-<!-- (2016-04-01 16:07 CEST) -->
+<!-- (2016-04-22 16:03 CEST) -->
 
 Browse `${DOCKER_URL}/job/GENIVI`, then click **New Item**
 
-* Name: `build_gdp_ivi9_rc1`
+* Name: `build_gdp_ivi9`
 * Type: **Freestyle project**
 
 then click **OK**. Inside the project configuration page, add the following information:
@@ -47,7 +47,7 @@ then click **OK**. Inside the project configuration page, add the following info
     - Repository URL: `git://git.projects.genivi.org/genivi-demo-platform.git`
     - Credentials: - none -
   - Branches to build
-    - Branch Specifier (blank for 'any'): `*/qemux86-64-ivi9-rc1`
+    - Branch Specifier (blank for 'any'): `*/qemux86-64`
   - Repository browser: (Auto)
 * Build Environment
   - Build inside a Docker container: Yes
@@ -91,21 +91,21 @@ bitbake genivi-demo-platform
 
 then click **Save**.
 
-### Build project `build_gdp_ivi9_rc1`
+### Build project `build_gdp_ivi9`
 
-Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9_rc1/`, then click **Build Now**.
+Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9/`, then click **Build Now**.
 
-You may watch the build logs at `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9_rc1/lastBuild/console`
+You may watch the build logs at `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9/lastBuild/console`
 
-<!-- (2016-04-01 16:10 CEST) http://alm-gm-ubu15.solarma.it:9080/job/GENIVI/job/build_gdp_ivi9_rc1/1/console -->
+<!-- (2016-04-22 16:07 CEST) http://mv-linux-powerhorse.solarma.it:9080/job/GENIVI/job/build_gdp_ivi9/1/console -->
 
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
-Building in workspace /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_rc1
+Building in workspace /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9
 Cloning the remote Git repository
 Cloning repository git://git.projects.genivi.org/genivi-demo-platform.git
- > git init /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9_rc1 # timeout=10
+ > git init /var/jenkins_home/workspace/GENIVI/build_gdp_ivi9 # timeout=10
 Fetching upstream changes from git://git.projects.genivi.org/genivi-demo-platform.git
  > git --version # timeout=10
  > git -c core.askpass=true fetch --tags --progress git://git.projects.genivi.org/genivi-demo-platform.git +refs/heads/*:refs/remotes/origin/*
@@ -114,19 +114,21 @@ Fetching upstream changes from git://git.projects.genivi.org/genivi-demo-platfor
  > git config remote.origin.url git://git.projects.genivi.org/genivi-demo-platform.git # timeout=10
 Fetching upstream changes from git://git.projects.genivi.org/genivi-demo-platform.git
  > git -c core.askpass=true fetch --tags --progress git://git.projects.genivi.org/genivi-demo-platform.git +refs/heads/*:refs/remotes/origin/*
- > git rev-parse refs/remotes/origin/qemux86-64-ivi9-rc1^{commit} # timeout=10
- > git rev-parse refs/remotes/origin/origin/qemux86-64-ivi9-rc1^{commit} # timeout=10
-Checking out Revision e8d3761271cf25ead9e404e4cf4fff08b45d40ff (refs/remotes/origin/qemux86-64-ivi9-rc1)
+ > git rev-parse refs/remotes/origin/qemux86-64^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/qemux86-64^{commit} # timeout=10
+Checking out Revision efd5d1d8b43779d968541493fdc3a8f9c52509fc (refs/remotes/origin/qemux86-64)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f e8d3761271cf25ead9e404e4cf4fff08b45d40ff
+ > git checkout -f efd5d1d8b43779d968541493fdc3a8f9c52509fc
 First time build. Skipping changelog.
 Pull Docker image gmacario/build-yocto-genivi from repository ...
 $ docker pull gmacario/build-yocto-genivi
 Using default tag: latest
 latest: Pulling from gmacario/build-yocto-genivi
 ...
-Parsing of 1614 .bb files complete (0 cached, 1614 parsed). 2098 targets, 278 skipped, 0 masked, 0 errors.
-[1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
+Parsing recipes: 100% || Time: 00:00:41
+
+Parsing of 1644 .bb files complete (0 cached, 1644 parsed). 2139 targets, 277 skipped, 0 masked, 0 errors.
+[1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
 
 Build Configuration:
 BB_VERSION        = "1.26.0"
@@ -140,39 +142,32 @@ TUNE_FEATURES     = "m64 core2"
 TARGET_FPU        = ""
 meta              
 meta-yocto        
-meta-yocto-bsp    = "(detachedfromeb4a134):eb4a134a60e3ac26a48379675ad6346a44010339"
+meta-yocto-bsp    = "(detachedfrom900d7d6):900d7d6b59c36b2bdbd1c85febec99e80ab54f95"
 meta-ivi          
-meta-ivi-bsp      = "(detachedfrombfd95c5):bfd95c5021885ed61b58a33087a4ee8e3d2f32ad"
+meta-ivi-bsp      = "(detachedfromc6c4be2):c6c4be2e454545fd913ef39f5806990157e8d30a"
 meta-oe           
 meta-filesystems  
-meta-ruby         = "(detachedfrom5b0305d):5b0305d9efa4b5692cd942586fb7aa92dba42d59"
+meta-ruby         = "(detachedfroma7c1a2b):a7c1a2b0e6947740758136216e45ca6ca66321fc"
 meta-qt5          = "(detachedfrom90919b9):90919b9d86988e7da01fa2c0a07246b5b5600a5d"
-meta-genivi-demo  = "(detachedfrome70bccf):e70bccfaf451ae77d9edf0b9d8f5d9e6918f829f"
+meta-genivi-demo  = "(detachedfrom8d73cb3):8d73cb3c2922fd4bb7040fb13094e4d7aff25272"
+meta-rust         = "(detachedfromf13ac9d):f13ac9d48ae928b761d7be204fa8f877d41e7099"
 
-[1;29mNOTE[0m: [29mPreparing RunQueue[0m
-[1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
-[1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
+[1;29mNOTE[0m: [29mPreparing RunQueue[0m
+[1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
+[1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
 No currently running tasks (1 of 4447)
-[39A[JNo currently running tasks (2 of 4447)
 ...
-[156A[JCurrently 1 running tasks (4442 of 4447):
-0: python-pyqt-5.3.1-r1 do_package_write_rpm (pid 30551)
-[99A[JNo currently running tasks (4442 of 4447)
-[42A[JNo currently running tasks (4443 of 4447)
-[42A[JNo currently running tasks (4444 of 4447)
-[42A[JNo currently running tasks (4445 of 4447)
-[42A[JNo currently running tasks (4446 of 4447)
-[42A[JCurrently 1 running tasks (4446 of 4447):
-0: genivi-demo-platform-1.3+snapshot-20160401-r0 do_rootfs (pid 31227)
-[113A[JNo currently running tasks (4446 of 4447)
-[42A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 4447 tasks of which 22 didn't need to be rerun and all succeeded.[0m
+[42A[JCurrently 1 running tasks (4446 of 4447):
+0: genivi-demo-platform-1.3+snapshot-20160422-r0 do_rootfs (pid 12904)
+[113A[JNo currently running tasks (4446 of 4447)
+[42A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 4447 tasks of which 22 didn't need to be rerun and all succeeded.[0m
 
-Summary: There were 28 WARNING messages shown.
+Summary: There were 14 WARNING messages shown.
 Stopping Docker container after build completion
-$ docker kill 952e99c8486c5e465c8248d7e95eae5db31be60e6da9ad60552fd5795734002d
-952e99c8486c5e465c8248d7e95eae5db31be60e6da9ad60552fd5795734002d
-$ docker rm --force 952e99c8486c5e465c8248d7e95eae5db31be60e6da9ad60552fd5795734002d
-952e99c8486c5e465c8248d7e95eae5db31be60e6da9ad60552fd5795734002d
+$ docker kill 0f46e6cbe3e2967ff03545042eea165ad1a32f041a3aaf116f8b30d4c4f4ab2b
+0f46e6cbe3e2967ff03545042eea165ad1a32f041a3aaf116f8b30d4c4f4ab2b
+$ docker rm --force 0f46e6cbe3e2967ff03545042eea165ad1a32f041a3aaf116f8b30d4c4f4ab2b
+0f46e6cbe3e2967ff03545042eea165ad1a32f041a3aaf116f8b30d4c4f4ab2b
 Archiving artifacts
 Notifying upstream projects of job completion
 Finished: SUCCESS
@@ -180,10 +175,10 @@ Finished: SUCCESS
 
 **NOTE**: A full build starting from an empty workspace takes about 6 hours to complete (Docker Engine running on a quad-core Intel(R) Xeon(TM) CPU X6550 @2.00GHz, 4 GB RAM + 16 GB swap).
 
-![Artifacts of project build_gdp_ivi9_rc1](images/capture-20160404-0957.png)
+![Artifacts of project build_gdp_ivi9](images/capture-20160423-0647.png)
 
-Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9_rc1/ws/gdp-src-build/tmp/deploy/images/qemux86-64/` to inspect the build results.
+Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp_ivi9/ws/gdp-src-build/tmp/deploy/images/qemux86-64/` to inspect the build results.
 
-![Workspace of project build_gdp_ivi9_beta](images/capture-20160404-0958.png)
+![Workspace of project build_gdp_ivi9](images/capture-20160423-0648.png)
 
 <!-- EOF -->
