@@ -1,6 +1,7 @@
 # Building GENIVI Common API C in Jenkins
 
-**WIP: Updating document for CAPIC PoC Release 0.2.1**
+**Updated for CAPIC PoC Release 0.2.1**
+
 ## Prerequisites
 
 * A recent version of [Jenkins](https://jenkins.io/) CI/CD installed together with the necessary plugins
