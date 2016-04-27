@@ -74,6 +74,8 @@ Result: SUCCESS
 
 Excerpt from build console:
 
+<!-- (2016-04-27 08:15 CEST) See http://alm-gm-ubu15.solarma.it:9080/job/GENIVI/job/common-api-c/1/console -->
+
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
@@ -91,47 +93,46 @@ Fetching upstream changes from git://git.projects.genivi.org/common-api/c-poc.gi
  > git -c core.askpass=true fetch --tags --progress git://git.projects.genivi.org/common-api/c-poc.git +refs/heads/*:refs/remotes/origin/*
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
  > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
-Checking out Revision d6ec42ce45c33f40560d1f24b9143e9b1e6816e9 (refs/remotes/origin/master)
+Checking out Revision 4b7d45153a49086f06e3f71f06adc4743d075b98 (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f d6ec42ce45c33f40560d1f24b9143e9b1e6816e9
+ > git checkout -f 4b7d45153a49086f06e3f71f06adc4743d075b98
 First time build. Skipping changelog.
 Pull Docker image gmacario/build-capi-native from repository ...
 $ docker pull gmacario/build-capi-native
-Docker container 9868e2db72d66222b443d7ce4389e3511fbb479ccc54bd72d5acf91c37c70e60 started to host the build
-$ docker exec --tty 9868e2db72d66222b443d7ce4389e3511fbb479ccc54bd72d5acf91c37c70e60 env
-[workspace] $ docker exec --tty --user 1000:1000 9868e2db72d66222b443d7ce4389e3511fbb479ccc54bd72d5acf91c37c70e60 env 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
- b="${f%.override}";
- echo "$f" >> "$COPY_REFERENCE_FILE_LOG";
- rel="${b:23}";
- dir=$(dirname "${b}");
- echo " $f -> $rel" >> "$COPY_REFERENCE_FILE_LOG";
- if [[ ! -e /var/jenkins_home/${rel} || $f = *.override ]]; then
- echo "copy $rel to JENKINS_HOME" >> "$COPY_REFERENCE_FILE_LOG";
- mkdir -p "/var/jenkins_home/${dir:23}";
- cp -r "${f}" "/var/jenkins_home/${rel}";
- [[ ${rel} == plugins/*.jpi ]] && touch "/var/jenkins_home/${rel}.pinned";
+Docker container c352a609d861cc459097406e297cdf5970364d04c87555611de7f3657983572e started to host the build
+$ docker exec --tty c352a609d861cc459097406e297cdf5970364d04c87555611de7f3657983572e env
+[workspace] $ docker exec --tty --user 1000:1000 c352a609d861cc459097406e297cdf5970364d04c87555611de7f3657983572e env 'BASH_FUNC_copy_reference_file%%=() {  f=${1%/};
+ echo "$f" >> $COPY_REFERENCE_FILE_LOG;
+ rel=${f:23};
+ dir=$(dirname ${f});
+ echo " $f -> $rel" >> $COPY_REFERENCE_FILE_LOG;
+ if [[ ! -e /var/jenkins_home/${rel} ]]; then
+ echo "copy $rel to JENKINS_HOME" >> $COPY_REFERENCE_FILE_LOG;
+ mkdir -p /var/jenkins_home/${dir:23};
+ cp -r /usr/share/jenkins/ref/${rel} /var/jenkins_home/${rel};
+ [[ ${rel} == plugins/*.jpi ]] && touch /var/jenkins_home/${rel}.pinned;
  fi
-}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#1 BUILD_ID=1 BUILD_NUMBER=1 BUILD_TAG=jenkins-GENIVI-common-api-c-1 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=1 GIT_BRANCH=origin/master GIT_COMMIT=d6ec42ce45c33f40560d1f24b9143e9b1e6816e9 GIT_URL=git://git.projects.genivi.org/common-api/c-poc.git HOME=/var/jenkins_home HOSTNAME=9a260eff78c8 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=d73dd7a3cff408ad JAVA_DEBIAN_VERSION=8u72-b15-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u72 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=d73dd7a3cff408ad JENKINS_SHA=e72e06e64d23eefb13090459f517b0697aad7be0 JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=1.642.2 JOB_NAME=GENIVI/common-api-c LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/jobs/GENIVI/jobs/common-api-c/workspace /bin/bash -xe /tmp/hudson7515196655354952219.sh
+}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#1 BUILD_ID=1 BUILD_NUMBER=1 BUILD_TAG=jenkins-GENIVI-common-api-c-1 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=1 GIT_BRANCH=origin/master GIT_COMMIT=4b7d45153a49086f06e3f71f06adc4743d075b98 GIT_URL=git://git.projects.genivi.org/common-api/c-poc.git HOME=/var/jenkins_home HOSTNAME=0ac267008914 HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=88213e4aa86bf5e1 JAVA_DEBIAN_VERSION=8u45-b14-2~bpo8+2 JAVA_VERSION=8u45 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=88213e4aa86bf5e1 JENKINS_SHA=da06f963edb627f0ced2fce612f9985d1928f79b JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins-ci.org JENKINS_VERSION=2.0 JOB_NAME=GENIVI/common-api-c LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/jobs/GENIVI/jobs/common-api-c/workspace /bin/bash -xe /tmp/hudson2104869269332432603.sh
 + id
 uid=1000(build) gid=1000(build) groups=1000(build)
 + ls -la
-total 92
-drwxr-xr-x  8 build build  4096 Mar 11 14:40 .
-drwxr-xr-x  4 build build  4096 Mar 11 14:40 ..
-drwxr-xr-x  8 build build  4096 Mar 11 14:40 .git
--rw-r--r--  1 build build   199 Mar 11 14:40 .gitignore
--rw-r--r--  1 build build 11250 Mar 11 14:40 LICENSE.EPL-1.0
--rw-r--r--  1 build build 16726 Mar 11 14:40 LICENSE.MPL-2.0
--rw-r--r--  1 build build   870 Mar 11 14:40 Makefile.am
--rw-r--r--  1 build build  3019 Mar 11 14:40 NEWS
--rw-r--r--  1 build build  5758 Mar 11 14:40 README.adoc
--rw-r--r--  1 build build   235 Mar 11 14:40 capic.pc.in
--rw-r--r--  1 build build  1228 Mar 11 14:40 configure.ac
-drwxr-xr-x  2 build build  4096 Mar 11 14:40 doc
-drwxr-xr-x  5 build build  4096 Mar 11 14:40 ref
-drwxr-xr-x  3 build build  4096 Mar 11 14:40 src
-drwxr-xr-x  2 build build  4096 Mar 11 14:40 test
-drwxr-xr-x 13 build build  4096 Mar 11 14:40 tools
+total 96
+drwxr-xr-x  8 build build  4096 Apr 27 06:16 .
+drwxr-xr-x  4 build build  4096 Apr 27 06:16 ..
+drwxr-xr-x  8 build build  4096 Apr 27 06:16 .git
+-rw-r--r--  1 build build   199 Apr 27 06:16 .gitignore
+-rw-r--r--  1 build build 11250 Apr 27 06:16 LICENSE.EPL-1.0
+-rw-r--r--  1 build build 16726 Apr 27 06:16 LICENSE.MPL-2.0
+-rw-r--r--  1 build build   895 Apr 27 06:16 Makefile.am
+-rw-r--r--  1 build build  4208 Apr 27 06:16 NEWS
+-rw-r--r--  1 build build  5758 Apr 27 06:16 README.adoc
+-rw-r--r--  1 build build   235 Apr 27 06:16 capic.pc.in
+-rw-r--r--  1 build build  2009 Apr 27 06:16 configure.ac
+drwxr-xr-x  2 build build  4096 Apr 27 06:16 doc
+drwxr-xr-x  5 build build  4096 Apr 27 06:16 ref
+drwxr-xr-x  3 build build  4096 Apr 27 06:16 src
+drwxr-xr-x  4 build build  4096 Apr 27 06:16 test
+drwxr-xr-x 13 build build  4096 Apr 27 06:16 tools
 + autoreconf -i
 libtoolize: putting auxiliary files in '.'.
 libtoolize: copying file './ltmain.sh'
@@ -140,8 +141,8 @@ libtoolize: and rerunning libtoolize and aclocal.
 libtoolize: Consider adding '-I m4' to ACLOCAL_AMFLAGS in Makefile.am.
 configure.ac:18: installing './ar-lib'
 configure.ac:17: installing './compile'
-configure.ac:21: installing './config.guess'
-configure.ac:21: installing './config.sub'
+configure.ac:22: installing './config.guess'
+configure.ac:22: installing './config.sub'
 configure.ac:16: installing './install-sh'
 configure.ac:16: installing './missing'
 Makefile.am: installing './depcomp'
@@ -167,6 +168,7 @@ checking for style of include used by make... GNU
 checking dependency style of gcc... gcc3
 checking for ar... ar
 checking the archiver (ar) interface... ar
+checking for gawk... (cached) mawk
 checking build system type... x86_64-pc-linux-gnu
 checking host system type... x86_64-pc-linux-gnu
 checking how to print strings... printf
@@ -236,14 +238,25 @@ config.status: creating capic.pc
 config.status: creating config.h
 config.status: executing depfiles commands
 config.status: executing libtool commands
+
+    capic 0.2.1
+
+    compiler:  gcc
+    CPPFLAGS:  
+    CFLAGS:     -Wall -Wextra -Werror  -g -O2
+    LDFLAGS:   
+
+    logging:   yes
+
 + make
 make  all-am
 make[1]: Entering directory '/var/jenkins_home/jobs/GENIVI/jobs/common-api-c/workspace'
-/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.    -I./src -I.  -Wall -Werror -fvisibility=hidden -g -O2 -MT src/libcapic_la-backend.lo -MD -MP -MF src/.deps/libcapic_la-backend.Tpo -c -o src/libcapic_la-backend.lo `test -f 'src/backend.c' || echo './'`src/backend.c
-libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I./src -I. -Wall -Werror -fvisibility=hidden -g -O2 -MT src/libcapic_la-backend.lo -MD -MP -MF src/.deps/libcapic_la-backend.Tpo -c src/backend.c  -fPIC -DPIC -o src/.libs/libcapic_la-backend.o
-mv -f src/.deps/libcapic_la-backend.Tpo src/.deps/libcapic_la-backend.Plo
-/bin/bash ./libtool  --tag=CC   --mode=link gcc -I./src -I.  -Wall -Werror -fvisibility=hidden -g -O2 -no-undefined -version-info 0:0:0  -o libcapic.la -rpath /usr/local/lib  src/libcapic_la-backend.lo  
-libtool: link: gcc -shared  -fPIC -DPIC  src/.libs/libcapic_la-backend.o    -g -O2   -Wl,-soname -Wl,libcapic.so.0 -o .libs/libcapic.so.0.0.0
+depbase=`echo src/backend.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I./src -I.   -Wall -Wextra -Werror  -fvisibility=hidden -g -O2 -MT src/backend.lo -MD -MP -MF $depbase.Tpo -c -o src/backend.lo src/backend.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I./src -I. -Wall -Wextra -Werror -fvisibility=hidden -g -O2 -MT src/backend.lo -MD -MP -MF src/.deps/backend.Tpo -c src/backend.c  -fPIC -DPIC -o src/.libs/backend.o
+/bin/bash ./libtool  --tag=CC   --mode=link gcc -Wall -Wextra -Werror  -fvisibility=hidden -g -O2 -no-undefined -version-info 0:0:0  -o libcapic.la -rpath /usr/local/lib  src/backend.lo  
+libtool: link: gcc -shared  -fPIC -DPIC  src/.libs/backend.o    -g -O2   -Wl,-soname -Wl,libcapic.so.0 -o .libs/libcapic.so.0.0.0
 libtool: link: (cd ".libs" && rm -f "libcapic.so.0" && ln -s "libcapic.so.0.0.0" "libcapic.so.0")
 libtool: link: (cd ".libs" && rm -f "libcapic.so" && ln -s "libcapic.so.0.0.0" "libcapic.so")
 libtool: link: ( cd ".libs" && rm -f "libcapic.la" && ln -s "../libcapic.la" "libcapic.la" )
