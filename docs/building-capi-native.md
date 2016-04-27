@@ -1,7 +1,6 @@
 # Building GENIVI Common API C in Jenkins
 
 **WIP: Updating document for CAPIC PoC Release 0.2.1**
-
 ## Prerequisites
 
 * A recent version of [Jenkins](https://jenkins.io/) CI/CD installed together with the necessary plugins
@@ -13,7 +12,7 @@
 
 ### Create folder `GENIVI`
 
-Browse `${DOCKER_URL}`, then click **New Item**
+Browse `${JENKINS_URL}`, then click **New Item**
 
 * Name: `GENIVI`
 * Type: **Folder**
@@ -22,7 +21,7 @@ then click **OK**. Inside the project configuration page, review configuration, 
 
 ### Create project `common-api-c`
 
-Browse `${DOCKER_URL}/job/GENIVI`, then click **New Item**
+Browse `${JENKINS_URL}/job/GENIVI`, then click **New Item**
 
 * Name: `common-api-c`
 * Type: **Freestyle project**
@@ -69,7 +68,7 @@ then click **Save**.
 
 ### Build project `common-api-c`
 
-Browse `${DOCKER_URL}/job/GENIVI/job/common-api-c`, then click **Build Now**
+Browse `${JENKINS_URL}/job/GENIVI/job/common-api-c`, then click **Build Now**
 
 Result: SUCCESS
 
