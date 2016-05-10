@@ -126,36 +126,12 @@ Checking out Revision b59c3727ed981603438d5dc58946d1cfcd5c71ab (refs/remotes/ori
  > git rev-list b59c3727ed981603438d5dc58946d1cfcd5c71ab # timeout=10
 Docker container 9526e0a492d3e5444cae781dc8ea350c068203fe36eed953ca25f3530e8c4f35 started to host the build
 $ docker exec --tty 9526e0a492d3e5444cae781dc8ea350c068203fe36eed953ca25f3530e8c4f35 env
-[workspace] $ docker exec --tty --user 1000:1000 9526e0a492d3e5444cae781dc8ea350c068203fe36eed953ca25f3530e8c4f35 env
 ...
-You can now run 'bitbake <target>'
-
-Common targets are:
-    core-image-minimal
-    core-image-sato
-    meta-toolchain
-    adt-installer
-    meta-ide-support
-
-You can also run generated qemu images with a command like 'runqemu qemux86'
-+++ '[' -n /var/jenkins_home/jobs/GENIVI/jobs/build_gdp/workspace/gdp-src-build ']'
-+++ cd /var/jenkins_home/jobs/GENIVI/jobs/build_gdp/workspace/gdp-src-build
-+++ unset OEROOT
-+++ unset BBPATH
-+++ unset THIS_SCRIPT
-+++ '[' -z '' ']'
-+++ '[' -f bitbake.lock ']'
-++ echo
-
-++ echo 'Now run:  bitbake genivi-dev-platform'
-Now run:  bitbake genivi-dev-platform
-++ whoami
-+ '[' build = root ']'
-+ bitbake genivi-dev-platform
 Parsing recipes: 100% || Time: 00:00:52
 
 Parsing of 1644 .bb files complete (0 cached, 1644 parsed). 2139 targets, 277 skipped, 0 masked, 0 errors.
 [1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
+
 Build Configuration:
 BB_VERSION        = "1.26.0"
 BUILD_SYS         = "x86_64-linux"
@@ -184,7 +160,16 @@ meta-rust         = "(detachedfromf13ac9d):f13ac9d48ae928b761d7be204fa8f877d41e7
 No currently running tasks (1 of 4447)
 [39A[JNo currently running tasks (2 of 4447)
 ...
-TODO
+[42A[JCurrently 1 running tasks (4446 of 4447):
+0: genivi-dev-platform-1.3+snapshot-20160510-r0 do_rootfs (pid 3927)
+[111A[JNo currently running tasks (4446 of 4447)
+[42A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 4447 tasks of which 22 didn't need to be rerun and all succeeded.[0m
+
+Summary: There were 12 WARNING messages shown.
+Stopping Docker container after build completion
+Archiving artifacts
+Notifying upstream projects of job completion
+Finished: SUCCESS
 ```
 
 **NOTE**: A full build starting from an empty workspace takes about 6 hours to complete (Docker Engine running on a quad-core Intel(R) Xeon(TM) CPU X6550 @2.00GHz, 4 GB RAM + 16 GB swap).
