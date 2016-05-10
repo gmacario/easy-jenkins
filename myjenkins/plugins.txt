@@ -3,13 +3,13 @@ ace-editor 1.1
 ant 1.2
 antisamy-markup-formatter 1.3
 authentication-tokens 1.2
-branch-api 1.6
+branch-api 1.6 # 1.7
 build-flow-plugin 0.18
 build-flow-test-aggregator 1.2
 build-pipeline-plugin 1.5.2
 cloudbees-folder 5.9
 conditional-buildstep 1.3.3
-credentials 1.27
+credentials 1.27 # 1.28
 cvs 2.12
 dashboard-view 2.9.7
 delivery-pipeline-plugin 0.9.9
@@ -25,12 +25,12 @@ ghprb 1.31.4
 git 2.4.4
 git-client 1.19.6
 git-server 1.6
-github 1.18.2
+github 1.18.2 # 1.19.0
 github-api 1.75
 github-branch-source 1.6
-github-oauth 0.22.3
+github-oauth 0.22.3 # 0.23
 github-organization-folder 1.3
-github-pullrequest 0.0.1-rc5
+github-pullrequest 0.0.1-rc5 # 0.1.0-rc6
 greenballs 1.15
 groovy 1.29
 handlebars 1.1.1
@@ -38,12 +38,12 @@ htmlpublisher 1.11
 icon-shim 2.0.3
 javadoc 1.3
 jenkins-multijob-plugin 1.21
-job-dsl 1.45
-jobConfigHistory 2.13
+job-dsl 1.45 # 1.46
+jobConfigHistory 2.13 # 2.14
 join 1.19
 jquery 1.11.2-0
 jquery-detached 1.2.1
-junit 1.12
+junit 1.12 # 1.13
 ldap 1.12
 mailer 1.17
 mapdb-api 1.0.6.0
@@ -59,10 +59,10 @@ parameterized-trigger 2.30
 pipeline-build-step 2.0
 pipeline-input-step 2.0
 pipeline-rest-api 1.3
-pipeline-stage-step 2.0
+pipeline-stage-step 2.0 # 2.1
 pipeline-stage-view 1.3
 plain-credentials 1.1
-promoted-builds 2.25
+promoted-builds 2.25 # 2.26
 run-condition 1.0
 scm-api 1.2
 script-security 1.19
@@ -77,10 +77,10 @@ token-macro 1.12.1
 translation 1.14
 view-job-filters 1.27
 windows-slaves 1.1
-workflow-aggregator 2.0
+workflow-aggregator 2.0 # 2.1
 workflow-api 2.0
 workflow-basic-steps 2.0
-workflow-cps 2.1
+workflow-cps 2.1 # 2.2
 workflow-cps-global-lib 2.0
 workflow-durable-task-step 2.0
 workflow-job 2.1
