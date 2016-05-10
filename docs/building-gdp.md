@@ -95,7 +95,7 @@ bitbake genivi-dev-platform
 
 then click **Save**.
 
-### Build project `build_gdp_ivi9`
+### Build project `build_gdp`
 
 Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp/`, then click **Build Now**.
 
