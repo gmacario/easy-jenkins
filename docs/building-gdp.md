@@ -1,7 +1,5 @@
 # Building GDP for qemux86-64 using easy-jenkins
 
-**WORK-IN-PROGRESS**
-
 <!-- (2016-05-10 11:00 CEST) -->
 
 This document explains how to build from sources the [GENIVI Development Platform](https://at.projects.genivi.org/wiki/x/aoCw) using [Jenkins](https://jenkins.io/).
@@ -11,7 +9,7 @@ The actual build is executed inside a [Docker custom build environment](https://
 The following instructions have been tested on:
 
 * Docker client: itm-gmacario-w7 (MS Windows 7 64-bit, Docker Toolbox 1.11.0)
-* Docker engine: alm-gm-ubu15 (Ubuntu 14.04.4 LTS 64-bit, Docker 1.11.1, Docker Compose 1.6.2)
+* Docker engine: mv-linux-powerhorse (Ubuntu 14.04.4 LTS 64-bit, Docker 1.11.1, Docker Compose 1.6.0)
 
 ## Preparation
 
