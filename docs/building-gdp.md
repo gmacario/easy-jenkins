@@ -46,7 +46,7 @@ then click **OK**. Inside the project configuration page, add the following info
     - Max # of builds to keep: 2
 * Source Code Management: Git
   - Repositories
-    - Repository URL: `https://github.com/GENIVI/meta-genivi-dev`
+    - Repository URL: `https://github.com/GENIVI/genivi-dev-platform.git`
     - Credentials: - none -
   - Branches to build
     - Branch Specifier (blank for 'any'): `*/qemux86-64`
@@ -101,9 +101,89 @@ Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp/`, then click **Build Now**.
 
 You may watch the build logs at `${JENKINS_URL}/job/GENIVI/job/build_gdp/lastBuild/console`
 
-<!-- (2016-04-22 16:07 CEST) http://mv-linux-powerhorse.solarma.it:9080/job/GENIVI/job/build_gdp_ivi9/1/console -->
+<!-- (2016-05-10 11:18 CEST) http://mv-linux-powerhorse.solarma.it:9080/job/GENIVI/job/build_gdp/3/console -->
 
 ```
+Started by user anonymous
+[EnvInject] - Loading node environment variables.
+Building in workspace /var/jenkins_home/jobs/GENIVI/jobs/build_gdp/workspace
+Cloning the remote Git repository
+Cloning repository https://github.com/GENIVI/genivi-dev-platform.git
+ > git init /var/jenkins_home/jobs/GENIVI/jobs/build_gdp/workspace # timeout=10
+Fetching upstream changes from https://github.com/GENIVI/genivi-dev-platform.git
+ > git --version # timeout=10
+ > git -c core.askpass=true fetch --tags --progress https://github.com/GENIVI/genivi-dev-platform.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/GENIVI/genivi-dev-platform.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/GENIVI/genivi-dev-platform.git # timeout=10
+Fetching upstream changes from https://github.com/GENIVI/genivi-dev-platform.git
+ > git -c core.askpass=true fetch --tags --progress https://github.com/GENIVI/genivi-dev-platform.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/qemux86-64^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/qemux86-64^{commit} # timeout=10
+Checking out Revision b59c3727ed981603438d5dc58946d1cfcd5c71ab (refs/remotes/origin/qemux86-64)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f b59c3727ed981603438d5dc58946d1cfcd5c71ab
+ > git rev-list b59c3727ed981603438d5dc58946d1cfcd5c71ab # timeout=10
+Docker container 9526e0a492d3e5444cae781dc8ea350c068203fe36eed953ca25f3530e8c4f35 started to host the build
+$ docker exec --tty 9526e0a492d3e5444cae781dc8ea350c068203fe36eed953ca25f3530e8c4f35 env
+[workspace] $ docker exec --tty --user 1000:1000 9526e0a492d3e5444cae781dc8ea350c068203fe36eed953ca25f3530e8c4f35 env
+...
+You can now run 'bitbake <target>'
+
+Common targets are:
+    core-image-minimal
+    core-image-sato
+    meta-toolchain
+    adt-installer
+    meta-ide-support
+
+You can also run generated qemu images with a command like 'runqemu qemux86'
++++ '[' -n /var/jenkins_home/jobs/GENIVI/jobs/build_gdp/workspace/gdp-src-build ']'
++++ cd /var/jenkins_home/jobs/GENIVI/jobs/build_gdp/workspace/gdp-src-build
++++ unset OEROOT
++++ unset BBPATH
++++ unset THIS_SCRIPT
++++ '[' -z '' ']'
++++ '[' -f bitbake.lock ']'
+++ echo
+
+++ echo 'Now run:  bitbake genivi-dev-platform'
+Now run:  bitbake genivi-dev-platform
+++ whoami
++ '[' build = root ']'
++ bitbake genivi-dev-platform
+Parsing recipes: 100% || Time: 00:00:52
+
+Parsing of 1644 .bb files complete (0 cached, 1644 parsed). 2139 targets, 277 skipped, 0 masked, 0 errors.
+[1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
+Build Configuration:
+BB_VERSION        = "1.26.0"
+BUILD_SYS         = "x86_64-linux"
+NATIVELSBSTRING   = "Ubuntu-14.04"
+TARGET_SYS        = "x86_64-poky-linux"
+MACHINE           = "qemux86-64"
+DISTRO            = "poky-ivi-systemd"
+DISTRO_VERSION    = "9.0.1"
+TUNE_FEATURES     = "m64 core2"
+TARGET_FPU        = ""
+meta              
+meta-yocto        
+meta-yocto-bsp    = "(detachedfrom900d7d6):900d7d6b59c36b2bdbd1c85febec99e80ab54f95"
+meta-ivi          
+meta-ivi-bsp      = "(detachedfromc6c4be2):c6c4be2e454545fd913ef39f5806990157e8d30a"
+meta-oe           
+meta-filesystems  
+meta-ruby         = "(detachedfroma7c1a2b):a7c1a2b0e6947740758136216e45ca6ca66321fc"
+meta-qt5          = "(detachedfrom90919b9):90919b9d86988e7da01fa2c0a07246b5b5600a5d"
+meta-genivi-dev   = "(detachedfromecc5dda):ecc5dda0caac4680df2601849660307d65a0ff89"
+meta-rust         = "(detachedfromf13ac9d):f13ac9d48ae928b761d7be204fa8f877d41e7099"
+
+[1;29mNOTE[0m: [29mPreparing RunQueue[0m
+[1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
+[1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
+No currently running tasks (1 of 4447)
+[39A[JNo currently running tasks (2 of 4447)
+...
 TODO
 ```
 
