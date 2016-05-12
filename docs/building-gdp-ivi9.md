@@ -1,5 +1,7 @@
 # Building GDP-ivi9 for qemux86-64 using easy-jenkins
 
+**NOTE**: This is an historical document for the GDP-ivi9 release - for more recent developments please refer to [building-gdp.md](building-gdp.md).
+
 <!-- (2016-04-22 16:00 CEST) -->
 
 This document explains how to build from sources the [GENIVI Demo Platform](https://at.projects.genivi.org/wiki/x/aoCw) using [Jenkins](https://jenkins-ci.org/).
