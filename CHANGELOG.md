@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## v1.y.z (NOT RELEASED YET)
+
+- docs: Add building-gdp.md (#114)
+- myjenkins: Update to latest available plugins (#115)
+- myjenkins: Update to latest available plugins (#117)
+
 ## v1.0.0 (2016-05-10)
 
 - myjenkins: Update to latest available plugins
