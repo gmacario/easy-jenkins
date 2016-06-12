@@ -37,7 +37,7 @@ Inside the project configuration page, fill-in the following information:
   - Build Environment
     - Build inside a Docker container: Yes
       - Docker image to use: Pull docker image from repository
-        - Image id/tag: `gmacario/wtfapp-devenv`
+        - Image id/tag: `gmacario/android-devenv`
   - Build
     - Execute shell
       - Command
