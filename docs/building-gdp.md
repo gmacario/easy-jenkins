@@ -47,7 +47,7 @@ then click **OK**. Inside the project configuration page, add the following info
     - Repository URL: `https://github.com/GENIVI/genivi-dev-platform.git`
     - Credentials: - none -
   - Branches to build
-    - Branch Specifier (blank for 'any'): `*/qemux86-64`
+    - Branch Specifier (blank for 'any'): `*/master`
   - Repository browser: (Auto)
 * Build Environment
   - Build inside a Docker container: Yes
@@ -74,7 +74,7 @@ git config --global user.name "easy-jenkins"
 git config --global user.email "$(whoami)@$(hostname)"
 
 # Configure the build
-source init.sh
+source init.sh qemux86-64
 
 # Prevent error "Do not use Bitbake as root"
 [ $(whoami) = "root" ] && touch conf/sanity.conf
@@ -99,71 +99,84 @@ Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp/`, then click **Build Now**.
 
 You may watch the build logs at `${JENKINS_URL}/job/GENIVI/job/build_gdp/lastBuild/console`
 
-<!-- (2016-05-10 11:18 CEST) http://mv-linux-powerhorse.solarma.it:9080/job/GENIVI/job/build_gdp/3/console -->
+<!-- (2016-06-21 09:10 CEST) http://ies-genbld01-vm.ies.mentorg.com:9080/job/GENIVI/job/build_gdp/4/console -->
 
 ```
 Started by user anonymous
 [EnvInject] - Loading node environment variables.
 Building in workspace /var/jenkins_home/jobs/GENIVI/jobs/build_gdp/workspace
-Cloning the remote Git repository
-Cloning repository https://github.com/GENIVI/genivi-dev-platform.git
- > git init /var/jenkins_home/jobs/GENIVI/jobs/build_gdp/workspace # timeout=10
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/GENIVI/genivi-dev-platform.git # timeout=10
 Fetching upstream changes from https://github.com/GENIVI/genivi-dev-platform.git
  > git --version # timeout=10
  > git -c core.askpass=true fetch --tags --progress https://github.com/GENIVI/genivi-dev-platform.git +refs/heads/*:refs/remotes/origin/*
- > git config remote.origin.url https://github.com/GENIVI/genivi-dev-platform.git # timeout=10
- > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
- > git config remote.origin.url https://github.com/GENIVI/genivi-dev-platform.git # timeout=10
-Fetching upstream changes from https://github.com/GENIVI/genivi-dev-platform.git
- > git -c core.askpass=true fetch --tags --progress https://github.com/GENIVI/genivi-dev-platform.git +refs/heads/*:refs/remotes/origin/*
- > git rev-parse refs/remotes/origin/qemux86-64^{commit} # timeout=10
- > git rev-parse refs/remotes/origin/origin/qemux86-64^{commit} # timeout=10
-Checking out Revision b59c3727ed981603438d5dc58946d1cfcd5c71ab (refs/remotes/origin/qemux86-64)
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 0368bf68855ce20947e36315e294d1c0d549ce8f (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f b59c3727ed981603438d5dc58946d1cfcd5c71ab
- > git rev-list b59c3727ed981603438d5dc58946d1cfcd5c71ab # timeout=10
-Docker container 9526e0a492d3e5444cae781dc8ea350c068203fe36eed953ca25f3530e8c4f35 started to host the build
-$ docker exec --tty 9526e0a492d3e5444cae781dc8ea350c068203fe36eed953ca25f3530e8c4f35 env
+ > git checkout -f 0368bf68855ce20947e36315e294d1c0d549ce8f
+ > git rev-list 0368bf68855ce20947e36315e294d1c0d549ce8f # timeout=10
+Docker container 806a0c286ca15e53ffc7e4948a96ba1b20d5acb04007e30eceb239acbd31f31d started to host the build
+$ docker exec --tty 806a0c286ca15e53ffc7e4948a96ba1b20d5acb04007e30eceb239acbd31f31d env
+[workspace] $ docker exec --tty --user 1000:1000 806a0c286ca15e53ffc7e4948a96ba1b20d5acb04007e30eceb239acbd31f31d env 'BASH_FUNC_copy_reference_file%%=() {  f="${1%/}";
+ b="${f%.override}";
+ echo "$f" >> "$COPY_REFERENCE_FILE_LOG";
+ rel="${b:23}";
+ dir=$(dirname "${b}");
+ echo " $f -> $rel" >> "$COPY_REFERENCE_FILE_LOG";
+ if [[ ! -e $JENKINS_HOME/${rel} || $f = *.override ]]; then
+ echo "copy $rel to JENKINS_HOME" >> "$COPY_REFERENCE_FILE_LOG";
+ mkdir -p "$JENKINS_HOME/${dir:23}";
+ cp -r "${f}" "$JENKINS_HOME/${rel}";
+ [[ ${rel} == plugins/*.jpi ]] && touch "$JENKINS_HOME/${rel}.pinned";
+ fi
+}' BUILD_CAUSE=MANUALTRIGGER BUILD_CAUSE_MANUALTRIGGER=true BUILD_DISPLAY_NAME=#4 BUILD_ID=4 BUILD_NUMBER=4 BUILD_TAG=jenkins-GENIVI-build_gdp-4 CA_CERTIFICATES_JAVA_VERSION=20140324 CLASSPATH= COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log EXECUTOR_NUMBER=0 GIT_BRANCH=origin/master GIT_COMMIT=0368bf68855ce20947e36315e294d1c0d549ce8f GIT_PREVIOUS_COMMIT=0368bf68855ce20947e36315e294d1c0d549ce8f GIT_URL=https://github.com/GENIVI/genivi-dev-platform.git HOME=/var/jenkins_home HOSTNAME=411d39cbb44e HUDSON_HOME=/var/jenkins_home HUDSON_SERVER_COOKIE=0038592f0fc785b4 JAVA_DEBIAN_VERSION=8u91-b14-1~bpo8+1 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 JAVA_VERSION=8u91 JENKINS_HOME=/var/jenkins_home JENKINS_SERVER_COOKIE=0038592f0fc785b4 JENKINS_SHA=1fd02a942cca991577ee9727dd3d67470e45c031 JENKINS_SLAVE_AGENT_PORT=50000 JENKINS_UC=https://updates.jenkins.io JENKINS_VERSION=2.9 JOB_BASE_NAME=build_gdp JOB_NAME=GENIVI/build_gdp LANG=C.UTF-8 NODE_LABELS=master NODE_NAME=master PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin PWD=/ ROOT_BUILD_CAUSE=MANUALTRIGGER ROOT_BUILD_CAUSE_MANUALTRIGGER=true SHLVL=2 TERM=xterm TINI_SHA=066ad710107dc7ee05d3aa6e4974f01dc98f3888 WORKSPACE=/var/jenkins_home/jobs/GENIVI/jobs/build_gdp/workspace /bin/bash -xe /tmp/hudson4309422608057931335.sh
++ id
+uid=1000(build) gid=1000(build) groups=1000(build)
++ pwd
+/var/jenkins_home/jobs/GENIVI/jobs/build_gdp/workspace
 ...
-Parsing recipes: 100% || Time: 00:00:52
-
-Parsing of 1644 .bb files complete (0 cached, 1644 parsed). 2139 targets, 277 skipped, 0 masked, 0 errors.
+Parsing of 1730 .bb files complete (1729 cached, 1 parsed). 2282 targets, 328 skipped, 0 masked, 0 errors.
 [1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
 
 Build Configuration:
-BB_VERSION        = "1.26.0"
+BB_VERSION        = "1.28.0"
 BUILD_SYS         = "x86_64-linux"
 NATIVELSBSTRING   = "Ubuntu-14.04"
 TARGET_SYS        = "x86_64-poky-linux"
 MACHINE           = "qemux86-64"
 DISTRO            = "poky-ivi-systemd"
-DISTRO_VERSION    = "9.0.1"
+DISTRO_VERSION    = "10.0.0"
 TUNE_FEATURES     = "m64 core2"
 TARGET_FPU        = ""
 meta              
 meta-yocto        
-meta-yocto-bsp    = "(detachedfrom900d7d6):900d7d6b59c36b2bdbd1c85febec99e80ab54f95"
+meta-yocto-bsp    = "HEAD:fc45deac89ef63ca1c44e763c38ced7dfd72cbe1"
 meta-ivi          
-meta-ivi-bsp      = "(detachedfromc6c4be2):c6c4be2e454545fd913ef39f5806990157e8d30a"
+meta-ivi-bsp      = "HEAD:9d72380c1d50d0c3469b85c3a43fe612b5ee1dd9"
 meta-oe           
 meta-filesystems  
-meta-ruby         = "(detachedfroma7c1a2b):a7c1a2b0e6947740758136216e45ca6ca66321fc"
-meta-qt5          = "(detachedfrom90919b9):90919b9d86988e7da01fa2c0a07246b5b5600a5d"
-meta-genivi-dev   = "(detachedfromecc5dda):ecc5dda0caac4680df2601849660307d65a0ff89"
-meta-rust         = "(detachedfromf13ac9d):f13ac9d48ae928b761d7be204fa8f877d41e7099"
+meta-ruby         = "HEAD:ad6133a2e95f4b83b6b3ea413598e2cd5fb3fd90"
+meta-qt5          = "HEAD:90919b9d86988e7da01fa2c0a07246b5b5600a5d"
+meta-genivi-dev   = "HEAD:10f29d4851387d1d25029cd58d94a5818fd1f6fc"
+meta-rust         = "HEAD:f13ac9d48ae928b761d7be204fa8f877d41e7099"
+meta-oic          = "HEAD:69146eaf8bc05c74c377e731b7e16d82854a4659"
+meta-erlang       = "HEAD:4d7eacc8e6593934ed5b0c8abc3d3e9dc339d849"
+meta-rvi          = "HEAD:de9d548fe35e2cee8688faaae910b4f6f7fea17e"
 
 [1;29mNOTE[0m: [29mPreparing RunQueue[0m
 [1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
 [1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
-No currently running tasks (1 of 4447)
-[39A[JNo currently running tasks (2 of 4447)
 ...
-[42A[JCurrently 1 running tasks (4446 of 4447):
-0: genivi-dev-platform-1.3+snapshot-20160510-r0 do_rootfs (pid 3927)
-[111A[JNo currently running tasks (4446 of 4447)
-[42A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 4447 tasks of which 22 didn't need to be rerun and all succeeded.[0m
+[195A[JCurrently 1 running tasks (4797 of 4800):
+0: genivi-dev-platform-1.3+snapshot-20160621-r0 do_rootfs (pid 2766)
+[111A[JCurrently 1 running tasks (4798 of 4800):
+0: genivi-dev-platform-1.3+snapshot-20160621-r0 do_rootfs (pid 2766)
+[111A[JNo currently running tasks (4798 of 4800)
+[42A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 4800 tasks of which 1886 didn't need to be rerun and all succeeded.[0m
 
-Summary: There were 12 WARNING messages shown.
+Summary: There were 3 WARNING messages shown.
 Stopping Docker container after build completion
 Archiving artifacts
 Notifying upstream projects of job completion
@@ -172,10 +185,10 @@ Finished: SUCCESS
 
 **NOTE**: A full build starting from an empty workspace takes about 6 hours to complete (Docker Engine running on a quad-core Intel(R) Xeon(TM) CPU X6550 @2.00GHz, 4 GB RAM + 16 GB swap).
 
-![Artifacts of project build_gdp](images/capture-20160510-1711.png)
+![Artifacts of project build_gdp](images/capture-20160622-0924.png)
 
 Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp/ws/gdp-src-build/tmp/deploy/images/qemux86-64/` to inspect the build results.
 
-![Workspace of project build_gdp_ivi9](images/capture-20160510-1712.png)
+![Workspace of project build_gdp_ivi9](images/capture-20160622-0925.png)
 
 <!-- EOF -->
