@@ -169,7 +169,18 @@ meta-rvi          = "HEAD:de9d548fe35e2cee8688faaae910b4f6f7fea17e"
 [1;29mNOTE[0m: [29mExecuting SetScene Tasks[0m
 [1;29mNOTE[0m: [29mExecuting RunQueue Tasks[0m
 ...
-TODO
+[195A[JCurrently 1 running tasks (4797 of 4800):
+0: genivi-dev-platform-1.3+snapshot-20160621-r0 do_rootfs (pid 2766)
+[111A[JCurrently 1 running tasks (4798 of 4800):
+0: genivi-dev-platform-1.3+snapshot-20160621-r0 do_rootfs (pid 2766)
+[111A[JNo currently running tasks (4798 of 4800)
+[42A[J[1;29mNOTE[0m: [29mTasks Summary: Attempted 4800 tasks of which 1886 didn't need to be rerun and all succeeded.[0m
+
+Summary: There were 3 WARNING messages shown.
+Stopping Docker container after build completion
+Archiving artifacts
+Notifying upstream projects of job completion
+Finished: SUCCESS
 ```
 
 **NOTE**: A full build starting from an empty workspace takes about 6 hours to complete (Docker Engine running on a quad-core Intel(R) Xeon(TM) CPU X6550 @2.00GHz, 4 GB RAM + 16 GB swap).
