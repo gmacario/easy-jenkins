@@ -52,7 +52,7 @@ then click **OK**. Inside the project configuration page, add the following info
 * Build Environment
   - Build inside a Docker container: Yes
     - Docker image to use: Pull docker image from repository
-      - Image id/tag: `gmacario/build-yocto-genivi`
+      - Image id/tag: `gmacario/build-yocto`
     - Advanced...
       - force Pull: Yes
       - Verbose: Yes
