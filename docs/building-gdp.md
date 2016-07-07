@@ -99,7 +99,7 @@ Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp/`, then click **Build Now**.
 
 You may watch the build logs at `${JENKINS_URL}/job/GENIVI/job/build_gdp/lastBuild/console`
 
-<!-- (2016-07-07 16:00 CEST) http://alm-gm-ubu15.alm.mentorg.com:9080/job/GENIVI/job/build_gdp/1/console -->
+<!-- (2016-07-06 16:00 CEST) http://alm-gm-ubu15.alm.mentorg.com:9080/job/GENIVI/job/build_gdp/1/console -->
 
 ```
 Started by user anonymous
