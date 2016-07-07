@@ -151,7 +151,7 @@ uid=1000(jenkins) gid=1000(jenkins) groups=1000(jenkins)
 + pwd
 /var/jenkins_home/workspace/GENIVI/build_gdp
 ...
-arsing of 1732 .bb files complete (0 cached, 1732 parsed). 2291 targets, 328 skipped, 0 masked, 0 errors.
+Parsing of 1732 .bb files complete (0 cached, 1732 parsed). 2291 targets, 328 skipped, 0 masked, 0 errors.
 [1;29mNOTE[0m: [29mResolving any missing task queue dependencies[0m
 
 Build Configuration:
