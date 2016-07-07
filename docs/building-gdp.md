@@ -197,10 +197,10 @@ Finished: SUCCESS
 
 **NOTE**: A full build starting from an empty workspace takes about 6 hours to complete (Docker Engine running on a quad-core Intel(R) Xeon(TM) CPU X6550 @2.00GHz, 4 GB RAM + 16 GB swap).
 
-![Artifacts of project build_gdp](images/capture-20160622-0924.png)
+![Artifacts of project build_gdp](images/capture-20160707-0933.png)
 
 Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp/ws/gdp-src-build/tmp/deploy/images/qemux86-64/` to inspect the build results.
 
-![Workspace of project build_gdp_ivi9](images/capture-20160622-0925.png)
+![Workspace of project build_gdp_ivi9](images/capture-20160707-0934.png)
 
 <!-- EOF -->
