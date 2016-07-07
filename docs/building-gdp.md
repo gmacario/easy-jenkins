@@ -9,7 +9,7 @@ The actual build is executed inside a [Docker custom build environment](https://
 The following instructions have been tested on:
 
 * Docker client: itm-gmacario-w7 (MS Windows 7 64-bit, Docker Toolbox 1.11.0)
-* Docker engine: mv-linux-powerhorse (Ubuntu 14.04.4 LTS 64-bit, Docker 1.11.1, Docker Compose 1.6.0)
+* Docker engine: alm-gm-ubu15.alm.mentorg.com (Ubuntu 14.04.4 LTS 64-bit, Docker 1.11.2, Docker Compose 1.6.2)
 
 ## Preparation
 
@@ -99,7 +99,7 @@ Browse `${JENKINS_URL}/job/GENIVI/job/build_gdp/`, then click **Build Now**.
 
 You may watch the build logs at `${JENKINS_URL}/job/GENIVI/job/build_gdp/lastBuild/console`
 
-<!-- (2016-07-07 16:00 CEST) http://alm-gm-ubu15.solarma.it:9080/job/GENIVI/job/build_gdp/1/console -->
+<!-- (2016-07-07 16:00 CEST) http://alm-gm-ubu15.alm.mentorg.com:9080/job/GENIVI/job/build_gdp/1/console -->
 
 ```
 Started by user anonymous
