@@ -70,76 +70,7 @@ RUN install-plugins.sh \
     translation:1.15 \
     view-job-filters:1.27 \
     windows-slaves:1.2 \
-    workflow-aggregator:2.5 \
-
-#    ace-editor:1.1 \
-#    authentication-tokens:1.3 \
-#    bouncycastle-api:2.16.0 \
-#    branch-api:2.0.6 \
-#    build-flow-plugin:0.20 \
-#    build-pipeline-plugin:1.5.6 \
-#    cloudbees-folder:5.17 \
-#    conditional-buildstep:1.3.5 \
-#    credentials:2.1.11 \
-#    credentials-binding:1.10 \
-#    cvs:2.13 \
-#    dashboard-view:2.9.10 \
-#    display-url-api:1.1.1 \
-#    docker-commons:1.6 \
-#    docker-workflow:1.10 \
-#    durable-task:1.13 \
-#    envinject:1.93.1 \
-#    git:3.0.5 \
-#    git-client:2.2.1 \
-#    git-server:1.7 \
-#    github:1.26.0 \
-#    github-api:1.84 \
-#    github-branch-source:2.0.3 \
-#    handlebars:1.1.1 \
-#    icon-shim:2.0.3 \
-#    javadoc:1.4 \
-#    job-dsl:1.57 \
-#    jquery:1.11.2-0 \
-#    jquery-detached:1.2.1 \
-#    junit:1.20 \
-#    mailer:1.19 \
-#    matrix-project:1.8 \
-#    maven-plugin:2.14 \
-#    momentjs:1.1.1 \
-#    multiple-scms:0.6 \
-#    parameterized-trigger:2.32 \
-#    pipeline-build-step:2.4 \
-#    pipeline-github-lib:1.0 \
-#    pipeline-graph-analysis:1.3 \
-#    pipeline-input-step:2.5 \
-#    pipeline-milestone-step:1.3 \
-#    pipeline-model-api:1.0.1 \
-#    pipeline-model-declarative-agent:1.0.1 \
-#    pipeline-model-definition:1.0.1 \
-#    pipeline-rest-api:2.5 \
-#    pipeline-stage-step:2.2 \
-#    pipeline-stage-tags-metadata:1.0.1 \
-#    pipeline-stage-view:2.5 \
-#    plain-credentials:1.3 \
-#    promoted-builds:2.28.1 \
-#    scm-api:2.0.4 \
-#    script-security:1.26 \
-#    ssh-agent:1.14 \
-#    ssh-credentials:1.13 \
-#    ssh-slaves:1.13 \
-#    structs:1.6 \
-#    subversion:2.7.1 \
-#    token-macro:2.0 \
-#    workflow-api:2.11 \
-#    workflow-basic-steps:2.4 \
-#    workflow-cps:2.27 \
-#    workflow-cps-global-lib:2.6 \
-#    workflow-durable-task-step:2.9 \
-#    workflow-job:2.10 \
-#    workflow-multibranch:2.12 \
-#    workflow-scm-step:2.3 \
-#    workflow-step-api:2.9 \
-#    workflow-support:2.13
+    workflow-aggregator:2.5
 
 COPY start.sh /tmp/start.sh
 RUN chmod +x /tmp/start.sh && dos2unix /tmp/start.sh
