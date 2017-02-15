@@ -35,10 +35,42 @@ RUN curl -o /usr/local/bin/docker-compose -fsSL \
     "https://github.com/docker/compose/releases/download/1.6.2/docker-compose-$(uname -s)-$(uname -m)" && \
     chmod +x /usr/local/bin/docker-compose
 
-# Install Jenkins plugins from the list at plugins.txt
-COPY plugins.txt /usr/share/jenkins/plugins.txt
-RUN dos2unix /usr/share/jenkins/plugins.txt
-RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
+# Workaround to prevent install-plugins.sh to fail
+RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
+
+# Install additional Jenkins plugins
+RUN install-plugins.sh \
+    ant:1.4 \
+    antisamy-markup-formatter:1.5 \
+    build-flow-test-aggregator:1.2 \
+    delivery-pipeline-plugin:0.10.2 \
+    docker-build-publish:1.3.2 \
+    docker-custom-build-environment:1.6.5 \
+    docker-plugin:0.16.2 \
+    ez-templates:1.2.5 \
+    ghprb:1.35.0 \
+    github-oauth:0.25 \
+    github-organization-folder:1.6 \
+    github-pullrequest:0.1.0-rc20 \
+    greenballs:1.15 \
+    groovy:1.30 \
+    htmlpublisher:1.12 \
+    jenkins-multijob-plugin:1.23 \
+    jobConfigHistory:2.15 \
+    join:1.21 \
+    ldap:1.14 \
+    mapdb-api:1.0.9.0 \
+    matrix-auth:1.4 \
+    mercurial:1.59 \
+    mock-slave:1.10 \
+    pam-auth:1.3 \
+    run-condition:1.0 \
+    scriptler:2.9 \
+    sectioned-view:1.20 \
+    translation:1.15 \
+    view-job-filters:1.27 \
+    windows-slaves:1.2 \
+    workflow-aggregator:2.5
 
 COPY start.sh /tmp/start.sh
 RUN chmod +x /tmp/start.sh && dos2unix /tmp/start.sh
