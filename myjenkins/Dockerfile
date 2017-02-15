@@ -35,6 +35,9 @@ RUN curl -o /usr/local/bin/docker-compose -fsSL \
     "https://github.com/docker/compose/releases/download/1.6.2/docker-compose-$(uname -s)-$(uname -m)" && \
     chmod +x /usr/local/bin/docker-compose
 
+# Workaround to prevent install-plugins.sh to fail
+RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
+
 # Install additional Jenkins plugins
 RUN install-plugins.sh \
     ant:1.4 \
