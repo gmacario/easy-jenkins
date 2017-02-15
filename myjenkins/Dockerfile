@@ -7,7 +7,7 @@
 # Credits to https://github.com/camiloribeiro/cdeasy
 # - https://github.com/camiloribeiro/cdeasy/blob/master/docker/jenkins/Dockerfile
 
-FROM jenkins:2.32.1
+FROM jenkins:2.32.2
 MAINTAINER Gianpaolo Macario <gmacario@gmail.com>
 
 USER root
