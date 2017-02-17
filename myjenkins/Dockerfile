@@ -43,6 +43,7 @@ RUN install-plugins.sh \
     ant:1.4 \
     antisamy-markup-formatter:1.5 \
     build-flow-test-aggregator:1.2 \
+    cloudbees-folder \
     delivery-pipeline-plugin:0.10.2 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
