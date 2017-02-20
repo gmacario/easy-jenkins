@@ -81,11 +81,6 @@ COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
 RUN touch /var/run/docker.sock
 
-# COPY start.sh /tmp/start.sh
-# RUN chmod +x /tmp/start.sh && dos2unix /tmp/start.sh
-# USER root
-# ENTRYPOINT ["/bin/bash", "-c", "/tmp/start.sh"]
-
 USER ${user}
 
 # EOF
