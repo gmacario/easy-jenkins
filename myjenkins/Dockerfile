@@ -30,6 +30,10 @@ RUN curl -o /usr/local/bin/gosu -fsSL \
 RUN wget -qO- https://get.docker.com/ | sh
 RUN usermod -aG docker jenkins
 
+# Add user "jenkins" to group "docker" of the Docker host
+# (on boot2docker, group "docker" has gid=100)
+RUN usermod -aG 100 jenkins
+
 # Install docker-compose
 RUN curl -o /usr/local/bin/docker-compose -fsSL \
     "https://github.com/docker/compose/releases/download/1.6.2/docker-compose-$(uname -s)-$(uname -m)" && \
@@ -73,14 +77,10 @@ RUN install-plugins.sh \
     windows-slaves:1.2 \
     workflow-aggregator:2.5
 
-COPY start.sh /tmp/start.sh
-RUN chmod +x /tmp/start.sh && dos2unix /tmp/start.sh
-
 COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
 RUN touch /var/run/docker.sock
 
-USER root
-ENTRYPOINT ["/bin/bash", "-c", "/tmp/start.sh"]
+USER ${user}
 
 # EOF
