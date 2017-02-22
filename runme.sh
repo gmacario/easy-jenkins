@@ -165,10 +165,20 @@ fi    # if ${USE_DOCKER_MACHINE} ...
 
 docker-compose up -d
 
+# Wait a reasonable time to make sure initialAdminPassword is generated
+sleep 30
+
 if ${USE_DOCKER_MACHINE}; then
-    echo "INFO: Browse http://$(docker-machine ip ${VM}):9080/ to access the Jenkins dashboard"
     echo "INFO: Run the following command to configure your shell:"
     echo "INFO: eval \$(docker-machine env ${VM})"
+    echo "INFO: Browse http://$(docker-machine ip ${VM}):9080/ to access the Jenkins dashboard"
 fi    # if ${USE_DOCKER_MACHINE} ...
+
+INITIAL_PASS=$(docker-compose exec -T myjenkins sh -c \
+    "[ -e /var/jenkins_home/secrets/initialAdminPassword ] && cat /var/jenkins_home/secrets/initialAdminPassword")
+
+if [ "${INITIAL_PASS}" != "" ]; then
+    echo "INFO: Initial administrator password: ${INITIAL_PASS}"
+fi
 
 # EOF
