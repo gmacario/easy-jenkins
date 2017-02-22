@@ -37,8 +37,9 @@ docker-machine --version || true
 docker version
 docker info
 docker images
-docker ps
+docker ps -a
 docker volume ls
+docker network ls
 
 # EOF
 ```
