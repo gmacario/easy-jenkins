@@ -171,13 +171,11 @@ if ${USE_DOCKER_MACHINE}; then
     echo "INFO: Browse http://$(docker-machine ip ${VM}):9080/ to access the Jenkins dashboard"
 fi    # if ${USE_DOCKER_MACHINE} ...
 
-INITIAL_PASS=$(docker-compose exec myjenkins sh -c \
+INITIAL_PASS=$(docker-compose exec -T myjenkins sh -c \
     "[ -e /var/jenkins_home/secrets/initialAdminPassword ] && cat /var/jenkins_home/secrets/initialAdminPassword")
 
-# INITIAL_PASS=$(docker-compose exec myjenkins cat /var/jenkins_home/secrets/initialAdminPassword)
-
 if [ "${INITIAL_PASS}" != "" ]; then
-    echo "INFO: The initial administrator password is set to ${INITIAL_PASS}"
+    echo "INFO: Initial administrator password: ${INITIAL_PASS}"
 fi
 
 # EOF
