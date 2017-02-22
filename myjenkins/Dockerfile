@@ -81,6 +81,6 @@ COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
 RUN touch /var/run/docker.sock
 
-USER ${user}
+USER jenkins
 
 # EOF
