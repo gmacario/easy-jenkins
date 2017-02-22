@@ -165,6 +165,9 @@ fi    # if ${USE_DOCKER_MACHINE} ...
 
 docker-compose up -d
 
+# Wait a reasonable time to make sure initialAdminPassword is generated
+sleep 30
+
 if ${USE_DOCKER_MACHINE}; then
     echo "INFO: Run the following command to configure your shell:"
     echo "INFO: eval \$(docker-machine env ${VM})"
