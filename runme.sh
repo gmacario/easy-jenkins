@@ -172,6 +172,8 @@ if ${USE_DOCKER_MACHINE}; then
 fi    # if ${USE_DOCKER_MACHINE} ...
 
 INITIAL_PASS=$(docker-compose exec myjenkins cat /var/jenkins_home/secrets/initialAdminPassword)
-echo "INFO: The initial administrator password is set to ${INITIAL_PASS}"
+if [ "${INITIAL_PASS}" != "" ]; then
+    echo "INFO: The initial administrator password is set to ${INITIAL_PASS}"
+fi
 
 # EOF
