@@ -47,7 +47,7 @@ RUN install-plugins.sh \
     ant:1.4 \
     antisamy-markup-formatter:1.5 \
     build-flow-test-aggregator:1.2 \
-    cloudbees-folder \
+    cloudbees-folder:5.18 \
     delivery-pipeline-plugin:0.10.2 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
@@ -56,7 +56,7 @@ RUN install-plugins.sh \
     ghprb:1.35.0 \
     github-oauth:0.25 \
     github-organization-folder:1.6 \
-    github-pullrequest:0.1.0-rc20 \
+    github-pullrequest:0.1.0-rc22 \
     greenballs:1.15 \
     groovy:1.30 \
     htmlpublisher:1.12 \
