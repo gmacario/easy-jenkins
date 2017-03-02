@@ -47,6 +47,7 @@ RUN install-plugins.sh \
     ant:1.4 \
     antisamy-markup-formatter:1.5 \
     blueocean:1.0.0-b23 \
+    blueocean-pipeline-editor:0.1-preview-4 \
     build-flow-test-aggregator:1.2 \
     cloudbees-folder:5.18 \
     delivery-pipeline-plugin:0.10.2 \
