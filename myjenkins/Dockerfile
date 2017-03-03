@@ -7,8 +7,7 @@
 # Credits to https://github.com/camiloribeiro/cdeasy
 # - https://github.com/camiloribeiro/cdeasy/blob/master/docker/jenkins/Dockerfile
 
-FROM jenkins:2.32.2
-MAINTAINER Gianpaolo Macario <gmacario@gmail.com>
+FROM jenkins:2.32.3
 
 USER root
 RUN apt-get update -qq && apt-get install -qqy \
@@ -46,11 +45,11 @@ RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 RUN install-plugins.sh \
     ant:1.4 \
     antisamy-markup-formatter:1.5 \
-    blueocean:1.0.0-b23 \
+    blueocean:1.0.0-b24 \
     blueocean-pipeline-editor:0.1-preview-4 \
     build-flow-test-aggregator:1.2 \
     cloudbees-folder:5.18 \
-    delivery-pipeline-plugin:0.10.2 \
+    delivery-pipeline-plugin:0.10.3 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
     docker-plugin:0.16.2 \
