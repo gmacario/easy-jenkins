@@ -8,7 +8,6 @@
 # - https://github.com/camiloribeiro/cdeasy/blob/master/docker/jenkins/Dockerfile
 
 FROM jenkins:2.32.3
-MAINTAINER Gianpaolo Macario <gmacario@gmail.com>
 
 USER root
 RUN apt-get update -qq && apt-get install -qqy \
