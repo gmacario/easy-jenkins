@@ -45,8 +45,8 @@ RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 RUN install-plugins.sh \
     ant:1.4 \
     antisamy-markup-formatter:1.5 \
-    blueocean:1.0.0-b24 \
-    blueocean-pipeline-editor:0.1-preview-4 \
+    blueocean:1.0.0-rc1 \
+    blueocean-pipeline-editor:0.2-rc1 \
     build-flow-test-aggregator:1.2 \
     delivery-pipeline-plugin:0.10.3 \
     docker-build-publish:1.3.2 \
@@ -74,7 +74,7 @@ RUN install-plugins.sh \
     sectioned-view:1.20 \
     translation:1.15 \
     view-job-filters:1.27 \
-    windows-slaves:1.2 \
+    windows-slaves:1.3.1 \
     workflow-aggregator:2.5
 
 COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
