@@ -48,7 +48,6 @@ RUN install-plugins.sh \
     blueocean:1.0.0-b24 \
     blueocean-pipeline-editor:0.1-preview-4 \
     build-flow-test-aggregator:1.2 \
-    cloudbees-folder:5.18 \
     delivery-pipeline-plugin:0.10.3 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
