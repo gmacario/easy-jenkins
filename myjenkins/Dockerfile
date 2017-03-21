@@ -52,6 +52,7 @@ RUN install-plugins.sh \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
     docker-plugin:0.16.2 \
+    email-ext:2.57.1 \
     ez-templates:1.2.5 \
     ghprb:1.35.0 \
     github-oauth:0.25 \
@@ -60,10 +61,11 @@ RUN install-plugins.sh \
     greenballs:1.15 \
     groovy:1.30 \
     htmlpublisher:1.12 \
-    jenkins-multijob-plugin:1.23 \
+    jenkins-multijob-plugin:1.24 \
     jobConfigHistory:2.15 \
     join:1.21 \
     ldap:1.14 \
+    mailer:1.20 \
     mapdb-api:1.0.9.0 \
     matrix-auth:1.4 \
     mercurial:1.59 \
@@ -72,6 +74,7 @@ RUN install-plugins.sh \
     run-condition:1.0 \
     scriptler:2.9 \
     sectioned-view:1.20 \
+    ssh-slaves:1.15 \
     translation:1.15 \
     view-job-filters:1.27 \
     windows-slaves:1.3.1 \
