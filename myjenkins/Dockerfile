@@ -16,6 +16,7 @@ RUN apt-get update -qq && apt-get install -qqy \
     curl \
     wget \
     lxc \
+    mc \
     iptables \
     dos2unix \
     groovy2
