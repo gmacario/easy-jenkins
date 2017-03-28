@@ -45,7 +45,7 @@ RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 RUN install-plugins.sh \
     ant:1.4 \
     antisamy-markup-formatter:1.5 \
-    blueocean:1.0.0-rc2 \
+    blueocean:1.0.0-rc3 \
     blueocean-pipeline-editor:0.2.0 \
     build-flow-test-aggregator:1.2 \
     delivery-pipeline-plugin:0.10.3 \
@@ -76,7 +76,7 @@ RUN install-plugins.sh \
     run-condition:1.0 \
     scriptler:2.9 \
     sectioned-view:1.20 \
-    ssh-slaves:1.15 \
+    ssh-slaves:1.16 \
     translation:1.15 \
     view-job-filters:1.27 \
     windows-slaves:1.3.1 \
