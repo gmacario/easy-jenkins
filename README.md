@@ -65,4 +65,4 @@ Under the [docs/][2] directory you can also find some examples about how to use 
 
 easy-jenkins is licensed under the MIT License - for details please see the `LICENSE` file.
 
-Copyright 2016, [Gianpaolo Macario](http://gmacario.github.io/)
+Copyright (C) 2016-2017, [Gianpaolo Macario](http://gmacario.github.io/)
