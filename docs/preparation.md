@@ -10,7 +10,7 @@ $ ./runme.sh
 
 Notice that the `runme.sh` will try to create a docker-machine if this is not already available.
 
-A more complex invocation may be used to create the containers to a differnt docker-machine (in the following example, `mv-linux-powerhorse`):
+A more complex invocation may be used to create the containers to a different docker-machine (in the following example, `mv-linux-powerhorse`):
 
 ```
 $ git clone https://github.com/gmacario/easy-jenkins
