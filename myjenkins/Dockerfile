@@ -45,7 +45,7 @@ RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 RUN install-plugins.sh \
     ant:1.4 \
     antisamy-markup-formatter:1.5 \
-    blueocean:1.0.0-rc4 \
+    blueocean:1.0.0 \
     blueocean-pipeline-editor:0.2.0 \
     build-flow-test-aggregator:1.2 \
     delivery-pipeline-plugin:0.10.3 \
