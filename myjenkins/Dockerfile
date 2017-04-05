@@ -53,6 +53,7 @@ RUN install-plugins.sh \
     docker-custom-build-environment:1.6.5 \
     docker-plugin:0.16.2 \
     email-ext:2.57.1 \
+    email-ext-recipients-column \
     ez-templates:1.2.5 \
     ghprb:1.35.0 \
     git-client:2.4.1 \
