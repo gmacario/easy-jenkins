@@ -67,8 +67,4 @@ You may watch the build logs at `${JENKINS_URL}/job/build_wtfapp_udooneo/lastBui
 
 <!-- (2016-02-29 15:25 CET) http://mv-linux-powerhorse.solarma.it:9080/job/build_wtfapp_udooneo/lastBuild/consoleText -->
 
-```
-TODO
-```
-
 <!-- EOF -->
