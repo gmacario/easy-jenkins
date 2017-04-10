@@ -37,7 +37,7 @@ Inside the project configuration page, fill-in the following information:
   - Build Environment
     - Build inside a Docker container: Yes
       - Docker image to use: Pull docker image from repository
-        - Image id/tag: `gmacario/wtfapp-devenv`
+        - Image id/tag: `gmacario/android-devenv`
   - Build
     - Execute shell
       - Command
@@ -66,9 +66,5 @@ Browse `${JENKINS_URL}/job/build_wtfapp_udooneo`, then click **Build Now**
 You may watch the build logs at `${JENKINS_URL}/job/build_wtfapp_udooneo/lastBuild/console`
 
 <!-- (2016-02-29 15:25 CET) http://mv-linux-powerhorse.solarma.it:9080/job/build_wtfapp_udooneo/lastBuild/consoleText -->
-
-```
-TODO
-```
 
 <!-- EOF -->
