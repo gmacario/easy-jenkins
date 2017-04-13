@@ -45,22 +45,22 @@ RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 RUN install-plugins.sh \
     ant:1.4 \
     antisamy-markup-formatter:1.5 \
-    blueocean:1.0.0 \
+    blueocean:1.0.1 \
     blueocean-pipeline-editor:0.2.0 \
     build-flow-test-aggregator:1.2 \
-    delivery-pipeline-plugin:0.10.3 \
+    delivery-pipeline-plugin:1.0.0 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
     docker-plugin:0.16.2 \
-    email-ext:2.57.1 \
+    email-ext:2.57.2 \
     ez-templates:1.2.5 \
-    ghprb:1.35.0 \
+    ghprb:1.36.1 \
     git-client:2.4.1 \
     github-oauth:0.25 \
     github-organization-folder:1.6 \
     github-pullrequest:0.1.0-rc22 \
     greenballs:1.15 \
-    groovy:1.30 \
+    groovy:2.0 \
     htmlpublisher:1.12 \
     jenkins-multijob-plugin:1.24 \
     jobConfigHistory:2.15 \
@@ -68,7 +68,7 @@ RUN install-plugins.sh \
     ldap:1.14 \
     mailer:1.20 \
     mapdb-api:1.0.9.0 \
-    matrix-auth:1.4 \
+    matrix-auth:1.5 \
     matrix-project:1.9 \
     mercurial:1.59 \
     mock-slave:1.10 \
@@ -76,7 +76,7 @@ RUN install-plugins.sh \
     run-condition:1.0 \
     scriptler:2.9 \
     sectioned-view:1.20 \
-    ssh-slaves:1.16 \
+    ssh-slaves:1.17 \
     translation:1.15 \
     view-job-filters:1.27 \
     windows-slaves:1.3.1 \
