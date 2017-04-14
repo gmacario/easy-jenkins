@@ -47,7 +47,6 @@ RUN install-plugins.sh \
     antisamy-markup-formatter:1.5 \
     blueocean:1.0.1 \
     blueocean-pipeline-editor:0.2.0 \
-    build-flow-test-aggregator:1.2 \
     delivery-pipeline-plugin:1.0.0 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
@@ -74,13 +73,15 @@ RUN install-plugins.sh \
     mock-slave:1.10 \
     pam-auth:1.3 \
     run-condition:1.0 \
-    scriptler:2.9 \
     sectioned-view:1.20 \
     ssh-slaves:1.17 \
     translation:1.15 \
     view-job-filters:1.27 \
     windows-slaves:1.3.1 \
     workflow-aggregator:2.5
+
+#    build-flow-test-aggregator:1.2 \
+#    scriptler:2.9 \
 
 COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
