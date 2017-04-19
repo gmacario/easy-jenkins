@@ -53,14 +53,14 @@ RUN install-plugins.sh \
     docker-plugin:0.16.2 \
     email-ext:2.57.2 \
     ez-templates:1.2.5 \
-    ghprb:1.36.1 \
+    ghprb:1.36.2 \
     git-client:2.4.1 \
     github-oauth:0.25 \
     github-organization-folder:1.6 \
     github-pullrequest:0.1.0-rc22 \
     greenballs:1.15 \
     groovy:2.0 \
-    htmlpublisher:1.12 \
+    htmlpublisher:1.13 \
     jenkins-multijob-plugin:1.24 \
     jobConfigHistory:2.15 \
     join:1.21 \
