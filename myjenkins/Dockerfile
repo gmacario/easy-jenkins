@@ -68,7 +68,7 @@ RUN install-plugins.sh \
     mailer:1.20 \
     mapdb-api:1.0.9.0 \
     matrix-auth:1.5 \
-    matrix-project:1.9 \
+    matrix-project:1.10 \
     mercurial:1.59 \
     mock-slave:1.10 \
     pam-auth:1.3 \
