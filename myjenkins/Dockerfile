@@ -7,7 +7,7 @@
 # Credits to https://github.com/camiloribeiro/cdeasy
 # - https://github.com/camiloribeiro/cdeasy/blob/master/docker/jenkins/Dockerfile
 
-FROM jenkins:2.46.1
+FROM jenkins:2.46.2
 
 USER root
 RUN apt-get update -qq && apt-get install -qqy \
