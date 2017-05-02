@@ -55,7 +55,7 @@ RUN install-plugins.sh \
     ez-templates:1.2.5 \
     ghprb:1.36.2 \
     git-client:2.4.5 \
-    github-oauth:0.26 \
+    github-oauth:0.27 \
     github-organization-folder:1.6 \
     github-pullrequest:0.1.0-rc22 \
     greenballs:1.15 \
@@ -64,7 +64,7 @@ RUN install-plugins.sh \
     jenkins-multijob-plugin:1.24 \
     jobConfigHistory:2.16 \
     join:1.21 \
-    ldap:1.14 \
+    ldap:1.15 \
     mailer:1.20 \
     mapdb-api:1.0.9.0 \
     matrix-auth:1.5 \
