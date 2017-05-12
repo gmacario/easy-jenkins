@@ -57,7 +57,7 @@ RUN install-plugins.sh \
     git-client:2.4.5 \
     github-oauth:0.27 \
     github-organization-folder:1.6 \
-    github-pullrequest:0.1.0-rc23 \
+    github-pullrequest:0.1.0-rc24 \
     greenballs:1.15 \
     groovy:2.0 \
     htmlpublisher:1.13 \
@@ -68,7 +68,7 @@ RUN install-plugins.sh \
     mailer:1.20 \
     mapdb-api:1.0.9.0 \
     matrix-auth:1.5 \
-    matrix-project:1.10 \
+    matrix-project:1.11 \
     mercurial:1.60 \
     mock-slave:1.10 \
     pam-auth:1.3 \
