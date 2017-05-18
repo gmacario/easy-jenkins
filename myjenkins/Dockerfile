@@ -67,7 +67,7 @@ RUN install-plugins.sh \
     ldap:1.15 \
     mailer:1.20 \
     mapdb-api:1.0.9.0 \
-    matrix-auth:1.5 \
+    matrix-auth:1.6 \
     matrix-project:1.11 \
     mercurial:1.60 \
     mock-slave:1.10 \
@@ -78,7 +78,8 @@ RUN install-plugins.sh \
     translation:1.15 \
     view-job-filters:1.27 \
     windows-slaves:1.3.1 \
-    workflow-aggregator:2.5
+    workflow-aggregator:2.5 \
+    workflow-job:2.11
 
 #    build-flow-test-aggregator:1.2 \
 #    scriptler:2.9 \
