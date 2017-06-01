@@ -73,7 +73,7 @@ RUN install-plugins.sh \
     mock-slave:1.10 \
     pam-auth:1.3 \
     run-condition:1.0 \
-    sectioned-view:1.20 \
+    sectioned-view:1.23 \
     ssh-slaves:1.17 \
     translation:1.15 \
     view-job-filters:1.27 \
