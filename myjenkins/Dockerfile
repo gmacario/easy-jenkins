@@ -45,15 +45,15 @@ RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 RUN install-plugins.sh \
     ant:1.5 \
     antisamy-markup-formatter:1.5 \
-    blueocean:1.0.1 \
+    blueocean:1.1.0 \
     blueocean-pipeline-editor:0.2.0 \
-    delivery-pipeline-plugin:1.0.1 \
+    delivery-pipeline-plugin:1.0.2 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
     docker-plugin:0.16.2 \
     email-ext:2.57.2 \
-    ez-templates:1.2.5 \
-    ghprb:1.37.0 \
+    ez-templates:1.2.6 \
+    ghprb:1.38.0 \
     git-client:2.4.6 \
     github-oauth:0.27 \
     github-organization-folder:1.6 \
@@ -61,7 +61,7 @@ RUN install-plugins.sh \
     greenballs:1.15 \
     groovy:2.0 \
     htmlpublisher:1.13 \
-    jenkins-multijob-plugin:1.24 \
+    jenkins-multijob-plugin:1.25 \
     jobConfigHistory:2.16 \
     join:1.21 \
     ldap:1.15 \
