@@ -45,7 +45,7 @@ RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 RUN install-plugins.sh \
     ant:1.5 \
     antisamy-markup-formatter:1.5 \
-    blueocean:1.1.0 \
+    blueocean:1.1.1 \
     blueocean-pipeline-editor:0.2.0 \
     delivery-pipeline-plugin:1.0.2 \
     docker-build-publish:1.3.2 \
@@ -69,7 +69,7 @@ RUN install-plugins.sh \
     mapdb-api:1.0.9.0 \
     matrix-auth:1.6 \
     matrix-project:1.11 \
-    mercurial:1.60 \
+    mercurial:1.61 \
     mock-slave:1.10 \
     pam-auth:1.3 \
     run-condition:1.0 \
