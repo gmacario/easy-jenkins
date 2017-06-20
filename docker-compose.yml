@@ -26,6 +26,12 @@ services:
   #   volumes:
   #     - data:/home/jenkins
 
+  nexus:
+    image: clearent/nexus:latest
+    ports:
+      - "8081:8081"
+    network_mode: "bridge"
+
 # volumes:
 #   data:
 #   downloads:
