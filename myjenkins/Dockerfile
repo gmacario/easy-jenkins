@@ -79,7 +79,7 @@ RUN install-plugins.sh \
     view-job-filters:1.27 \
     windows-slaves:1.3.1 \
     workflow-aggregator:2.5 \
-    workflow-job:2.11.1
+    workflow-job:2.12.1
 
 #    build-flow-test-aggregator:1.2 \
 #    scriptler:2.9 \
