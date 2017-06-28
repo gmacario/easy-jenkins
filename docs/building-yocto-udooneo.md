@@ -68,9 +68,6 @@ source init.sh
 # Workaround for "DISTRO 'poky-ivi-systemd' not found."
 export DISTRO="poky"
 
-# Workaround for https://github.com/gmacario/easy-jenkins/issues/57
-bitbake m4-firmware
-
 # bitbake core-image-minimal
 bitbake udoo-image-full-cmdline
 # bitbake genivi-demo-platform
@@ -499,7 +496,7 @@ Starting kernel ...
 ...
 Poky (Yocto Project Reference Distro) 2.0.1 udooneo /dev/ttymxc0
 
-udooneo login: 
+udooneo login:
 ```
 
 Login with user `root` (default password: none)
