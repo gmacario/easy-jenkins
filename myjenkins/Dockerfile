@@ -52,7 +52,7 @@ RUN install-plugins.sh \
     docker-custom-build-environment:1.6.5 \
     docker-plugin:0.16.2 \
     email-ext:2.57.2 \
-    ez-templates:1.2.6 \
+    ez-templates:1.3.0 \
     ghprb:1.38.0 \
     git-client:2.4.6 \
     github-oauth:0.27 \
@@ -64,7 +64,7 @@ RUN install-plugins.sh \
     jenkins-multijob-plugin:1.25 \
     jobConfigHistory:2.16 \
     join:1.21 \
-    ldap:1.15 \
+    ldap:1.16 \
     mailer:1.20 \
     mapdb-api:1.0.9.0 \
     matrix-auth:1.6 \
