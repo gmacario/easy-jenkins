@@ -64,7 +64,7 @@ RUN install-plugins.sh \
     jenkins-multijob-plugin:1.25 \
     jobConfigHistory:2.16 \
     join:1.21 \
-    ldap:1.15 \
+    ldap:1.16 \
     mailer:1.20 \
     mapdb-api:1.0.9.0 \
     matrix-auth:1.6 \
