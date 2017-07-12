@@ -51,7 +51,7 @@ RUN install-plugins.sh \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
     docker-plugin:0.16.2 \
-    email-ext:2.57.2 \
+    email-ext:2.58 \
     ez-templates:1.3.0 \
     ghprb:1.39.0 \
     git-client:2.4.6 \
@@ -67,14 +67,14 @@ RUN install-plugins.sh \
     ldap:1.16 \
     mailer:1.20 \
     mapdb-api:1.0.9.0 \
-    matrix-auth:1.6 \
+    matrix-auth:1.7 \
     matrix-project:1.11 \
     mercurial:1.61 \
     mock-slave:1.10 \
     pam-auth:1.3 \
     run-condition:1.0 \
     sectioned-view:1.23 \
-    ssh-slaves:1.17 \
+    ssh-slaves:1.20 \
     translation:1.15 \
     view-job-filters:1.27 \
     windows-slaves:1.3.1 \
