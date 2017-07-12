@@ -51,30 +51,30 @@ RUN install-plugins.sh \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
     docker-plugin:0.16.2 \
-    email-ext:2.57.2 \
+    email-ext:2.58 \
     ez-templates:1.3.0 \
-    ghprb:1.38.0 \
+    ghprb:1.39.0 \
     git-client:2.4.6 \
     github-oauth:0.27 \
     github-organization-folder:1.6 \
     github-pullrequest:0.1.0-rc24 \
     greenballs:1.15 \
     groovy:2.0 \
-    htmlpublisher:1.13 \
-    jenkins-multijob-plugin:1.25 \
+    htmlpublisher:1.14 \
+    jenkins-multijob-plugin:1.26 \
     jobConfigHistory:2.16 \
     join:1.21 \
     ldap:1.16 \
     mailer:1.20 \
     mapdb-api:1.0.9.0 \
-    matrix-auth:1.6 \
+    matrix-auth:1.7 \
     matrix-project:1.11 \
     mercurial:1.61 \
     mock-slave:1.10 \
     pam-auth:1.3 \
     run-condition:1.0 \
     sectioned-view:1.23 \
-    ssh-slaves:1.17 \
+    ssh-slaves:1.20 \
     translation:1.15 \
     view-job-filters:1.27 \
     windows-slaves:1.3.1 \
