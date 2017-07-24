@@ -47,7 +47,7 @@ RUN install-plugins.sh \
     antisamy-markup-formatter:1.5 \
     blueocean:1.1.4 \
     blueocean-pipeline-editor:0.2.0 \
-    delivery-pipeline-plugin:1.0.2 \
+    delivery-pipeline-plugin:1.0.3 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
     docker-plugin:0.16.2 \
@@ -57,7 +57,7 @@ RUN install-plugins.sh \
     git-client:2.4.6 \
     github-oauth:0.27 \
     github-organization-folder:1.6 \
-    github-pullrequest:0.1.0-rc24 \
+    github-pullrequest:0.1.0-rc25 \
     greenballs:1.15 \
     groovy:2.0 \
     htmlpublisher:1.14 \
@@ -69,7 +69,7 @@ RUN install-plugins.sh \
     mapdb-api:1.0.9.0 \
     matrix-auth:1.7 \
     matrix-project:1.11 \
-    mercurial:1.61 \
+    mercurial:2.0 \
     mock-slave:1.10 \
     pam-auth:1.3 \
     run-condition:1.0 \
