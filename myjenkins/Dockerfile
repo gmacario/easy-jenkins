@@ -43,11 +43,11 @@ RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 
 # Install additional Jenkins plugins
 RUN install-plugins.sh \
-    ant:1.5 \
+    ant:1.6 \
     antisamy-markup-formatter:1.5 \
-    blueocean:1.1.5 \
+    blueocean:1.1.6 \
     blueocean-pipeline-editor:0.2.0 \
-    delivery-pipeline-plugin:1.0.3 \
+    delivery-pipeline-plugin:1.0.4 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
     docker-plugin:0.16.2 \
