@@ -43,10 +43,10 @@ RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 
 # Install additional Jenkins plugins
 RUN install-plugins.sh \
-    ant:1.6 \
+    ant:1.7 \
     antisamy-markup-formatter:1.5 \
-    blueocean:1.1.6 \
-    blueocean-pipeline-editor:0.2.0 \
+    blueocean:1.2.0 \
+    blueocean-pipeline-editor:1.2.0 \
     delivery-pipeline-plugin:1.0.4 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
@@ -62,7 +62,7 @@ RUN install-plugins.sh \
     groovy:2.0 \
     htmlpublisher:1.14 \
     jenkins-multijob-plugin:1.27 \
-    jobConfigHistory:2.16 \
+    jobConfigHistory:2.17 \
     join:1.21 \
     ldap:1.16 \
     mailer:1.20 \
@@ -73,8 +73,8 @@ RUN install-plugins.sh \
     mock-slave:1.10 \
     pam-auth:1.3 \
     run-condition:1.0 \
-    sectioned-view:1.23 \
-    ssh-slaves:1.20 \
+    sectioned-view:1.24 \
+    ssh-slaves:1.21 \
     translation:1.15 \
     view-job-filters:1.27 \
     windows-slaves:1.3.1 \
