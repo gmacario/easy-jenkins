@@ -61,7 +61,7 @@ RUN install-plugins.sh \
     greenballs:1.15 \
     groovy:2.0 \
     htmlpublisher:1.14 \
-    jenkins-multijob-plugin:1.27 \
+    jenkins-multijob-plugin:1.28 \
     jobConfigHistory:2.17 \
     join:1.21 \
     ldap:1.16 \
@@ -69,7 +69,7 @@ RUN install-plugins.sh \
     mapdb-api:1.0.9.0 \
     matrix-auth:1.7 \
     matrix-project:1.11 \
-    mercurial:2.0 \
+    mercurial:2.1 \
     mock-slave:1.10 \
     pam-auth:1.3 \
     run-condition:1.0 \
