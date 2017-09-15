@@ -46,7 +46,7 @@ RUN install-plugins.sh \
     ant:1.7 \
     antisamy-markup-formatter:1.5 \
     blueocean:1.2.1 \
-    blueocean-pipeline-editor:1.2.0 \
+    blueocean-pipeline-editor:1.2.1 \
     delivery-pipeline-plugin:1.0.5 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
