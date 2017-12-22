@@ -54,7 +54,9 @@ RUN install-plugins.sh \
     email-ext:2.59 \
     ez-templates:1.3.1 \
     ghprb:1.39.0 \
-    git-client:2.6.0 \
+    git-client:2.7.0 \
+    git-plugin:3.7.0 \
+    github-branch-source:2.3.2 \
     github-oauth:0.28.1 \
     github-organization-folder:1.6 \
     github-pullrequest:0.1.0-rc29 \
@@ -72,6 +74,7 @@ RUN install-plugins.sh \
     mercurial:2.2 \
     mock-slave:1.11 \
     pam-auth:1.3 \
+    pipeline-github-lib:1.0 \
     run-condition:1.0 \
     sectioned-view:1.24 \
     ssh-slaves:1.21 \
