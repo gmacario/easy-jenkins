@@ -54,8 +54,8 @@ RUN install-plugins.sh \
     email-ext:2.59 \
     ez-templates:1.3.1 \
     ghprb:1.39.0 \
+    git:3.7.0 \
     git-client:2.7.0 \
-    git-plugin:3.7.0 \
     github-branch-source:2.3.2 \
     github-oauth:0.28.1 \
     github-organization-folder:1.6 \
