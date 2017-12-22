@@ -45,33 +45,36 @@ RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 RUN install-plugins.sh \
     ant:1.7 \
     antisamy-markup-formatter:1.5 \
-    blueocean:1.2.1 \
-    blueocean-pipeline-editor:1.2.1 \
-    delivery-pipeline-plugin:1.0.5 \
+    blueocean:1.3.5 \
+    blueocean-pipeline-editor:1.3.5 \
+    delivery-pipeline-plugin:1.1.0 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
-    docker-plugin:0.16.2 \
+    docker-plugin:1.1.2 \
     email-ext:2.59 \
-    ez-templates:1.3.0 \
+    ez-templates:1.3.1 \
     ghprb:1.39.0 \
-    git-client:2.5.0 \
-    github-oauth:0.27 \
+    git:3.7.0 \
+    git-client:2.7.0 \
+    github-branch-source:2.3.2 \
+    github-oauth:0.28.1 \
     github-organization-folder:1.6 \
-    github-pullrequest:0.1.0-rc26 \
+    github-pullrequest:0.1.0-rc29 \
     greenballs:1.15 \
     groovy:2.0 \
     htmlpublisher:1.14 \
     jenkins-multijob-plugin:1.28 \
-    jobConfigHistory:2.17 \
+    jobConfigHistory:2.18 \
     join:1.21 \
     ldap:1.17 \
     mailer:1.20 \
     mapdb-api:1.0.9.0 \
     matrix-auth:1.7 \
-    matrix-project:1.11 \
-    mercurial:2.1 \
-    mock-slave:1.10 \
+    matrix-project:1.12 \
+    mercurial:2.2 \
+    mock-slave:1.11 \
     pam-auth:1.3 \
+    pipeline-github-lib:1.0 \
     run-condition:1.0 \
     sectioned-view:1.24 \
     ssh-slaves:1.21 \
@@ -79,7 +82,7 @@ RUN install-plugins.sh \
     view-job-filters:1.27 \
     windows-slaves:1.3.1 \
     workflow-aggregator:2.5 \
-    workflow-job:2.12.2
+    workflow-job:2.16
 
 #    build-flow-test-aggregator:1.2 \
 #    scriptler:2.9 \
