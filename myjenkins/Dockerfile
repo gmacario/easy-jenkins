@@ -45,15 +45,15 @@ RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 RUN install-plugins.sh \
     ant:1.7 \
     antisamy-markup-formatter:1.5 \
-    blueocean:1.3.5 \
-    blueocean-pipeline-editor:1.3.5 \
-    delivery-pipeline-plugin:1.1.0 \
+    blueocean:1.4.0 \
+    blueocean-pipeline-editor:1.4.0 \
+    delivery-pipeline-plugin:1.1.1 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
     docker-plugin:1.1.2 \
     email-ext:2.59 \
-    ez-templates:1.3.1 \
-    ghprb:1.39.0 \
+    ez-templates:1.3.2 \
+    ghprb:1.40.0 \
     git:3.7.0 \
     git-client:2.7.0 \
     github-branch-source:2.3.2 \
