@@ -47,6 +47,8 @@ RUN install-plugins.sh \
     antisamy-markup-formatter:1.5 \
     blueocean:1.4.0 \
     blueocean-pipeline-editor:1.4.0 \
+    build-timeout:1.19 \
+    command-launcher:1.2 \
     delivery-pipeline-plugin:1.1.1 \
     docker-build-publish:1.3.2 \
     docker-custom-build-environment:1.6.5 \
@@ -60,6 +62,7 @@ RUN install-plugins.sh \
     github-oauth:0.29 \
     github-organization-folder:1.6 \
     github-pullrequest:0.1.0-rc29 \
+    gradle:1.28 \
     greenballs:1.15 \
     groovy:2.0 \
     htmlpublisher:1.14 \
@@ -75,14 +78,18 @@ RUN install-plugins.sh \
     mock-slave:1.11 \
     pam-auth:1.3 \
     pipeline-github-lib:1.0 \
+    resource-disposer:0.8 \
     run-condition:1.0 \
     sectioned-view:1.24 \
     ssh-slaves:1.21 \
+    subversion:2.10.2 \
+    timestamper:1.8.9 \
     translation:1.16 \
     view-job-filters:1.27 \
     windows-slaves:1.3.1 \
     workflow-aggregator:2.5 \
-    workflow-job:2.17
+    workflow-job:2.17 \
+    ws-cleanup:0.34
 
 #    build-flow-test-aggregator:1.2 \
 #    scriptler:2.9 \
