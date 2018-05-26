@@ -55,7 +55,6 @@ RUN install-plugins.sh \
     docker-plugin \
     email-ext \
     ez-templates \
-    ghprb \
     git \
     git-client \
     github-branch-source \
