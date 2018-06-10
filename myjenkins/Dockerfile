@@ -77,6 +77,7 @@ RUN install-plugins.sh \
     mock-slave \
     pam-auth \
     pipeline-github-lib \
+    publish-over-ssh \
     resource-disposer \
     run-condition \
     sectioned-view \
