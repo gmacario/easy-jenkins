@@ -6,9 +6,10 @@
 #
 # Based on https://github.com/camiloribeiro/cdeasy
 
-FROM jenkins/jenkins
+# FROM jenkins/jenkins
 # FROM jenkins/jenkins:lts
-# FROM jenkins/jenkins-experimental:latest-jdk10-incrementals
+# FROM jenkins/jenkins-experimental:latest-jdk10
+FROM jenkins/jenkins-experimental:latest-jdk10-incrementals
 
 USER root
 RUN apt-get update -qq && \
@@ -96,10 +97,8 @@ RUN install-plugins.sh \
     windows-slaves \
     workflow-aggregator \
     workflow-job \
-    workflow-support \
+    "workflow-support:incrementals;org.jenkins-ci.plugins.workflow;2.19-rc295.e017dc58c0a3" \
     ws-cleanup
-
-#    "workflow-support:incrementals;org.jenkins-ci.plugins.workflow;2.19-rc295.e017dc58c0a3" \
 
 # COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
