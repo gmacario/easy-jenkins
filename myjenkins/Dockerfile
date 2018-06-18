@@ -7,7 +7,7 @@
 # Credits to https://github.com/camiloribeiro/cdeasy
 # - https://github.com/camiloribeiro/cdeasy/blob/master/docker/jenkins/Dockerfile
 
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins-experimental:latest-jdk10
 
 USER root
 RUN apt-get update -qq && apt-get install -qqy \
