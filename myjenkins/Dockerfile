@@ -10,7 +10,9 @@
 FROM jenkins/jenkins-experimental:latest-jdk10
 
 USER root
-RUN apt-get update -qq && apt-get install -qqy \
+RUN apt-get update -qq && \
+    apt-cache search groovy && \
+    apt-get install -qqy \
     apt-transport-https \
     ca-certificates \
     curl \
