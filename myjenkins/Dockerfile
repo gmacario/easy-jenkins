@@ -20,7 +20,7 @@ RUN apt-get update -qq && \
     lxc \
     iptables \
     dos2unix \
-    groovy2
+    groovy
 
 # Install gosu
 RUN curl -o /usr/local/bin/gosu -fsSL \
