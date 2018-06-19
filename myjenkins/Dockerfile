@@ -91,7 +91,7 @@ RUN install-plugins.sh \
     windows-slaves \
     workflow-aggregator \
     workflow-job \
-    "workflow-support:incrementals;org.jenkins-ci.plugins.workflow;2.19-rc295.8acfa38fd7b9" \
+    "workflow-support:incrementals;org.jenkins-ci.plugins.workflow;2.19-rc295.e017dc58c0a3" \
     ws-cleanup
 
 #    build-flow-test-aggregator:1.2 \
