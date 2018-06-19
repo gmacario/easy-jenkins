@@ -7,7 +7,7 @@
 # Credits to https://github.com/camiloribeiro/cdeasy
 # - https://github.com/camiloribeiro/cdeasy/blob/master/docker/jenkins/Dockerfile
 
-FROM jenkins/jenkins-experimental:latest-jdk10
+FROM jenkins/jenkins-experimental:latest-jdk10-incrementals
 
 USER root
 RUN apt-get update -qq && \
