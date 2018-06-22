@@ -100,7 +100,7 @@ RUN install-plugins.sh \
 #    build-flow-test-aggregator:1.2 \
 #    scriptler:2.9 \
 
-COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
+# COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
 RUN touch /var/run/docker.sock
 
