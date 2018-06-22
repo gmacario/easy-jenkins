@@ -4,7 +4,7 @@ Easily deploy a [Jenkins](https://jenkins-ci.org/) CI/CD infrastructure via [doc
 
 Please see [CHANGELOG](CHANGELOG.md) for main changes since previous release.
 
-I recently gave [a presentation about easy-jenkins](http://gmacario.github.io/images/easybuild-torinotech-2016-04-01.pdf) to explain the motivations behind this project.
+Here is [a presentation about easy-jenkins](http://gmacario.github.io/images/easybuild-torinotech-2016-04-01.pdf) which explains the motivations behind this project.
 
 ### TL;DR
 
