@@ -43,6 +43,8 @@ RUN curl -o /usr/local/bin/docker-compose -fsSL \
 # Workaround to prevent install-plugins.sh to fail
 RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 
+ENV JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental
+
 # Install additional Jenkins plugins
 RUN install-plugins.sh \
     ant \
@@ -51,6 +53,7 @@ RUN install-plugins.sh \
     blueocean-pipeline-editor \
     build-timeout \
     command-launcher \
+    configuration-as-code:experimental \
     delivery-pipeline-plugin \
     docker-build-publish \
     docker-custom-build-environment \
