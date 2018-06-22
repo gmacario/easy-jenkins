@@ -47,6 +47,7 @@ ENV JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental
 
 # Install additional Jenkins plugins
 RUN install-plugins.sh \
+    ansicolor \
     ant \
     antisamy-markup-formatter \
     blueocean \
