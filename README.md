@@ -45,7 +45,7 @@ In order to run easy-jenkins you need a recent 64-bit x86 host with:
 5. A recent Internet browser (i.e. [Google Chrome](https://www.google.com/chrome/))
 6. A fast Internet connection
 
-**Note 1**: By installing [Docker Toolbox](https://www.docker.com/products/docker-toolbox) (either on [OS X](http://www.apple.com/osx/) or [MS Windows](http://www.microsoft.com/en-us/windows)) you will get all the Docker tools (i.e. docker, docker-compose, docker-machine, etc.) required by easy-jenkins.
+**Note 1**: By installing [Docker Toolbox](https://docs.docker.com/toolbox/) (either on [OS X](http://www.apple.com/osx/) or [MS Windows](http://www.microsoft.com/en-us/windows)) you will get all the Docker tools (i.e. docker, docker-compose, docker-machine, etc.) required by easy-jenkins.
 
 **Note 2**: Thanks to docker-machine you can configure easy-jenkins to deploy and run the containers on a remote Docker engine, for instance:
 
