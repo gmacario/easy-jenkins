@@ -7,10 +7,12 @@
 # Credits to https://github.com/camiloribeiro/cdeasy
 # - https://github.com/camiloribeiro/cdeasy/blob/master/docker/jenkins/Dockerfile
 
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins-experimental:latest-jdk10-incrementals
 
 USER root
-RUN apt-get update -qq && apt-get install -qqy \
+RUN apt-get update -qq && \
+    apt-cache search groovy && \
+    apt-get install -qqy \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -18,7 +20,7 @@ RUN apt-get update -qq && apt-get install -qqy \
     lxc \
     iptables \
     dos2unix \
-    groovy2
+    groovy
 
 # Install gosu
 RUN curl -o /usr/local/bin/gosu -fsSL \
@@ -89,6 +91,7 @@ RUN install-plugins.sh \
     windows-slaves \
     workflow-aggregator \
     workflow-job \
+    "workflow-support:incrementals;org.jenkins-ci.plugins.workflow;2.19-rc295.e017dc58c0a3" \
     ws-cleanup
 
 #    build-flow-test-aggregator:1.2 \
