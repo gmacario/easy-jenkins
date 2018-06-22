@@ -39,7 +39,7 @@ In order to run easy-jenkins you need a recent 64-bit x86 host with:
 
 1. Minimum HW requirements: a dual-core CPU, 8 GB RAM, 100 GB disk space
 2. [Docker](https://www.docker.com/) tools (see Note 1)
-   * Docker Engine (see Note 2)
+   * Docker - minimum API version 1.35 (see Note 2)
    * Docker Compose
    * Docker Machine
 5. A recent Internet browser (i.e. [Google Chrome](https://www.google.com/chrome/))
