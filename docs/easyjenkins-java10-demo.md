@@ -1,14 +1,18 @@
 # Preparing easy-jenkins demo, 2018-06-22
 
-See <https://github.com/gmacario/easy-jenkins/issues/268>
+## Executive Summary
 
-YouTube Video: <https://www.youtube.com/watch?v=1ZX9qA0AZjM>
+This document details the steps to reproduce the demo given by [@gmacario](https://github.com/gmacario) during the last day of the [Jenkins & Java 10+ Hackathon](https://jenkins.io/blog/2018/06/08/jenkins-java10-hackathon/) which took place on 2018-06-22.
+
+YouTube Video: <https://www.youtube.com/watch?v=1ZX9qA0AZjM> (from 18:52 to 28:10)
+
+See <https://github.com/gmacario/easy-jenkins/issues/268>
 
 ## Prerequisites
 
 Please refer to section "System Requirements" of <https://github.com/gmacario/easy-jenkins>
 
-## Demo Storyboard
+## Step-by-step instructions
 
 Login to a Bash shell on the machine where you installed Docker (in our example, login as _gmacario@mac-tizy_)
 
@@ -51,7 +55,7 @@ eval $(docker-machine env easy-jenkins) && \
 docker-compose logs -f
 ```
 
-#### Configure easy-jenkins instance
+### Configure easy-jenkins instance
 
 Browse `${JENKINS_URL}` -- example: <http://192.168.99.100:9080/>
 
@@ -66,7 +70,7 @@ Browse `${JENKINS_URL}` -- example: <http://192.168.99.100:9080/>
   - Click "Save"
 
 
-#### Install sample Pipelines (my-jenkins-pipelines)
+### Install sample Pipelines (my-jenkins-pipelines)
 
 Browse `${JENKINS_URL}`
 
@@ -93,7 +97,7 @@ docker-compose down -v && \
 docker-machine stop easy-jenkins
 ```
 
-### If the storyboard fails
+## If anything fails...
 
 Logged as gmacario@mac-tizy
 
