@@ -24,7 +24,7 @@ Clone easy-jenkins source code from GitHub
 mkdir -p $HOME/github/gmacario && cd $HOME/github/gmacario && \
 [ ! -e easy-jenkins ] && git clone https://github.com/gmacario/easy-jenkins && \
 cd $HOME/github/gmacario/easy-jenkins && \
-git checkout wip/try-java10-jasc && git pull --all --prune
+git checkout feature/install-nexus-oss && git pull --all --prune
 ```
 
 Bring-up easy-jenkins
