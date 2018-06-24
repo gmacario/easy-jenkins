@@ -27,7 +27,7 @@ services:
   #     - data:/home/jenkins
 
   nexus:
-    image: clearent/nexus:latest
+    image: sonatype/nexus3:latest
     ports:
       - "8081:8081"
     network_mode: "bridge"
