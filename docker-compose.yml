@@ -29,7 +29,7 @@ services:
   nexus:
     image: sonatype/nexus3:latest
     ports:
-      - "8081:8081"
+      - "9081:8081"
     network_mode: "bridge"
 
 # volumes:
