@@ -4,8 +4,7 @@
 # - Jenkins workflow plugins
 # - Docker
 #
-# Credits to https://github.com/camiloribeiro/cdeasy
-# - https://github.com/camiloribeiro/cdeasy/blob/master/docker/jenkins/Dockerfile
+# Based on https://github.com/camiloribeiro/cdeasy
 
 FROM jenkins/jenkins:lts
 
