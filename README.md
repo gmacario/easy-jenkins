@@ -38,7 +38,7 @@ in order to setup the environment variables so that `docker-compose` and `docker
 In order to run easy-jenkins you need a recent 64-bit x86 host with: 
 
 1. Minimum HW requirements: a dual-core CPU, 8 GB RAM, 100 GB disk space
-2. [Docker](https://www.docker.com/) tools (see Note 1)
+2. The most recent version of [Docker](https://www.docker.com/) tools (see Note 1)
    * Docker Engine (see Note 2)
    * Docker Compose
    * Docker Machine
