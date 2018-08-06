@@ -4,13 +4,16 @@
 # - Jenkins workflow plugins
 # - Docker
 #
-# Credits to https://github.com/camiloribeiro/cdeasy
-# - https://github.com/camiloribeiro/cdeasy/blob/master/docker/jenkins/Dockerfile
+# Based on https://github.com/camiloribeiro/cdeasy
 
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins
+# FROM jenkins/jenkins:lts
+# FROM jenkins/jenkins-experimental:latest-jdk10-incrementals
 
 USER root
-RUN apt-get update -qq && apt-get install -qqy \
+RUN apt-get update -qq && \
+    apt-cache search groovy && \
+    apt-get install -qqy \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -18,7 +21,7 @@ RUN apt-get update -qq && apt-get install -qqy \
     lxc \
     iptables \
     dos2unix \
-    groovy2
+    groovy
 
 # Install gosu
 RUN curl -o /usr/local/bin/gosu -fsSL \
@@ -41,14 +44,18 @@ RUN curl -o /usr/local/bin/docker-compose -fsSL \
 # Workaround to prevent install-plugins.sh to fail
 RUN mkdir -p /usr/share/jenkins/ref/plugins/tmp
 
+ENV JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental
+
 # Install additional Jenkins plugins
 RUN install-plugins.sh \
+    ansicolor \
     ant \
     antisamy-markup-formatter \
     blueocean \
     blueocean-pipeline-editor \
     build-timeout \
     command-launcher \
+    configuration-as-code:experimental \
     delivery-pipeline-plugin \
     docker-build-publish \
     docker-custom-build-environment \
@@ -89,12 +96,13 @@ RUN install-plugins.sh \
     windows-slaves \
     workflow-aggregator \
     workflow-job \
+    "workflow-support:incrementals;org.jenkins-ci.plugins.workflow;2.19-rc295.e017dc58c0a3" \
     ws-cleanup
 
 #    build-flow-test-aggregator:1.2 \
 #    scriptler:2.9 \
 
-COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
+# COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
 RUN touch /var/run/docker.sock
 
