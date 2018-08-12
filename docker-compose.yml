@@ -1,7 +1,9 @@
+# easy-jenkins docker-compose.yml
+#
 # See also:
 # - Compose file reference: https://docs.docker.com/compose/compose-file/
 
-version: '2'
+version: '3'
 
 services:
   myjenkins:
