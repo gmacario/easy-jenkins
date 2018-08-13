@@ -1,0 +1,8 @@
+jenkins:
+  systemMessage: "Jenkins configured automatically for nemo by Jenkins Configuration as Code Plugin\n\n"
+  numExecutors: 4
+  labelString: "docker linux"
+  scmCheckoutRetryCount: 2
+  mode: NORMAL
+
+# EOF
