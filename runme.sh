@@ -108,7 +108,7 @@ result=$(docker --version)
 # echo "DEBUG: line $LINENO: result=$result"
 have_maj_min_pat=$(echo $result | sed -e 's/^.*version //' | sed -e 's/\,.*$//')
 # echo "DEBUG: line $LINENO: have_maj_min_pat=$have_maj_min_pat"
-want_maj_min_pat="1.10.0"
+want_maj_min_pat="18.02.0"
 # echo "DEBUG: line $LINENO: want_maj_min_pat=$want_maj_min_pat"
 if ! is_version_ok $have_maj_min_pat $want_maj_min_pat; then
     echo "ERROR: Should install docker >= $want_maj_min_pat (have $have_maj_min_pat)"
