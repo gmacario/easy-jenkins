@@ -163,6 +163,19 @@ if ${USE_DOCKER_MACHINE}; then
     eval $(docker-machine env ${VM})
 fi    # if ${USE_DOCKER_MACHINE} ...
 
+if [ "${CASC_JENKINS_CONFIG}" = "" ]; then
+    CASC_JENKINS_CONFIG="casc_configs/$(hostname).yaml"
+    if [ ! -e "${CASC_JENKINS_CONFIG}" ]; then
+        echo "WARNING: Could not find ${CASC_JENKINS_CONFIG} -- using default"
+        CASC_JENKINS_CONFIG="casc_configs/default.yaml"
+    fi
+    export CASC_JENKINS_CONFIG="/var/jenkins_home/${CASC_JENKINS_CONFIG}"
+fi
+echo "DEBUG: CASC_JENKINS_CONFIG=${CASC_JENKINS_CONFIG}"
+
+# echo "DEBUG: Inspecting environment variables"
+# printenv | sort
+
 docker-compose up -d
 
 # Wait a reasonable time to make sure initialAdminPassword is generated
