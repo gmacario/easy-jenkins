@@ -1,6 +1,7 @@
 jenkins:
   systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code Plugin\n\n"
   numExecutors: 3
+  labelString: "docker linux"
   scmCheckoutRetryCount: 2
   mode: NORMAL
 
