@@ -9,6 +9,8 @@ services:
   myjenkins:
     # image: jenkins:latest
     build: myjenkins
+    environment:
+      - CASC_JENKINS_CONFIG=/test/myjenkins.yaml
     ports:
       - "9080:8080"
       - "51000:50000"
@@ -18,6 +20,7 @@ services:
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
+      - "${PWD}/myjenkins.yaml:/test/myjenkins.yaml"
 
   # build-yocto-slave:
   #   image: gmacario/build-yocto:latest
