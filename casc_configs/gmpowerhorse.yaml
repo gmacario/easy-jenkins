@@ -4,5 +4,7 @@ jenkins:
   labelString: "docker linux"
   scmCheckoutRetryCount: 2
   mode: NORMAL
+  location:
+    url: "http://gmpowerhorse.gmacario.it:9080"
 
 # EOF
