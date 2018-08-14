@@ -1,7 +1,11 @@
-# easy-jenkins docker-compose.yml
+# =================================================================================
+# Project: https://github.com/gmacario/easy-jenkins
 #
-# See also:
+# File: docker-compose.yml
+#
+# References:
 # - Compose file reference: https://docs.docker.com/compose/compose-file/
+# =================================================================================
 
 version: '3.3'
 
@@ -25,9 +29,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - "${PWD}/casc_configs:/var/jenkins_home/casc_configs:ro"
     secrets:
-      - github             # Github username with password as an example
       - adminpw            # Initial administrator user password
-      - agent_private_key  # SSH private key for connecting ssh slaves
+      - gpmacariopw
+      # - agent_private_key  # SSH private key for connecting ssh slaves
+      # - github             # Github username with password as an example
 
   # build-yocto-slave:
   #   image: gmacario/build-yocto:latest
@@ -48,14 +53,16 @@ services:
 # Be careful with newlines in your secrets, make sure to remove them
 # before running docker-compose up.
 secrets:
-  github:
-    file: /var/deploy/secrets/github
   adminpw:
-    file: /var/deploy/secrets/adminpw
-  agent_private_key:
-    # This should point to the private key you want your jenkins master to use
-    # when connecting to slaves. For example in AWS this would be your .pem file
-    file: ~/.ssh/id_rsa
+    file: ${PWD}/secrets/adminpw
+  gpmacariopw:
+    file: ${PWD}/secrets/gpmacariopw
+# agent_private_key:
+#   # This should point to the private key you want your jenkins master to use
+#   # when connecting to slaves. For example in AWS this would be your .pem file
+#   file: ~/.ssh/id_rsa
+# github:
+#   file: /var/deploy/secrets/github
 
 volumes:
   jenkins_home:
