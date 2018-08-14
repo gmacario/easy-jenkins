@@ -1,8 +1,35 @@
 jenkins:
-  systemMessage: "Jenkins configured automatically for nemo by Jenkins Configuration as Code Plugin\n\n"
-  numExecutors: 4
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+#    globalMatrix:
+#      grantedPermissions:
+#        - name: "anonymous"
+#          permissions:
+#            - "Overall/Read"
+#            - "Job/Read"
+#            - "View/Read"
+#        - name: "authenticated"
+#          permissions:
+#            - "Overall/Administer"
   labelString: "docker linux"
-  scmCheckoutRetryCount: 2
   mode: NORMAL
-
+  numExecutors: 4
+  scmCheckoutRetryCount: 2
+  securityRealm:
+    local:
+      # allowsSignup: true
+      # enableCaptcha: false
+      users:
+      - id: "admin"
+        password: ${adminpw:-passw0rd}
+      - id: "gp.macario"
+        password: ${gpmacariopw:-samplepass}
+#     - id: "bruno.mea"
+#       password: ${adminpw:-samplepass}
+#     - id: "michele.paglia"
+#       password: ${adminpw:-samplepass}
+#     - id: "alberto.gotta"
+#       password: ${adminpw:-samplepass}
+  systemMessage: "Jenkins configured automatically for nemo by Jenkins Configuration as Code Plugin\n\n"
 # EOF
