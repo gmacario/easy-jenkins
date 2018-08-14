@@ -73,6 +73,7 @@ RUN install-plugins.sh \
     groovy \
     htmlpublisher \
     jenkins-multijob-plugin \
+    job-dsl \
     jobConfigHistory \
     join \
     ldap \
