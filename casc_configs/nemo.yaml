@@ -24,7 +24,7 @@ jenkins:
       - id: "admin"
         password: ${adminpw:-passw0rd}
       - id: "gp.macario"
-        password: ${adminpw:-samplepass}
+        password: ${gpmacariopw:-samplepass}
 #     - id: "bruno.mea"
 #       password: ${adminpw:-samplepass}
 #     - id: "michele.paglia"
