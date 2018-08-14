@@ -55,7 +55,8 @@ RUN install-plugins.sh \
     blueocean-pipeline-editor \
     build-timeout \
     command-launcher \
-    configuration-as-code:experimental \
+    configuration-as-code \
+    configuration-as-code-support \
     delivery-pipeline-plugin \
     docker-build-publish \
     docker-custom-build-environment \
