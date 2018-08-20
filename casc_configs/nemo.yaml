@@ -1,4 +1,7 @@
 jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
   authorizationStrategy:
     loggedInUsersCanDoAnything:
       allowAnonymousRead: false
@@ -12,14 +15,18 @@ jenkins:
 #        - name: "authenticated"
 #          permissions:
 #            - "Overall/Administer"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
   labelString: "docker linux"
   mode: NORMAL
   numExecutors: 4
   scmCheckoutRetryCount: 2
   securityRealm:
     local:
-      # allowsSignup: true
-      # enableCaptcha: false
+      allowsSignup: false
+      enableCaptcha: false
       users:
       - id: "admin"
         password: ${adminpw:-passw0rd}
