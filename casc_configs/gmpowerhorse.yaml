@@ -1,8 +1,16 @@
 jenkins:
   systemMessage: "Jenkins configured automatically for gmpowerhorse by Jenkins Configuration as Code Plugin\n\n"
+  mode: NORMAL
   numExecutors: 4
   labelString: "docker linux"
   scmCheckoutRetryCount: 2
-  mode: NORMAL
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "admin"
+        password: ${adminpw:-passw0rd}
+
 
 # EOF
