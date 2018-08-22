@@ -30,7 +30,7 @@ services:
       - "${PWD}/casc_configs:/var/jenkins_home/casc_configs:ro"
     secrets:
       - adminpw            # Initial administrator user password
-      - gpmacariopw
+      # - gpmacariopw
       # - agent_private_key  # SSH private key for connecting ssh slaves
       # - github             # Github username with password as an example
 
@@ -56,8 +56,8 @@ services:
 secrets:
   adminpw:
     file: ${PWD}/secrets/adminpw
-  gpmacariopw:
-    file: ${PWD}/secrets/gpmacariopw
+#  gpmacariopw:
+#    file: ${PWD}/secrets/gpmacariopw
 # agent_private_key:
 #   # This should point to the private key you want your jenkins master to use
 #   # when connecting to slaves. For example in AWS this would be your .pem file
