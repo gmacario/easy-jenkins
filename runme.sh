@@ -181,7 +181,7 @@ if [ ! -e "secrets/adminpw" ]; then
     INITIAL_PASS="Ver!s4cr4tpa55wd"
     mkdir -p secrets
     echo "${INITIAL_PASS}" > secrets/adminpw
-    echo "INFO: Initial administrator password: ${INITIAL_PASS}"
+    echo "INFO: Initial Jenkins admin password: ${INITIAL_PASS}"
 fi
 
 docker-compose up -d
@@ -199,7 +199,7 @@ INITIAL_PASS=$(docker-compose exec -T myjenkins sh -c \
     "[ -e /var/jenkins_home/secrets/initialAdminPassword ] && cat /var/jenkins_home/secrets/initialAdminPassword")
 
 if [ "${INITIAL_PASS}" != "" ]; then
-    echo "INFO: Initial administrator password: ${INITIAL_PASS}"
+    echo "INFO: Initial Jenkins admin password: ${INITIAL_PASS}"
 fi
 
 # EOF
