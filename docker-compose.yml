@@ -48,6 +48,7 @@ services:
     image: sonatype/nexus3:latest
     ports:
       - "9081:8081"
+      - "9123:9123"
     network_mode: "bridge"
 
 # Be careful with newlines in your secrets, make sure to remove them
