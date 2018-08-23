@@ -1,8 +1,27 @@
+# File: casc_plugins/gmpowerhorse.yaml
+
+plugins:
+  sites:
+  - id: "default"
+    url: "https://updates.jenkins.io/update-center.json"
 jenkins:
-  systemMessage: "Jenkins configured automatically for gmpowerhorse by Jenkins Configuration as Code Plugin\n\n"
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  labelString: "docker linux"
   mode: NORMAL
   numExecutors: 4
-  labelString: "docker linux"
+  primaryView:
+    all:
+      name: "all"
+  quietPeriod: 5
   scmCheckoutRetryCount: 2
   securityRealm:
     local:
@@ -11,6 +30,10 @@ jenkins:
       users:
       - id: "admin"
         password: ${adminpw:-passw0rd}
-
+  slaveAgentPort: 50000
+  systemMessage: "Jenkins configured automatically for gmpowerhorse by Jenkins Configuration as Code Plugin\n\n"
+  views:
+  - all:
+      name: "all"
 
 # EOF
