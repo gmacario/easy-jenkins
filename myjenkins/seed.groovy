@@ -4,6 +4,9 @@
   
   Adapted from https://github.com/gmacario/cdeasy/blob/master/docker/jenkins/seed.groovy
   
+  If copied on the Jenkins master under `/usr/share/jenkins/ref/init.groovy.d/`
+  this script will automatically be run every time the Jenkins master is started
+
   To test the script:
   - Browse ${JENKINS_URL}/script to access the Jenkins Script Console
   - Paste the contents of this file
@@ -28,7 +31,7 @@ for (node in Jenkins.instance.getNodes()) {
 map = Jenkins.instance.getItemMap()
 println "DEBUG: map = " + map
 if (map.containsKey(jobName)) {
-  println "ERROR: project " + jobName + " exists"
+  println "ERROR: project " + jobName + " already exists"
   return 1;
 }
 
@@ -38,25 +41,26 @@ gitScm.branches = [new hudson.plugins.git.BranchSpec("*/master")]
 project.scm = gitScm
 
 project.getBuildersList().clear()
-//
-// project.getBuildersList().add(new Shell("echo Hello world"));
-//
+
+project.getBuildersList().add(new Shell("echo Hello world"));
+
 // project.getBuildersList().add(new Shell("docker pull niaquinto/gradle"));
 // project.getBuildersList().add(new Shell("docker run -v \$PWD:/usr/bin/app --entrypoint=gradle niaquinto/gradle build"));
 //
-project.getBuildersList().add(new ExecuteDslScripts(
-  new ExecuteDslScripts.ScriptLocation("false","mydsl/**/*.groovy",null),
-  false,
-  RemovedJobAction.IGNORE,
-  RemovedViewAction.IGNORE,
-  LookupStrategy.JENKINS_ROOT,
-  "src/main/groovy")
-);
+// project.getBuildersList().add(new ExecuteDslScripts(
+//   new ExecuteDslScripts.ScriptLocation("false","mydsl/**/*.groovy",null),
+//   false,
+//   RemovedJobAction.IGNORE,
+//   RemovedViewAction.IGNORE,
+//   LookupStrategy.JENKINS_ROOT,
+//   "src/main/groovy")
+// );
+
 project.save()
 
-// TODO: JENKINS_URL ???
 // println "DEBUG: Executing printenv"
 // println "printenv".execute().text
 
-println "INFO: Script seed.groovy executed correctly. Now execute"
-println "\$ curl \${JENKINS_URL}/job/" + jobName + "/build"
+println "INFO: Trigger the build with 'curl \${JENKINS_URL}/job/" + jobName + "/build'"
+
+// EOF
