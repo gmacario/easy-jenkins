@@ -44,14 +44,14 @@ project.getBuildersList().clear()
 // project.getBuildersList().add(new Shell("docker pull niaquinto/gradle"));
 // project.getBuildersList().add(new Shell("docker run -v \$PWD:/usr/bin/app --entrypoint=gradle niaquinto/gradle build"));
 //
-project.getBuildersList().add(new ExecuteDslScripts(
-  new ExecuteDslScripts.ScriptLocation("false","mydsl/**/*.groovy",null),
-  false,
-  RemovedJobAction.IGNORE,
-  RemovedViewAction.IGNORE,
-  LookupStrategy.JENKINS_ROOT,
-  "src/main/groovy")
-);
+// project.getBuildersList().add(new ExecuteDslScripts(
+//   new ExecuteDslScripts.ScriptLocation("false","mydsl/**/*.groovy",null),
+//   false,
+//   RemovedJobAction.IGNORE,
+//   RemovedViewAction.IGNORE,
+//   LookupStrategy.JENKINS_ROOT,
+//   "src/main/groovy")
+// );
 project.save()
 
 // TODO: JENKINS_URL ???
