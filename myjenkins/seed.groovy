@@ -38,9 +38,9 @@ gitScm.branches = [new hudson.plugins.git.BranchSpec("*/master")]
 project.scm = gitScm
 
 project.getBuildersList().clear()
-//
-// project.getBuildersList().add(new Shell("echo Hello world"));
-//
+
+project.getBuildersList().add(new Shell("echo Hello world"));
+
 // project.getBuildersList().add(new Shell("docker pull niaquinto/gradle"));
 // project.getBuildersList().add(new Shell("docker run -v \$PWD:/usr/bin/app --entrypoint=gradle niaquinto/gradle build"));
 //
@@ -52,6 +52,7 @@ project.getBuildersList().clear()
 //   LookupStrategy.JENKINS_ROOT,
 //   "src/main/groovy")
 // );
+
 project.save()
 
 // TODO: JENKINS_URL ???
