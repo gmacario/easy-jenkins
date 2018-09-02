@@ -103,7 +103,7 @@ RUN install-plugins.sh \
 
 #    "workflow-support:incrementals;org.jenkins-ci.plugins.workflow;2.19-rc295.e017dc58c0a3" \
 
-# COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
+COPY seed.groovy /usr/share/jenkins/ref/init.groovy.d/seed.groovy
 
 RUN touch /var/run/docker.sock
 
