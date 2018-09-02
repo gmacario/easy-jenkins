@@ -61,7 +61,6 @@ project.save()
 // println "DEBUG: Executing printenv"
 // println "printenv".execute().text
 
-println "INFO: Script seed.groovy executed correctly. Now execute"
-println "\$ curl \${JENKINS_URL}/job/" + jobName + "/build"
+println "INFO: Trigger the build with 'curl \${JENKINS_URL}/job/" + jobName + "/build'"
 
 // EOF
