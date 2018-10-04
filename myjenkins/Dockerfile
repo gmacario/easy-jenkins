@@ -77,6 +77,8 @@ RUN install-plugins.sh \
     job-dsl \
     jobConfigHistory \
     join \
+    kubernetes \
+    kubernetes-cli \
     ldap \
     mailer \
     mapdb-api \
