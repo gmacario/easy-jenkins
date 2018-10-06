@@ -63,8 +63,8 @@ Basically whatever you can do with Jenkins.
 
 [1]: https://jenkins.io/doc/
 [2]: https://www.youtube.com/user/CloudBeesTV
-[3]: http://www.wakaleo.com/books/jenkins-the-definitive-guide
-[4]: docs
+[3]: https://archive.org/details/jenkins
+[4]: docs/
 
 ### License
 
