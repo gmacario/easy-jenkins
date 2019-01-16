@@ -70,4 +70,4 @@ Basically whatever you can do with Jenkins.
 
 easy-jenkins is licensed under the MIT License - for details please see the `LICENSE` file.
 
-Copyright (C) 2016-2018, [Gianpaolo Macario](http://gmacario.github.io/)
+Copyright (C) 2016-2019, [Gianpaolo Macario](http://gmacario.github.io/)
