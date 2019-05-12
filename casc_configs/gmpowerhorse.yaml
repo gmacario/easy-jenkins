@@ -1,9 +1,5 @@
 # File: casc_plugins/gmpowerhorse.yaml
 
-plugins:
-  sites:
-  - id: "default"
-    url: "https://updates.jenkins.io/update-center.json"
 jenkins:
   agentProtocols:
   - "JNLP4-connect"
