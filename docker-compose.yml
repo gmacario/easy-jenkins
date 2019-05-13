@@ -20,7 +20,7 @@ services:
       # - CASC_JENKINS_CONFIG:/var/jenkins_home/casc_configs
     ports:
       - "9080:8080"
-      - "51000:50000"
+      - "50000:50000"
     # tty: true
     # privileged: true
     network_mode: "bridge"
