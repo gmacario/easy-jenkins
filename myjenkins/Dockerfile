@@ -56,7 +56,6 @@ RUN install-plugins.sh \
     build-timeout \
     command-launcher \
     configuration-as-code \
-    configuration-as-code-support \
     delivery-pipeline-plugin \
     docker-build-publish \
     docker-custom-build-environment \
@@ -67,7 +66,6 @@ RUN install-plugins.sh \
     git-client \
     github-branch-source \
     github-oauth \
-    github-organization-folder \
     github-pullrequest \
     gradle \
     greenballs \
