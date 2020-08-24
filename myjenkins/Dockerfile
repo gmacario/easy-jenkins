@@ -6,8 +6,8 @@
 #
 # Based on https://github.com/camiloribeiro/cdeasy
 
-FROM jenkins/jenkins
-# FROM jenkins/jenkins:lts
+# FROM jenkins/jenkins
+FROM jenkins/jenkins:lts
 # FROM jenkins/jenkins-experimental:latest-jdk10-incrementals
 
 USER root
